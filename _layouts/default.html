@@ -15,7 +15,7 @@
         <script type="text/javascript" src="public/master.min.js"></script>
 
         <script type="text/javascript">
-            $(document).ready( function() {
+            $(function() {
                 $('.subMenu').smint({
                     'scrollSpeed' : 1000
                 });
@@ -37,12 +37,21 @@
         <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-        </script>
-        <script type="text/javascript">
+
             try {
                 var pageTracker = _gat._getTracker("UA-43288838-2");
                 pageTracker._trackPageview();
             } catch(err) {}
+        </script>
+
+        <script type="text/javascript">
+            setTimeout(function(){
+                $(".prettyprint span").each(function(){
+                    var text = $(this).text();
+                    $(this).html(text.replace('Lava', '<span style="color:red;">Lava</span>'));
+                });
+                //$('.prettyprint :first-child').css('color', 'red');
+            }, 500);
         </script>
 
     </body>

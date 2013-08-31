@@ -73,10 +73,3 @@ do
     printf "\n\n" >> $MASTERJS
 done
 echo "                                   ...Done"
-
-
-echo ""
-echo ""
-echo "=========================================="
-echo "== Complete!"
-echo "=========================================="
