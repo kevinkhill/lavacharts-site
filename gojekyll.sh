@@ -8,4 +8,4 @@ echo "=========================================="
 echo "== Starting Jekyll"
 echo "=========================================="
 
-jekyll serve --baseurl ''
+jekyll serve --watch --baseurl ''

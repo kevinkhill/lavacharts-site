@@ -1,13 +1,5 @@
-/*
- * My twist on einaros's Sons of Obsidian theme at
- * http://studiostyl.es/schemes/son-of-obsidian by
- * Alex Ford of CodeTunnel:
- * http://CodeTunnel.com/blog/post/71/google-code-prettify-obsidian-theme
- */
-
-@import url(http://fonts.googleapis.com/css?family=Inconsolata);
-
-.prettyprint span {
+.prettyprint
+{
     font-family: 'Inconsolata', monospaced;
 }
 

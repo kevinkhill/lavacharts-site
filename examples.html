@@ -1,59 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>LavaCharts by kevinkhill</title>
+---
+layout: default
+title: LavaCharts | Examples by kevinkhill
+---
 
-    <meta name="keywords" content="chart, laravel, bundle, package, composer, php" />
-    <meta name="description" content="Charts & Graphs for Laravel powered by the Google Chart API." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1 user-scalable=no">
+<a href="https://github.com/kevinkhill/LavaCharts" id="forkMe">
+    <img src="public/images/forkme.png" alt="Fork me on GitHub">
+</a>
 
-    <link rel="stylesheet" href="public/master.min.css" type="text/css">
-    <script type="text/javascript" src="public/master.min.js"></script>
-    
-    <script type="text/javascript">
-        $(document).ready( function() {
-            $('.subMenu').smint({
-                'scrollSpeed' : 1000
-            });
-
-            $(window).on('scroll', function() {
-                var st = $(this).scrollTop()-180;
-                $('.welcome').css({
-                    'opacity' : (1 - st/150)
-                });
-            });
-
-            $('.prettyprintContainerLabel').each(function(){
-                var containerLabel = $(this);
-                var containerWrapper = containerLabel.parent('div.prettyprintContainer');
-                var codeContainer = containerWrapper.find('div.prettyprintCode');
-                var section = containerWrapper.parent('div.section');
-
-                containerLabel.click(function(){
-                    if(codeContainer.is(":visible")) { //Visible, Hidding
-                        containerLabel.removeClass('collapse').addClass('expand');
-                        codeContainer.slideUp(300, function() {
-                            containerWrapper.addClass('hidden');
-                        });
-                    } else { //Hidden, Opening
-                        containerLabel.removeClass('expand').addClass('collapse');
-                        containerWrapper.removeClass('hidden');
-                        codeContainer.slideDown(600);
-                    }
-                });
-            });
-
-        });
-    </script>
-    <!--[if lt IE 9]>
-        <script type="text/javascript" src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-</head>
-
-<body onload="setTimeout(function() { window.scrollTo(0, 0) }, 100);">
-    <a href="https://github.com/kevinkhill/LavaCharts" id="forkMe">
-        <img src="public/images/forkme.png" alt="Fork me on GitHub">
-    </a>
     <div class="wrap">
         <div class="subMenu" >
             <div class="inner">
@@ -340,5 +293,28 @@ if(Lava::hasErrors())
 <!--End Geo Charts-->
 
 </div>
+
+<script type="text/javascript">
+    $('.prettyprintContainerLabel').each(function(){
+        var containerLabel = $(this);
+        var containerWrapper = containerLabel.parent('div.prettyprintContainer');
+        var codeContainer = containerWrapper.find('div.prettyprintCode');
+        var section = containerWrapper.parent('div.section');
+
+        containerLabel.click(function(){
+            if(codeContainer.is(":visible")) { //Visible, Hidding
+                containerLabel.removeClass('collapse').addClass('expand');
+                codeContainer.slideUp(300, function() {
+                    containerWrapper.addClass('hidden');
+                });
+            } else { //Hidden, Opening
+                containerLabel.removeClass('expand').addClass('collapse');
+                containerWrapper.removeClass('hidden');
+                codeContainer.slideDown(600);
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
