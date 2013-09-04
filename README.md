@@ -9,7 +9,7 @@ LavaCharts is a Package for Laravel 4 that wraps the Google Chart API for PHP5.3
 In your project's main composer.json file, add this line to the requirements:  
 
   ```
-  "khill\lavacharts" : "dev-master"
+  "khill/lavacharts" : "dev-master"
   ```  
 
 Run Composer to install LavaCharts:  
