@@ -18,8 +18,21 @@ Run Composer to install LavaCharts:
   composer install
   ```
 
-Finally, register LavaCharts in your app by adding this line the providers array in "app/config/app.php":  
+Next, register LavaCharts in your app by adding this line the providers array in "app/config/app.php":  
 
   ```
   "Khill\Lavacharts\LavachartsServiceProvider"
   ```
+
+If you want to view the demos, publish the assets with:
+
+  ```
+  php artisan asset::publish khill/lavacharts
+  ```
+  
+If you want to overide the default config of the package, run:
+
+  ```
+  php artisan config::publish khill/lavacharts
+  ```
+  
