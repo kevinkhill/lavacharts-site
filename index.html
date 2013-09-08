@@ -1,9 +1,38 @@
----
-layout: default
-title: LavaCharts by kevinkhill
----
+<!DOCTYPE html>
 
-<a href="https://github.com/kevinkhill/LavaCharts" id="forkMe">
+<html>
+    <head>
+        <title>LavaCharts by kevinkhill</title>
+        <meta name="keywords" content="chart, laravel, bundle, package, composer, php" />
+        <meta name="description" content="Charts & Graphs for Laravel powered by the Google Chart API." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1 user-scalable=no">
+
+        <link rel="icon" href="public/images/favicon.ico" type="image/x-icon" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link href="public/master.min.css" rel="stylesheet" type="text/css">
+
+        <script type="text/javascript" src="public/master.min.js"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                $('.subMenu').smint({
+                    'scrollSpeed' : 1000
+                });
+
+                $(window).on('scroll', function() {
+                    var st = $(this).scrollTop()-180;
+                    $('.welcome').css({
+                        'opacity' : (1 - st/150)
+                    });
+                });
+            });
+        </script>
+    </head>
+
+
+    <body>
+        <a href="https://github.com/kevinkhill/LavaCharts" id="forkMe">
     <img src="public/images/forkme.png" alt="Fork me on GitHub">
 </a>
 
@@ -66,22 +95,17 @@ title: LavaCharts by kevinkhill
     <div class="section s2">
             <div class="inner left">
                 <h1 class="heading">Installing</h1>
-         	
-         	In your project's main composer.json file, add this line to the requirements:<br />
-                <pre class="prettyprint inline">"khill/lavacharts" : "dev-master"</pre><br />
-                
-                Run Composer to install LavaCharts:
-                <pre class="prettyprint inline">composer install</pre><br />
-                
-                Finally, register LavaCharts in your app by adding this line the providers array in "app/config/app.php"
+                To your project's main composer.json file, add this the the requirements:<br />
+                <pre class="prettyprint inline">"khill\lavacharts" : "dev-master"</pre><br />
+                Register the LavaChart Service Provider by adding this line the providers array in "app/config/app.php"
                 <pre class="prettyprint inline">'Khill\Lavacharts\LavachartsServiceProvider'</pre><br />
-                
+                Finally, to download and install, just run:
+                <pre class="prettyprint inline">composer install</pre><br />
                 If you want to view the demos, publish the assets with:
-  		<pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
-		
-		If you want to overide the default config of the package, run:
-		<pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />
-                
+                <pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
+                If you want to overide the default config of the package, run:
+                <pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />
+
                 <div style="margin-top:140px;text-align:right;font-size:26pt;">Thanks Composer, and away we go!</div>
             </div>
     </div>
@@ -188,3 +212,25 @@ if(Lava::hasErrors())
 
 
 </div><!-- /wrap -->
+
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+            try {
+                var pageTracker = _gat._getTracker("UA-43288838-2");
+                pageTracker._trackPageview();
+            } catch(err) {}
+        </script>
+
+        <script type="text/javascript">
+            setTimeout(function(){
+                $(".prettyprint span").each(function(){
+                    var text = $(this).text();
+                    $(this).html(text.replace('Lava', '<span style="color:red;">Lava</span>'));
+                });
+            }, 500);
+        </script>
+
+    </body>
+</html>
