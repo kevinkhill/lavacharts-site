@@ -80,12 +80,29 @@
     <div class="section s1">
             <div class="inner left">
                 <h1 class="heading">DataTables</h1>
+
+                <h3>Syntax</h3>
                 <pre class="prettyprint inline">Lava::DataTable(string $label);</pre>
-                <h3>Functions</h3>
+
+                <h3>Methods</h3>
                 <ul class="arrows">
-                    <li><em>__constructor()</em> takes Label for the DataTable</li>
-                    <li><em>addColumn()</em></li>
-                    <li><em>addRow()</em></li>
+                    <li>
+                        <p>Assigns a label for the DataTable.</p>
+                        <pre class="prettyprint inline">__constructor(string $label)</pre>
+                    </li>
+                    <li>
+                        <p>Add columns to the DataTable.</p>
+                        <p>The first argument is the type of data that the column will represent. Valid values include:<br />
+                        'string', 'number', 'boolean', 'date', 'datetime', 'timeofday'</p>
+                        <p>The second and third are optional, defining a label and ID for the column.</p>
+                        <pre class="prettyprint inline">addColumn(string $type, string $opt_label = '', string $opt_id = '')</pre>
+                    </li>
+                    <li>
+                        <p>Add a row to the DataTable</p>
+                        <p>Pass an array of data points, with equal number of items to number of columns added.<br />
+                        If four columns were added, then count($cellArray) passed to addRow must == 4</p>
+                        <pre class="prettyprint inline">addRow(array $opt_cellArray = NULL)</pre>
+                    </li>
                 </ul>
             </div>
     </div>
