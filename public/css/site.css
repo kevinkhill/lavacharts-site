@@ -38,6 +38,28 @@ ul.arrows li {
   padding-left:30px;
 }
 
+<<<<<<< HEAD
+||||||| parent of edf1524... working on api
+ul.arrows li em {
+    color: #93c763;
+    padding: 0 5px;
+}
+
+ul.arrows li strong {
+    color: #62AEFF;
+}
+
+=======
+ul.arrows li em {
+    color: #93c763;
+    padding: 0 10px;
+}
+
+ul.arrows li strong {
+    color: #62AEFF;
+}
+
+>>>>>>> edf1524... working on api
 p {
     margin:2em 0;
     color:#fff;
