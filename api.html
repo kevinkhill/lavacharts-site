@@ -42,8 +42,8 @@
                 <a href="#" id="sTop" class="subNavBtn">API</a>
                 <a href="#" id="s1" class="subNavBtn">DataTables</a>
                 <a href="#" id="s2" class="subNavBtn">Charts</a>
-                <a href="#" id="s3" class="subNavBtn">Configs</a>
-                <a href="#" id="s4" class="subNavBtn">Chaining</a>
+                <a href="#" id="s3" class="subNavBtn">Chart Config</a>
+                <a href="#" id="s4" class="subNavBtn">Config Objs</a>
                 <a href="#" id="s5" class="subNavBtn end">Extras</a>
             </div>
         </div>
@@ -81,6 +81,8 @@
             <div class="inner left">
                 <h1 class="heading">DataTables</h1>
 
+                <h2>The heart of the Chart, containing all of the data to display on the screen.</h2>
+
                 <h3>Syntax</h3>
                 <pre class="prettyprint inline">Lava::DataTable(string $label);</pre>
 
@@ -88,6 +90,7 @@
                 <ul class="arrows">
                     <li>
                         <p>Assigns a label for the DataTable.</p>
+                        <p>Remember this label, for assigning the same label to the Chart will automatically link the two.</p>
                         <pre class="prettyprint inline">__constructor(string $label)</pre>
                     </li>
                     <li>
@@ -100,7 +103,7 @@
                     <li>
                         <p>Add a row to the DataTable</p>
                         <p>Pass an array of data points, with equal number of items to number of columns added.<br />
-                        If four columns were added, then count($cellArray) passed to addRow must == 4</p>
+                        The order of data corresponds to the order in which the columns were added and count($cellArray) must == num of columns</p>
                         <pre class="prettyprint inline">addRow(array $opt_cellArray = NULL)</pre>
                     </li>
                 </ul>
@@ -113,12 +116,33 @@
     <div class="section s2">
             <div class="inner left">
                 <h1 class="heading">Charts</h1>
+
+                <h2>Currently, LavaCharts supports these charts:</h2>
                 <pre class="prettyprint inline">Lava::LineChart(string $label);</pre>
                 <pre class="prettyprint inline">Lava::AreaChart(string $label);</pre>
                 <pre class="prettyprint inline">Lava::PieChart(string $label);</pre>
                 <pre class="prettyprint inline">Lava::DonutChart(string $label);</pre>
                 <pre class="prettyprint inline">Lava::ColumnChart(string $label);</pre>
                 <pre class="prettyprint inline">Lava::GeoChart(string $label);</pre>
+
+                <br/>
+                <h2>Chart Methods:</h2>
+                <ul class="arrows padleft">
+                    <li>The chart methods always return themselves, except for one, so options are chainable.</li>
+                    <li>The constructor of the Charts assigns a label, which will match itself with the DataTable.</li>
+                </ul>
+
+                <h3>Methods</h3>
+                <pre class="prettyprint inline">setConfig( array $options = array() )</pre>
+                <ul class="arrows padleft">
+                    <li><strong>options</strong><em>array</em>Sets configuration options from array of values.</li>
+                </ul><br />
+
+                <pre class="prettyprint inline">outputInto( string $elementID )</pre>
+                <ul class="arrows padleft">
+                    <li><strong>elementID</strong><em>string</em>Sets the Element ID of the HTML element to output the chart into.</li>
+                    <li>This method will output the javascript blocks into the page, the chart is rendered via javascript into $elementID</li>
+                </ul><br />
             </div>
     </div>
 <!--/Installing-->
@@ -127,6 +151,46 @@
 <!--Config-->
 	<div class="section s3">
             <div class="inner left">
+                <h1 class="heading">Chart Configuration</h1>
+
+                <h2>Setting up the options for the charts:</h2>
+                <ul class="arrows padleft">
+                    <li>All charts have common configuration options, along with chart specific options</li>
+                    <li>Options can be set be passing an associative array to the setConfig() method</li>
+                    <li>OR options can be set by using/chaining corresponding option methods</li>
+                </ul><br />
+
+                <h2>Common Configuration</h2>
+                <p>These options are inherited from the master Chart class and apply to all charts.</p>
+
+                <h3>Chart Area</h3>
+                <p>Defines where the chart itself is drawn, excluding axis and legends.</p>
+                <pre class="prettyprint inline">chartArea( chartArea $chartArea )</pre>
+                <ul class="arrows padleft">
+                    <li><strong>param</strong><em>object (<a href="#chartArea">chartArea</a>)</em>An object with members to configure the placement and size of the chart area.</li>
+                </ul><br />
+
+                <pre class="prettyprint inline">colors( array $colorArray )</pre>
+                <ul class="arrows padleft">
+                    <li><strong>param</strong><em>array</em>An array of strings, where each element is an HTML color string.</li>
+                </ul><br />
+
+                <h3>Font Size</h3>
+                <p>The default font size, in pixels, of all text in the chart. You can override this using properties for specific chart elements.</p>
+                <pre class="prettyprint inline">fontSize( integer $fontSize )</pre>
+                <ul class="arrows padleft">
+                    <li><strong>param</strong><em>integer</em></li>
+                </ul><br />
+
+            </div>
+    </div>
+<!--/Configs-->
+
+
+<!--Examples-->
+    <div class="section s4">
+            <div class="inner left">
+
                 <h1 class="heading">Config Objects</h1>
                     <h2>All of the configuration objects can be created by one of two ways:</h2>
                     <ul class="arrows">
@@ -143,7 +207,7 @@
                         <li><strong>fill</strong><em>string</em>The chart fill color, as an HTML color string.</li>
                     </ul><br />
 
-                    <h3>Chart Area</h3>
+                    <h3>Chart Area</h3><a name="chartArea"></a>
                     <pre class="prettyprint inline">Lava::chartArea(array $config);</pre>
                     <ul class="arrows padleft">
                         <li><strong>left</strong><em>integer</em>How far to draw the chart from the left border.</li>
@@ -242,17 +306,8 @@
                         <li><strong>minute</strong><em>integer</em>Minute.</li>
                         <li><strong>second</strong><em>integer</em>Second.</li>
                         <li><strong>millisecond</strong><em>integer</em>Millisecond.</li>
-                    </ul><br />
+                    </ul>
 
-            </div>
-    </div>
-<!--/Configs-->
-
-
-<!--Examples-->
-    <div class="section s4">
-            <div class="inner">
-                <h1 class="heading">Chaining</h1>
             </div>
     </div>
 <!--/Examples-->
@@ -261,7 +316,41 @@
 <!--API-->
     <div class="section s5">
             <div class="inner left">
-                <h1 class="heading">Extras</h1>
+                <h1 class="heading">Chaining</h1>
+
+                <h1 class="heading">Method Chaining</h1>
+
+                <h2>PHP 5.3+ allows us to chain almost all aspects of LavaCharts</h2>
+
+                <h3>Configuration Objects</h3>
+                <pre class="prettyprint inline">
+$titleStyle = Lava::textStyle()->color('#F3BB00')
+                               ->fontName('Arial')
+                               ->fontSize(20);
+                </pre>
+                <pre class="prettyprint inline">
+$backgroundColor = Lava::backgroundColor()->stroke('#113bc9')
+                                          ->strokeWidth(4)
+                                          ->fill('#ffd');
+                </pre><br />
+
+                <h3>DataTables</h3>
+                <pre class="prettyprint inline">
+$chartData = Lava::DataTable('Times')
+                 ->addColumn('date', 'Dates', 'dates')
+                 ->addColumn('number', 'Estimated Time', 'schedule')
+                 ->addColumn('number', 'Actual Time', 'run')
+                 ->addRow(array(Lava::jsDate(2013, 8, 1), 15, 23))
+                 ->addRow(array(Lava::jsDate(2013, 8, 2), 12, 21))
+                 ->addRow(array(Lava::jsDate(2013, 8, 3), 16, 20))
+                 ->addRow(array(Lava::jsDate(2013, 8, 4), 13, 23))
+                 ->addRow(array(Lava::jsDate(2013, 8, 5), 18, 19))
+                </pre><br />
+
+                <h3>Charts</h3>
+                <pre class="prettyprint inline">
+Lava::LineChart('Times')->setConfig(array('title' => 'Times for Deliveries'));
+                </pre>
             </div>
     </div>
 <!--/API-->
