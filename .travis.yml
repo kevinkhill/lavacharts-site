@@ -1,10 +1,14 @@
-# whitelist
-branches:
-    only:
-        - master
+language: php
 
-# blacklist
+php:
+  - "5.3"
+
 branches:
-  except:
-        - ghp-staging
-        - gh-pages
+  only:
+    - master
+
+before_script:
+  - composer self-update
+  - composer install
+
+email: kevinkhill@gmail.com
