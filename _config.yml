@@ -1,3 +1,3 @@
 baseurl: /LavaCharts
 
-exclude: ['vendor','src','tests','yuicompressor-2.4.8.jar','phpunit.xml','compressor.sh','composer.json','README.md','gojekyll.sh']
+exclude: ['src','scripts','nbproject','public/css','public/js','public/builds']

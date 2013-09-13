@@ -1,0 +1,67 @@
+<pre class="prettyprint inline">axisTitlesPosition( string $position )</pre>
+<p>Where to place the axis titles, compared to the chart area</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid values:<br/>
+    <em>"in"</em> - Draws the axis titles inside the the chart area.<br/>
+    <em>"out"</em> - Draws the axis titles outside the chart area.<br/>
+    <em>"none"</em> - Omit the axis titles.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">curveType( integer $height )</pre>
+<p>Controls the curve of the lines when the line width is not zero.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid values:<br/>
+    <em>"none"</em> for straight lines without curve.<br/>
+    <em>"function"</em> to smooth the angles of the lines.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<!--                <pre class="prettyprint inline">focusTarget( integer $height )</pre>
+<p>Height of the chart, in pixels.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>integer</em>Number of pixels</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />-->
+
+<pre class="prettyprint inline">hAxis( <a href="#hAxis">hAxis</a> $hAxis )</pre>
+<p>An object with members to configure various horizontal axis elements.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>object (<a href="#hAxis">hAxis</a>)</em>hAxis object to configure the horizontal axis.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">isHTML( boolean $isHTML )</pre>
+<p>If set to true, use HTML-rendered (rather than SVG-rendered) tooltips.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>boolean</em>Sets HTML or SVG tooltips.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">interpolateNulls( boolean $interpolateNulls )</pre>
+<p>Whether to guess the value of missing points.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>boolean</em>Sets whether to guess missing points.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">lineWidth( int $lineWidth )</pre>
+<p>Data line width in pixels. Use zero to hide all lines and show only the points.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>int</em>Width of line, in pixels.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">pointSize( int $pointSize )</pre>
+<p>Diameter of displayed points in pixels. Use zero to hide all points.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>int</em>Diameter of points, in pixels.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">vAxis( <a href="#vAxis">vAxis</a> $vAxis )</pre>
+<p>An object with members to configure various vertical axis elements.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>object (<a href="#vAxis">vAxis</a>)</em>vAxis object to configure the vertical axis.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />

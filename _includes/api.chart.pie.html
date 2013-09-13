@@ -1,0 +1,77 @@
+<pre class="prettyprint inline">is3D( boolean $is3D )</pre>
+<p>If set to true, displays a three-dimensional chart</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>boolean</em>If TRUE, chart is 3D and disables some other options.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">slices( array $<a href="#slice" class="green">slices</a> )</pre>
+<p>An array of slice objects, each describing the format of the corresponding slice in the pie.<br/>
+The values of the array keys will correspond to each numbered piece of the pie, starting from 0.<br/>
+You can skip slices by assigning the keys of the array as (int)s.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>array of objs (<a href="#slice">slice</a>)</em>Array of objects, type slice.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">pieSliceBorderColor( string $pieSliceBorderColor )</pre>
+<p>Sets the color of the slice borders. (only applies if is3D == [ FALSE | NULL ])</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid HTML color code.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">pieSliceText( string $pieSliceText )</pre>
+<p>Sets the content of the text displayed on the slice.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid values:<br/>
+    <em>"percentage"</em> - The percentage of the slice size out of the total.<br/>
+    <em>"value"</em> - The quantitative value of the slice.<br/>
+    <em>"label"</em> - The name of the slice.<br/>
+    <em>"none"</em> - No text is displayed.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">pieSliceTextStyle( <a href="#textStyle">textStyle</a> $pieSliceTextStyle )</pre>
+<p>Sets the text style of the slices.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>object (<a href="#textStyle" class="green">textStyle</a>)</em>The textStyle applied to the slice.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">pieStartAngle( int $pieStartAngle )</pre>
+<p>Sets the angle, in degrees, to rotate the chart by.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>int</em>The default of 0 will orient the leftmost edge of the first slice directly up.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">reverseCategories( boolean $reverseCategories )</pre>
+<p>If set to true, will draw slices counterclockwise. The default is to draw clockwise.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>boolean</em>[ TRUE | FALSE ]</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">sliceVisibilityThreshold( numeric $sliceVisibilityThreshold )</pre>
+<p>The slice relative part, below which a slice will not show individually.<br/>
+    All slices that have not passed this threshold will be combined to a single slice, whose size is the sum of all their sizes.<br/>
+    Default is not to show individually any slice which is smaller than half a degree.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>int | float</em>Threshold amount.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">pieResidueSliceColor( string $pieResidueSliceColor )</pre>
+<p>Color for the combination slice that holds all slices below "sliceVisibilityThreshold".</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid HTML color string.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">pieResidueSliceLabel( string $pieResidueSliceLabel )</pre>
+<p>A label for the combination slice that holds all slices below "sliceVisibilityThreshold".</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Slice label.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />

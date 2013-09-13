@@ -1,0 +1,75 @@
+<pre class="prettyprint inline">Lava::XxxxChart( string $label = '' )</pre><a name="pcConstructor"></a>
+<p>Replace "Xxxx" with any supported chart, no quotes and new chart of that type will be created. (note, use CamelCase)</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Sets a label for the chart to correspond with a <a href="#dataTable" class="green">DataTable</a>. (optional, but recommended)</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns a new chart of specified type for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">setConfig( array $option )</pre><a name="setConfig"></a>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>array</em>Sets configuration options from array of values.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">outputInto( string $elementID )</pre><a name="outputInto"></a>
+<ul class="arrows padleft">
+    <li><strong>elementID</strong><em>string</em>Sets the ID of the HTML element to output the chart into.</li>
+    <li><strong class="returns">returns</strong><em>script block</em>Javascript blocks to insert into the page.</li>
+</ul><br />
+
+<pre class="prettyprint inline">dataTable( DataTable $dataTable | string $label )</pre><a name="pcDataTable"></a>
+<p>If the DataTable was created with a label that doesn't match the Chart label, then pass the label to this function.<br/>
+    Otherwish, if the DataTable was created with no title, then pass a DataTable object to this function to assign to the chart.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>object (<a href="#dataTable">DataTable</a>)</em>Sets the DataTable to use for the chart.</li>
+    <li><em>OR</em><strong>param</strong><em>string</em>Sets the labeled DataTable to use for the chart.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">backgroundColor( <a href="#backgroundColor">backgroundColor</a> $backgroundColor)</pre><a name="backgroundColor"></a>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>object (<a href="#backgroundColor" class="green">backgroundColor</a>)</em>Sets the chart background fill color, border and border color.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">chartArea( <a href="#chartArea">chartArea</a> $chartArea )</pre><a name="chartArea"></a>
+<p>Defines where the chart itself is drawn, excluding axis and legends.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>object (<a href="#chartArea">chartArea</a>)</em>An object with members to configure the placement and size of the chart area.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">colors( array $colorArray )</pre><a name="colors"></a>
+<p>The colors to use for the chart elements.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>array</em>An array of strings, where each element is an HTML color string.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">fontSize( integer $fontSize )</pre><a name="fontSize"></a>
+<p>The default font size, in pixels, of all text in the chart. You can override this using properties for specific chart elements.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>integer</em>Number of pixels</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">fontName( string $fontName )</pre></pre><a name="fontName"></a>
+<p>The default font face for all text in the chart. You can override this using properties for specific chart elements.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid font name.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">height( integer $height )</pre></pre><a name="height"></a>
+<p>Height of the chart, in pixels.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>integer</em>Number of pixels</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">width( integer $width )</pre></pre><a name="width"></a>
+<p>Width of the chart, in pixels.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>integer</em>Number of pixels</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br /><br /><br />

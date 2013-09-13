@@ -1,0 +1,32 @@
+<h1 class="heading">Charts & Configuration</h1>
+<br/>
+
+<h2>LavaCharts is extensively customizable, utilizing all the configuration of Google Charts</h2>
+<p>All configuration options closely mirror the javascript structure of the Google Chart API.<br/>The was done to make it easy for looking up references or if you have used the Chart API before.</p>
+
+<br/>
+<h3>Currently Supported Charts</h3>
+<ul class="arrows padleft">
+    <li>
+        <a href="#line" class="green">Line</a>,&nbsp;
+        <a href="#area" class="green">Area</a>,&nbsp;
+        <a href="#pie" class="green">Pie & Donut</a>,&nbsp;
+        <a href="#column" class="green">Column</a>,&nbsp;
+        <a href="#geo" class="green">Geo</a>,&nbsp;
+        <em>More Coming Soon...</em>
+    </li>
+</ul><br/>
+
+<h2>Chart Methods:</h2>
+<ul class="arrows padleft">
+    <li>The Chart methods always return themselves, so options are <a href="#chaining" class="green">chainable</a>.</li>
+    <li>The Charts all <strong>extend</strong> the parent "Chart" class to provide common options to all specific Chart objects.</li>
+    <li>Charts also have <a href="#specific" class="green">specific</a> config methods, to further customize the chart. (use the above links to jump to a section)</li>
+</ul><br />
+
+<h2>Setting up the options for the charts:</h2>
+<ul class="arrows padleft">
+    <li>This is the list of options that all charts have in common, since they extend from the Chart class.</li>
+    <li>Options can be set by using the <strong>method names</strong> as keys in an associative array mapped to values, then passed into the setConfig() method<em>OR</em>options can be set by using/<a href="#chaining" class="green">chaining</a> the methods shown below.</li>
+    <li>The outputInto() method is an exception, and cannot be chained, since it returns the javascript blocks for inserting into views.</li>
+</ul><br />

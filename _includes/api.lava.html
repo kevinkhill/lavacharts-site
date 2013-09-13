@@ -1,0 +1,41 @@
+<div class="inner left">
+    <h1 class="heading">Lava API</h1>
+
+    <h2>The Lava Class is used to create & store DataTables and Charts <br/>
+        as well as creating configuration objects and placing the chart into the page.</h2>
+
+    <br/>
+    <h3>Methods</h3>
+    <pre class="prettyprint inline">Lava::DataTable( string $label )</pre>
+    <ul class="arrows padleft">
+        <li><em><a href="#dataTable">See DataTables</a></em></li>
+    </ul><br />
+
+    <pre class="prettyprint inline">Lava::XxxxChart( string $label )</pre>
+    <ul class="arrows padleft">
+        <li><em><a href="#charts">See Charts & Config</a></em></li>
+    </ul><br />
+
+    <pre class="prettyprint inline">Lava::div( string $elementID | int $width, int $height )</pre><a name="div"></a>
+    <p>Builds a div html element with ID for a chart to be rendered into.</p>
+    <ul class="arrows padleft">
+        <li><strong>param</strong><em>string</em>Assigns a label to the DataTable, and stores it in the Lava Class.</li>
+        <li><em>OR</em>Set the dimensions as (int)s and the element ID is assigned automatically from the outputInto() method.</li>
+        <li><strong>param</strong><em>int</em>Sets CSS width for the div.</li>
+        <li><strong>param</strong><em>int</em>Sets CSS height for the div.</li>
+        <li><strong class="returns">returns</strong><em>html</em>Div HTML element to place in page for the chart to be rendered into.</li>
+    </ul><br />
+
+    <pre class="prettyprint inline">Lava::hasErrors()</pre><a name="hasErrors"></a>
+    <p>Checks if any errors were encountered while setting up the chart.</p>
+    <ul class="arrows padleft">
+        <li><strong class="returns">returns</strong><em>boolean</em>TRUE if errors occured, otherwise FALSE.</li>
+    </ul><br />
+
+    <pre class="prettyprint inline">Lava::getErrors()</pre><a name="getErrors"></a>
+    <p>Returns any errors that may have been encountered while configuring.<br/>Errors are wrapped with the defined html tag that can be set in the "app\config\packages\khill\lavacharts\config.php".</p>
+    <a href="/" class="green">See how to publish the LavaChart config file.</a>
+    <ul class="arrows padleft">
+        <li><strong class="returns">returns</strong><em>string</em>Error string[s], wrapped in html element.</li>
+    </ul><br />
+</div>

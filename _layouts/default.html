@@ -10,6 +10,7 @@
         <link rel="icon" href="public/images/favicon.ico" type="image/x-icon" />
         <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
         <link href="public/master.min.css" rel="stylesheet" type="text/css">
 
         <script type="text/javascript" src="public/master.min.js"></script>
@@ -17,13 +18,32 @@
         <script type="text/javascript">
             $(function() {
                 $('.subMenu').smint({
-                    'scrollSpeed' : 1000
+                    'scrollSpeed' : 500
                 });
 
                 $(window).on('scroll', function() {
                     var st = $(this).scrollTop()-180;
                     $('.welcome').css({
                         'opacity' : (1 - st/150)
+                    });
+                });
+
+                function scrollToAnchor(aid){
+                    var aTag = $("a[name='"+ aid +"']");
+                    $('html,body').animate({scrollTop: aTag.offset().top -120});
+                }
+
+                $('a[href^="#"]').each(function(){
+                    var $this = $(this);
+
+                    $this.click(function(event){
+                        event.preventDefault();
+
+                        var url = $this.attr('href');
+                        var parts = url.split("#");
+                        var target = parts[1];
+
+                        scrollToAnchor(target);
                     });
                 });
             });
@@ -45,12 +65,17 @@
         </script>
 
         <script type="text/javascript">
-            setTimeout(function(){
-                $(".prettyprint span").each(function(){
-                    var text = $(this).text();
-                    $(this).html(text.replace('Lava', '<span style="color:red;">Lava</span>'));
-                });
-            }, 500);
+            $(function() {
+                setTimeout(function() {
+                    $(".prettyprint span").each(function(){
+                        var text = $(this).text();
+                        $(this).html(text.replace('Lava', '<span style="color:red;">Lava</span>'));
+                    });
+                }, 500);
+
+                drawer.bindTabClick()
+                drawer.bindOutsideClick();
+            });
         </script>
 
     </body>

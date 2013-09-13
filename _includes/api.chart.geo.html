@@ -1,0 +1,83 @@
+<pre class="prettyprint inline">colorAxis( <a href="#colorAxis">colorAxis</a> $colorAxis)</pre>
+<p>An object that specifies a mapping between color column values and colors or a gradient scale.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>object (<a href="#colorAxis">colorAxis</a>)</em>Color axis object.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">datalessRegionColor( string $datalessRegionColor )</pre>
+<p>Color to assign to regions with no associated data.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid HTML color.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">displayMode( string $displayMode )</pre>
+<p>Defines which type of map this is. The DataTable format must match the value specified.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid values:<br/>
+    <em>"auto"</em> - Chooses based on the format of the DataTable.<br/>
+    <em>"regions"</em> - This is a region map.<br/>
+    <em>"markers"</em> - This is a marker map.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">enableRegionInteractivity( boolean $enableRegionInteractivity )</pre>
+<p>If true, enable region interactivity, including focus and tool-tip elaboration on mouse hover and region selection</p>
+<!--and firing of regionClick and select events on mouse click.</p>-->
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>boolean</em>The default is true in region mode, and false in marker mode.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">keepAspectRatio( boolean $keepAspectRatio)</pre>
+<p>Sets if the map can be stretched or to retain aspect ratio</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>boolean</em>If true, the map will be drawn at the largest size that can fit inside the chart area at its natural aspect ratio.<br/>
+    If only one of the width and height options is specified, the other one will be calculated according to the aspect ratio.<br/>
+    If false, the map will be stretched to the exact size of the chart as specified by the width and height options.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">region( string $region )</pre>
+<p>The area to display on the map. (Surrounding areas will be displayed as well.)</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid values:<br/>
+    <em>"world"</em> - A map of the entire world.<br/>
+    <em>"&lt;code&gt;"</em> - A continent or a sub-continent, specified by its 3-digit code, e.g., '011' for Western Africa.<br/>
+    <em>"&lt;code&gt;"</em> - A country, specified by its ISO 3166-1 alpha-2 code, e.g., 'AU' for Australia.<br/>
+    <em>"&lt;code&gt;"</em> - A state in the United States, specified by its ISO 3166-2:US code, e.g., 'US-AL' for Alabama.<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;Note that the resolution option must be set to either 'provinces' or 'metros'.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">magnifyingGlass( <a href="#magnifyingGlass">magnifyingGlass</a> $magnifyingGlass )</pre>
+<p></p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>object (<a href="#magnifyingGlass">magnifyingGlass</a>)</em></li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">markerOpacity( float $markerOpacity)</pre>
+<p>The opacity of the markers, where 0.0 is fully transparent and 1.0 is fully opaque.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>float</em>Opactiy value.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">resolution( string $resolution )</pre>
+<p>The resolution of the map borders.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>string</em>Valid values:<br/>
+    <em>"countries"</em> - Supported for all regions, except for US state regions.<br/>
+    <em>"provinces"</em> - Supported only for country regions and US state regions.<br/>
+    <em>"metros"</em> - Supported for the US country region and US state regions only.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />
+
+<pre class="prettyprint inline">sizeAxis( <a href="#sizeAxis">sizeAxis</a> $sizeAxis )</pre>
+<p>An object with members to configure how values are associated with bubble sizes.</p>
+<ul class="arrows padleft">
+    <li><strong>param</strong><em>object (<a href="#sizeAxis">sizeAxis</a>)</em>Size Axis object.</li>
+    <li><strong class="returns">returns</strong><em>object (Chart)</em>Returns the chart for chaining.</li>
+</ul><br />

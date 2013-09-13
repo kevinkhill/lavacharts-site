@@ -1,0 +1,37 @@
+<div class="inner left"><a name="dataTable"></a>
+    <h1 class="heading">DataTables</h1>
+
+    <h2>The heart of the Chart, containing all of the data to display on the screen.</h2>
+    <p><em>Data can come from anywhere:</em>&nbsp;&nbsp;SQL results,external APIs, manually, in a loop, however you need.</p>
+    <br/>
+
+    <h3>Methods</h3>
+    <pre class="prettyprint inline">Lava::DataTable( string $label = '' )</pre>
+    <p>Creates new DataTable object, and optionally stores in memory with label if assigned.</p>
+    <ul class="arrows padleft">
+        <li><strong>param</strong><em>string</em>Assigns a label to the DataTable, and stores it in the Lava Class. (optional, but recommended)</li>
+        <li><em>OR</em>With no parameter, a DataTable is returned and not stored in the Lava Class</li>
+        <li><strong class="returns">returns</strong><em>object (dataTable)</em>A DataTable object.</li>
+    </ul><br />
+
+    <pre class="prettyprint inline">addColumn( string $type, string $opt_label = '', string $opt_id = '')</pre>
+    <p>Add columns to the DataTable.</p>
+    <ul class="arrows padleft">
+        <li><strong>param</strong><em>string</em>Type of data that the column will represent.<br />
+            Valid values include: 'string', 'number', 'boolean', 'date', 'datetime', 'timeofday'.</li>
+        <li><strong>param</strong><em>string</em>Column label (optional).</li>
+        <li><strong>param</strong><em>string</em>Column ID (optional).</li>
+        <li><strong class="returns">returns</strong><em>object (dataTable)</em>A DataTable object.</li>
+    </ul><br />
+
+
+    <pre class="prettyprint inline">addRow(array $opt_cellArray = NULL)</pre>
+    <p>Add a row to the DataTable</p>
+    <ul class="arrows padleft">
+        <li><strong>param</strong><em>array</em>Array of data points, with equal number of items to number of columns.</li>
+        <li><strong class="returns">returns</strong><em>object (dataTable)</em>A DataTable object.</li>
+        <li>The order of data corresponds to the order in which the columns were added<br/>
+        Number of items in row, must equal number of columns. EX: count($opt_cellArray) == count(columns).<br/>
+        Additionaly, if called with no parameter, then a NULL value will be added to the DataTable, skipping a row.</li>
+    </ul><br />
+</div>

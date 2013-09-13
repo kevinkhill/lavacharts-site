@@ -13,7 +13,7 @@
  * @license http://opensource.org/licenses/MIT MIT
  */
 
-use Khill\Lavacharts\Charts\Chart;
+use Khill\Lavacharts\Helpers\Helpers;
 
 class AreaChart extends Chart
 {
@@ -24,18 +24,14 @@ class AreaChart extends Chart
         $this->defaults = array_merge($this->defaults, array(
 //            'animation',
             'areaOpacity',
-//            'enableInteractivity',
+            'axisTitlesPosition',
             'events',
-//            'focusTarget',
             'hAxis',
             'isHtml',
             'interpolateNulls',
             'lineWidth',
             'pointSize',
-//            'reverseCategories',
-//            'series',
-//            'theme',
-            'vAxes',
+//            'vAxes',
             'vAxis'
         ));
     }
@@ -101,7 +97,7 @@ class AreaChart extends Chart
         {
             $this->addOption(array('areaOpacity' => $opacity));
         } else {
-            $this->error('Invalid areaOpacity, must be type (float) between 0.0 - 1.0');
+            $this->type_error(__FUNCTION__, 'float', 'between 0.0 - 1.0');
         }
 
         return $this;
@@ -125,25 +121,11 @@ class AreaChart extends Chart
         {
             $this->addOption(array('axisTitlesPosition' => $position));
         } else {
-            $this->error('Invalid axisTitlesPosition, must be (string) '.Helpers::array_string($values));
+            $this->type_error(__FUNCTION__, 'string', 'with a value of '.Helpers::array_string($values));
         }
 
         return $this;
     }
-
-//    public function enableInteractivity($param)
-//    {
-//
-//
-//        return $this;
-//    }
-//
-//    public function focusTarget($param)
-//    {
-//
-//
-//        return $this;
-//    }
 
     /**
      * An object with members to configure various horizontal axis elements. To
@@ -155,11 +137,11 @@ class AreaChart extends Chart
      */
     public function hAxis($hAxis)
     {
-        if(is_a($hAxis, 'hAxis'))
+        if(Helpers::is_hAxis($hAxis))
         {
             $this->addOption($hAxis->toArray());
         } else {
-            $this->error('Invalid hAxis, must be an object type (hAxis).');
+            $this->type_error(__FUNCTION__, 'hAxis');
         }
 
         return $this;
@@ -177,7 +159,7 @@ class AreaChart extends Chart
         {
             $this->addOption(array('isHTML' => $isHTML));
         } else {
-            $this->error('Invalid isHTML value, must be type (boolean).');
+            $this->type_error(__FUNCTION__, 'boolean');
         }
 
         return $this;
@@ -195,7 +177,7 @@ class AreaChart extends Chart
         {
             $this->addOption(array('isStacked' => $isStacked));
         } else {
-            $this->error('Invalid isStacked value, must be type (boolean).');
+            $this->type_error(__FUNCTION__, 'boolean');
         }
 
         return $this;
@@ -215,7 +197,7 @@ class AreaChart extends Chart
         {
             $this->addOption(array('interpolateNulls' => $interpolateNulls));
         } else {
-            Lavacharts::_set_error($where, 'Invalid interpolateNulls value, must be type (boolean).');
+            $this->type_error(__FUNCTION__, 'boolean');
         }
 
         return $this;
@@ -235,7 +217,7 @@ class AreaChart extends Chart
         {
             $this->addOption(array('lineWidth' => $width));
         } else {
-            $this->error('Invalid lineWidth, must be type (int).');
+            $this->type_error(__FUNCTION__, 'int');
         }
 
         return $this;
@@ -254,31 +236,30 @@ class AreaChart extends Chart
         {
             $this->addOption(array('pointSize' => $size));
         } else {
-            $this->error('Invalid pointSize, must be type (int).');
+            $this->type_error(__FUNCTION__, 'int');
         }
 
         return $this;
     }
 
-    public function reverseCatagories($param)
+    /**
+     * An object with members to configure various vertical axis elements. To
+     * specify properties of this property, create a new vAxis() object, set
+     * the values then pass it to this function or to the constructor.
+     *
+     * @param vAxis $vAxis
+     * @return \AreaChart
+     */
+    public function vAxis($vAxis)
     {
-
+        if(Helpers::is_vAxis($vAxis))
+        {
+            $this->addOption($vAxis->toArray());
+        } else {
+            $this->type_error(__FUNCTION__, 'vAxis');
+        }
 
         return $this;
     }
-
-    public function series($param)
-    {
-
-
-        return $this;
-    }
-
-//    public function theme($param)
-//    {
-//
-//
-//        return $this;
-//    }
 
 }

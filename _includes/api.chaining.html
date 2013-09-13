@@ -1,0 +1,39 @@
+<div class="inner left"><a name="chaining"></a>
+    <h1 class="heading">Method Chaining</h1>
+
+    <h2>PHP 5.3+ allows us to chain almost all aspects of LavaCharts</h2>
+    <p>Provided are some examples of method chaining.</p>
+
+    <h3>Configuration Objects</h3>
+    <pre class="prettyprint inline">
+$titleStyle = Lava::textStyle()->color('#F3BB00')
+                               ->fontName('Arial')
+                               ->fontSize(20);
+    </pre>
+    <pre class="prettyprint inline">
+$backgroundColor = Lava::backgroundColor()->stroke('#113bc9')
+                                          ->strokeWidth(4)
+                                          ->fill('#ffd');
+    </pre><br />
+
+    <h3>DataTables</h3>
+    <pre class="prettyprint inline">
+$chartData = Lava::DataTable('Times')
+                 ->addColumn('date', 'Dates', 'dates')
+                 ->addColumn('number', 'Estimated Time', 'schedule')
+                 ->addColumn('number', 'Actual Time', 'run')
+                 ->addRow(array(Lava::jsDate(2013, 8, 1), 15, 23))
+                 ->addRow(array(Lava::jsDate(2013, 8, 2), 12, 21))
+                 ->addRow(array(Lava::jsDate(2013, 8, 3), 16, 20))
+                 ->addRow(array(Lava::jsDate(2013, 8, 4), 13, 23))
+                 ->addRow(array(Lava::jsDate(2013, 8, 5), 18, 19))
+    </pre><br />
+
+    <h3>Charts</h3>
+    <pre class="prettyprint inline">
+Lava::LineChart('Times')->title('Times for Deliveries')
+                        ->fontSize(20)
+                        ->fontName('Impact')
+                        ->colors(array('blue', 'green', 'red'))
+    </pre>
+</div>

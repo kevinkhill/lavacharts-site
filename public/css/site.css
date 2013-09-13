@@ -47,8 +47,28 @@ ul.arrows li em {
     padding: 0 10px;
 }
 
+ul.arrows li em a {
+    color:#cfe6ba;
+}
+
+ul.arrows li a:visited {
+    color: #acacac !important;
+}
+
 ul.arrows li strong {
     color: #62AEFF;
+}
+
+.returns {
+    color: #EC7600 !important;
+}
+
+a.green {
+    color: #93c763 !important;
+}
+
+a.green:visited {
+    color: #acacac !important;
 }
 
 p {

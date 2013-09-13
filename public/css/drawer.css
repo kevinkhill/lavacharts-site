@@ -1,0 +1,91 @@
+#slideout {
+    background-color:#504f4f;
+    position:absolute;
+    width:100%;
+    height:350px;
+    top:-352px;
+    left:-1px;
+    z-index:9999;
+    border-bottom: 2px solid #62aeff;
+}
+
+#slideout .toc-list {
+    height: 330px;
+    float:left;
+    margin-right: 25px;
+    padding: 40px;
+    text-align: left;
+}
+
+#slideout .toc-list h1 {
+    line-height: 1pt;;
+}
+
+#slideout .toc-list ul {
+    padding-left: 0px;
+    margin-left: 20px;
+}
+
+#slideout .toc-list a {
+    color:#93c763;
+}
+
+#slideout h1 {
+    font-size:16pt;
+    color: #FFF;
+}
+
+#slideout li {
+    display: list-item;
+    color: #FFF;
+}
+
+#clickme {
+    background-color:#403f3f;
+    background-image: url('/public/images/toc.png');
+    background-position: 0 -3px;
+    position: relative;
+    top:350px;
+    left:-1px;
+    height:30px;
+    width:150px;
+    border-right: 2px solid #62aeff;
+    border-bottom: 2px solid #62aeff;
+}
+
+#clickme:hover {
+    cursor: pointer;
+}
+
+#clickme span {
+    position: relative;
+    top:-65px;
+    left:0px;
+    color:#FFF;
+}
+
+#slidecontent {
+    float:left;
+    padding: 10px;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}

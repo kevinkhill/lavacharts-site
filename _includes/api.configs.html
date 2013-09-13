@@ -1,0 +1,146 @@
+<div class="inner left">
+
+    <h1 class="heading">Config Objects</h1>
+        <h2>All of the configuration objects can be created by one of two ways:</h2>
+        <ul class="arrows">
+            <li>Passing an associative array into the constructor.</li>
+            <li>Using the configuration options as methods of the object. (Chainable, see <a href="#chaining" class="green">Chaining</a> section)</li>
+            <li>The only exception is the jsDate object, it mimics the javascript date signature.</li>
+        </ul><br />
+
+        <h3>Background Color</h3><a name="backgroundColor"></a>
+        <pre class="prettyprint inline">Lava::backgroundColor( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong>stroke</strong><em>string</em>The color of the chart border, as an HTML color string.</li>
+            <li><strong>strokeWidth</strong><em>int</em>The border width, in pixels.</li>
+            <li><strong>fill</strong><em>string</em>The chart fill color, as an HTML color string.</li>
+            <li><strong class="returns">returns</strong><em>object (backgroundColor)</em>backgroundColor Config Object.</li>
+        </ul><br />
+
+        <h3>Chart Area</h3><a name="chartArea"></a>
+        <pre class="prettyprint inline">Lava::chartArea( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong>left</strong><em>integer</em>How far to draw the chart from the left border.</li>
+            <li><strong>top</strong><em>integer</em>How far to draw the chart from the top border.</li>
+            <li><strong>width</strong><em>integer</em>Width of the chart.</li>
+            <li><strong>height</strong><em>integer</em>Height of the chart.</li>
+            <li><strong class="returns">returns</strong><em>object (chartArea)</em>chartArea Config Object.</li>
+        </ul><br />
+
+        <h3>Text Style</h3><a name="textStyle"></a>
+        <pre class="prettyprint inline">Lava::textStyle( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong>color</strong><em>string</em>Color of the text.</li>
+            <li><strong>fontName</strong><em>string</em>Name of font.</li>
+            <li><strong>fontSize</strong><em>string</em>Size of font, in pixels.</li>
+            <li><strong class="returns">returns</strong><em>object (textStyle)</em>textStyle Config Object.</li>
+        </ul><br />
+
+        <h3>Legend</h3><a name="legend"></a>
+        <pre class="prettyprint inline">Lava::legend( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong>position</strong><em>string</em>Position of the legend.</li>
+            <li><strong>alignment</strong><em>string</em>Alignment of the legend.</li>
+            <li><strong>textStyle</strong><em>object (<a href="#textStyle">textStyle</a>)</em>Text style of the legend.</li>
+            <li><strong class="returns">returns</strong><em>object (legend)</em>legend Config Object.</li>
+        </ul><br />
+
+        <h3>Tooltip</h3><a name="tooltip"></a>
+        <pre class="prettyprint inline">Lava::tooltip( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong>showColorCode</strong><em>boolean</em>Show color code for the tooltip.</li>
+            <li><strong>textStyle</strong><em>object (<a href="#textStyle">textStyle</a>)</em>Tooltip text style.</li>
+            <li><strong>trigger</strong><em>string</em>Trigger action of the tooltip.</li>
+            <li><strong class="returns">returns</strong><em>object (tooltip)</em>tooltip Config Object.</li>
+        </ul><br />
+
+        <h3>Axis</h3>
+        <pre class="prettyprint inline">Lava::vAxis( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong class="returns">returns</strong><em>object ()</em> Config Object.</li>
+        </ul><br />
+
+
+        <h3>Horizontal Axis extends Axis</h3><a name="hAxis"></a>
+        <pre class="prettyprint inline">Lava::hAxis( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong class="returns">returns</strong><em>object (hAxis)</em>hAxis Config Object.</li>
+        </ul><br />
+
+        <h3>Vertical Axis extends Axis</h3><a name="vAxis"></a>
+        <pre class="prettyprint inline">Lava::vAxis( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong></strong><em></em></li>
+            <li><strong class="returns">returns</strong><em>object (vAxis)</em>vAxis Config Object.</li>
+        </ul><br />
+
+        <h3>Color Axis</h3><a name="colorAxis"></a>
+        <pre class="prettyprint inline">Lava::colorAxis( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong>minValue</strong><em>integer</em>Minimum value for chart color data.</li>
+            <li><strong>maxValue</strong><em>integer</em>Maximum value for chart color data.</li>
+            <li><strong>values</strong><em>array</em>Controls how values are associated with colors.</li>
+            <li><strong>colors</strong><em>array</em>Colors to assign to values in the visualization.</li>
+            <li><strong class="returns">returns</strong><em>object (colorAxis)</em>colorAxis Config Object.</li>
+        </ul><br />
+
+        <h3>Slice</h3><a name="slice"></a>
+        <pre class="prettyprint inline">Lava::slice( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong>color</strong><em>string</em>The slice fill color.</li>
+            <li><strong>offset</strong><em>string</em>Offset amount.</li>
+            <li><strong>textStyle</strong><em>object (<a href="#textStyle">textStyle</a>)</em>Slice text style.</li>
+            <li><strong class="returns">returns</strong><em>object (slice)</em>slice Config Object.</li>
+        </ul><br />
+
+        <h3>Size Axis</h3><a name="sizeAxis"></a>
+        <pre class="prettyprint inline">Lava::sizeAxis( array $config );</pre>
+        <ul class="arrows padleft">
+            <li><strong>maxSize</strong><em>integer</em>Maximum radius of the largest possible bubble, in pixels.</li>
+            <li><strong>maxValue</strong><em>integer</em>The size value to be mapped to $this->maxSize</li>
+            <li><strong>minSize</strong><em>integer</em>Mininum radius of the smallest possible bubble, in pixels</li>
+            <li><strong>minValue</strong><em>integer</em>The size value to be mapped to $this->minSize</li>
+            <li><strong class="returns">returns</strong><em>object (sizeAxis)</em>sizeAxis Config Object.</li>
+        </ul><br />
+
+        <h3>Magnifying Glass</h3><a name="magnifyingGlass"></a>
+        <pre class="prettyprint inline">Lava::magnifyingGlass( integer $zoomFactor );</pre>
+        <ul class="arrows padleft">
+            <li><strong>zoomFactor</strong><em>integer</em>Zoom factor of the magnifying glass.</li>
+            <li><strong class="returns">returns</strong><em>object (magnifyingGlass)</em>magnifyingGlass Config Object.</li>
+        </ul><br />
+
+        <h3>jsDate</h3><a name="jsDate"></a>
+        <pre class="prettyprint inline">Lava::jsDate( integers $year, $month, $day, $hour, $minute, $second, $millisecond );</pre>
+        <ul class="arrows padleft">
+            <li><strong>year</strong><em>integer</em>Year.</li>
+            <li><strong>month</strong><em>integer</em>Month, starting with January => 0, Feb. => 1, etc...</li>
+            <li><strong>day</strong><em>integer</em>Day.</li>
+            <li><strong>hour</strong><em>integer</em>Hour.</li>
+            <li><strong>minute</strong><em>integer</em>Minute.</li>
+            <li><strong>second</strong><em>integer</em>Second.</li>
+            <li><strong>millisecond</strong><em>integer</em>Millisecond.</li>
+            <li><strong class="returns">returns</strong><em>object (jsDate)</em>jsDate Config Object.</li>
+        </ul>
+
+</div>

@@ -61,7 +61,7 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 				// Courtesy of Ryan Clarke (@clarkieryan)
 
 
-				if(optionLocs[index][0] <= scrollTop && scrollTop <= optionLocs[index][1]){
+				if(optionLocs[index][0] <= scrollTop+200 && scrollTop <= optionLocs[index][1]){
 					if(direction == "up"){
 						$("#"+id).addClass("active");
 						$("#"+optionLocs[index+1][2]).removeClass("active");

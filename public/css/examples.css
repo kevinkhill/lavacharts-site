@@ -58,11 +58,11 @@
 }
 
 .expand {
-    background: url('../images/toggle_expand_w.png') #62AEFF no-repeat 2px 4px;
+    background: url('/public/images/toggle_expand_w.png') #62AEFF no-repeat 2px 4px;
 }
 
 .collapse {
-    background: url('../images/toggle_collapse_w.png') #62AEFF no-repeat 2px 4px;
+    background: url('/public/images/toggle_collapse_w.png') #62AEFF no-repeat 2px 4px;
 }
 
 .prettyprint {
