@@ -24,6 +24,8 @@ Next, register LavaCharts in your app by adding this line the providers array in
   "Khill\Lavacharts\LavachartsServiceProvider"
   ```
 
+*Don't worry about the Alias, it is set up for you :)*
+
 If you want to view the demos, publish the assets with:
 
   ```
