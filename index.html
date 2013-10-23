@@ -76,6 +76,7 @@ title: LavaCharts by kevinkhill
                 <pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
                 If you want to overide the default config of the package, run:
                 <pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />
+                Don't worry about adding the Alias, it is loaded automatically :)
 
                 <div style="margin-top:140px;text-align:right;font-size:26pt;">Thanks Composer, and away we go!</div>
             </div>
@@ -134,7 +135,7 @@ $config = array(
                 <p>Currently, the supported Charts are: Line, Area, Pie, Donut, Column, and Geo</p>
                 <p>Lastly, apply the configuration to the chart, chaining onto the chart.</p>
                 <pre class="prettyprint inline">
-Lava::LineChart('Stocks');->setConfig($config);</pre><br/>
+Lava::LineChart('Stocks')->setConfig($config);</pre><br/>
 
 
                 <h3>On to The View</h3>

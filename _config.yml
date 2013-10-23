@@ -1,3 +1,13 @@
-baseurl: /LavaCharts
+baseurl: "/LavaCharts"
 
-exclude: ['src','scripts','nbproject','public/css','public/js','public/builds']
+exclude: [src, scripts, nbproject ,public/css, public/js, public/builds]
+
+pygments: true
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks
