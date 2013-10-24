@@ -66,12 +66,12 @@ title: LavaCharts by kevinkhill
     <div class="section s2">
             <div class="inner left">
                 <h1 class="heading">Installing</h1>
-                To your project's main composer.json file, add this the the requirements:<br />
+                First, add this line to your project's main composer.json file<br />
                 <pre class="prettyprint inline">"khill\lavacharts" : "dev-master"</pre><br />
-                Register the LavaChart Service Provider by adding this line the providers array in "app/config/app.php"
-                <pre class="prettyprint inline">'Khill\Lavacharts\LavachartsServiceProvider'</pre><br />
-                Finally, to download and install, just run:
+                Next, run composer to download and install:
                 <pre class="prettyprint inline">composer install</pre><br />
+                Last, register the LavaChart Service Provider by adding this line the providers array in "app/config/app.php"
+                <pre class="prettyprint inline">'Khill\Lavacharts\LavachartsServiceProvider'</pre><br />
                 If you want to view the demos, publish the assets with:
                 <pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
                 If you want to overide the default config of the package, run:
