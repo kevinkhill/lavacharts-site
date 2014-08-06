@@ -33,6 +33,22 @@
         font-variant: small-caps;
         letter-spacing: .7em;
       }
+
+      .vspace {
+        display: block;
+        height: 75px;
+      }
+
+      .pre {
+        font-family: monospace;
+        padding: 3px;
+        font-size: 13px;
+        line-height: 1.428571429;
+        color: #333;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
     </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -82,35 +98,36 @@
       </div>
 
       <div class="section">
-        <p class="lead">Introduction</p>
+        <h3>Introduction</h3>
+          <p class="lead">Lavacharts abstracts Google's Javascript API to PHP</p>
           <ul class="arrows">
-            <li>LavaCharts is a PHP Wrapper for the Google Chart API to enable the use of dynamic, beautiful charts with Laravel.</li>
-            <li>Utilizing the power of PHP5.3+ we can render fantastic charts dynamically in page with very little code in the views.</li>
-            <li>Configuration is intuitive and easy to follow since it directly coordinates with Google's Chart API.</li>
+            <li>The Lavachart library takes away the need for manual writing of Javascript in your views</li>
+            <li>Focus on data and customization instead of worrying about JSON or poking about the JS console for errors.</li>
+            <li>The libray wraps the work of generating the proper Chart Javascript, so you can focus on more important things.</li>
+            <li>Configuration is intuitive and easy to follow since it correlates 1:1 with the Google Chart API.</li>
+            <li>Designed to work with any PHP project, but some bonus features were added for Laravel users</li>
+            <li>Laravel specific features include: A ServiceProvider, Facade, and Blade template extensions.</li>
           </ul>
-          <div style="margin-top:140px;text-align:right;font-size:26pt;">Lets make some charts!</div>
+        <div class="vspace"></div>
       </div>
 
-        <!--Installing-->
-            <div class="section s2">
-                    <div class="inner left">
-                        <h1 class="heading">Installing</h1>
-                        First, add this line to your project's main composer.json file<br />
-                        <pre class="prettyprint inline">"khill\lavacharts" : "dev-master"</pre><br />
-                        Next, run composer to download and install:
-                        <pre class="prettyprint inline">composer install</pre><br />
-                        Last, register the LavaChart Service Provider by adding this line the providers array in "app/config/app.php"
-                        <pre class="prettyprint inline">'Khill\Lavacharts\LavachartsServiceProvider'</pre><br />
-                        If you want to view the demos, publish the assets with:
-                        <pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
-                        If you want to overide the default config of the package, run:
-                        <pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />
-                        Don't worry about adding the Alias, it is loaded automatically :)
-
-                        <div style="margin-top:100px;text-align:right;font-size:26pt;">Thanks Composer, and away we go!</div>
-                    </div>
-            </div>
-        <!--/Installing-->
+<!--Installing-->
+      <div class="section">
+        <h3>Installing</h3>
+        <p class="lead">First we add lavacharts as a requirement for your project.</p>
+        <p>Copy this line into your project's composer.json file, in the <span class="pre">"require": {}</span> section</p>
+        <pre class="prettyprint inline">"khill\lavacharts" : "~2.0"</pre><br />
+        Next, run composer to download and install:
+        <pre class="prettyprint inline">composer install</pre><br />
+        Last, register the LavaChart Service Provider by adding this line the providers array in "app/config/app.php"
+        <pre class="prettyprint inline">'Khill\Lavacharts\LavachartsServiceProvider'</pre><br />
+        If you want to view the demos, publish the assets with:
+        <pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
+        If you want to overide the default config of the package, run:
+        <pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />
+        Don't worry about adding the Alias, it is loaded automatically.
+      </div>
+<!--/Installing-->
 
 
         <!--Usage-->
