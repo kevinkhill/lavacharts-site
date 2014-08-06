@@ -63,11 +63,11 @@
     <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
       <ul class="nav navmenu-nav">
         <li><a href="#install" class="navmenu-heading">Install</a></li>
-          <li><a href="#composer">Composer</a></li>
-          <li><a href="#manual">Manual</a></li>
+          <li><a href="#install-composer">Composer</a></li>
+          <li><a href="#install-manual">Manual</a></li>
         <li><a href="#usage" class="navmenu-heading">Usage</a></li>
-          <li><a href="#laravel">Laravel</a></li>
-          <li><a href="#vanilla">Vanilla PHP</a></li>
+          <li><a href="#usage-laravel">Laravel</a></li>
+          <li><a href="#usage-vanilla">Vanilla PHP</a></li>
         <li><a href="#documents" class="navmenu-heading">Documentation</a></li>
           <li><a href="#chart-line">Line Chart</a></li>
           <li><a href="#chart-area">Area Chart</a></li>
@@ -78,7 +78,7 @@
           <li><a href="#chart-geo">Geo Chart</a></li>
         <li><a href="#api" class="navmenu-heading">API</a></li>
           <li><a href="#api-v2">Version 2.0</a></li>
-          <li><a href="#api-v2">Version 1.0</a></li>
+          <li><a href="#api-v1">Version 1.0</a></li>
       </ul>
     </div>
 
@@ -112,27 +112,38 @@
       </div>
 
 <!--Installing-->
-      <div class="section">
-        <h3>Installing</h3>
-        <p class="lead">First we add lavacharts as a requirement for your project.</p>
+      <div class="section"><a id="install"></a>
+        <h3>Installation</h3>
+        <p class="lead">Get up and running within minutes, using the PHP package manager, Composer.
+        <p>Click Here to check out Composer if you haven't heard of it</p>
+
+        <h4>Composer</h4><a id="install-composer"></a>
+        <p>First we add lavacharts as a requirement for your project.</p>
         <p>Copy this line into your project's composer.json file, in the <span class="pre">"require": {}</span> section</p>
         <pre class="prettyprint inline">"khill\lavacharts" : "~2.0"</pre><br />
-        Next, run composer to download and install:
-        <pre class="prettyprint inline">composer install</pre><br />
-        Last, register the LavaChart Service Provider by adding this line the providers array in "app/config/app.php"
-        <pre class="prettyprint inline">'Khill\Lavacharts\LavachartsServiceProvider'</pre><br />
-        If you want to view the demos, publish the assets with:
+        Next, run composer to download and install
+        <pre class="prettyprint inline">composer update</pre>
+        <p>You are good to go!</p><br />
+
+        <h4>Manual</h4><a id="install-manual"></a>
+        
+        <p>Register the Service Provider by adding this line the providers array in <span class="pre">app/config/app.php</span></p>
+        <pre class="prettyprint inline">"Khill\Lavacharts\LavachartsServiceProvider"</pre>
+        
+        <!--If you want to view the demos, publish the assets with:
         <pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
         If you want to overide the default config of the package, run:
-        <pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />
-        Don't worry about adding the Alias, it is loaded automatically.
+        <pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />-->
+        <p>Don't worry about adding the Alias, it is loaded automatically.</p>
+
+        <div class="vspace"></div>
       </div>
 <!--/Installing-->
 
 
         <!--Usage-->
             <div class="usage">
-                    <div class="usage-laravel">
+                    <a id="usage-laravel">
                         <h1 class="heading">Laravel Projects</h1>
                         <ul class="arrows">
                             <li>Getting up and running with LavaCharts is a breeze and you can follow along with these easy steps to get you going.</li>
