@@ -5,10 +5,6 @@ body {
   padding: 50px 0 0 0;
 }
 
-.navmenu {
-  padding-top: 50px;
-}
-
 .navbar {
   display: block;
   text-align: center;
@@ -39,8 +35,15 @@ body {
   }
   .navmenu {
     padding-top: 0;
+    margin-top: 0;
   }
   .navbar {
     display: none !important; /* IE8 fix */
+  }
+}
+
+@media (max-width: 991px) {
+  .navmenu {
+    margin-top: 50px;
   }
 }

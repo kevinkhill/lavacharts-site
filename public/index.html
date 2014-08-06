@@ -3,57 +3,66 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Charts and Graphs for PHP powered by the Google Chart API">
+    <meta name="author" content="Kevin Hill">
 
-    <title>Navmenu Template for Bootstrap</title>
+    <title>Lavacharts</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/jasny-bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/navmenu.css" rel="stylesheet">
     <style type="text/css">
-        .navmenu-heading {
-            font-size: larger;
-            font-weight: 700;
-            border-bottom: 1px solid #e7e7e7;
-            color: #555;
-            position: relative;
-            display: block;
-            padding: 15px 5px;
-        }
+      .center {
+        text-align:center;
+      }
+
+      .navmenu-heading {
+        font-size: larger;
+        font-weight: 700;
+        border-bottom: 1px solid #e7e7e7;
+        color: #555;
+        position: relative;
+        display: block;
+        margin: 10px 0 -5px -5px;
+      }
+
+      .spaced-caps {
+        font-variant: small-caps;
+        letter-spacing: .7em;
+      }
     </style>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
 
   <body>
+    <a id="top"></a>
     <div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-      <a class="navmenu-brand visible-md visible-lg" href="#">Project name</a>
       <ul class="nav navmenu-nav">
-        <li class="active"><a href="./">Welcome</a></li>
-        <li class="navmenu-heading">Install</li>
-          <li><a href="#">Composer</a></li>
-          <li><a href="#">Manual</a></li>
-        <li class="navmenu-heading">Usage</li>
-          <li><a href="#">Laravel</a></li>
-          <li><a href="#">Vanilla PHP</a></li>
-        <li class="navmenu-heading">Examples</li>
-          <li><a href="#">Line Chart</a></li>
-          <li><a href="#">Area Chart</a></li>
-          <li><a href="#">Column Chart</a></li>
-          <li><a href="#">Combo Chart</a></li>
-          <li><a href="#">Pie Chart</a></li>
-          <li><a href="#">Donut Chart</a></li>
-          <li><a href="#">Geo Chart</a></li>
-        </li>
-        <li><a href="#">API Docs</a></li>
+        <li><a href="#install" class="navmenu-heading">Install</a></li>
+          <li><a href="#composer">Composer</a></li>
+          <li><a href="#manual">Manual</a></li>
+        <li><a href="#usage" class="navmenu-heading">Usage</a></li>
+          <li><a href="#laravel">Laravel</a></li>
+          <li><a href="#vanilla">Vanilla PHP</a></li>
+        <li><a href="#documents" class="navmenu-heading">Documentation</a></li>
+          <li><a href="#chart-line">Line Chart</a></li>
+          <li><a href="#chart-area">Area Chart</a></li>
+          <li><a href="#chart-column">Column Chart</a></li>
+          <li><a href="#chart-combo">Combo Chart</a></li>
+          <li><a href="#chart-pie">Pie Chart</a></li>
+          <li><a href="#chart-donut">Donut Chart</a></li>
+          <li><a href="#chart-geo">Geo Chart</a></li>
+        <li><a href="#api" class="navmenu-heading">API</a></li>
+          <li><a href="#api-v2">Version 2.0</a></li>
+          <li><a href="#api-v2">Version 1.0</a></li>
       </ul>
     </div>
 
@@ -63,35 +72,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Project name</a>
+      <a class="navbar-brand spaced-caps" href="#">Lavacharts</a>
     </div>
 
     <div class="container">
-      <div class="page-header">
-        <h1>Navmenu Template</h1>
+      <div class="page-header center">
+        <h1 class="visible-md visible-lg">Welcome to Lavacharts</h1>
+        <h2>Charts and Graphs for PHP<br />Powered by the Google Chart API</h2>
       </div>
-        <div class="section sTop">
-            <div class="welcome">
-                <h1>Welcome to LavaCharts</h1>
-                <h2>Charts & Graphs for Laravel<br />Powered by the Google Chart API</h2>
-            </div>
-        </div>
 
-
-        <!--Intro-->
-            <div class="section s1">
-                    <div class="inner left">
-                        <h1 class="heading">Intro</h1>
-                        <ul class="arrows">
-                            <li>LavaCharts is a PHP Wrapper for the Google Chart API to enable the use of dynamic, beautiful charts with Laravel.</li>
-                            <li>Utilizing the power of PHP5.3+ we can render fantastic charts dynamically in page with very little code in the views.</li>
-                            <li>Configuration is intuitive and easy to follow since it directly coordinates with Google's Chart API.</li>
-                        </ul>
-                        <div style="margin-top:140px;text-align:right;font-size:26pt;">Lets make some charts!</div>
-                    </div>
-            </div>
-        <!--/Intro-->
-
+      <div class="section">
+        <p class="lead">Introduction</p>
+          <ul class="arrows">
+            <li>LavaCharts is a PHP Wrapper for the Google Chart API to enable the use of dynamic, beautiful charts with Laravel.</li>
+            <li>Utilizing the power of PHP5.3+ we can render fantastic charts dynamically in page with very little code in the views.</li>
+            <li>Configuration is intuitive and easy to follow since it directly coordinates with Google's Chart API.</li>
+          </ul>
+          <div style="margin-top:140px;text-align:right;font-size:26pt;">Lets make some charts!</div>
+      </div>
 
         <!--Installing-->
             <div class="section s2">
@@ -109,7 +107,7 @@
                         <pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />
                         Don't worry about adding the Alias, it is loaded automatically :)
 
-                        <div style="margin-top:140px;text-align:right;font-size:26pt;">Thanks Composer, and away we go!</div>
+                        <div style="margin-top:100px;text-align:right;font-size:26pt;">Thanks Composer, and away we go!</div>
                     </div>
             </div>
         <!--/Installing-->
@@ -265,6 +263,7 @@ echo Lava::LineChart('Stocks')->outputInto('myStocks');</pre><br/>
         <!--Examples-->
             <div id="examples">
                     <div class="inner">
+                        <a id="examples"></a>
                         <h1 class="heading">Examples</h1>
                         <a href="examples.html"><span style="color:white;font-size:26pt;">Let's See Some Examples</span></a>
                     </div>
@@ -286,8 +285,8 @@ echo Lava::LineChart('Stocks')->outputInto('myStocks');</pre><br/>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/jasny-bootstrap.min.js"></script>
 
 </body>
