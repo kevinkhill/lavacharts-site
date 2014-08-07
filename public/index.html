@@ -38,12 +38,12 @@ title: Lavacharts
     <h3 id="install-composer">With Composer</h3>
     {% include install/composer.html %}
   </div>
-  
+  <!--
   <div class="sub-section">
     <h3 id="install-manual">Manually</h3>
     {% include install/manual.html %}
   </div>
-  <br />
+  <br />-->
 
   <div class="sub-section">
     <h3 id="install-laravel">Laravel</h3>
@@ -79,37 +79,35 @@ title: Lavacharts
 </div>
 
 
-<!--Examples-->
-    <div id="examples">
-            <div class="inner">
-                <a id="examples"></a>
-                <h1 class="heading">Examples</h1>
-                <a href="examples.html"><span style="color:white;font-size:26pt;">Let's See Some Examples</span></a>
-            </div>
-            <div id="chart-line-docs"></div>
+<!--Charts-->
+<div id="charts" class="section section-dark">
+  <h2>Charts</h2>
 
-            <div class="vspace"></div>
-            <div class="vspace"></div>
-            <div class="vspace"></div>
-            <div class="vspace"></div>
-            <div class="vspace"></div>
-            <div class="vspace"></div>
+  <div class="sub-section">
+    <h3 id="chart-line">LineChart</h3>
+    <div id="chart-line-docs">
+      { include charts/line/docs.html %}
     </div>
-<!--/Examples-->
-
-
-<!--API-->
-    <div class="section section s5">
-            <div class="inner">
-                <h1 class="heading">API</h1>
-                <a href="api.html"><span style="color:white;font-size:26pt;">(Work in Progress)</span></a>
-            </div>
-            <div id="chart-line-example"></div>
-            <div class="vspace"></div>
-            <div class="vspace"></div>
-            <div class="vspace"></div>
-            <div class="vspace"></div>
-            <div class="vspace"></div>
-            <div class="vspace"></div>
+    <div id="chart-line-example">
+      { include charts/line/example.html %}
     </div>
-<!--/API-->
+  </div>
+</div>
+<!--/Charts-->
+
+
+<!--Configuration Options-->
+<div id="configs" class="section section-dark">
+  <h2>Configuration Options</h2>
+
+  <div class="sub-section">
+    <h3 id="config-textstyle">TextStyle</h3>
+    <div id="config-textstyle-docs">
+      { include configs/textstyle/docs.html %}
+    </div>
+    <div id="config-textstyle-example">
+      { include configs/textstyle/example.html %}
+    </div>
+  </div>
+</div>
+<!--/Configuration Options-->

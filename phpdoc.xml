@@ -2,10 +2,10 @@
 <phpdoc>
   <title>LavaCharts</title>
   <parser>
-    <target>./build/api</target>
+    <target>./public/api/2.0</target>
   </parser>
   <transformer>
-    <target>./build/api</target>
+    <target>./public/api/2.0</target>
   </transformer>
   <logging>
     <level>warn</level>

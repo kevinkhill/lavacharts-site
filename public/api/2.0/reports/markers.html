@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; Markers
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">LavaCharts</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Khill.html">\Khill</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">242</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">129</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Navigation</li>
+                                                                                                                                                                                        <li><a href="#Charts/GeoChart.php"><i class="icon-file"></i> Charts/GeoChart.php</a></li>
+                                                                                                                                                        <li><a href="#Configs/HorizontalAxis.php"><i class="icon-file"></i> Configs/HorizontalAxis.php</a></li>
+                                                                                                <li><a href="#Charts/ComboChart.php"><i class="icon-file"></i> Charts/ComboChart.php</a></li>
+                                                                                                <li><a href="#Charts/AreaChart.php"><i class="icon-file"></i> Charts/AreaChart.php</a></li>
+                                                                                                                                                                                                                                                                                                                                <li><a href="#Configs/DataTable.php"><i class="icon-file"></i> Configs/DataTable.php</a></li>
+                                                                                                <li><a href="#Charts/LineChart.php"><i class="icon-file"></i> Charts/LineChart.php</a></li>
+                                                                                                <li><a href="#Configs/Annotation.php"><i class="icon-file"></i> Configs/Annotation.php</a></li>
+                                                                                                <li><a href="#Configs/ChartArea.php"><i class="icon-file"></i> Configs/ChartArea.php</a></li>
+                                                                                                <li><a href="#Events/MouseOver.php"><i class="icon-file"></i> Events/MouseOver.php</a></li>
+                                                                                                                                                        <li><a href="#Events/Event.php"><i class="icon-file"></i> Events/Event.php</a></li>
+                                                                                                                                                        <li><a href="#Charts/TreeMap.php"><i class="icon-file"></i> Charts/TreeMap.php</a></li>
+                                                                                                <li><a href="#Configs/ConfigObject.php"><i class="icon-file"></i> Configs/ConfigObject.php</a></li>
+                                                                                                <li><a href="#Configs/Slice.php"><i class="icon-file"></i> Configs/Slice.php</a></li>
+                                                                                                <li><a href="#Configs/Legend.php"><i class="icon-file"></i> Configs/Legend.php</a></li>
+                                                                                                <li><a href="#Configs/BackgroundColor.php"><i class="icon-file"></i> Configs/BackgroundColor.php</a></li>
+                                                                                                <li><a href="#JavascriptFactory.php"><i class="icon-file"></i> JavascriptFactory.php</a></li>
+                                                                                                                                                        <li><a href="#Configs/TextStyle.php"><i class="icon-file"></i> Configs/TextStyle.php</a></li>
+                                                                                                                                                                                                                <li><a href="#Charts/Chart.php"><i class="icon-file"></i> Charts/Chart.php</a></li>
+                                                                                                                                                        <li><a href="#Configs/VerticalAxis.php"><i class="icon-file"></i> Configs/VerticalAxis.php</a></li>
+                                                                                                <li><a href="#Charts/DonutChart.php"><i class="icon-file"></i> Charts/DonutChart.php</a></li>
+                                                                                                <li><a href="#Configs/Gradient.php"><i class="icon-file"></i> Configs/Gradient.php</a></li>
+                                                                                                <li><a href="#Configs/MagnifyingGlass.php"><i class="icon-file"></i> Configs/MagnifyingGlass.php</a></li>
+                                                                                                <li><a href="#Events/Ready.php"><i class="icon-file"></i> Events/Ready.php</a></li>
+                                                                                                <li><a href="#Configs/Series.php"><i class="icon-file"></i> Configs/Series.php</a></li>
+                                                                                                <li><a href="#Events/AnimationFinish.php"><i class="icon-file"></i> Events/AnimationFinish.php</a></li>
+                                                                                                <li><a href="#Configs/DataCell.php"><i class="icon-file"></i> Configs/DataCell.php</a></li>
+                                                                                                <li><a href="#Configs/Axis.php"><i class="icon-file"></i> Configs/Axis.php</a></li>
+                                                                                                                                                        <li><a href="#Events/Select.php"><i class="icon-file"></i> Events/Select.php</a></li>
+                                                                                                <li><a href="#Volcano.php"><i class="icon-file"></i> Volcano.php</a></li>
+                                                                                                                                                        <li><a href="#Charts/ColumnChart.php"><i class="icon-file"></i> Charts/ColumnChart.php</a></li>
+                                                                                                                                                        <li><a href="#Charts/PieChart.php"><i class="icon-file"></i> Charts/PieChart.php</a></li>
+                                                                                                <li><a href="#Events/Error.php"><i class="icon-file"></i> Events/Error.php</a></li>
+                                                                                                                                                        <li><a href="#Events/MouseOut.php"><i class="icon-file"></i> Events/MouseOut.php</a></li>
+                                                                                                <li><a href="#Configs/ColorAxis.php"><i class="icon-file"></i> Configs/ColorAxis.php</a></li>
+                                                                                                <li><a href="#Configs/Tooltip.php"><i class="icon-file"></i> Configs/Tooltip.php</a></li>
+                                                                                                <li><a href="#Lavacharts.php"><i class="icon-file"></i> Lavacharts.php</a></li>
+                                                                                                <li><a href="#Configs/BoxStyle.php"><i class="icon-file"></i> Configs/BoxStyle.php</a></li>
+                                                                                                <li><a href="#Configs/SizeAxis.php"><i class="icon-file"></i> Configs/SizeAxis.php</a></li>
+                                                                                                                            </ul>
+        </div>
+
+        <div class="span10 offset2">
+
+            <ul class="breadcrumb">
+                <li><a href="../"><i class="icon-map-marker"></i></a><span class="divider">\</span></li>
+                <li>Markers</li>
+            </ul>
+
+            
+            <div id="marker-accordion">
+                                                                                                                                    <div class="package-contents">
+                            <a name="Charts/GeoChart.php" id="Charts/GeoChart.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Charts/GeoChart.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>18</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>19</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>20</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                    <div class="package-contents">
+                            <a name="Configs/HorizontalAxis.php" id="Configs/HorizontalAxis.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/HorizontalAxis.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Charts/ComboChart.php" id="Charts/ComboChart.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Charts/ComboChart.php
+                                <small style="float: right;padding-right: 10px;">6</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>18</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>19</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>20</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>31</td>
+                                            <td>use Khill\Lavacharts\Traits\AxisTitlesPosition;</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>435</td>
+                                            <td>Nothing specified for axis 0</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>436</td>
+                                            <td>Axis 1</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Charts/AreaChart.php" id="Charts/AreaChart.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Charts/AreaChart.php
+                                <small style="float: right;padding-right: 10px;">5</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>35</td>
+                                            <td>&#039;animation&#039;,</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>44</td>
+                                            <td>&#039;vAxes&#039;,</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                                                                                                                                <div class="package-contents">
+                            <a name="Configs/DataTable.php" id="Configs/DataTable.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/DataTable.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>22</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>23</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>24</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Charts/LineChart.php" id="Charts/LineChart.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Charts/LineChart.php
+                                <small style="float: right;padding-right: 10px;">5</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>35</td>
+                                            <td>&#039;animation&#039;,</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>43</td>
+                                            <td>&#039;vAxes&#039;,</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/Annotation.php" id="Configs/Annotation.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/Annotation.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/ChartArea.php" id="Configs/ChartArea.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/ChartArea.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Events/MouseOver.php" id="Events/MouseOver.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Events/MouseOver.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                    <div class="package-contents">
+                            <a name="Events/Event.php" id="Events/Event.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Events/Event.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                    <div class="package-contents">
+                            <a name="Charts/TreeMap.php" id="Charts/TreeMap.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Charts/TreeMap.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>26</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>27</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>28</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/ConfigObject.php" id="Configs/ConfigObject.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/ConfigObject.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/Slice.php" id="Configs/Slice.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/Slice.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/Legend.php" id="Configs/Legend.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/Legend.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/BackgroundColor.php" id="Configs/BackgroundColor.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/BackgroundColor.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="JavascriptFactory.php" id="JavascriptFactory.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                JavascriptFactory.php
+                                <small style="float: right;padding-right: 10px;">5</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>67</td>
+                                            <td>google.com/jsapi&quot;&gt;&lt;/script&gt;&#039;;</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>147</td>
+                                            <td>Checking if output div exists</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                    <div class="package-contents">
+                            <a name="Configs/TextStyle.php" id="Configs/TextStyle.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/TextStyle.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                                                        <div class="package-contents">
+                            <a name="Charts/Chart.php" id="Charts/Chart.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Charts/Chart.php
+                                <small style="float: right;padding-right: 10px;">4</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>13</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>266</td>
+                                            <td>*</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                    <div class="package-contents">
+                            <a name="Configs/VerticalAxis.php" id="Configs/VerticalAxis.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/VerticalAxis.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Charts/DonutChart.php" id="Charts/DonutChart.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Charts/DonutChart.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/Gradient.php" id="Configs/Gradient.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/Gradient.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>13</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/MagnifyingGlass.php" id="Configs/MagnifyingGlass.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/MagnifyingGlass.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>18</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>19</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Events/Ready.php" id="Events/Ready.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Events/Ready.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/Series.php" id="Configs/Series.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/Series.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Events/AnimationFinish.php" id="Events/AnimationFinish.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Events/AnimationFinish.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/DataCell.php" id="Configs/DataCell.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/DataCell.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>13</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/Axis.php" id="Configs/Axis.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/Axis.php
+                                <small style="float: right;padding-right: 10px;">4</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>157</td>
+                                            <td>@TODO convert to carbon</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                    <div class="package-contents">
+                            <a name="Events/Select.php" id="Events/Select.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Events/Select.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Volcano.php" id="Volcano.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Volcano.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>13</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                    <div class="package-contents">
+                            <a name="Charts/ColumnChart.php" id="Charts/ColumnChart.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Charts/ColumnChart.php
+                                <small style="float: right;padding-right: 10px;">5</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>18</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>36</td>
+                                            <td>&#039;animation&#039;,</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>42</td>
+                                            <td>&#039;vAxes&#039;,</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                    <div class="package-contents">
+                            <a name="Charts/PieChart.php" id="Charts/PieChart.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Charts/PieChart.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Events/Error.php" id="Events/Error.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Events/Error.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                                                    <div class="package-contents">
+                            <a name="Events/MouseOut.php" id="Events/MouseOut.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Events/MouseOut.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/ColorAxis.php" id="Configs/ColorAxis.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/ColorAxis.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/Tooltip.php" id="Configs/Tooltip.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/Tooltip.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Lavacharts.php" id="Lavacharts.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Lavacharts.php
+                                <small style="float: right;padding-right: 10px;">5</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>11</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>12</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>13</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>49</td>
+                                            <td>@TODO WIP</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>75</td>
+                                            <td>@TODO WIP</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/BoxStyle.php" id="Configs/BoxStyle.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/BoxStyle.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Configs/SizeAxis.php" id="Configs/SizeAxis.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Configs/SizeAxis.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>14</td>
+                                            <td>github.com/kevinkhill/LavaCharts GitHub Repository Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>kevinkhill.github.io/LavaCharts GitHub Project Page</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>16</td>
+                                            <td>opensource.org/licenses/MIT MIT</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                    </div>
+        </div>
+    </section>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Khill.html">\Khill</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on August 7th, 2014 at 17:27.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

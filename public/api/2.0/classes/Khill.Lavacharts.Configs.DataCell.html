@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>LavaCharts</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">LavaCharts</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Khill.html">\Khill</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">242</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">129</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1635209821"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1635209821" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1302407171"></a>
+                                <a href="../namespaces/Khill.html" style="margin-left: 30px; padding-left: 0">Khill</a>
+            </div>
+            <div id="namespace-1302407171" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1666379311"></a>
+                                <a href="../namespaces/Khill.Lavacharts.html" style="margin-left: 30px; padding-left: 0">Lavacharts</a>
+            </div>
+            <div id="namespace-1666379311" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1580159415"></a>
+                                <a href="../namespaces/Khill.Lavacharts.Charts.html" style="margin-left: 30px; padding-left: 0">Charts</a>
+            </div>
+            <div id="namespace-1580159415" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Charts.AreaChart.html">AreaChart</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Charts.Chart.html">Chart</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Charts.ColumnChart.html">ColumnChart</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Charts.ComboChart.html">ComboChart</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Charts.DonutChart.html">DonutChart</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Charts.GeoChart.html">GeoChart</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Charts.LineChart.html">LineChart</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Charts.PieChart.html">PieChart</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Charts.TreeMap.html">TreeMap</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1425647568"></a>
+                                <a href="../namespaces/Khill.Lavacharts.Configs.html" style="margin-left: 30px; padding-left: 0">Configs</a>
+            </div>
+            <div id="namespace-1425647568" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.Annotation.html">Annotation</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.Axis.html">Axis</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.BackgroundColor.html">BackgroundColor</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.BoxStyle.html">BoxStyle</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.ChartArea.html">ChartArea</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.ColorAxis.html">ColorAxis</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.ConfigObject.html">ConfigObject</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.DataCell.html">DataCell</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.DataTable.html">DataTable</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.Gradient.html">Gradient</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.HorizontalAxis.html">HorizontalAxis</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.Legend.html">Legend</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.MagnifyingGlass.html">MagnifyingGlass</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.Series.html">Series</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.SizeAxis.html">SizeAxis</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.Slice.html">Slice</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.TextStyle.html">TextStyle</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.Tooltip.html">Tooltip</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Configs.VerticalAxis.html">VerticalAxis</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1234958488"></a>
+                                <a href="../namespaces/Khill.Lavacharts.Events.html" style="margin-left: 30px; padding-left: 0">Events</a>
+            </div>
+            <div id="namespace-1234958488" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Events.AnimationFinish.html">AnimationFinish</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Events.Error.html">Error</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Events.Event.html">Event</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Events.MouseOut.html">MouseOut</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Events.MouseOver.html">MouseOver</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Events.Ready.html">Ready</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Events.Select.html">Select</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-59943352"></a>
+                                <a href="../namespaces/Khill.Lavacharts.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-59943352" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.ChartNotFound.html">ChartNotFound</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.DataTableNotFound.html">DataTableNotFound</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidCellCount.html">InvalidCellCount</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidChartLabel.html">InvalidChartLabel</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidColumnDefinition.html">InvalidColumnDefinition</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidConfigProperty.html">InvalidConfigProperty</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidConfigValue.html">InvalidConfigValue</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidDate.html">InvalidDate</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidDivDimensions.html">InvalidDivDimensions</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidElementId.html">InvalidElementId</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidLavaObject.html">InvalidLavaObject</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.InvalidRowDefinition.html">InvalidRowDefinition</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Exceptions.LabelNotFound.html">LabelNotFound</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1438459208"></a>
+                                <a href="../namespaces/Khill.Lavacharts.Facades.html" style="margin-left: 30px; padding-left: 0">Facades</a>
+            </div>
+            <div id="namespace-1438459208" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Facades.Lavacharts.html">Lavacharts</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-331440514"></a>
+                                <a href="../namespaces/Khill.Lavacharts.Helpers.html" style="margin-left: 30px; padding-left: 0">Helpers</a>
+            </div>
+            <div id="namespace-331440514" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Helpers.Helpers.html">Helpers</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-548891151"></a>
+                                <a href="../namespaces/Khill.Lavacharts.Traits.html" style="margin-left: 30px; padding-left: 0">Traits</a>
+            </div>
+            <div id="namespace-548891151" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/Khill.Lavacharts.Traits.Animation.html">Animation</a></li>
+                                                    <li class="trait"><a href="../classes/Khill.Lavacharts.Traits.AxisTitlesPosition.html">AxisTitlesPosition</a></li>
+                                                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Khill.Lavacharts.JavascriptFactory.html">JavascriptFactory</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Lavacharts.html">Lavacharts</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.LavachartsServiceProvider.html">LavachartsServiceProvider</a></li>
+                                                    <li class="class"><a href="../classes/Khill.Lavacharts.Volcano.html">Volcano</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Khill.Lavacharts.Configs.html">\Khill\Lavacharts\Configs</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Khill\Lavacharts\Configs</small>DataCell</h1>
+                    <p><em></em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Khill.Lavacharts.Configs.DataCell.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Khill.Lavacharts.Configs.DataCell.html#method_toJSON" class="">toJSON()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Khill.Lavacharts.Configs.DataCell.html#property_v" class="">$v</a><br />
+                                                                    <a href="../classes/Khill.Lavacharts.Configs.DataCell.html#property_f" class="">$f</a><br />
+                                                                    <a href="../classes/Khill.Lavacharts.Configs.DataCell.html#property_p" class="">$p</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Configs.DataCell.html"><div class="path-wrapper">Configs/DataCell.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Khill\Lavacharts\Configs\DataCell</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                codeCoverageIgnore
+                            </th>
+                            <td>
+                                                                    
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_v" name="property_v" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$v</h3>
+                <pre class="signature">$v : string</pre>
+                <p><em>The cell value.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_f" name="property_f" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$f</h3>
+                <pre class="signature">$f : string</pre>
+                <p><em>A string version of the v value. (Optional)</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_p" name="property_p" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$p</h3>
+                <pre class="signature">$p : string</pre>
+                <p><em>An object that is a map of custom values applied to the cell. (Optional)</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$v = null</span>, string  <span class="argument">$f = null</span>, string  <span class="argument">$p = null</span>) : \Khill\Lavacharts\Configs\DataCell</pre>
+                <p><em>Defines a DataCell for a DataTable</em></p>
+                <p>Each cell in the table holds a value. Cells can have a null value, or a
+value of the type specified by its column. Cells optionally can take a
+"formatted" version of the data; this is a string version of the data,
+formatted for display by a visualization. A visualization can (but is
+not required to) use the formatted version for display, but will always
+use the data itself for any sorting or calculations that it makes (such
+as determining where on a graph to place a point). An example might be
+assigning the values "low" "medium", and "high" as formatted values to
+numeric cell values of 1, 2, and 3.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$v </td>
+                                <td><p>The cell value</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$f </td>
+                                <td><p>A string version of the v value</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$p </td>
+                                <td><p>An object that is a map of custom values applied to the cell</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Khill.Lavacharts.Configs.DataCell.html">\Khill\Lavacharts\Configs\DataCell</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Khill.Lavacharts.Configs.DataTable.html"><span class="namespace-wrapper"></span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_toJSON" name="method_toJSON" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">toJSON()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">toJSON() : string</pre>
+                <p><em>Converts the DataCell object to JSON notation.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>JSON string representation of the data cell</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">DataCell.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Configs/DataCell.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Khill.html">\Khill</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on August 7th, 2014 at 17:26.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
