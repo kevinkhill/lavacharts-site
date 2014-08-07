@@ -1,0 +1,37 @@
+# Where things are
+source:      ./_site
+destination: .
+plugins:     ./_plugins
+layouts:     ./_layouts
+data_source: ./_data
+collections: nil
+
+# Handling Reading
+safe:         false
+include:      [".htaccess"]
+exclude:      []
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "md"
+
+# Filtering Content
+show_drafts: nil
+limit_posts: 0
+future:      true
+unpublished: false
+
+# Plugins
+whitelist: []
+gems:      []
+
+# Conversion
+markdown:    kramdown
+highlighter: pygments
+lsi:         false
+excerpt_separator: "\n\n"
+
+# Serving
+detach:  false
+port:    4000
+host:    0.0.0.0
+baseurl: "" # does not include hostname

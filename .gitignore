@@ -1,6 +1,7 @@
 vendor/
 _site/
 tmp/
+node_modules/
 build/
 cache/
 docs/
