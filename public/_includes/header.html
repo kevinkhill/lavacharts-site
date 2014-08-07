@@ -10,12 +10,18 @@
     <title>{{ site.name }}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/jasny-bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type='text/css' />
+    <link href="css/jasny-bootstrap.css" rel="stylesheet" type='text/css' />
 
     <!-- Custom styles for this template -->
-    <link href="css/navmenu.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/navmenu.css" rel="stylesheet" type='text/css' />
+    <link href="css/pygments.css" rel="stylesheet" type='text/css' />
     <style type="text/css">
+      body {
+        position: relative;
+      }
+
       .center {
         text-align:center;
       }
@@ -37,18 +43,59 @@
 
       .vspace {
         display: block;
-        height: 75px;
+        height: 100px;
       }
 
-      .pre {
-        font-family: monospace;
-        padding: 3px;
+      .highlight pre {
+        font-family: 'Inconsolata', monospace;
+        padding: 10px;
         font-size: 13px;
         line-height: 1.428571429;
         color: #333;
-        background-color: #f5f5f5;
+        background-color: #333;
         border: 1px solid #ccc;
         border-radius: 4px;
+      }
+
+      .pre {
+        font-family: 'Inconsolata', monospace;
+        padding: 5px;
+        font-size: 13px;
+        line-height: 1.428571429;
+        color: #ccc;
+        background-color: #333;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .border-box {
+        padding: 30px 15px;
+        border-radius : 4px;
+        border : 1px solid rgb(21, 21, 21);
+      }
+
+      .container {
+        padding: 0;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .section-light {
+        background-color: #e0e0e0;
+      }
+
+      .section-dark {
+        background-color: #ececec;
+      }
+
+      .sub-section {
+        margin: 0 0 80px 20px;
+      }
+
+      .subnav>li>a {
+        padding-left: 25px;
       }
     </style>
 
@@ -58,4 +105,4 @@
       <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>  
+  <body data-spy="scroll" data-target=".navmenu" data-offset="25">  

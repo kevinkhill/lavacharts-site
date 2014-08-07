@@ -1,0 +1,13 @@
+<p>Now lets configure some options for the chart. There are many ways to customize the chart, but for the example, we'll keep it simple.</p>
+<p>For the full list of options, <strong>Click Here</strong></p>
+<pre class="prettyprint inline">
+$config = array(
+   'title' => 'My Stocks'
+);</pre><br/>
+
+<p>Finally, we choose what type of chart, LineChart for this example.</p>
+<p>As long as the Chart's label matches the DataTable's label, the DataTable will automatically be applied to the chart.</p>
+<p>Currently, the supported Charts are: Line, Area, Pie, Donut, Column, and Geo</p>
+<p>Lastly, apply the configuration to the chart, chaining onto the chart.</p>
+<pre class="prettyprint inline">
+Lava::LineChart('Stocks')->setConfig($config);</pre><br/>

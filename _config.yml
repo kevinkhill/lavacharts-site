@@ -5,6 +5,8 @@ site:
 source:      ./public
 destination: ./_site
 
+pygments: true
+
 # Handling Reading
 safe:         false
 include:      [".htaccess"]
