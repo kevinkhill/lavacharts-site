@@ -1,15 +1,14 @@
+site:
+  name: Lavacharts
+
 # Where things are
-source:      ./_site
-destination: .
-plugins:     ./_plugins
-layouts:     ./_layouts
-data_source: ./_data
-collections: nil
+source:      ./public
+destination: ./_site
 
 # Handling Reading
 safe:         false
 include:      [".htaccess"]
-exclude:      []
+exclude:      ['src','scripts']
 keep_files:   [".git", ".svn"]
 encoding:     "utf-8"
 markdown_ext: "md"
@@ -20,10 +19,6 @@ limit_posts: 0
 future:      true
 unpublished: false
 
-# Plugins
-whitelist: []
-gems:      []
-
 # Conversion
 markdown:    kramdown
 highlighter: pygments
@@ -33,5 +28,5 @@ excerpt_separator: "\n\n"
 # Serving
 detach:  false
 port:    4000
-host:    0.0.0.0
+host:    localhost
 baseurl: "" # does not include hostname
