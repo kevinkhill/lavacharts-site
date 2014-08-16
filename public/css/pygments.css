@@ -1,3 +1,6 @@
+/* Logo Red: #991C1F */
+/* Logo Yellow: #F3971F */
+
 .hll { background-color: #222222 }
 .c { color: #000080 } /* Comment */
 .err { color: #cccccc; border: 1px solid #FF0000 } /* Error */
@@ -54,7 +57,7 @@
 .sb { color: #cd0000 } /* Literal.String.Backtick */
 .sc { color: #cd0000 } /* Literal.String.Char */
 .sd { color: #cd0000 } /* Literal.String.Doc */
-.s2 { color: #cd0000 } /* Literal.String.Double */
+.s2 { color: #F3971F } /* Literal.String.Double */
 .se { color: #cd0000 } /* Literal.String.Escape */
 .sh { color: #cd0000 } /* Literal.String.Heredoc */
 .si { color: #cd0000 } /* Literal.String.Interpol */
