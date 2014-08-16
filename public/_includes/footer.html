@@ -1,46 +1,41 @@
-    </div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jasny-bootstrap.min.js"></script>
+<script type="text/javascript">
+    /*var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 
-	<script type="text/javascript">
-        /*var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    try {
+        var pageTracker = _gat._getTracker("UA-43288838-2");
+        pageTracker._trackPageview();
+    } catch(err) {}*/
+</script>
 
-        try {
-            var pageTracker = _gat._getTracker("UA-43288838-2");
-            pageTracker._trackPageview();
-        } catch(err) {}*/
-    </script>
+<script type="text/javascript">/*
+    var mostRecent,
+        links = '<ul>',
+        defaultLink = '<li><a href="https://github.com/kevinkhill/LavaCharts/releases">Github Releases</a></li>';
 
-    <script type="text/javascript">/*
-        var mostRecent,
-            links = '<ul>',
-            defaultLink = '<li><a href="https://github.com/kevinkhill/LavaCharts/releases">Github Releases</a></li>';
+    $.getJSON('https://api.github.com/repos/kevinkhill/lavacharts/releases', function (data) {
+        if (data) {
+            mostRecent = data.sort(function (a, b) {
+                return new Date(b.date) - new Date(a.date);
+            })[data.length - 1];
 
-        $.getJSON('https://api.github.com/repos/kevinkhill/lavacharts/releases', function (data) {
-            if (data) {
-                mostRecent = data.sort(function (a, b) {
-                    return new Date(b.date) - new Date(a.date);
-                })[data.length - 1];
-
-                links += '<li><a href="'+mostRecent.tarball_url+'">'+mostRecent.tag_name+'.tar.gz</a></li>';
-                links += '<li><a href="'+mostRecent.zipball_url+'">'+mostRecent.tag_name+'.zip</a></li>';
-            } else {
-                links += defaultLink;
-            }
-            //console.log(mostRecent);
-        }).fail(function (jqXHR, status, error) {
-            //console.log(jqXHR.status);
-            if (jqXHR.status == '404') {
-                links += defaultLink;
-            }
-        }).complete(function() {
-            links += '</ul>';
-            //console.log(links);
-            $('#github-download-links').html(links);
-        });
-    */</script>
-</body>
-</html>
+            links += '<li><a href="'+mostRecent.tarball_url+'">'+mostRecent.tag_name+'.tar.gz</a></li>';
+            links += '<li><a href="'+mostRecent.zipball_url+'">'+mostRecent.tag_name+'.zip</a></li>';
+        } else {
+            links += defaultLink;
+        }
+        //console.log(mostRecent);
+    }).fail(function (jqXHR, status, error) {
+        //console.log(jqXHR.status);
+        if (jqXHR.status == '404') {
+            links += defaultLink;
+        }
+    }).complete(function() {
+        links += '</ul>';
+        //console.log(links);
+        $('#github-download-links').html(links);
+    });
+*/</script>

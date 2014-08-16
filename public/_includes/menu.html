@@ -1,43 +1,56 @@
-<div class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm">
-  <ul class="nav navmenu-nav">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
 
-    <li><a href="#install" class="navmenu-heading">Install</a></li>
-      <li><a href="#install-composer">Composer</a></li>
-      <!--<li><a href="#install-manual">Manual</a></li>-->
-      <li><a href="#install-laravel">Laravel</a></li>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lava-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Lavacharts</a>
+    </div>
 
-    <li><a href="#quickstart" class="navmenu-heading">Quickstart</a></li>
-      <li><a href="#quickstart-datatable">DataTables</a></li>
-      <li><a href="#quickstart-output">Output</a></li>
+    <div class="collapse navbar-collapse" id="lava-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#install">Install</a></li>
+        <li><a href="#install-composer">Composer</a></li>
+        <!--<li><a href="#install-manual">Manual</a></li>-->
+        <li><a href="#install-laravel">Laravel</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quickstart <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#quickstart-datatable">DataTables</a></li>
+            <li><a href="#quickstart-output">Output</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Charts <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#chart-area">Line Chart</a></li>
+            <li><a href="#chart-area">Area Chart</a></li>
+            <li><a href="#chart-column">Column Chart</a></li>
+            <li><a href="#chart-combo">Combo Chart</a></li>
+            <li><a href="#chart-pie">Pie Chart</a></li>
+            <li><a href="#chart-donut">Donut Chart</a></li>
+            <li><a href="#chart-geo">Geo Chart</a></li>       
+          </ul>       
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customize <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#config-textstyle">TextStyle</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="api/2.0/index.html">Version 2.0</a></li>
+            <li><a href="api/1.0/index.html">Version 1.0</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-    <li><a href="#charts" class="navmenu-heading">Charts</a></li>
-      <li><a href="#chart-line">LineChart</a>
-        <ul class="nav navmenu-nav subnav">
-          <li><a href="#chart-line-docs">Docs</a></li>
-          <li><a href="#chart-line-example">Example</a></li>
-        </ul>
-      </li>
-      <li><a href="#chart-area">Area Chart</a></li>
-      <li><a href="#chart-column">Column Chart</a></li>
-      <li><a href="#chart-combo">Combo Chart</a></li>
-      <li><a href="#chart-pie">Pie Chart</a></li>
-      <li><a href="#chart-donut">Donut Chart</a></li>
-      <li><a href="#chart-geo">Geo Chart</a></li>
-
-    <li><a href="#configs" class="navmenu-heading">Configs</a></li>
-      <li><a href="#config-textstyle">TextStyle</a></li>
-
-    <li><a href="#api" class="navmenu-heading">API</a></li>
-      <li><a href="api/2.0/index.html">Version 2.0</a></li>
-      <li><a href="api/1.0/index.html">Version 1.0</a></li>
-  </ul>
-</div>
-
-<div class="navbar navbar-default navbar-fixed-top hidden-md hidden-lg">
-  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <a class="navbar-brand spaced-caps" href="#">Lavacharts</a>
-</div>
+  </div>
+</nav>

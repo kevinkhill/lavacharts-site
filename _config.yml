@@ -5,7 +5,7 @@ site:
 source:      ./public
 destination: ./_site
 
-pygments: true
+highlighter: pygments
 
 # Handling Reading
 safe:         false
