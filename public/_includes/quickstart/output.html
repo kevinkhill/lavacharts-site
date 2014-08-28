@@ -5,7 +5,7 @@
 	<li>The library will generate everything you need, div and javascript.</li>
 </ol>
 
-<p>Syntax: <span class="pre">render(chartType, chartLabel, elementId <em>[, array(height, width)]</em>)</span></p>
+<p>Syntax: <span class="pre">render(chartType, chartLabel, elementId <em>[, bool | array(height, width)]</em>)</span></p>
 
 {% highlight php startinline %}
 // Example #1, output into a div you already created
@@ -13,5 +13,8 @@
 echo Lava::render('LineChart', 'Stocks', 'myStocks');
 
 // Example #2, have the library create the div
+echo Lava::render('LineChart', 'Stocks', 'stocks-div', true);
+
+// Example #3, have the library create the div with a fixed size
 echo Lava::render('LineChart', 'Stocks', 'stocks-div', array('height'=>300, 'width'=>600));
 {% endhighlight %}

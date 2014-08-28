@@ -183,12 +183,12 @@ class Chart
      *
      * @return string Javscript code blocks
      */
-    public function render($ei)
+    /*public function render($ei)
     {
         $jsf = new JavascriptFactory;
 
         return $jsf->getChartJs($this, $ei);
-    }
+    }*/
 
     /**
      * Returns a JSON string representation of the object's properties.
