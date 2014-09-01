@@ -53,10 +53,7 @@ class ComboChart extends Chart
     }
 
     /**
-     * Where to place the axis titles, compared to the chart area. Supported values:
-     * in - Draw the axis titles inside the the chart area.
-     * out - Draw the axis titles outside the chart area.
-     * none - Omit the axis titles.
+     * Customizations for the charts annotations.
      *
      * @param  Annotation $a
      * @throws InvalidConfigValue
@@ -64,7 +61,7 @@ class ComboChart extends Chart
      */
     public function annotations(Annotation $a)
     {
-        return $this->addOption($a->toArray());
+        return $this->addOption($a->toArray(__FUNCTION__));
     }
 
     /**
@@ -245,7 +242,7 @@ class ComboChart extends Chart
     public function vAxes($a)
     {
         if (Helpers::arrayValuesCheck($a, 'class', 'VerticalAxis')) {
-            return $this->addOption(array(__FUNCTION__ => $a));
+            return $this->addOption([__FUNCTION__ => $a]));
         } else {
             throw $this->invalidConfigValue(
                 __FUNCTION__,
