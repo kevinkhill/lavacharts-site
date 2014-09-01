@@ -3,6 +3,7 @@
 $charts = array(
     'LineChart',
     'AreaChart',
+    'ColumnChart',
     'ComboChart',
     'PieChart',
     'DonutChart',
@@ -19,7 +20,7 @@ foreach ($charts as $chart)
     });
 }
 
-// OLDEST: Lava::LineChart('Stocks')->outputInto('stocks_div')
-// OLDER:  Lava::render('LineChart', 'Stocks', 'stocks_div')
-// OLD:    Lava::renderLineChart('Stocks', 'stocks_div')
-// NEW:    @linechart('Stocks', 'stocks_div')
+// OLDEST: Lava::LineChart('Stocks')->outputInto('sales_div')
+// OLDER:  Lava::render('LineChart', 'Stocks', 'sales_div')
+// OLD:    Lava::renderLineChart('Stocks', 'sales_div')
+// NEW:    @linechart('Stocks', 'sales_div')
