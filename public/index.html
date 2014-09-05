@@ -4,12 +4,23 @@ title: Lavacharts
 ---
 
 <div class="page-header center">
-    <img src="/images/logo.gif" class="img-responsive" style="padding:0 10px; margin:0 auto;" />
+  <img src="/images/logo.gif" class="img-responsive" style="padding:0 10px; margin:0 auto;" />
   <h2>Charts and Graphs for PHP<br />Powered by the Google Chart API</h2>
   
   <div class="my-buttons">
     <iframe src="http://ghbtns.com/github-btn.html?user=kevinkhill&amp;repo=lavacharts&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
-     <iframe src="http://ghbtns.com/github-btn.html?user=kevinkhill&amp;repo=lavacharts&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+    <iframe src="http://ghbtns.com/github-btn.html?user=kevinkhill&amp;repo=lavacharts&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+  </div>
+  <div class="my-buttons">
+    <a href="https://travis-ci.org/kevinkhill/Lavacharts.png?branch=2.0)](https://travis-ci.org/kevinkhill/Lavacharts">
+      <img src="//coveralls.io/repos/kevinkhill/Lavacharts/badge.png?branch=2.0" />
+    </a>
+    <a href="https://coveralls.io/r/kevinkhill/Lavacharts?branch=2.0">
+      <img src="//poser.pugx.org/khill/lavacharts/downloads.svg" />
+    </a>
+    <a href="https://packagist.org/packages/khill/lavacharts">
+    <img src="//poser.pugx.org/khill/lavacharts/license.svg" />
+    </a>
   </div>
 </div>
 
@@ -137,6 +148,11 @@ title: Lavacharts
 <div id="configs" class="section section-dark">
   <h2>Configuration Options</h2>
 
+  <div id="config-howto" class="sub-section">
+    <h3>How To Use</h3>
+    { include configs/howto.html %}
+  </div>
+
   <div id="config-annotation" class="sub-section">
     <h3>Annotation</h3>
     {% include configs/annotation.html %}
@@ -145,6 +161,11 @@ title: Lavacharts
   <div id="config-backgroundcolor" class="sub-section">
     <h3>BackgroundColor</h3>
     {% include configs/backgroundcolor.html %}
+  </div>
+
+  <div id="config-coloraxis" class="sub-section">
+    <h3>ColorAxis</h3>
+    {% include configs/coloraxis.html %}
   </div>
 
   <div id="config-boxstyle" class="sub-section">
@@ -157,9 +178,34 @@ title: Lavacharts
     {% include configs/gradient.html %}
   </div>
 
+  <div id="config-legend" class="sub-section">
+    <h3>Legend</h3>
+    {% include configs/legend.html %}
+  </div>
+
+  <div id="config-magnifyingglass" class="sub-section">
+    <h3>MagnifyingGlass</h3>
+    {% include configs/magnifyingglass.html %}
+  </div>
+
+  <div id="config-sizeaxis" class="sub-section">
+    <h3>SizeAxis</h3>
+    {% include configs/sizeaxis.html %}
+  </div>
+
+  <div id="config-slice" class="sub-section">
+    <h3>Slice</h3>
+    {% include configs/slice.html %}
+  </div>
+
   <div id="config-textstyle" class="sub-section">
     <h3>TextStyle</h3>
     {% include configs/textstyle.html %}
+  </div>
+
+  <div id="config-tooltip" class="sub-section">
+    <h3>Tooltip</h3>
+    {% include configs/tooltip.html %}
   </div>
 </div>
 <!--/Configuration Options-->

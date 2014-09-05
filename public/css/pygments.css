@@ -8,7 +8,7 @@
 .k { color: #ffff00 } /* Keyword */
 .l { color: #cccccc } /* Literal */
 .n { color: #cccccc } /* Name */
-.o { color: #e83425 } /* Operator */
+.o { color: #AA5303 } /* Operator */
 .x { color: #cccccc } /* Other */
 .p { color: #cccccc } /* Punctuation */
 .cm { color: #000080 } /* Comment.Multiline */
@@ -52,7 +52,7 @@
 .w { color: #cccccc } /* Text.Whitespace */
 .mf { color: #cd00cd } /* Literal.Number.Float */
 .mh { color: #cd00cd } /* Literal.Number.Hex */
-.mi { color: #ff0000 } /* Literal.Number.Integer */
+.mi { color: #FFB90F } /* Literal.Number.Integer */
 .mo { color: #cd00cd } /* Literal.Number.Oct */
 .sb { color: #cd0000 } /* Literal.String.Backtick */
 .sc { color: #cd0000 } /* Literal.String.Char */

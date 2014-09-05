@@ -1,0 +1,34 @@
+<p>All of the methods return the <span class="pre">TextStyle</span> object to enable the chaining of configuration options</p>
+<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the TextStyle's constructor</p>
+
+<div class="row">
+    <div class="col-sm-4">
+        <h4>Constructor</h4>
+{% highlight php startinline %}
+$lava->TextStyle([
+    'color' => '#F4C6B2',
+    'fontName' => 'Arial',
+    'fontSize' => 16
+]);
+{% endhighlight %}
+    </div>
+    <div class="col-sm-4">
+        <h4>Chaining</h4>
+{% highlight php startinline %}
+$lava->TextStyle()
+     ->color('#F4C6B2')
+     ->fontName('Arial')
+     ->fontSize(16);
+{% endhighlight %}      
+    </div>
+    <div class="col-sm-4">
+        <h4>Laravel</h4>
+{% highlight php startinline %}
+Lava::TextStyle([
+    'color' => '#F4C6B2',
+    'fontName' => 'Arial',
+    'fontSize' => 16
+]);
+{% endhighlight %}
+    </div>
+</div>
