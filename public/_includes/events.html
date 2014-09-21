@@ -1,0 +1,27 @@
+<p class="lead">Enable interaction with your charts through events</p>
+<p>Adding an event your chart is as simple as defining a javascript function in your page, then attaching the Lava event object to the chart.</p>
+<p>Pass the event's constructor the function name, and when the chart event is fired, the function will be called.</p>
+<p>As with any chart customization, you can use the named method, <span class="pre">events()</span>, and pass in an array of events.
+<p>Or you can add the key <span class="pre">'events'</span> to a config array with and pass an array of events there.</p>
+
+<div id="events" class="sub-section">
+  <h3>MouseOut</h3>
+  {% highlight php startinline %}
+
+  $mouseOut = $lava->MouseOut('mouseOutCallback');  // Lava::MouseOut() if using Laravel
+
+  {% endhighlight %}
+
+  <h3>MouseOver</h3>
+  {% highlight php startinline %}
+
+  $mouseOver = $lava->MouseOver('mouseOverCallback');  // Lava::MouseOver() if using Laravel
+
+  {% endhighlight %}
+
+  <h3>Select</h3>
+  {% highlight php startinline %}
+    $select = $lava->Select('selectCallback');  // Lava::Select() if using Laravel
+  {% endhighlight %}
+  <p>More information can be found on <a href="https://developers.google.com/chart/interactive/docs/events#The_Select_Event">Google's Website</a></p>
+</div>
