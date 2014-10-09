@@ -1,0 +1,41 @@
+---
+layout: default
+title: Lavacharts
+---
+
+<div class="section section-light">
+  <h2>Line Chart</h2>
+  <img src="" />
+  <div class="vspace"></div>
+</div>
+
+
+<!--Code-->
+<div id="install" class="section section-dark">
+  <h2>Controller</h2>
+{% highlight php startinline %}
+$lava = new Lavacharts; // See below
+
+$stocksTable = $lava->DataTable('Stocks');
+
+$stocksTable->addColumn('date', 'Date', 'date')
+            ->addColumn('number', 'Projected', 'projected')
+            ->addColumn('number', 'Closing', 'closing');
+
+for($a = 1; $a < 30; $a++)
+{
+    $data = array(
+        "2014/$a/03",        // Date
+        rand(9500,10000),    // Line 1's data
+        rand(9500,10000)     // Line 2's data
+    );
+
+    $stocksTable->addRow($data);
+}
+
+$lava->LineChart('Stocks')->title('Stock Market Trends');
+{% endhighlight %}
+  <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p> 
+  <div class="vspace"></div>
+</div>
+<!--/Code-->
