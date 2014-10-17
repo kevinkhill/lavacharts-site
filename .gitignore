@@ -5,6 +5,7 @@ node_modules/
 build/
 cache/
 docs/
+.idea/
 
 bootstrap/compiled.php
 composer.phar
