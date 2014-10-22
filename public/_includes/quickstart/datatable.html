@@ -19,7 +19,7 @@
 </ul>
 
 {% highlight php startinline %}
-use Carbon\Carbon;
+use Carbon\Carbon; // optional
 
 $stocksTable = $lava->DataTable();  // Lava::DataTable() if using Laravel
 
@@ -30,7 +30,7 @@ $stocksTable->addColumn('date', 'Day of Month', 'day')
 // Random Data For Example
 for ($a = 1; $a < 30; $a++)
 {
-    $data[0] = Carbon::create(2014, 8, $a);
+    $data[0] = Carbon::create(2014, 8, $a); // "2014-8-18" would also work
     $data[1] = rand(800,1000);
     $data[2] = rand(800,1000);
 

@@ -10,11 +10,11 @@
 {% highlight php startinline %}
 // Example #1, output into a div you already created
 // <div id="myStocks"></div>
-echo Lava::render('LineChart', 'Stocks', 'stocks-div');
+echo $lava->render('LineChart', 'myFancyChart', 'stocks-div');
 
 // Example #2, have the library create the div
-echo Lava::render('LineChart', 'Stocks', 'stocks-div', true);
+echo $lava->render('LineChart', 'myFancyChart', 'stocks-div', true);
 
 // Example #3, have the library create the div with a fixed size
-echo Lava::render('LineChart', 'Stocks', 'stocks-div', array('height'=>300, 'width'=>600));
+echo $lava->render('LineChart', 'myFancyChart', 'stocks-div', array('height'=>300, 'width'=>600));
 {% endhighlight %}

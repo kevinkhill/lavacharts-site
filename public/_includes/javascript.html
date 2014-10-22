@@ -2,15 +2,16 @@
   <h3>Event Callbacks</h3>
   <p>Your callback is passed the javascript event object and a reference to the chart in which the event took place.</p>
 {% highlight javascript startinline %}
-function selectCallback(event, chart) {
+function selectCallback (event, chart) {
   // Useful for using chart methods such as chart.getSelection();
 }
 {% endhighlight %}
 
   <h3>Helper Function</h3>
   <p>Also available for use in javascript, is the lava object which has helper functions.</p>
-  <p>The function takes a chart label (the label you used when creating the chart) and returns the chart object.</p>
+  <p>The <em>get</em> function takes a chart label (the label you used when creating the chart) and returns the chart object.</p>
 {% highlight javascript startinline %}
-lava.get('ChartLabel') returns Chart
+lava.get('myFancyChart') returns Chart
 {% endhighlight %}
+    <p>This will let you access the chart outside of a chart event.</p>
 </div>
