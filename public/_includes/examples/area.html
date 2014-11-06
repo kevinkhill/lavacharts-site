@@ -1,0 +1,57 @@
+<h2>AreaChart Example</h2>
+<h3>Controller</h3>
+{% highlight php startinline %}
+use Khill\Lavacharts\Lavacharts;
+
+$lava = new Lavacharts; // See note below for Laravel
+
+$population = Lava::DataTable();
+
+$population->addColumn('date', 'Year', 'date')
+           ->addColumn('number', 'Number of People', 'pop')
+           ->addRow(array('2006', 623452))
+           ->addRow(array('2007', 685034))
+           ->addRow(array('2008', 716845))
+           ->addRow(array('2009', 757254))
+           ->addRow(array('2010', 778034))
+           ->addRow(array('2011', 792353))
+           ->addRow(array('2012', 839657))
+           ->addRow(array('2013', 842367))
+           ->addRow(array('2014', 873490));
+
+$areachart = Lava::AreaChart('Population')
+                 ->setOptions(array(
+                   'datatable' => $population,
+                   'title' => 'Population Growth',
+                   'legend' => Lava::Legend(array(
+                     'position' => 'in' 
+                   ))
+                 ));
+{% endhighlight %}
+<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
+<p>Otherwise, pass <span class="code">$areachart</span> to your view to render.</p>
+
+<h3>View</h3>
+<div class="row">
+  <div class="col-sm-6">
+      <h4>Vanilla</h4>
+{% highlight php startinline %}
+<div id="pop_div"></div>
+<? echo $areachart->render('Population', 'pop_div') ?>
+{% endhighlight %}
+  </div>
+  <div class="col-sm-6">
+    <h4>Laravel</h4>
+{% highlight php startinline %}
+<div id="pop_div"></div>
+<? echo Lava::render('AreaChart', 'Population', 'pop_div') ?>
+
+// If using blade templates
+@areachart('Population', 'pop_div')
+{% endhighlight %}
+  </div>
+</div>
+
+<div class="center example-img">
+  <img src="images/examples/area.jpg" />
+</div>
