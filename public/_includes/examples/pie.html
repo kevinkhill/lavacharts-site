@@ -1,0 +1,61 @@
+<h2>PieChart Example</h2>
+<h3>Controller</h3>
+{% highlight php startinline %}
+use Khill\Lavacharts\Lavacharts;
+
+$lava = new Lavacharts; // See note below for Laravel
+
+$reasons = $lava->DataTable();
+
+$reasons->addColumn('string', 'Reasons')
+        ->addColumn('number', 'Percent')
+        ->addRow(array('Check Reviews', 5))
+        ->addRow(array('Watch Trailers', 2))
+        ->addRow(array('See Actors Other Work', 4))
+        ->addRow(array('Settle Argument', 89));
+
+$piechart = $lava->PieChart('IMDB')
+                 ->setOptions(array(
+                   'datatable' => $reasons,
+                   'title' => 'Reasons I visit IMDB',
+                   'is3D' => true,
+                     'slices' => array(
+                        $lava->Slice(array(
+                          'offset' => 0.2
+                        )),
+                        $lava->Slice(array(
+                          'offset' => 0.25
+                        )),
+                        $lava->Slice(array(
+                          'offset' => 0.3
+                        ))
+                      )
+                  ));
+{% endhighlight %}
+<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
+<p>Otherwise, pass <span class="code">$piechart</span> to your view to render.</p>
+
+<h3>View</h3>
+<div class="row">
+  <div class="col-sm-6">
+      <h4>Vanilla</h4>
+{% highlight php startinline %}
+<div id="chart-div"></div>
+<? echo $piechart->render('IMDB', 'chart-div') ?>
+{% endhighlight %}
+  </div>
+  <div class="col-sm-6">
+    <h4>Laravel</h4>
+{% highlight php startinline %}
+<div id="chart-div"></div>
+<? echo Lava::render('PieChart', 'IMDB', 'chart-div') ?>
+
+// If using blade templates
+@piechart('IMDB', 'chart-div')
+{% endhighlight %}
+  </div>
+</div>
+
+<div class="center example-img">
+  <img src="images/examples/pie.jpg" />
+</div>

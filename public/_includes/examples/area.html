@@ -5,7 +5,7 @@ use Khill\Lavacharts\Lavacharts;
 
 $lava = new Lavacharts; // See note below for Laravel
 
-$population = Lava::DataTable();
+$population = $lava->DataTable();
 
 $population->addColumn('date', 'Year', 'date')
            ->addColumn('number', 'Number of People', 'pop')
@@ -19,14 +19,14 @@ $population->addColumn('date', 'Year', 'date')
            ->addRow(array('2013', 842367))
            ->addRow(array('2014', 873490));
 
-$areachart = Lava::AreaChart('Population')
-                 ->setOptions(array(
-                   'datatable' => $population,
-                   'title' => 'Population Growth',
-                   'legend' => Lava::Legend(array(
-                     'position' => 'in' 
-                   ))
-                 ));
+$areachart = $lava->AreaChart('Population')
+                  ->setOptions(array(
+                    'datatable' => $population,
+                    'title' => 'Population Growth',
+                    'legend' => $lava->Legend(array(
+                      'position' => 'in' 
+                    ))
+                  ));
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
 <p>Otherwise, pass <span class="code">$areachart</span> to your view to render.</p>
