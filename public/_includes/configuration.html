@@ -1,5 +1,5 @@
 <p>Now lets configure some options for the chart. There are many ways to customize the chart, but for the example, we'll keep it simple.</p>
-<p>For the full list of options, <strong>Click Here</strong></p>
+<p>For the full list of options, <a href="#configs"><strong>Click Here</strong></a></p>
 <pre class="prettyprint inline">
 $config = array(
    'title' => 'My Stocks'
@@ -10,4 +10,4 @@ $config = array(
 <p>Currently, the supported Charts are: Line, Area, Pie, Donut, Column, and Geo</p>
 <p>Lastly, apply the configuration to the chart, chaining onto the chart.</p>
 <pre class="prettyprint inline">
-Lava::LineChart('Stocks')->setConfig($config);</pre><br/>
+Lava::LineChart('Stocks')->setOptions($config);</pre><br/>

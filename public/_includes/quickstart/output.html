@@ -10,11 +10,18 @@
 {% highlight php startinline %}
 // Example #1, output into a div you already created
 // <div id="myStocks"></div>
-echo $lava->render('LineChart', 'myFancyChart', 'stocks-div');
+echo $lava->render('LineChart', 'myFancyChart', 'myStocks');
 
 // Example #2, have the library create the div
-echo $lava->render('LineChart', 'myFancyChart', 'stocks-div', true);
+echo $lava->render('LineChart', 'myFancyChart', 'myStocks', true);
 
 // Example #3, have the library create the div with a fixed size
-echo $lava->render('LineChart', 'myFancyChart', 'stocks-div', array('height'=>300, 'width'=>600));
+echo $lava->render('LineChart', 'myFancyChart', 'myStocks', array('height'=>300, 'width'=>600));
+{% endhighlight %}
+
+<p>Alternatively, the render method is available from the Chart object as well, bypassing the need for inputing the type and title of the chart.</p>
+{% highlight php startinline %}
+// After creating the chart with $linechart = $lava->LineChart() or any other type,
+// pass the Chart object to your view and call the render method with a div's elementId
+echo $linechart->render('myStocks');
 {% endhighlight %}

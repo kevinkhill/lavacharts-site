@@ -1,39 +1,34 @@
 <p class="lead">Creating a new DataTable</p>
+<p>The following is a simple example, just to get you up and running.</p>
+<p>For an in-depth look at DataTables, <a href="#datatable">Click Here</a> or use the link from the menu.</p>
 <ul>
   <li>First, create a new DataTable object using the method from Lavcharts.</li>
   <li>Next, add some columns, defining the structure of the chart's data.
 	  <ul>
-	  	<li>'date' type column accepts a <a href="https://github.com/briannesbitt/Carbon#api-instantiation">Carbon Object</a>, or any string that <span class="pre">Carbon::parse()</span> can interpret.</li>
-	  	<li>'number' type column accepts any integer or float value.</li>
+	  	<li><span class="pre">addDateColumn($description)</span> for dates</li>
+      <li><span class="pre">addNumColumn($description)</span> for numbers</li>
+      <li><span class="pre">addStringColumn($description)</span> for strings</li>
 	  </ul>
   </li>
-  <li>The Carbon library is included with Lavacharts, so just add <span class="pre">use Carbon\Carbon;</span> to the file where you are creating the DataTable, to create Carbon objects for date columns.
-    <ul>
-      <li>Note, you could also just pass a parsable datetime string, instead of including the Carbon class.</li>
-    </ul>
-  </li>
   <li>In this example, the first column is the horizontal axis, then then next two columns are the two sets of data.</li>
-  <li>The order of arguments are as follows for the addColumn method <span class="pre">[data type, label (opt), id (opt), formatter (opt)]</span></li>
   <li>The <span class="pre">addRow()</span> method signature, follows the order in which the columns were added.
   <br />So here, data[0] is for 'day', data[1] is for 'projected' and data[2] is for 'official'</li>
 </ul>
 
 {% highlight php startinline %}
-use Carbon\Carbon; // optional
-
 $stocksTable = $lava->DataTable();  // Lava::DataTable() if using Laravel
 
-$stocksTable->addColumn('date', 'Day of Month', 'day')
-            ->addColumn('number', 'Projected', 'projected')
-            ->addColumn('number', 'Official', 'offical');
+$stocksTable->addDateColumn('Day of Month')
+            ->addNumColumn('Projected')
+            ->addNumColumn('Official');
 
 // Random Data For Example
 for ($a = 1; $a < 30; $a++)
 {
-    $data[0] = Carbon::create(2014, 8, $a); // "2014-8-18" would also work
-    $data[1] = rand(800,1000);
-    $data[2] = rand(800,1000);
+    $rowData = array(
+      "2014-8-$a", rand(800,1000), rand(800,1000)
+    );
 
-    $stocksTable->addRow($data);
+    $stocksTable->addRow($rowData);
 }
 {% endhighlight %}
