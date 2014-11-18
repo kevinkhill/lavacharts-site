@@ -1,0 +1,55 @@
+<h2>GeoChart Example</h2>
+<h3>Controller</h3>
+{% highlight php startinline %}
+use Khill\Lavacharts\Lavacharts;
+
+$lava = new Lavacharts; // See note below for Laravel
+
+$popularity = $lava->DataTable();
+
+$popularity->addStringColumn('Country')
+           ->addNumColumn('Popularity')
+           ->addRow(array('Germany', 200))
+           ->addRow(array('United States', 300))
+           ->addRow(array('Brazil', 400))
+           ->addRow(array('Canada', 500))
+           ->addRow(array('France', 600))
+           ->addRow(array('RU', 700));
+
+$geochart = $lava->GeoChart('Popularity')
+                 ->setOptions(array(
+                   'datatable' => $popularity
+                 ));                  
+{% endhighlight %}
+<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
+<p>Otherwise, pass <span class="code">$geochart</span> or <span class="code">$lava</span> to your view to render.</p>
+
+<h3>View</h3>
+<div class="row">
+  <div class="col-sm-6">
+      <h4>Vanilla</h4>
+{% highlight php startinline %}
+<div id="pop-div"></div>
+// With the chart object
+<? echo $geochart->render('pop-div') ?>
+
+// With the lava object
+<? echo $lava->render('GeoChart', 'Popularity', 'pop-div') ?>
+{% endhighlight %}
+  </div>
+  <div class="col-sm-6">
+    <h4>Laravel</h4>
+{% highlight php startinline %}
+<div id="pop-div"></div>
+// With Lava class alias
+<? echo Lava::render('GeoChart', 'Popularity', 'pop-div') ?>
+
+// With Blade Templates
+@geochart('Popularity', 'pop-div')
+{% endhighlight %}
+  </div>
+</div>
+
+<div class="center example-img">
+  <img src="images/examples/geo.jpg" />
+</div>
