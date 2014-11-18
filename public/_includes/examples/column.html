@@ -1,0 +1,60 @@
+<h2>ColumnChart Example</h2>
+<h3>Controller</h3>
+{% highlight php startinline %}
+use Khill\Lavacharts\Lavacharts;
+
+$lava = new Lavacharts; // See note below for Laravel
+
+$finances = $lava->DataTable();
+
+$finances->addDateColumn('Year')
+         ->addNumColumn('Sales')
+         ->addNumColumn('Expenses')
+         ->setDateTimeFormat('Y')
+         ->addRow(array('2004', 1000, 400))
+         ->addRow(array('2005', 1170, 460))
+         ->addRow(array('2006', 660, 1120))
+         ->addRow(array('2007', 1030, 54));
+
+$columnchart = $lava->ColumnChart('Finances')
+                    ->setOptions(array(
+                      'datatable' => $finances,
+                      'title' => 'Company Performance',
+                      'titleTextStyle' => $lava->TextStyle(array(
+                        'color' => '#eb6b2c',
+                        'fontSize' => 14
+                      ))
+                    ));
+{% endhighlight %}
+<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
+<p>Otherwise, pass <span class="code">$columnchart</span> or <span class="code">$lava</span> to your view to render.</p>
+
+<h3>View</h3>
+<div class="row">
+  <div class="col-sm-6">
+      <h4>Vanilla</h4>
+{% highlight php startinline %}
+<div id="perf_div"></div>
+// With the chart object
+<? echo $columnchart->render('perf_div') ?>
+
+// With the lava object
+<? echo $lava->render('ColumnChart', 'Finances', 'perf_div') ?>
+{% endhighlight %}
+  </div>
+  <div class="col-sm-6">
+    <h4>Laravel</h4>
+{% highlight php startinline %}
+<div id="perf_div"></div>
+// With Lava class alias
+<? echo Lava::render('ColumnChart', 'Finances', 'perf_div') ?>
+
+// With Blade Templates
+@columnchart('Finances', 'perf_div')
+{% endhighlight %}
+  </div>
+</div>
+
+<div class="center example-img">
+  <img src="images/examples/column.jpg" />
+</div>

@@ -7,10 +7,10 @@ $lava = new Lavacharts; // See note below for Laravel
 
 $temperatures = $lava->DataTable();
 
-$temperatures->addColumn('date', 'Date', 'date')
-             ->addColumn('number', 'Max Temp', 'max')
-             ->addColumn('number', 'Mean Temp', 'mean')
-             ->addColumn('number', 'Min Temp', 'min')
+$temperatures->addDateColumn('Date')
+             ->addNumColumn('Max Temp')
+             ->addNumColumn('Mean Temp')
+             ->addNumColumn('Min Temp')
              ->addRow(array('2014-10-1', 67, 65, 62))
              ->addRow(array('2014-10-2', 68, 65, 61))
              ->addRow(array('2014-10-3', 68, 62, 55))
@@ -35,7 +35,7 @@ $linechart = $lava->LineChart('Temps')
                   ->title('Weather in October');
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$linechart</span> to your view to render.</p>
+<p>Otherwise, pass <span class="code">$linechart</span> or <span class="code">$lava</span> to your view to render.</p>
 
 <h3>View</h3>
 <div class="row">
@@ -43,16 +43,21 @@ $linechart = $lava->LineChart('Temps')
       <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="temps_div"></div>
-<? echo $linechart->render('Temps', 'temps_div') ?>
+// With the chart object
+<? echo $linechart->render('temps_div') ?>
+
+// With the lava object
+<? echo $lava->render('LineChart', 'Temps', 'temps_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
     <h4>Laravel</h4>
 {% highlight php startinline %}
 <div id="temps_div"></div>
+// With Lava class alias
 <? echo Lava::render('LineChart', 'Temps', 'temps_div') ?>
 
-// If using blade templates
+// With Blade Templates
 @linechart('Temps', 'temps_div')
 {% endhighlight %}
   </div>

@@ -1,0 +1,163 @@
+---
+layout: pages
+title: Lavacharts
+---
+
+<div id="charts" class="section section-dark">
+  <h2>Charts</h2>
+  <p class="lead">Select a chart from the dropdown menu to see the different configuration methods / options available.</p>
+  <p>All of the methods below are also available to all of the charts, as the each extend the parent <span class="pre">Chart</span></p>
+  
+  <div id="chart-parent" class="sub-section">
+    <h3>Parent Chart</h3>
+    {% include charts/parent-methods.html %}
+  </div>
+
+  <div id="chart-line" class="sub-section">
+    <h3>LineChart</h3>
+    {% include charts/line/docs.html %}
+    <p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/linechart#Configuration_Options">Google's Config Docs</a></p>
+  </div>
+
+  <div id="chart-area" class="sub-section">
+    <h3>AreaChart</h3>
+    {% include charts/area/docs.html %}
+    <p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/areachart#Configuration_Options">Google's Config Docs</a></p>
+  </div>
+
+  <div id="chart-column" class="sub-section">
+    <h3>ColumnChart</h3>
+    {% include charts/column/docs.html %}
+    <p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/columnchart#Configuration_Options">Google's Config Docs</a></p>
+  </div>
+
+  <div id="chart-combo" class="sub-section">
+    <h3>ComboChart</h3>
+    {% include charts/combo/docs.html %}
+    <p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/combochart#Configuration_Options">Google's Config Docs</a></p>
+  </div>
+
+  <div id="chart-pie" class="sub-section">
+    <h3>PieChart</h3>
+    {% include charts/pie/docs.html %}
+    <p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/piechart#Configuration_Options">Google's Config Docs</a></p>
+  </div>
+
+  <div id="chart-donut" class="sub-section">
+    <h3>DonutChart</h3>
+    {% include charts/donut/docs.html %}
+  </div>
+</div>
+<!--/Charts-->
+
+
+<!--Examples-->
+<div id="examples" class="section section-light">
+  <div id="example-line" class="sub-section">
+    {% include examples/line.html %}
+  </div>
+
+  <div id="example-area" class="sub-section">
+    {% include examples/area.html %}
+  </div>
+
+  <div id="example-pie" class="sub-section">
+    {% include examples/pie.html %}
+  </div>
+
+  <div id="example-donut" class="sub-section">
+    {% include examples/donut.html %}
+  </div>
+</div>
+
+
+<!--Configuration Options-->
+<div id="configs" class="section section-dark">
+  <h2>Configuration Options</h2>
+
+  <div id="config-howto" class="sub-section">
+    <h3>How To Use</h3>
+    {% include configs/howto.html %}
+  </div>
+
+  <div id="config-annotation" class="sub-section">
+    <h3>Annotation</h3>
+    {% include configs/annotation.html %}
+  </div>
+
+  <div id="config-backgroundcolor" class="sub-section">
+    <h3>BackgroundColor</h3>
+    {% include configs/backgroundcolor.html %}
+  </div>
+
+  <div id="config-chartarea" class="sub-section">
+    <h3>BoxStyle</h3>
+    {% include configs/chartarea.html %}
+  </div>
+
+  <div id="config-coloraxis" class="sub-section">
+    <h3>ColorAxis</h3>
+    {% include configs/coloraxis.html %}
+  </div>
+
+  <div id="config-gradient" class="sub-section">
+    <h3>Gradient</h3>
+    {% include configs/gradient.html %}
+  </div>
+
+  <div id="config-horizontalaxis" class="sub-section">
+    <h3>HorizontalAxis</h3>
+    {% include configs/horizontalaxis.html %}
+  </div>
+
+  <div id="config-legend" class="sub-section">
+    <h3>Legend</h3>
+    {% include configs/legend.html %}
+  </div>
+
+  <div id="config-magnifyingglass" class="sub-section">
+    <h3>MagnifyingGlass</h3>
+    {% include configs/magnifyingglass.html %}
+  </div>
+
+  <div id="config-series" class="sub-section">
+    <h3>Series</h3>
+    {% include configs/series.html %}
+  </div>
+
+  <div id="config-sizeaxis" class="sub-section">
+    <h3>SizeAxis</h3>
+    {% include configs/sizeaxis.html %}
+  </div>
+
+  <div id="config-slice" class="sub-section">
+    <h3>Slice</h3>
+    {% include configs/slice.html %}
+  </div>
+
+  <div id="config-textstyle" class="sub-section">
+    <h3>TextStyle</h3>
+    {% include configs/textstyle.html %}
+  </div>
+
+  <div id="config-tooltip" class="sub-section">
+    <h3>Tooltip</h3>
+    {% include configs/tooltip.html %}
+  </div>
+
+  <div id="config-verticalaxis" class="sub-section">
+    <h3>VerticalAxis</h3>
+    {% include configs/verticalaxis.html %}
+  </div>
+</div>
+<!--/Configuration Options-->
+
+
+<!--Events-->
+<div id="events" class="section section-light">
+  <h2>Chart Events</h2>
+  {% include events.html %}
+
+  <h2>Javascript</h2>
+  {% include javascript.html %}
+</div>

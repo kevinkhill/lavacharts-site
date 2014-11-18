@@ -1,0 +1,72 @@
+<h2>ComboChart Example</h2>
+<h3>Controller</h3>
+{% highlight php startinline %}
+use Khill\Lavacharts\Lavacharts;
+
+$lava = new Lavacharts; // See note below for Laravel
+
+$finances = $lava->DataTable();
+
+$finances->addDateColumn('Year')
+         ->addNumColumn('Sales')
+         ->addNumColumn('Expenses')
+         ->addNumColumn('Net Worth')
+         ->addRow(array('2009-1-1', 1100, 490, 1324))
+         ->addRow(array('2010-1-1', 1000, 400, 1524))
+         ->addRow(array('2011-1-1', 1400, 450, 1351))
+         ->addRow(array('2012-1-1', 1250, 600, 1243))
+         ->addRow(array('2013-1-1', 1100, 550, 1462));
+
+$combochart = $lava->ComboChart('Finances')
+                   ->setOptions(array(
+                     'datatable' => $finances,
+                     'title' => 'Company Performance',
+                     'titleTextStyle' => $lava->TextStyle(array(
+                       'color' => 'rgb(123, 65, 89)',
+                       'fontSize' => 16
+                     )),
+                     'legend' => $lava->Legend(array(
+                       'position' => 'in'
+                     )),
+                     'seriesType' => 'bars',
+                     'series' => array(
+                       2 => $lava->Series(array(
+                         'type' => 'line'
+                       ))
+                     )
+                   ));
+// Note: In the series config, '2' correlates to the 3rd horizontal axis dataset.
+// The DateColumn is the VerticalAxis, so 'Net Worth' is the 3rd, key 2, in the series.                    
+{% endhighlight %}
+<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
+<p>Otherwise, pass <span class="code">$combochart</span> or <span class="code">$lava</span> to your view to render.</p>
+
+<h3>View</h3>
+<div class="row">
+  <div class="col-sm-6">
+      <h4>Vanilla</h4>
+{% highlight php startinline %}
+<div id="finances-div"></div>
+// With the chart object
+<? echo $combochart->render('finances-div') ?>
+
+// With the lava object
+<? echo $lava->render('ComboChart', 'Finances', 'finances-div') ?>
+{% endhighlight %}
+  </div>
+  <div class="col-sm-6">
+    <h4>Laravel</h4>
+{% highlight php startinline %}
+<div id="finances-div"></div>
+// With Lava class alias
+<? echo Lava::render('ComboChart', 'Finances', 'finances-div') ?>
+
+// With Blade Templates
+@combochart('Finances', 'finances-div')
+{% endhighlight %}
+  </div>
+</div>
+
+<div class="center example-img">
+  <img src="images/examples/combo.jpg" />
+</div>

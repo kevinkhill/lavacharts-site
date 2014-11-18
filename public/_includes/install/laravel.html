@@ -3,13 +3,9 @@
 <p>Do not require the <span class="pre">vendor/autoload.php</span> file, since Laravel takes care of that.</p>
 <p>And also, register the service provider by adding this line to the providers array in <span class="pre">app/config/app.php</span></p>
 {% highlight php startinline %}
-"Lavacharts\LaravelServiceProvider"
+"Khill\Lavacharts\LavachartsServiceProvider"
 {% endhighlight %}
 
-<!--If you want to view the demos, publish the assets with:
-<pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
-If you want to overide the default config of the package, run:
-<pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />-->
 <p>Don't worry about adding the class alias, it is loaded automatically.</p>
 
 <p class="lead">Remember, while using Laravel, replace <span class="pre">$lava-></span> with <span class="pre">Lava::</span></p>

@@ -7,8 +7,8 @@ $lava = new Lavacharts; // See note below for Laravel
 
 $reasons = $lava->DataTable();
 
-$reasons->addColumn('string', 'Reasons')
-        ->addColumn('number', 'Percent')
+$reasons->addStringColumn('Reasons')
+        ->addNumColumn('Percent')
         ->addRow(array('Check Reviews', 5))
         ->addRow(array('Watch Trailers', 2))
         ->addRow(array('See Actors Other Work', 4))
@@ -21,7 +21,7 @@ $donutchart = $lava->DonutChart('IMDB')
                    ));
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$donutchart</span> to your view to render.</p>
+<p>Otherwise, pass <span class="code">$donutchart</span> or <span class="code">$lava</span> to your view to render.</p>
 
 <h3>View</h3>
 <div class="row">
@@ -29,16 +29,21 @@ $donutchart = $lava->DonutChart('IMDB')
       <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="chart-div"></div>
+// With the chart object
 <? echo $donutchart->render('IMDB', 'chart-div') ?>
+
+// With the lava object
+<? echo $lava->render('DonutChart', 'IMDB', 'chart-div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
     <h4>Laravel</h4>
 {% highlight php startinline %}
 <div id="chart-div"></div>
+// With Lava class alias
 <? echo Lava::render('DonutChart', 'IMDB', 'chart-div') ?>
 
-// If using blade templates
+// With Blade Templates
 @donutchart('IMDB', 'chart-div')
 {% endhighlight %}
   </div>

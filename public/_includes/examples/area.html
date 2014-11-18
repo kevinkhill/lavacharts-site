@@ -7,8 +7,8 @@ $lava = new Lavacharts; // See note below for Laravel
 
 $population = $lava->DataTable();
 
-$population->addColumn('date', 'Year', 'date')
-           ->addColumn('number', 'Number of People', 'pop')
+$population->addDateColumn('Year')
+           ->addNumColumn('Number of People')
            ->addRow(array('2006', 623452))
            ->addRow(array('2007', 685034))
            ->addRow(array('2008', 716845))
@@ -29,7 +29,7 @@ $areachart = $lava->AreaChart('Population')
                   ));
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$areachart</span> to your view to render.</p>
+<p>Otherwise, pass <span class="code">$areachart</span> or <span class="code">$lava</span> to your view to render.</p>
 
 <h3>View</h3>
 <div class="row">
@@ -37,16 +37,21 @@ $areachart = $lava->AreaChart('Population')
       <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="pop_div"></div>
-<? echo $areachart->render('Population', 'pop_div') ?>
+// With the chart object
+<? echo $areachart->render('pop_div') ?>
+
+// With the lava object
+<? echo $lava->render('AreaChart', 'Population', 'pop_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
     <h4>Laravel</h4>
 {% highlight php startinline %}
 <div id="pop_div"></div>
+// With Lava class alias
 <? echo Lava::render('AreaChart', 'Population', 'pop_div') ?>
 
-// If using blade templates
+// With Blade Templates
 @areachart('Population', 'pop_div')
 {% endhighlight %}
   </div>
