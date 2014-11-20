@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>LavaCharts | Examples by kevinkhill</title>
+        <meta name="keywords" content="chart, laravel, bundle, package, composer, php" />
+        <meta name="description" content="Charts & Graphs for Laravel powered by the Google Chart API." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1 user-scalable=no">
+
+        <link rel="icon" href="public/images/favicon.ico" type="image/x-icon" />
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link href="public/master.min.css" rel="stylesheet" type="text/css">
+
+        <script type="text/javascript" src="public/master.min.js"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                $('.subMenu').smint({
+                    'scrollSpeed' : 500
+                });
+
+                $(window).on('scroll', function() {
+                    var st = $(this).scrollTop()-180;
+                    $('.welcome').css({
+                        'opacity' : (1 - st/150)
+                    });
+                });
+
+                function scrollToAnchor(aid){
+                    var aTag = $("a[name='"+ aid +"']");
+                    $('html,body').animate({scrollTop: aTag.offset().top -120});
+                }
+
+                $('a[href^="#"]').each(function(){
+                    var $this = $(this);
+
+                    $this.click(function(event){
+                        event.preventDefault();
+
+                        var url = $this.attr('href');
+                        var parts = url.split("#");
+                        var target = parts[1];
+
+                        scrollToAnchor(target);
+                    });
+                });
+            });
+        </script>
+    </head>
+
+
+    <body>
+        <a href="https://github.com/kevinkhill/LavaCharts" id="forkMe">
+    <img src="public/images/forkme.png" alt="Fork me on GitHub">
+</a>
+
+    <div class="wrap">
+        <div class="subMenu" >
+            <div class="inner">
+                <a href="#" id="sTop" class="subNavBtn">LavaCharts</a>
+                <a href="#" id="s1" class="subNavBtn">Line</a>
+                <a href="#" id="s2" class="subNavBtn">Area</a>
+                <a href="#" id="s3" class="subNavBtn">Pie</a>
+                <a href="#" id="s4" class="subNavBtn">Column</a>
+                <a href="#" id="s5" class="subNavBtn end">Geo</a>
+            </div>
+        </div>
+
+<!-- Top Section -->
+	<div class="section sTop">
+            <div class="inner">
+                <div class="welcome">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="http://laravel.com" title="Laravel PHP Framework">
+                                    <img src="public/images/laravel.png" alt="Laravel Logo">
+                                </a>
+                            </td>
+                            <td style="vertical-align: middle;">
+                                <span id="plus">+</span>
+                            </td>
+                            <td>
+                                <a href="https://developers.google.com/chart/interactive/docs/gallery" title="Google Chart Gallery">
+                                    <img src="public/images/googledev.png" alt="Google Developers Logo">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <h1>LavaChart Examples</h1>
+                    <h2>Demos & Examples of<br />LavaCharts in Laravel</h2>
+                </div>
+            </div>
+            <br class="clear">
+	</div>
+<!-- /Top Section -->
+
+
+<!-- Line Charts -->
+	<div class="section s1">
+            <div class="inner">
+                <h1 class="exampleHeading">Line Charts</h1>
+    <!-- Basic -->
+                <h2>Basic Example</h2>
+                <a href="public/images/examples/line.basic.png" title="Basic Line Chart Example">
+                    <img src="public/images/examples/line.basic.png" />
+                </a>
+                <br />
+
+                <div class="prettyprintContainer hidden">
+                    <span class="prettyprintContainerLabel expand">
+                        Route Closure / Controller
+                    </span>
+                    <div class="prettyprintCode" style="display:none;">
+                        <pre class="prettyprint linenums">
+$stocksTable = Lava::DataTable('Stocks');
+
+$stocksTable->addColumn('date', 'Date', 'date')
+            ->addColumn('number', 'Projected', 'projected')
+            ->addColumn('number', 'Closing', 'closing');
+
+for($a = 1; $a < 30; $a++)
+{
+    $data = array(
+        new jsDate(2011, 5, $a), //Date
+        rand(9500,10000),        //Line 1's data
+        rand(9500,10000)         //Line 2's data
+    );
+
+    $stocksTable->addRow($data);
+}
+
+Lava::LineChart('Stocks')->title('Stock Market Trends');</pre>
+                    </div>
+                </div>
+
+
+                <div class="prettyprintContainer hidden">
+                    <span class="prettyprintContainerLabel expand">
+                        View
+                    </span>
+                    <div class="prettyprintCode" style="display:none;">
+                <!--<div id="clip_button" data-clipboard-target="clip_controller">Copy To Clipboard</div>-->
+                        <pre id="clip_controller" class="prettyprint linenums">
+echo Lava::LineChart('Stocks')->outputInto('stock_div');
+echo Lava::div(1000, 400);
+
+if(Lava::hasErrors())
+{
+    echo Lava::getErrors();
+}</pre>
+                    </div>
+                </div>
+    <!-- /Basic -->
+
+    <!-- Advanced -->
+                <h2>Advanced Example</h2>
+                <a href="public/images/examples/line.advanced.png">
+                    <img src="public/images/examples/line.advanced.png" />
+                </a>
+                <br />
+
+                <div class="prettyprintContainer hidden">
+                    <span class="prettyprintContainerLabel expand">
+                        Route Closure / Controller
+                    </span>
+                    <div class="prettyprintCode" style="display:none;">
+                        <pre class="prettyprint linenums">
+$timesTable = Lava::DataTable('Times');
+
+$timesTable->addColumn('date', 'Dates', 'dates')
+           ->addColumn('number', 'Estimated Time', 'schedule')
+           ->addColumn('number', 'Actual Time', 'run');
+
+for($a = 1; $a < 30; $a++)
+{
+    $data = array(
+        Lava::jsDate(2013, 8, $a), //Date object
+        rand(5,30),                //Line 1's data
+        rand(5,30),                //Line 2's data
+    );
+
+    $timesTable->addRow($data);
+}
+
+//Either Chain functions together and assign to variables
+$legendStyle = Lava::textStyle()->color('#F3BB00')
+                                ->fontName('Arial')
+                                ->fontSize(20);
+
+$legend = Lava::legend()->position('bottom')
+                        ->alignment('start')
+                        ->textStyle($legendStyle);
+
+
+//Or pass in arrays with set options into the function's constructor
+$tooltip = Lava::tooltip(array(
+                'showColorCode' => TRUE,
+                'textStyle' => Lava::textStyle(array(
+                    'color' => '#C0C0B0',
+                    'fontName' => 'Courier New',
+                    'fontSize' => 10
+                ))
+            ));
+
+
+$config = array(
+    'backgroundColor' => Lava::backgroundColor(array(
+        'stroke' => '#113bc9',
+        'strokeWidth' => 4,
+        'fill' => '#ffd'
+    )),
+    'chartArea' => Lava::chartArea(array(
+        'left' => 100,
+        'top' => 75,
+        'width' => '85%',
+        'height' => '55%'
+    )),
+    'titleTextStyle' => Lava::textStyle(array(
+        'color' => '#FF0A04',
+        'fontName' => 'Georgia',
+        'fontSize' => 18
+    )),
+    'legend' => $legend,
+    'tooltip' => $tooltip,
+    'title' => 'Times for Deliveries',
+    'titlePosition' => 'out',
+    'curveType' => 'function',
+    'width' => 1000,
+    'height' => 450,
+    'pointSize' => 3,
+    'lineWidth' => 1,
+    'colors' => array('#4F9CBB', 'green'),
+    'hAxis' => Lava::hAxis(array(
+        'baselineColor' => '#fc32b0',
+        'gridlines' => array(
+            'color' => '#43fc72',
+            'count' => 6
+        ),
+        'minorGridlines' => array(
+            'color' => '#b3c8d1',
+            'count' => 3
+        ),
+        'textPosition' => 'out',
+        'textStyle' => Lava::textStyle(array(
+            'color' => '#C42B5F',
+            'fontName' => 'Tahoma',
+            'fontSize' => 10
+        )),
+        'slantedText' => TRUE,
+        'slantedTextAngle' => 30,
+        'title' => 'Delivery Dates',
+        'titleTextStyle' => Lava::textStyle(array(
+            'color' => '#BB33CC',
+            'fontName' => 'Impact',
+            'fontSize' => 14
+        )),
+        'maxAlternation' => 6,
+        'maxTextLines' => 2
+    )),
+    'vAxis' => Lava::vAxis(array(
+        'baseline' => 5,
+        'baselineColor' => '#CF3BBB',
+        'format' => '## Min.',
+        'textPosition' => 'out',
+        'textStyle' => Lava::textStyle(array(
+            'color' => '#DDAA88',
+            'fontName' => 'Arial Bold',
+            'fontSize' => 10
+        )),
+        'title' => 'Delivery Time',
+        'titleTextStyle' => Lava::textStyle(array(
+            'color' => '#5C6DAB',
+            'fontName' => 'Verdana',
+            'fontSize' => 14
+        )),
+    ))
+);
+
+Lava::LineChart('Times')->setConfig($config);
+                        </pre>
+                    </div>
+                </div>
+
+
+                <div class="prettyprintContainer hidden">
+                    <span class="prettyprintContainerLabel expand">
+                        View
+                    </span>
+                    <div class="prettyprintCode" style="display:none;">
+                        <pre id="clip_controller" class="prettyprint linenums">
+echo Lava::LineChart('Times')->outputInto('time_div');
+echo Lava::div(800, 500);
+
+if(Lava::hasErrors())
+{
+    echo Lava::getErrors();
+}</pre>
+                    </div>
+                </div>
+    <!-- /Advanced -->
+            </div>
+	</div>
+<!-- /Line Charts -->
+
+	<div class="section s2">
+            <div class="inner">
+                <h1 class="exampleHeading">Area Charts</h1>
+                <h2>Basic</h2>
+                <h2>Advanced</h2>
+            </div>
+	</div>
+<!--End Area Charts-->
+
+	<div class="section s3">
+            <div class="inner">
+                <h1 class="exampleHeading">Pie Charts</h1>
+                <h2>Basic</h2>
+                <h2>Advanced</h2>
+            </div>
+	</div>
+<!--End Pie Charts-->
+
+	<div class="section s4">
+            <div class="inner">
+                <h1 class="exampleHeading">Column Charts</h1>
+                <h2>Basic</h2>
+                <h2>Advanced</h2>
+            </div>
+	</div>
+<!--End Column Charts-->
+
+	<div class="section s5">
+            <div class="inner">
+                <h1 class="exampleHeading">Geo Charts</h1>
+                <h2>Basic</h2>
+                <h2>Advanced</h2>
+            </div>
+	</div>
+<!--End Geo Charts-->
+
+</div>
+
+<script type="text/javascript">
+    $('.prettyprintContainerLabel').each(function(){
+        var containerLabel = $(this);
+        var containerWrapper = containerLabel.parent('div.prettyprintContainer');
+        var codeContainer = containerWrapper.find('div.prettyprintCode');
+        var section = containerWrapper.parent('div.section');
+
+        containerLabel.click(function(){
+            if(codeContainer.is(":visible")) { //Visible, Hidding
+                containerLabel.removeClass('collapse').addClass('expand');
+                codeContainer.slideUp(300, function() {
+                    containerWrapper.addClass('hidden');
+                });
+            } else { //Hidden, Opening
+                containerLabel.removeClass('expand').addClass('collapse');
+                containerWrapper.removeClass('hidden');
+                codeContainer.slideDown(600);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+            try {
+                var pageTracker = _gat._getTracker("UA-43288838-2");
+                pageTracker._trackPageview();
+            } catch(err) {}
+        </script>
+
+        <script type="text/javascript">
+            $(function() {
+                setTimeout(function() {
+                    $(".prettyprint span").each(function(){
+                        var text = $(this).text();
+                        $(this).html(text.replace('Lava', '<span style="color:red;">Lava</span>'));
+                    });
+                }, 500);
+
+                drawer.bindTabClick()
+                drawer.bindOutsideClick();
+            });
+        </script>
+
+    </body>
+</html>
