@@ -1,4 +1,41 @@
-<p class="lead">Creating a new DataTable</p>
+<p class="lead">Taking a closer look</p>
+
+<p>A column can be defined as an array with the following properties</p>
+<div class="pre">
+  <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> ]] )
+</div>
+<br />
+
+<p>There are many ways to add columns to the DataTable, all following the above syntax</p>
+<div class="pre">
+  <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> ]])
+  <span class="s1">returns</span> DataTable
+</div>
+<div class="pre">
+  <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> ]]) )
+  <span class="s1">returns</span> DataTable
+</div>
+<div class="pre">
+  <span class="k">addColumns</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of column arrays, see above */</span> ) )
+  <span class="s1">returns</span> DataTable
+</div>
+<br />
+
+<p>Also provided are simplified, alias methods, which will automatically fill the type and colLabel.</p>
+<div class="pre">
+  <span class="k">addDateColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> )
+  <span class="s1">returns</span> DataTable
+</div>
+<div class="pre">
+  <span class="k">addNumberColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> )
+  <span class="s1">returns</span> DataTable
+</div>
+<div class="pre">
+  <span class="k">addStringColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> )
+  <span class="s1">returns</span> DataTable
+</div>
+<br />
+
 <ul>
   <li>First, create a new DataTable object using the method from Lavcharts.</li>
   <li>Next, add some columns, defining the structure of the chart's data.
@@ -21,9 +58,9 @@
 {% highlight php startinline %}
 $stocksTable = $lava->DataTable();  // Lava::DataTable() if using Laravel
 
-$stocksTable->addDateColumn('Day of Month')
-            ->addNumColumn('Projected')
-            ->addNumColumn('Official');
+$stocksTable->addColumn('date', 'Day of Month', 'd_col')
+            ->addColumn('number', 'Projected', 'p_col')
+            ->addColumn('number', 'Official', 'o_col');
 
 // Random Data For Example
 for ($a = 1; $a < 30; $a++)
