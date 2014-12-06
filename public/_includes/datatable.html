@@ -5,13 +5,14 @@
     <li>Type - Defines the type of data that will be in the column.</li>
     <li>colDesc - The description of the column. (optional)</li>
     <li>colLabel - A label used to access specific columns. (optional)</li>
+    <li>format - The desired format for the column. (optional)</li>
 </ul>
 <div class="pre">
-  <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> ]])
+  <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ]]] )
   <span class="s1">returns</span> DataTable
 </div>
 <div class="pre">
-  <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> ]]) )
+  <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ]]]) )
   <span class="s1">returns</span> DataTable
 </div>
 <div class="pre">
@@ -73,3 +74,15 @@
 <br />
 <br />
 
+<p class="lead" id="format">Formats</p>
+<p>Columns can have formats applied so the data/labels will be shown according to the format definition.</p>
+<div class="pre">
+  <span class="k">DateFormat</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="nv">$c1</span> [, <span class="nv">$c2</span> [, <span class="nv">$cN</span> ]]) )
+  <span class="s1">returns</span> Format
+</div>
+<p></p>
+<div class="pre">
+  <span class="k">NumberFormat</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of row arrays, see above */</span> ) )
+  <span class="s1">returns</span> Format
+</div>
+<br />
