@@ -1,12 +1,11 @@
-<p class="lead">Taking a closer look</p>
+<p class="lead">Columns</p>
 
-<p>A column can be defined as an array with the following properties</p>
-<div class="pre">
-  <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> ]] )
-</div>
-<br />
-
-<p>There are many ways to add columns to the DataTable, all following the above syntax</p>
+<p>There are many ways to add columns to the DataTable, using strings, arrays, or an array of arrays.</p>
+<ul>
+    <li>Type - Defines the type of data that will be in the column.</li>
+    <li>colDesc - The description of the column. (optional)</li>
+    <li>colLabel - A label used to access specific columns. (optional)</li>
+</ul>
 <div class="pre">
   <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> ]])
   <span class="s1">returns</span> DataTable
@@ -22,6 +21,7 @@
 <br />
 
 <p>Also provided are simplified, alias methods, which will automatically fill the type and colLabel.</p>
+<ul><li>Note: The first columns label with be "col_1", then "col_2", etc.</li></ul>
 <div class="pre">
   <span class="k">addDateColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> )
   <span class="s1">returns</span> DataTable
@@ -36,39 +36,40 @@
 </div>
 <br />
 
-<ul>
-  <li>First, create a new DataTable object using the method from Lavcharts.</li>
-  <li>Next, add some columns, defining the structure of the chart's data.
-	  <ul>
-	  	<li>'date' type column accepts a <a href="https://github.com/briannesbitt/Carbon#api-instantiation">Carbon Object</a>, or any string that <span class="pre">Carbon::parse()</span> can interpret.</li>
-	  	<li>'number' type column accepts any integer or float value.</li>
-	  </ul>
-  </li>
-  <li>The Carbon library is included with Lavacharts, so just add <span class="pre">use Carbon\Carbon;</span> to the file where you are creating the DataTable, to create Carbon objects for date columns.
-    <ul>
-      <li>Note, you could also just pass a parsable datetime string, instead of including the Carbon class.</li>
-    </ul>
-  </li>
-  <li>In this example, the first column is the horizontal axis, then then next two columns are the two sets of data.</li>
-  <li>The order of arguments are as follows for the addColumn method <span class="pre">[data type, label (opt), id (opt), formatter (opt)]</span></li>
-  <li>The <span class="pre">addRow()</span> method signature, follows the order in which the columns were added.
-  <br />So here, data[0] is for 'day', data[1] is for 'projected' and data[2] is for 'official'</li>
-</ul>
+<p>Other column related methods</p>
+<div class="pre">
+  <span class="k">getColumns</span>()
+  <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.array.php">array</a>
+</div>
+<div class="pre">
+  <span class="k">getNumberOfColumns</span>()
+  <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.int.php">int</a>
+</div>
+<br />
+<br />
 
-{% highlight php startinline %}
-$stocksTable = $lava->DataTable();  // Lava::DataTable() if using Laravel
+<p class="lead">Rows</p>
+<p>Add rows either by chaining the single row command, or batch adding with the addRows() method.</p>
+<ul><li>Note: Each row array added, must have the same number of data points as the number of columns.</li></ul>
+<div class="pre">
+  <span class="k">addRow</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="nv">$c1</span> [, <span class="nv">$c2</span> [, <span class="nv">$cN</span> ]]) )
+  <span class="s1">returns</span> DataTable
+</div>
+<div class="pre">
+  <span class="k">addRows</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of row arrays, see above */</span> ) )
+  <span class="s1">returns</span> DataTable
+</div>
+<br />
 
-$stocksTable->addColumn('date', 'Day of Month', 'd_col')
-            ->addColumn('number', 'Projected', 'p_col')
-            ->addColumn('number', 'Official', 'o_col');
+<p>Other row related methods</p>
+<div class="pre">
+  <span class="k">getRows</span>()
+  <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.array.php">array</a>
+</div>
+<div class="pre">
+  <span class="k">getNumberOfRows</span>()
+  <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.int.php">int</a>
+</div>
+<br />
+<br />
 
-// Random Data For Example
-for ($a = 1; $a < 30; $a++)
-{
-    $data[0] = "2014-8-$a";
-    $data[1] = rand(800,1000);
-    $data[2] = rand(800,1000);
-
-    $stocksTable->addRow($data);
-}
-{% endhighlight %}
