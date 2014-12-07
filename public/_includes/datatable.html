@@ -1,4 +1,4 @@
-<h4>Columns</h4>
+<h3>Columns</h3>
 <p>There are many ways to add columns to the DataTable, using strings, arrays, or an array of arrays.</p>
 <ul>
     <li>Type - Defines the type of data that will be in the column.</li>
@@ -48,7 +48,7 @@
 <br />
 <br />
 
-<h4>Rows</h4>
+<h3>Rows</h3>
 <p>Add rows either by chaining the single row command, or batch adding with the addRows() method.</p>
 <ul><li>Note: Each row array added, must have the same number of data points as the number of columns.</li></ul>
 <div class="pre">
@@ -73,7 +73,7 @@
 <br />
 <br />
 
-<h4 id="format">Formats</h4>
+<h3 id="format">Formats</h3>
 <p>Columns can have formats applied so the data/labels will be shown according to the format definition. The two available are:</p>
 <ul>
     <li>DateFormat</li>
@@ -85,15 +85,53 @@
 <br />
 <p class="lead">DateFormat</p>
 <div class="pre">
-  <span class="k">formatType</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="nv">$c1</span> [, <span class="nv">$c2</span> [, <span class="nv">$cN</span> ]]) )
+  <span class="k">formatType</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$ft</span> )
   <span class="s1">returns</span> Format
 </div>
+<div class="pre">
+  <span class="k">pattern</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$p</span> )
+  <span class="s1">returns</span> Format
+</div>
+<div class="pre">
+  <span class="k">timezone</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tz</span> )
+  <span class="s1">returns</span> Format
+</div>
+<p>Explanations of the methods can be found in <a href="https://developers.google.com/chart/interactive/docs/reference#dateformatter">Google's Documentation</a></p>
 <br />
 
 
 <p class="lead">NumberFormat</p>
 <div class="pre">
-  <span class="k">NumberFormat</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of row arrays, see above */</span> ) )
+  <span class="k">decimalSymbol</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$ds</span> )
   <span class="s1">returns</span> Format
 </div>
+<div class="pre">
+  <span class="k">fractionDigits</span>( <a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$fd</span> )
+  <span class="s1">returns</span> Format
+</div>
+<div class="pre">
+  <span class="k">groupingSymbol</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$gs</span> )
+  <span class="s1">returns</span> Format
+</div>
+<div class="pre">
+  <span class="k">negativeColor</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$nc</span> )
+  <span class="s1">returns</span> Format
+</div>
+<div class="pre">
+  <span class="k">negativeParens</span>( <a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$np</span> )
+  <span class="s1">returns</span> Format
+</div>
+<div class="pre">
+  <span class="k">pattern</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$p</span> )
+  <span class="s1">returns</span> Format
+</div>
+<div class="pre">
+  <span class="k">prefix</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$p</span> )
+  <span class="s1">returns</span> Format
+</div>
+<div class="pre">
+  <span class="k">suffix</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$s</span> )
+  <span class="s1">returns</span> Format
+</div>
+<p>Explanations of the methods can be found in <a href="https://developers.google.com/chart/interactive/docs/reference#numberformatter">Google's Documentation</a></p>
 <br />
