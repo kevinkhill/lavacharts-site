@@ -5,9 +5,9 @@
   <li>First, create a new DataTable object using the method from Lavcharts.</li>
   <li>Next, add some columns, defining the structure of the chart's data.
 	  <ul>
-	  	<li><span class="pre">addDateColumn($description)</span> for dates</li>
-      <li><span class="pre">addNumColumn($description)</span> for numbers</li>
-      <li><span class="pre">addStringColumn($description)</span> for strings</li>
+    	  <li><span class="pre">addDateColumn($description)</span> for dates</li>
+          <li><span class="pre">addNumberColumn($description)</span> for numbers</li>
+          <li><span class="pre">addStringColumn($description)</span> for strings</li>
 	  </ul>
   </li>
   <li>In this example, the first column is the horizontal axis, then then next two columns are the two sets of data.</li>
@@ -19,8 +19,8 @@
 $stocksTable = $lava->DataTable();  // Lava::DataTable() if using Laravel
 
 $stocksTable->addDateColumn('Day of Month')
-            ->addNumColumn('Projected')
-            ->addNumColumn('Official');
+            ->addNumberColumn('Projected')
+            ->addNumberColumn('Official');
 
 // Random Data For Example
 for ($a = 1; $a < 30; $a++)

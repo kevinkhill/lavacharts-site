@@ -135,3 +135,20 @@
 </div>
 <p>Explanations of the methods can be found in <a href="https://developers.google.com/chart/interactive/docs/reference#numberformatter">Google's Documentation</a></p>
 <br />
+<br />
+
+<h3>Utility Methods</h3>
+<p>Set the timezone to be used for Date columns, defaults to <span class="pre">America/Los_Angeles</pre></p>
+<div class="pre">
+  <span class="k">setTimezone</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tz</span> )
+  <span class="s1">returns</span> DataTable
+</div>
+<br />
+
+<p>If using string dates, maybe to represent only years such as "2000" and they are not being interpreted correctly, then use this method to set the format string for the whole DataTable.</p>
+<p>Use a format string following the <a href="http://php.net/manual/en/datetime.createfromformat.php">DateTime format</a></p>
+<div class="pre">
+  <span class="k">setDateTimeFormat</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$dtf</span> )
+  <span class="s1">returns</span> DataTable
+</div>
+
