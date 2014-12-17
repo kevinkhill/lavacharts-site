@@ -1,7 +1,9 @@
 # Where things are
 destination: ./_site
-
 highlighter: pygments
+
+google_analytics_id: UA-43288838-2
+repository: https://github.com/kevinkhill/lavacharts
 
 # Handling Reading
 safe:         true
@@ -26,4 +28,4 @@ excerpt_separator: "\n\n"
 detach:  false
 port:    4000
 host:    localhost
-baseurl: "" # does not include hostname
+baseurl: "/lavacharts" # does not include hostname
