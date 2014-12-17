@@ -1,168 +1,75 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Lavacharts by kevinkhill</title>
-        <meta name="keywords" content="chart, laravel, bundle, package, composer, php" />
-        <meta name="description" content="Charts & Graphs for Laravel powered by the Google Chart API." />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1 user-scalable=no">
-
-        <link rel="icon" href="{{ site.baseurl }}/images/v1/favicon.ico" type="image/x-icon" />
-        <link href='//fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-
-        <link href="{{ site.baseurl }}/css/v1/master.min.css" rel="stylesheet" type="text/css">
-
-        <script type="text/javascript" src="{{ site.baseurl }}/js/v1/master.min.js"></script>
-
-        <script type="text/javascript">
-            $(function() {
-                $('.subMenu').smint({
-                    'scrollSpeed' : 500
-                });
-
-                $(window).on('scroll', function() {
-                    var st = $(this).scrollTop()-180;
-                    $('.welcome').css({
-                        'opacity' : (1 - st/150)
-                    });
-                });
-
-                function scrollToAnchor(aid){
-                    var aTag = $("a[name='"+ aid +"']");
-                    $('html,body').animate({scrollTop: aTag.offset().top -120});
-                }
-
-                $('a[href^="#"]').each(function(){
-                    var $this = $(this);
-
-                    $this.click(function(event){
-                        event.preventDefault();
-
-                        var url = $this.attr('href');
-                        var parts = url.split("#");
-                        var target = parts[1];
-
-                        scrollToAnchor(target);
-                    });
-                });
-            });
-        </script>
-    </head>
-
-
-    <body>
-        <a href="//github.com/kevinkhill/lavacharts" id="forkMe">
-    <img src="{{ site.baseurl }}/images/v1/forkme.png" alt="Fork me on GitHub">
-</a>
-
-<div class="wrap">
-      <div class="subMenu" >
-            <div class="inner">
-                <a href="#" id="sTop" class="subNavBtn">Lavacharts</a>
-                <a href="#" id="s1" class="subNavBtn">Intro</a>
-                <a href="#" id="s2" class="subNavBtn">Installing</a>
-                <a href="#" id="s3" class="subNavBtn">Usage</a>
-                <a href="#" id="s4" class="subNavBtn">Examples</a>
-                <a href="#" id="s5" class="subNavBtn end">API</a>
-            </div>
-        </div>
-
-    <div class="section sTop">
-            <div class="inner">
-                <div class="welcome">
-                    <table>
-                        <tr>
-                            <td>
-                                <a href="http://laravel.com" title="Laravel PHP Framework">
-                                    <img src="{{ site.baseurl }}/images/v1/laravel.png" alt="Laravel Logo">
-                                </a>
-                            </td>
-                            <td style="vertical-align: middle;">
-                                <span id="plus">+</span>
-                            </td>
-                            <td>
-                                <a href="https://developers.google.com/chart/interactive/docs/gallery" title="Google Chart Gallery">
-                                    <img src="{{ site.baseurl }}/images/v1/googledev.png" alt="Google Developers Logo">
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                    <h1>Welcome to Lavacharts</h1>
-                    <h2>Charts & Graphs for Laravel<br />Powered by the Google Chart API</h2>
-                </div>
-            </div>
-            <br class="clear">
-    </div>
-
+---
+layout: v1
+title: Lavacharts v1
+---
 
 <!--Intro-->
-    <div class="section s1">
-            <div class="inner left">
-                <h1 class="heading">Intro</h1>
-                <ul class="arrows">
-                    <li>Lavacharts is a PHP Wrapper for the Google Chart API to enable the use of dynamic, beautiful charts with Laravel.</li>
-                    <li>Utilizing the power of PHP5.3+ we can render fantastic charts dynamically in page with very little code in the views.</li>
-                    <li>Configuration is intuitive and easy to follow since it directly coordinates with Google's Chart API.</li>
-                </ul>
-                <div style="margin-top:140px;text-align:right;font-size:26pt;">Lets make some charts!</div>
-            </div>
+<div class="section s1">
+    <div class="inner left">
+        <h1 class="heading">Intro</h1>
+        <ul class="arrows">
+            <li>Lavacharts is a PHP Wrapper for the Google Chart API to enable the use of dynamic, beautiful charts with Laravel.</li>
+            <li>Utilizing the power of PHP5.3+ we can render fantastic charts dynamically in page with very little code in the views.</li>
+            <li>Configuration is intuitive and easy to follow since it directly coordinates with Google's Chart API.</li>
+        </ul>
+        <div style="margin-top:140px;text-align:right;font-size:26pt;">Lets make some charts!</div>
     </div>
+</div>
 <!--/Intro-->
 
 
 <!--Installing-->
-    <div class="section s2">
-            <div class="inner left">
-                <h1 class="heading">Installing</h1>
-                First, add this line to your project's main composer.json file<br />
-                <pre class="prettyprint inline">"khill\lavacharts" : "dev-master"</pre><br />
-                Next, run composer to download and install:
-                <pre class="prettyprint inline">composer install</pre><br />
-                Last, register the LavaChart Service Provider by adding this line the providers array in "app/config/app.php"
-                <pre class="prettyprint inline">'Khill\Lavacharts\LavachartsServiceProvider'</pre><br />
-                If you want to view the demos, publish the assets with:
-                <pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
-                If you want to overide the default config of the package, run:
-                <pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />
-                Don't worry about adding the Alias, it is loaded automatically :)
+<div class="section s2">
+    <div class="inner left">
+        <h1 class="heading">Installing</h1>
+        First, add this line to your project's main composer.json file<br />
+        <pre class="prettyprint inline">"khill\lavacharts" : "dev-master"</pre><br />
+        Next, run composer to download and install:
+        <pre class="prettyprint inline">composer install</pre><br />
+        Last, register the LavaChart Service Provider by adding this line the providers array in "app/config/app.php"
+        <pre class="prettyprint inline">'Khill\Lavacharts\LavachartsServiceProvider'</pre><br />
+        If you want to view the demos, publish the assets with:
+        <pre class="prettyprint inline">php artisan asset:publish khill/lavacharts</pre><br />
+        If you want to overide the default config of the package, run:
+        <pre class="prettyprint inline">php artisan config:publish khill/lavacharts</pre><br />
+        Don't worry about adding the Alias, it is loaded automatically :)
 
-                <div style="margin-top:140px;text-align:right;font-size:26pt;">Thanks Composer, and away we go!</div>
-            </div>
+        <div style="margin-top:140px;text-align:right;font-size:26pt;">Thanks Composer, and away we go!</div>
     </div>
+</div>
 <!--/Installing-->
 
 
 <!--Usage-->
-	<div class="section s3">
-            <div class="inner left">
-                <h1 class="heading">Usage</h1>
-                <ul class="arrows">
-                    <li>Getting up and running with Lavacharts is a breeze and you can follow along with these easy steps to get you going.</li>
-                    <li>You can also view the examples if you want to dive right in and look under the hood.</li>
-                    <li>These steps will show you how to put a simple line chart into your project.</li>
-                </ul>
-                <br />
-                <br />
+<div class="section s3">
+    <div class="inner left">
+        <h1 class="heading">Usage</h1>
+        <ul class="arrows">
+            <li>Getting up and running with Lavacharts is a breeze and you can follow along with these easy steps to get you going.</li>
+            <li>You can also view the examples if you want to dive right in and look under the hood.</li>
+            <li>These steps will show you how to put a simple line chart into your project.</li>
+        </ul>
+        <br />
+        <br />
 
-                <h3>First, The Controller / Route Closure</h3>
-                <p>First we need data, so create a new DataTable where we can load some fresh data into.</p>
-                <p>Pass a string to the DataTable function to assign a label to the table, we'll call this one "Stocks"</p>
-                <pre class="prettyprint inline">
+        <h3>First, The Controller / Route Closure</h3>
+        <p>First we need data, so create a new DataTable where we can load some fresh data into.</p>
+        <p>Pass a string to the DataTable function to assign a label to the table, we'll call this one "Stocks"</p>
+        <pre class="prettyprint inline">
 $stocksTable = Lava::DataTable('Stocks');</pre><br />
 
-                <p>Next we add some columns, defining the structure of the chart's data.</p>
-                <p>In this example, the first column is the horizontal axis, then then next two columns are the two sets of data.</p>
-                <p>The order of arguments are as follows: [data type, label, id]</p>
-                 <pre class="prettyprint inline">
+        <p>Next we add some columns, defining the structure of the chart's data.</p>
+        <p>In this example, the first column is the horizontal axis, then then next two columns are the two sets of data.</p>
+        <p>The order of arguments are as follows: [data type, label, id]</p>
+         <pre class="prettyprint inline">
 $stocksTable->addColumn('number', 'Count', 'count');
 $stocksTable->addColumn('number', 'Projected', 'projected');
 $stocksTable->addColumn('number', 'Official', 'official');</pre><br/>
 
-                <p>Let's add some data! You will probably have useful data, but this example will be filled with random values.</p>
-                <p>The addRow() function signature, follows the order in which the columns were added.</p>
-                <p>So here, array[0] is for 'count', array[1] is for 'projected' and array[2] is for 'official'</p>
-                 <pre class="prettyprint inline">
+        <p>Let's add some data! You will probably have useful data, but this example will be filled with random values.</p>
+        <p>The addRow() function signature, follows the order in which the columns were added.</p>
+        <p>So here, array[0] is for 'count', array[1] is for 'projected' and array[2] is for 'official'</p>
+         <pre class="prettyprint inline">
 for($a = 1; $a < 25; $a++)
 {
     $data[0] = $a;              //Count
@@ -172,26 +79,26 @@ for($a = 1; $a < 25; $a++)
     $stocksTable->addRow($data);
 }</pre><br/>
 
-                <p>Now lets configure some options for the chart. There are many ways to customize the chart, but for the example, we'll keep it simple.</p>
-                <p>For the full list of options, <strong>Click Here</strong></p>
-                <pre class="prettyprint inline">
+        <p>Now lets configure some options for the chart. There are many ways to customize the chart, but for the example, we'll keep it simple.</p>
+        <p>For the full list of options, <strong>Click Here</strong></p>
+        <pre class="prettyprint inline">
 $config = array(
     'title' => 'My Stocks'
 );</pre><br/>
 
-                <p>Finally, we choose what type of chart, LineChart for this example.</p>
-                <p>As long as the Chart's label matches the DataTable's label, the DataTable will automatically be applied to the chart.</p>
-                <p>Currently, the supported Charts are: Line, Area, Pie, Donut, Column, and Geo</p>
-                <p>Lastly, apply the configuration to the chart, chaining onto the chart.</p>
-                <pre class="prettyprint inline">
+        <p>Finally, we choose what type of chart, LineChart for this example.</p>
+        <p>As long as the Chart's label matches the DataTable's label, the DataTable will automatically be applied to the chart.</p>
+        <p>Currently, the supported Charts are: Line, Area, Pie, Donut, Column, and Geo</p>
+        <p>Lastly, apply the configuration to the chart, chaining onto the chart.</p>
+        <pre class="prettyprint inline">
 Lava::LineChart('Stocks')->setConfig($config);</pre><br/>
 
 
-                <h3>On to The View</h3>
-                <p>There are two ways to get your chart to display on your page.</p>
-                <p>With the first method, Lavacharts will generate everything you need.</p>
-                <p>In the second method, Lavacharts will output into a div with a set "id"</p>
-                <pre class="prettyprint inline">
+        <h3>On to The View</h3>
+        <p>There are two ways to get your chart to display on your page.</p>
+        <p>With the first method, Lavacharts will generate everything you need.</p>
+        <p>In the second method, Lavacharts will output into a div with a set "id"</p>
+        <pre class="prettyprint inline">
 //Example #1, have the library create the div
 echo Lava::LineChart('Stocks')->outputInto('stocks_div');
 echo Lava::div(600, 300);
@@ -200,64 +107,34 @@ echo Lava::div(600, 300);
 //With an ID such as id="myStocks"
 echo Lava::LineChart('Stocks')->outputInto('myStocks');</pre><br/>
 
-                <p>You can also use these two functions to test for errors in the setup and configuration of the chart.</p>
-                <pre class="prettyprint inline">
+        <p>You can also use these two functions to test for errors in the setup and configuration of the chart.</p>
+        <pre class="prettyprint inline">
 if(Lava::hasErrors())
 {
     echo Lava::getErrors();
 }</pre><br/>
 
-            </div>
     </div>
+</div>
 <!--/Installing-->
 
 
 <!--Examples-->
-    <div class="section s4">
-            <div class="inner">
-                <h1 class="heading">Examples</h1>
-                <a href="examples.html"><span style="color:white;font-size:26pt;">Let's See Some Examples</span></a>
-            </div>
+<div class="section s4">
+    <div class="inner">
+        <h1 class="heading">Examples</h1>
+        <a href="examples.html"><span style="color:white;font-size:26pt;">Let's See Some Examples</span></a>
     </div>
+</div>
 <!--/Examples-->
 
 
 <!--API-->
-    <div class="section s5">
-            <div class="inner">
-                <h1 class="heading">API</h1>
-                <a href="api.html"><span style="color:white;font-size:26pt;">(Work in Progress)</span></a>
-            </div>
+<div class="section s5">
+    <div class="inner">
+        <h1 class="heading">API</h1>
+        <a href="api.html"><span style="color:white;font-size:26pt;">(Work in Progress)</span></a>
     </div>
+</div>
 <!--/API-->
 
-
-</div><!-- /wrap -->
-
-
-        <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-
-            try {
-                var pageTracker = _gat._getTracker("UA-43288838-2");
-                pageTracker._trackPageview();
-            } catch(err) {}
-        </script>
-
-        <script type="text/javascript">
-            $(function() {
-                setTimeout(function() {
-                    $(".prettyprint span").each(function(){
-                        var text = $(this).text();
-                        $(this).html(text.replace('Lava', '<span style="color:red;">Lava</span>'));
-                    });
-                }, 500);
-
-                drawer.bindTabClick()
-                drawer.bindOutsideClick();
-            });
-        </script>
-
-    </body>
-</html>
