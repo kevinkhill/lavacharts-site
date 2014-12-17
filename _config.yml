@@ -1,5 +1,4 @@
 # Where things are
-source:      ./public
 destination: ./_site
 
 highlighter: pygments

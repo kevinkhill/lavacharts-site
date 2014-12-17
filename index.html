@@ -1,263 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Charts and Graphs for PHP powered by the Google Chart API" />
-<meta name="keywords" content="chart, laravel, bundle, package, composer, php" />
-<meta name="author" content="Kevin Hill" />
+---
+layout: default
+title: Lavacharts
+---
 
-<title>Lavacharts</title>
-
-<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-<link href="/css/bootstrap.min.css" rel="stylesheet" type='text/css' />
-<link href="/css/pygments.css" rel="stylesheet" type='text/css' />
-<link href='//fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-<style type="text/css">
-  body {
-    position: relative;
-  }
-
-  #wrap {
-    position: fixed;
-    top: 50px;
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    padding-top: 15px;
-  }
-
-  .center {
-    text-align:center;
-  }
-
-  .example-img {
-    margin-top: 30px;
-  }
-
-  .navmenu-heading {
-    font-size: larger;
-    font-weight: 700;
-    border-bottom: 1px solid #e7e7e7;
-    color: #555;
-    position: relative;
-    display: block;
-    margin: 10px 0 -5px -5px;
-  }
-
-  .spaced-caps {
-    font-variant: small-caps;
-    letter-spacing: .7em;
-  }
-
-  .vspace {
-    display: block;
-    height: 100px;
-  }
-
-  .highlight pre {
-    font-family: 'Inconsolata', monospace;
-    padding: 10px;
-    font-size: 13px;
-    line-height: 1.428571429;
-    color: #333;
-    background-color: #333;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  .pre {
-    font-family: 'Inconsolata', monospace;
-    padding: 5px;
-    font-size: 13px;
-    line-height: 1.428571429;
-    color: #ccc;
-    background-color: #333;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  .border-box {
-    padding: 30px 15px;
-    border-radius : 4px;
-    border : 1px solid rgb(21, 21, 21);
-  }
-
-  .container {
-    padding: 0;
-  }
-
-  .section {
-    padding: 20px;
-  }
-
-  .section-light {
-    background-color: #e0e0e0;
-  }
-
-  .section-dark {
-    background-color: #ececec;
-  }
-
-  .sub-section {
-    padding-top: 5px;
-    margin: 0 0 80px 20px;
-  }
-
-  .subnav>li>a {
-    padding-left: 25px;
-  }
-</style>
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-  <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-</head>
-
-<body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lava-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Lavacharts</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="lava-navbar">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quickstart <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#install">Install</a></li>
-            <li><a href="#quickstart-datatable">DataTables</a></li>
-            <li><a href="#quickstart-chart">Charts</a></li>
-            <li><a href="#quickstart-output">Rendering</a></li>
-            <li><a href="#config-howto">Customizing</a></li>
-          </ul>
-        </li>
-        <li><a href="#datatable">DataTables</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Charts <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#charts">Parent Chart</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Charts</li>
-            <li><a href="#chart-line">Line Chart</a></li>
-            <li><a href="#chart-area">Area Chart</a></li>
-            <li><a href="#chart-column">Column Chart</a></li>
-            <li><a href="#chart-combo">Combo Chart</a></li>
-            <li><a href="#chart-pie">Pie Chart</a></li>
-            <li><a href="#chart-donut">Donut Chart</a></li>
-            <li><a href="#chart-geo">Geo Chart</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#example-line">Line Chart</a></li>
-            <li><a href="#example-area">Area Chart</a></li>
-            <li><a href="#example-column">Column Chart</a></li>
-            <li><a href="#example-combo">Combo Chart</a></li>
-            <li><a href="#example-pie">Pie Chart</a></li>
-            <li><a href="#example-donut">Donut Chart</a></li>
-            <li><a href="#example-geo">Geo Chart</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customize <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#configs">How To Use</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Config Options</li>
-            <li><a href="#config-annotation">Annotation</a></li>
-            <li><a href="#config-backgroundcolor">BackgroundColor</a></li>
-            <li><a href="#config-boxstyle">BoxStyle</a></li>
-            <li><a href="#config-chartarea">ChartArea</a></li>
-            <li><a href="#config-coloraxis">ColorAxis</a></li>
-            <li><a href="#config-gradient">Gradient</a></li>
-            <li><a href="#config-horizontalaxis">HorizontalAxis</a></li>
-            <li><a href="#config-legend">Legend</a></li>
-            <li><a href="#config-magnifyingglass">MagnifyingGlass</a></li>
-            <li><a href="#config-series">Series</a></li>
-            <li><a href="#config-sizeaxis">SizeAxis</a></li>
-            <li><a href="#config-slice">Slice</a></li>
-            <li><a href="#config-textstyle">TextStyle</a></li>
-            <li><a href="#config-tooltip">Tooltip</a></li>
-            <li><a href="#config-verticalaxis">VerticalAxis</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events & JS<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li role="presentation" class="dropdown-header">Events</li>
-            <li><a href="#events">MouseOut</a></li>
-            <li><a href="#events">MouseOver</a></li>
-            <li><a href="#events">Select</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Javascript</li>
-            <li><a href="#javascript">Event Callbacks</a></li>
-            <li><a href="#javascript">Lava Helpers</a></li>
-          </ul>
-        </li>
-
-<!--
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="api/2.0/index.html">Version 2.0</a></li>
-            <li><a href="api/1.0/index.html">Version 1.0</a></li>
-          </ul>
-        </li>
--->
-      </ul>
-    </div>
-
-  </div>
-</nav>
-
-
-	<div id="wrap">
-		<div class="container">
-			<div class="page-header center">
-        <img src="/images/logo.gif" class="img-responsive" style="padding:0 10px; margin:0 auto;" />
-        <h2>Charts and Graphs for PHP<br />Powered by the Google Chart API</h2>
-
-        <div class="my-buttons">
-          <a href="//travis-ci.org/kevinkhill/lavacharts">
-            <img src="//travis-ci.org/kevinkhill/lavacharts.png?branch=2.0">
-          </a>
-          <a href="//coveralls.io/repos/kevinkhill/lavacharts.png?branch=2.0">
-            <img src="//coveralls.io/repos/kevinkhill/lavacharts/badge.png?branch=2.0" />
-          </a>
-          <a href="//coveralls.io/r/kevinkhill/lavacharts?branch=2.0">
-            <img src="//poser.pugx.org/khill/lavacharts/downloads.svg" />
-          </a>
-          <a href="//packagist.org/packages/khill/lavacharts">
-            <img src="//poser.pugx.org/khill/lavacharts/license.svg" />
-          </a>
-        </div>
-        <br />
-        <div class="my-buttons">
-          <iframe src="//ghbtns.com/github-btn.html?user=kevinkhill&amp;repo=lavacharts&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
-          <iframe src="//ghbtns.com/github-btn.html?user=kevinkhill&amp;repo=lavacharts&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
-        </div>
-        <br />
-        <p class="lead">Looking for the old Lavacharts 1.0 Docs? <a href="/v1/index.html">Click Here</a></p>
-      </div>
-
-			<div class="section section-dark">
+<div class="section section-dark">
   <h2>Introduction</h2>
   <p class="lead">Lavacharts abstracts Google's Javascript Chart API to PHP</p>
   <ul class="arrows">
@@ -280,30 +26,12 @@
 
   <div id="install-composer" class="sub-section">
     <h3>With Composer</h3>
-    <p>First, copy this line into your project's composer.json file, in the <span class="pre">"require": {}</span> section</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="s2">&quot;khill\lavacharts&quot;</span> <span class="o">:</span> <span class="s2">&quot;2.0.*&quot;</span></code></pre></div>
-<br />
-
-Next, run composer to download and install
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">composer</span> <span class="nx">update</span></code></pre></div>
-<br />
-
-<p>Finally, <span class="pre">require 'vendor/autoload.php';</span> in your project and you are good to go!</p>
+    {% include install/composer.html %}
   </div>
 
   <div id="install-laravel" class="sub-section">
     <h3>Laravel</h3>
-    <p class="lead">If you are using Laravel...</p>
-
-<p>Do not require the <span class="pre">vendor/autoload.php</span> file, since Laravel takes care of that.</p>
-<p>And also, register the service provider by adding this line to the providers array in <span class="pre">app/config/app.php</span></p>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="s2">&quot;Khill\Lavacharts\Laravel\LavachartsServiceProvider&quot;</span></code></pre></div>
-
-<p>Don't worry about adding the class alias, it is loaded automatically.</p>
-
-<p class="lead">Remember, while using Laravel, replace <span class="pre">$lava-></span> with <span class="pre">Lava::</span></p>
-
+    {% include install/laravel.html %}
   </div>
 
   <div class="vspace"></div>
@@ -323,86 +51,17 @@ Next, run composer to download and install
 
   <div id="quickstart-datatable" class="sub-section">
     <h3>DataTables</h3>
-    <p class="lead">Creating a new DataTable</p>
-<p>The following is a simple example, just to get you up and running.</p>
-<p>For an in-depth look at DataTables, <a href="#datatable">Click Here</a> or use the link from the menu.</p>
-<ul>
-  <li>First, create a new DataTable object using the method from Lavcharts.</li>
-  <li>Next, add some columns, defining the structure of the chart's data.
-	  <ul>
-    	  <li><span class="pre">addDateColumn($description)</span> for dates</li>
-          <li><span class="pre">addNumberColumn($description)</span> for numbers</li>
-          <li><span class="pre">addStringColumn($description)</span> for strings</li>
-	  </ul>
-  </li>
-  <li>In this example, the first column is the horizontal axis, then then next two columns are the two sets of data.</li>
-  <li>The <span class="pre">addRow()</span> method signature, follows the order in which the columns were added.
-  <br />So here, data[0] is for 'day', data[1] is for 'projected' and data[2] is for 'official'</li>
-</ul>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$stocksTable</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">DataTable</span><span class="p">();</span>  <span class="c1">// Lava::DataTable() if using Laravel</span>
-
-<span class="nv">$stocksTable</span><span class="o">-&gt;</span><span class="na">addDateColumn</span><span class="p">(</span><span class="s1">&#39;Day of Month&#39;</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">addNumberColumn</span><span class="p">(</span><span class="s1">&#39;Projected&#39;</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">addNumberColumn</span><span class="p">(</span><span class="s1">&#39;Official&#39;</span><span class="p">);</span>
-
-<span class="c1">// Random Data For Example</span>
-<span class="k">for</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$a</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">;</span> <span class="nv">$a</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nv">$rowData</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-      <span class="s2">&quot;2014-8-</span><span class="si">$a</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-    <span class="p">);</span>
-
-    <span class="nv">$stocksTable</span><span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="nv">$rowData</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
-
+    {% include quickstart/datatable.html %}
   </div>
 
   <div id="quickstart-chart" class="sub-section">
     <h3>Creating a Chart</h3>
-    <ul class="arrows">
-  <li>Select which chart you will be generating.</li>
-  <li>Assign the chart a label.</li>
-  <li>Assign the datatable to the chart.</li>
-  <li>Continue on to render the chart.</li>
-</ul>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$chart</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">LineChart</span><span class="p">(</span><span class="s1">&#39;myFancyChart&#39;</span><span class="p">);</span>  <span class="c1">// Lava::LineChart() if using Laravel</span>
-
-<span class="nv">$chart</span><span class="o">-&gt;</span><span class="na">datatable</span><span class="p">(</span><span class="nv">$stocksTable</span><span class="p">);</span>
-
-<span class="c1">// You could also pass an associative array to setOptions() method</span>
-<span class="c1">// $chart-&gt;setOptions(array(</span>
-<span class="c1">//   &#39;datatable&#39; =&gt; $stocksTable</span>
-<span class="c1">// ));</span></code></pre></div>
-
+    {% include quickstart/chart.html %}
   </div>
 
   <div id="quickstart-output" class="sub-section">
     <h3>Output</h3>
-    <p class="lead">Rendering the chart</p>
-<p>There are two ways to get your chart to display on your page.</p>
-<ol>
-	<li>The library will generate only the javascript, and render into a div with a set elementId</li>
-	<li>The library will generate everything you need, div and javascript.</li>
-</ol>
-
-<p>Syntax: <span class="pre">render(chartType, chartLabel, elementId <em>[, bool | array(height, width)]</em>)</span></p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// Example #1, output into a div you already created</span>
-<span class="c1">// &lt;div id=&quot;myStocks&quot;&gt;&lt;/div&gt;</span>
-<span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;LineChart&#39;</span><span class="p">,</span> <span class="s1">&#39;myFancyChart&#39;</span><span class="p">,</span> <span class="s1">&#39;myStocks&#39;</span><span class="p">);</span>
-
-<span class="c1">// Example #2, have the library create the div</span>
-<span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;LineChart&#39;</span><span class="p">,</span> <span class="s1">&#39;myFancyChart&#39;</span><span class="p">,</span> <span class="s1">&#39;myStocks&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-
-<span class="c1">// Example #3, have the library create the div with a fixed size</span>
-<span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;LineChart&#39;</span><span class="p">,</span> <span class="s1">&#39;myFancyChart&#39;</span><span class="p">,</span> <span class="s1">&#39;myStocks&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="o">=&gt;</span><span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span><span class="o">=&gt;</span><span class="mi">600</span><span class="p">));</span></code></pre></div>
-
-<p>Alternatively, the render method is available from the Chart object as well, bypassing the need for inputing the type and title of the chart.</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// After creating the chart with $linechart = $lava-&gt;LineChart() or any other type,</span>
-<span class="c1">// pass the Chart object to your view and call the render method with a div&#39;s elementId</span>
-<span class="k">echo</span> <span class="nv">$linechart</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;myStocks&#39;</span><span class="p">);</span></code></pre></div>
-
+    {% include quickstart/output.html %}
   </div>
 
   <div class="vspace"></div>
@@ -412,161 +71,7 @@ Next, run composer to download and install
 <!--Usage-->
 <div id="datatable" class="section section-light">
   <h2>DataTables</h2>
-  <h3>Columns</h3>
-<p>There are many ways to add columns to the DataTable, using strings, arrays, or an array of arrays.</p>
-<ul>
-    <li>Type - Defines the type of data that will be in the column.</li>
-    <li>colDesc - The description of the column. (optional)</li>
-    <li>colLabel - A label used to access specific columns. (optional)</li>
-    <li>format - The desired format for the column. (optional)</li>
-</ul>
-<div class="pre">
-  <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ]]] )
-  <span class="s1">returns</span> DataTable
-</div>
-<div class="pre">
-  <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ]]]) )
-  <span class="s1">returns</span> DataTable
-</div>
-<div class="pre">
-  <span class="k">addColumns</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of column arrays, see above */</span> ) )
-  <span class="s1">returns</span> DataTable
-</div>
-<br />
-
-<p>Also provided are simplified, alias methods, which will automatically fill the type and colLabel.</p>
-<ul><li>Note: The first columns label with be "col_1", then "col_2", etc.</li></ul>
-<div class="pre">
-  <span class="k">addDateColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ] )
-  <span class="s1">returns</span> DataTable
-</div>
-<div class="pre">
-  <span class="k">addNumberColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ] )
-  <span class="s1">returns</span> DataTable
-</div>
-<div class="pre">
-  <span class="k">addStringColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> )
-  <span class="s1">returns</span> DataTable
-</div>
-<br />
-
-<p>Other column related methods</p>
-<div class="pre">
-  <span class="k">getColumns</span>()
-  <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.array.php">array</a>
-</div>
-<div class="pre">
-  <span class="k">getNumberOfColumns</span>()
-  <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.int.php">int</a>
-</div>
-<br />
-<br />
-
-<h3>Rows</h3>
-<p>Add rows either by chaining the single row command, or batch adding with the addRows() method.</p>
-<ul><li>Note: Each row array added, must have the same number of data points as the number of columns.</li></ul>
-<div class="pre">
-  <span class="k">addRow</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="nv">$c1</span> [, <span class="nv">$c2</span> [, <span class="nv">$cN</span> ]]) )
-  <span class="s1">returns</span> DataTable
-</div>
-<div class="pre">
-  <span class="k">addRows</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of row arrays, see above */</span> ) )
-  <span class="s1">returns</span> DataTable
-</div>
-<br />
-
-<p>Other row related methods</p>
-<div class="pre">
-  <span class="k">getRows</span>()
-  <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.array.php">array</a>
-</div>
-<div class="pre">
-  <span class="k">getNumberOfRows</span>()
-  <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.int.php">int</a>
-</div>
-<br />
-<br />
-
-<h3 id="format">Formats</h3>
-<p>Columns can have formats applied so the data/labels will be shown according to the format definition. The two available are:</p>
-<ul>
-    <li>DateFormat</li>
-    <li>NumberFormat</li>
-</ul>
-<p>All of the methods return the <span class="pre">Format</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the Format's constructor</p>
-<p>Formats are created the same way as <a href="#configs">ConfigObjects</a></p>
-<br />
-<p class="lead">DateFormat</p>
-<div class="pre">
-  <span class="k">formatType</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$ft</span> )
-  <span class="s1">returns</span> Format
-</div>
-<div class="pre">
-  <span class="k">pattern</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$p</span> )
-  <span class="s1">returns</span> Format
-</div>
-<div class="pre">
-  <span class="k">timezone</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tz</span> )
-  <span class="s1">returns</span> Format
-</div>
-<p>Explanations of the methods can be found in <a href="https://developers.google.com/chart/interactive/docs/reference#dateformatter">Google's Documentation</a></p>
-<br />
-
-
-<p class="lead">NumberFormat</p>
-<div class="pre">
-  <span class="k">decimalSymbol</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$ds</span> )
-  <span class="s1">returns</span> Format
-</div>
-<div class="pre">
-  <span class="k">fractionDigits</span>( <a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$fd</span> )
-  <span class="s1">returns</span> Format
-</div>
-<div class="pre">
-  <span class="k">groupingSymbol</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$gs</span> )
-  <span class="s1">returns</span> Format
-</div>
-<div class="pre">
-  <span class="k">negativeColor</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$nc</span> )
-  <span class="s1">returns</span> Format
-</div>
-<div class="pre">
-  <span class="k">negativeParens</span>( <a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$np</span> )
-  <span class="s1">returns</span> Format
-</div>
-<div class="pre">
-  <span class="k">pattern</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$p</span> )
-  <span class="s1">returns</span> Format
-</div>
-<div class="pre">
-  <span class="k">prefix</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$p</span> )
-  <span class="s1">returns</span> Format
-</div>
-<div class="pre">
-  <span class="k">suffix</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$s</span> )
-  <span class="s1">returns</span> Format
-</div>
-<p>Explanations of the methods can be found in <a href="https://developers.google.com/chart/interactive/docs/reference#numberformatter">Google's Documentation</a></p>
-<br />
-<br />
-
-<h3>Utility Methods</h3>
-<p>Set the timezone to be used for Date columns, defaults to <span class="pre">America/Los_Angeles</pre></p>
-<div class="pre">
-  <span class="k">setTimezone</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tz</span> )
-  <span class="s1">returns</span> DataTable
-</div>
-<br />
-
-<p>If using string dates, maybe to represent only years such as "2000" and they are not being interpreted correctly, then use this method to set the format string for the whole DataTable.</p>
-<p>Use a format string following the <a href="http://php.net/manual/en/datetime.createfromformat.php">DateTime format</a></p>
-<div class="pre">
-  <span class="k">setDateTimeFormat</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$dtf</span> )
-  <span class="s1">returns</span> DataTable
-</div>
-
-
+  {% include configs/datatable.html %}
   <div class="vspace"></div>
 </div>
 
@@ -579,351 +84,42 @@ Next, run composer to download and install
 
   <div id="chart-parent" class="sub-section">
     <h3>Parent Chart</h3>
-    <p>All of the methods (except for setOptions) return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
-
-<div class="pre">
-  <span class="k">datatable</span>(<a href="#config-datatable">Datatable</a> <span class="nv">$dt</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">setOptions</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span>)
-  <span class="s1">returns</span> Chart
-</div><!--
-<div class="pre">
-  <span class="k">getOptions</span>()
-</div>
-<div class="pre">
-  <span class="k">getOption</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$label</span>)
-</div>
-<div class="pre">
-  <span class="k">optionsToJson</span>()
-  <span class="s1">returns</span> JSON representation of all the options
-</div>-->
-<div class="pre">
-  <span class="k">backgroundColor</span>(<a href="#config-backgroundcolor">BackgroundColor</a> <span class="nv">$bgc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">chartArea</span>(<a href="#config-chartarea">ChartArea</a> <span class="nv">$ca</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">colors</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$c</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">events</span>()
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">fontSize</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$fs</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">fontName</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$fn</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">height</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$h</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">legend</span>(<a href="#config-legend">Legend</a> <span class="nv">$l</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">title</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$t</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">titlePosition</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tp</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">titleTextStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$ts</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">tooltip</span>(<a href="#config-tooltip">Tooltip</a> <span class="nv">$t</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">width</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$w</span>)
-  <span class="s1">returns</span> Chart
-</div>
-
+    {% include charts/parent-methods.html %}
   </div>
 
   <div id="chart-line" class="sub-section">
     <h3>LineChart</h3>
-    <p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
-
-<div class="pre">
-  <span class="k">axisTitlesPosition</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$atp</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">curveType</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$c</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">hAxis</span>(<a href="#config-horizontalaxis">HorizontalAxis</a> <span class="nv">$ha</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">interpolateNulls</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$in</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">lineWidth</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$lw</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pointSize</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$ps</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">vAxis</span>(<a href="#config-verticalaxis">VerticalAxis</a> <span class="nv">$va</span>)
-  <span class="s1">returns</span> Chart
-</div>
-
-<p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/linechart#Configuration_Options">Google's Config Docs</a></p>
-
+    {% include charts/line-docs.html %}
   </div>
 
   <div id="chart-area" class="sub-section">
     <h3>AreaChart</h3>
-    <p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
-
-<div class="pre">
-  <span class="k">areaOpacity</span>(<a href="http://php.net/manual/en/language.types.float.php">float</a> <span class="nv">$ao</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">axisTitlesPosition</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$atp</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">hAxis</span>(<a href="#config-horizontalaxis">HorizontalAxis</a> <span class="nv">$ha</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">interpolateNulls</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$in</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">lineWidth</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$lw</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pointSize</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$ps</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">vAxis</span>(<a href="#config-verticalaxis">VerticalAxis</a> <span class="nv">$va</span>)
-  <span class="s1">returns</span> Chart
-</div>
-
-<p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/areachart#Configuration_Options">Google's Config Docs</a></p>
-
+    {% include charts/area-docs.html %}
   </div>
 
   <div id="chart-column" class="sub-section">
     <h3>ColumnChart</h3>
-    <p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
-
-<div class="pre">
-  <span class="k">axisTitlesPosition</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$atp</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">barGroupWidth</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> | <a href="http://php.net/manual/en/language.types.string.php">string <span class="c1">/* representing a percent */</span></a> <span class="nv">$bgw</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">hAxis</span>(<a href="#config-horizontalaxis">HorizontalAxis</a> <span class="nv">$ha</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">isStacked</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$is</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pointSize</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$ps</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">vAxis</span>(<a href="#config-verticalaxis">VerticalAxis</a> <span class="nv">$va</span>)
-  <span class="s1">returns</span> Chart
-</div>
-
-<p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/columnchart#Configuration_Options">Google's Config Docs</a></p>
-
+    {% include charts/column-docs.html %}
   </div>
 
   <div id="chart-combo" class="sub-section">
     <h3>ComboChart</h3>
-    <p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
-
-<div class="pre">
-  <span class="k">annotations</span>(<a href="#config-annotation">Annotation</a> <span class="nv">$a</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">areaOpacity</span>(<a href="http://php.net/manual/en/language.types.float.php">float</a> <span class="nv">$ao</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">axisTitlesPosition</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$atp</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">barGroupWidth</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> | <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="c1">/* representing a percent */</span> <span class="nv">$bgw</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">hAxis</span>(<a href="#config-horizontalaxis">HorizontalAxis</a> <span class="nv">$ha</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">isStacked</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$is</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">series</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="c1">/* of <a href="#config-series">Series</a> objects */</span> <span class="nv">$s</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">seriesType</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$s</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">vAxes</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="c1">/* of <a href="#config-verticalaxis">VerticalAxis</a> objects */</span> <span class="nv">$va</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">vAxis</span>(<a href="#config-verticalaxis">VerticalAxis</a> <span class="nv">$va</span>)
-  <span class="s1">returns</span> Chart
-</div>
-
-<p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/combochart#Configuration_Options">Google's Config Docs</a></p>
-
+    {% include charts/combo-docs.html %}
   </div>
 
   <div id="chart-pie" class="sub-section">
     <h3>PieChart</h3>
-    <p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
-
-<div class="pre">
-  <span class="k">is3D</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$i</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">slices</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="c1">/* of <a href="#config-slice">Slice</a> objects */</span> <span class="nv">$s</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieSliceBorderColor</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$psbc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieSliceText</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$pst</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieSliceTextStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$psts</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieStartAngle</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$psa</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">reverseCategories</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$rc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">sliceVisibilityThreshold</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> | <a href="http://php.net/manual/en/language.types.float.php">float</a> <span class="nv">$svt</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieResidueSliceColor</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$prsc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieResidueSliceLabel</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$prsl</span>)
-  <span class="s1">returns</span> Chart
-</div>
-
-<p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/piechart#Configuration_Options">Google's Config Docs</a></p>
-
+    {% include charts/pie-docs.html %}
   </div>
 
   <div id="chart-donut" class="sub-section">
     <h3>DonutChart</h3>
-    <p class="lead">The donut chart extends the pie chart with one extra method</p>
-<p>All the configuration options are the same as the pie chart.</p>
-
-<div class="pre">
-  <span class="k">pieHole</span>(<a href="http://php.net/manual/en/language.types.float.php">float</a> <span class="nv">$ph</span>)
-  <span class="s1">returns</span> Chart
-</div>
+    {% include charts/donut-docs.html %}
   </div>
 
   <div id="chart-geo" class="sub-section">
     <h3>GeoChart</h3>
-    <p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
-
-<div class="pre">
-  <span class="k">colorAxis</span>(<a href="#config-coloraxis">ColorAxis</a> <span class="nv">$ca</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">datalessRegionColor</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$drc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">displayMode</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$dm</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">enableRegionInteractivity</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$eri</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">keepAspectRatio</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$kar</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">region</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$r</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">magnifyingGlass</span>(<a href="#config-magnifyingglass">MagnifyingGlass</a> <span class="nv">$mg</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">markerOpacity</span>(<a href="http://php.net/manual/en/language.types.float.php">float</a> <span class="nv">$mo</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">resolution</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$r</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">sizeAxis</span>(<a href="#config-sizeaxis">SizeAxis</a> <span class="nv">$sa</span>)
-  <span class="s1">returns</span> Chart
-</div>
-
-<p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/linechart#Configuration_Options">Google's Config Docs</a></p>
-
+    {% include charts/geo-docs.html %}
   </div>
 </div>
 <!--/Charts-->
@@ -932,426 +128,31 @@ Next, run composer to download and install
 <!--Examples-->
 <div id="examples" class="section section-light">
   <div id="example-line" class="sub-section">
-    <h2>LineChart Example</h2>
-<h3>Controller</h3>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Khill\Lavacharts\Lavacharts</span><span class="p">;</span>
-
-<span class="nv">$lava</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Lavacharts</span><span class="p">;</span> <span class="c1">// See note below for Laravel</span>
-
-<span class="nv">$temperatures</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">DataTable</span><span class="p">();</span>
-
-<span class="nv">$temperatures</span><span class="o">-&gt;</span><span class="na">addDateColumn</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
-             <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Max Temp&#39;</span><span class="p">)</span>
-             <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Mean Temp&#39;</span><span class="p">)</span>
-             <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Min Temp&#39;</span><span class="p">)</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-1&#39;</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">62</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-2&#39;</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">61</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-3&#39;</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">55</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-4&#39;</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">52</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-5&#39;</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">47</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-6&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">45</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-7&#39;</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">65</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-8&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">62</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-9&#39;</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">56</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-10&#39;</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">52</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-11&#39;</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-12&#39;</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">46</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-13&#39;</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">46</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-14&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-15&#39;</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">68</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-16&#39;</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-17&#39;</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
-             <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014-10-18&#39;</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">62</span><span class="p">));</span>
-
-<span class="nv">$linechart</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">LineChart</span><span class="p">(</span><span class="s1">&#39;Temps&#39;</span><span class="p">)</span>
-                  <span class="o">-&gt;</span><span class="na">dataTable</span><span class="p">(</span><span class="nv">$temperatures</span><span class="p">)</span>
-                  <span class="o">-&gt;</span><span class="na">title</span><span class="p">(</span><span class="s1">&#39;Weather in October&#39;</span><span class="p">);</span></code></pre></div>
-<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$linechart</span> or <span class="code">$lava</span> to your view to render.</p>
-
-<h3>View</h3>
-<div class="row">
-  <div class="col-sm-6">
-      <h4>Vanilla</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;temps_div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With the chart object</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nv">$linechart</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;temps_div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With the lava object</span>
-<span class="cp">&lt;?</span> <span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;LineChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Temps&#39;</span><span class="p">,</span> <span class="s1">&#39;temps_div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-  </div>
-  <div class="col-sm-6">
-    <h4>Laravel</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;temps_div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With Lava class alias</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nx">Lava</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;LineChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Temps&#39;</span><span class="p">,</span> <span class="s1">&#39;temps_div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With Blade Templates</span>
-<span class="x">@linechart(&#39;Temps&#39;, &#39;temps_div&#39;)</span></code></pre></div>
-  </div>
-</div>
-
-<div class="center example-img">
-  <img src="images/examples/line.jpg" />
-</div>
-
+    {% include examples/line.html %}
   </div>
 
   <div id="example-area" class="sub-section">
-    <h2>AreaChart Example</h2>
-<h3>Controller</h3>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Khill\Lavacharts\Lavacharts</span><span class="p">;</span>
-
-<span class="nv">$lava</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Lavacharts</span><span class="p">;</span> <span class="c1">// See note below for Laravel</span>
-
-<span class="nv">$population</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">DataTable</span><span class="p">();</span>
-
-<span class="nv">$population</span><span class="o">-&gt;</span><span class="na">addDateColumn</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
-           <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Number of People&#39;</span><span class="p">)</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2006&#39;</span><span class="p">,</span> <span class="mi">623452</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2007&#39;</span><span class="p">,</span> <span class="mi">685034</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2008&#39;</span><span class="p">,</span> <span class="mi">716845</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2009&#39;</span><span class="p">,</span> <span class="mi">757254</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2010&#39;</span><span class="p">,</span> <span class="mi">778034</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2011&#39;</span><span class="p">,</span> <span class="mi">792353</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2012&#39;</span><span class="p">,</span> <span class="mi">839657</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2013&#39;</span><span class="p">,</span> <span class="mi">842367</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2014&#39;</span><span class="p">,</span> <span class="mi">873490</span><span class="p">));</span>
-
-<span class="nv">$areachart</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">AreaChart</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span>
-                  <span class="o">-&gt;</span><span class="na">setOptions</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                    <span class="s1">&#39;datatable&#39;</span> <span class="o">=&gt;</span> <span class="nv">$population</span><span class="p">,</span>
-                    <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Population Growth&#39;</span><span class="p">,</span>
-                    <span class="s1">&#39;legend&#39;</span> <span class="o">=&gt;</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">Legend</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                      <span class="s1">&#39;position&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;in&#39;</span> 
-                    <span class="p">))</span>
-                  <span class="p">));</span></code></pre></div>
-<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$areachart</span> or <span class="code">$lava</span> to your view to render.</p>
-
-<h3>View</h3>
-<div class="row">
-  <div class="col-sm-6">
-      <h4>Vanilla</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;pop_div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With the chart object</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nv">$areachart</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;pop_div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With the lava object</span>
-<span class="cp">&lt;?</span> <span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;AreaChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;pop_div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-  </div>
-  <div class="col-sm-6">
-    <h4>Laravel</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;pop_div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With Lava class alias</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nx">Lava</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;AreaChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;pop_div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With Blade Templates</span>
-<span class="x">@areachart(&#39;Population&#39;, &#39;pop_div&#39;)</span></code></pre></div>
-  </div>
-</div>
-
-<div class="center example-img">
-  <img src="images/examples/area.jpg" />
-</div>
-
+    {% include examples/area.html %}
   </div>
 
   <div id="example-column" class="sub-section">
-    <h2>ColumnChart Example</h2>
-<h3>Controller</h3>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Khill\Lavacharts\Lavacharts</span><span class="p">;</span>
-
-<span class="nv">$lava</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Lavacharts</span><span class="p">;</span> <span class="c1">// See note below for Laravel</span>
-
-<span class="nv">$finances</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">DataTable</span><span class="p">();</span>
-
-<span class="nv">$finances</span><span class="o">-&gt;</span><span class="na">addDateColumn</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
-         <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">)</span>
-         <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Expenses&#39;</span><span class="p">)</span>
-         <span class="o">-&gt;</span><span class="na">setDateTimeFormat</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
-         <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2004&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
-         <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2005&#39;</span><span class="p">,</span> <span class="mi">1170</span><span class="p">,</span> <span class="mi">460</span><span class="p">))</span>
-         <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2006&#39;</span><span class="p">,</span> <span class="mi">660</span><span class="p">,</span> <span class="mi">1120</span><span class="p">))</span>
-         <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2007&#39;</span><span class="p">,</span> <span class="mi">1030</span><span class="p">,</span> <span class="mi">54</span><span class="p">));</span>
-
-<span class="nv">$columnchart</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">ColumnChart</span><span class="p">(</span><span class="s1">&#39;Finances&#39;</span><span class="p">)</span>
-                    <span class="o">-&gt;</span><span class="na">setOptions</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                      <span class="s1">&#39;datatable&#39;</span> <span class="o">=&gt;</span> <span class="nv">$finances</span><span class="p">,</span>
-                      <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Company Performance&#39;</span><span class="p">,</span>
-                      <span class="s1">&#39;titleTextStyle&#39;</span> <span class="o">=&gt;</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">TextStyle</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                        <span class="s1">&#39;color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;#eb6b2c&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;fontSize&#39;</span> <span class="o">=&gt;</span> <span class="mi">14</span>
-                      <span class="p">))</span>
-                    <span class="p">));</span></code></pre></div>
-<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$columnchart</span> or <span class="code">$lava</span> to your view to render.</p>
-
-<h3>View</h3>
-<div class="row">
-  <div class="col-sm-6">
-      <h4>Vanilla</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;perf_div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With the chart object</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nv">$columnchart</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;perf_div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With the lava object</span>
-<span class="cp">&lt;?</span> <span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;ColumnChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Finances&#39;</span><span class="p">,</span> <span class="s1">&#39;perf_div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-  </div>
-  <div class="col-sm-6">
-    <h4>Laravel</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;perf_div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With Lava class alias</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nx">Lava</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;ColumnChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Finances&#39;</span><span class="p">,</span> <span class="s1">&#39;perf_div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With Blade Templates</span>
-<span class="x">@columnchart(&#39;Finances&#39;, &#39;perf_div&#39;)</span></code></pre></div>
-  </div>
-</div>
-
-<div class="center example-img">
-  <img src="images/examples/column.jpg" />
-</div>
-
+    {% include examples/column.html %}
   </div>
 
   <div id="example-combo" class="sub-section">
-    <h2>ComboChart Example</h2>
-<h3>Controller</h3>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Khill\Lavacharts\Lavacharts</span><span class="p">;</span>
-
-<span class="nv">$lava</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Lavacharts</span><span class="p">;</span> <span class="c1">// See note below for Laravel</span>
-
-<span class="nv">$finances</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">DataTable</span><span class="p">();</span>
-
-<span class="nv">$finances</span><span class="o">-&gt;</span><span class="na">addDateColumn</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
-         <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">)</span>
-         <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Expenses&#39;</span><span class="p">)</span>
-         <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Net Worth&#39;</span><span class="p">)</span>
-         <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2009-1-1&#39;</span><span class="p">,</span> <span class="mi">1100</span><span class="p">,</span> <span class="mi">490</span><span class="p">,</span> <span class="mi">1324</span><span class="p">))</span>
-         <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2010-1-1&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">1524</span><span class="p">))</span>
-         <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2011-1-1&#39;</span><span class="p">,</span> <span class="mi">1400</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">1351</span><span class="p">))</span>
-         <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2012-1-1&#39;</span><span class="p">,</span> <span class="mi">1250</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">1243</span><span class="p">))</span>
-         <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;2013-1-1&#39;</span><span class="p">,</span> <span class="mi">1100</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">1462</span><span class="p">));</span>
-
-<span class="nv">$combochart</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">ComboChart</span><span class="p">(</span><span class="s1">&#39;Finances&#39;</span><span class="p">)</span>
-                   <span class="o">-&gt;</span><span class="na">setOptions</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                     <span class="s1">&#39;datatable&#39;</span> <span class="o">=&gt;</span> <span class="nv">$finances</span><span class="p">,</span>
-                     <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Company Performance&#39;</span><span class="p">,</span>
-                     <span class="s1">&#39;titleTextStyle&#39;</span> <span class="o">=&gt;</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">TextStyle</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                       <span class="s1">&#39;color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;rgb(123, 65, 89)&#39;</span><span class="p">,</span>
-                       <span class="s1">&#39;fontSize&#39;</span> <span class="o">=&gt;</span> <span class="mi">16</span>
-                     <span class="p">)),</span>
-                     <span class="s1">&#39;legend&#39;</span> <span class="o">=&gt;</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">Legend</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                       <span class="s1">&#39;position&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;in&#39;</span>
-                     <span class="p">)),</span>
-                     <span class="s1">&#39;seriesType&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bars&#39;</span><span class="p">,</span>
-                     <span class="s1">&#39;series&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-                       <span class="mi">2</span> <span class="o">=&gt;</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">Series</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                         <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;line&#39;</span>
-                       <span class="p">))</span>
-                     <span class="p">)</span>
-                   <span class="p">));</span>
-<span class="c1">// Note: In the series config, &#39;2&#39; correlates to the 3rd horizontal axis dataset.</span>
-<span class="c1">// The DateColumn is the VerticalAxis, so &#39;Net Worth&#39; is the 3rd, key 2, in the series.</span></code></pre></div>
-<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$combochart</span> or <span class="code">$lava</span> to your view to render.</p>
-
-<h3>View</h3>
-<div class="row">
-  <div class="col-sm-6">
-      <h4>Vanilla</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;finances-div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With the chart object</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nv">$combochart</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;finances-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With the lava object</span>
-<span class="cp">&lt;?</span> <span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;ComboChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Finances&#39;</span><span class="p">,</span> <span class="s1">&#39;finances-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-  </div>
-  <div class="col-sm-6">
-    <h4>Laravel</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;finances-div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With Lava class alias</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nx">Lava</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;ComboChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Finances&#39;</span><span class="p">,</span> <span class="s1">&#39;finances-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With Blade Templates</span>
-<span class="x">@combochart(&#39;Finances&#39;, &#39;finances-div&#39;)</span></code></pre></div>
-  </div>
-</div>
-
-<div class="center example-img">
-  <img src="images/examples/combo.jpg" />
-</div>
-
+    {% include examples/combo.html %}
   </div>
 
   <div id="example-pie" class="sub-section">
-    <h2>PieChart Example</h2>
-<h3>Controller</h3>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Khill\Lavacharts\Lavacharts</span><span class="p">;</span>
-
-<span class="nv">$lava</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Lavacharts</span><span class="p">;</span> <span class="c1">// See note below for Laravel</span>
-
-<span class="nv">$reasons</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">DataTable</span><span class="p">();</span>
-
-<span class="nv">$reasons</span><span class="o">-&gt;</span><span class="na">addStringColumn</span><span class="p">(</span><span class="s1">&#39;Reasons&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">addNumberColumn</span><span class="p">(</span><span class="s1">&#39;Percent&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Check Reviews&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Watch Trailers&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;See Actors Other Work&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Settle Argument&#39;</span><span class="p">,</span> <span class="mi">89</span><span class="p">));</span>
-
-<span class="nv">$piechart</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">PieChart</span><span class="p">(</span><span class="s1">&#39;IMDB&#39;</span><span class="p">)</span>
-                 <span class="o">-&gt;</span><span class="na">setOptions</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                   <span class="s1">&#39;datatable&#39;</span> <span class="o">=&gt;</span> <span class="nv">$reasons</span><span class="p">,</span>
-                   <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Reasons I visit IMDB&#39;</span><span class="p">,</span>
-                   <span class="s1">&#39;is3D&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
-                     <span class="s1">&#39;slices&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-                        <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">Slice</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                          <span class="s1">&#39;offset&#39;</span> <span class="o">=&gt;</span> <span class="mf">0.2</span>
-                        <span class="p">)),</span>
-                        <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">Slice</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                          <span class="s1">&#39;offset&#39;</span> <span class="o">=&gt;</span> <span class="mf">0.25</span>
-                        <span class="p">)),</span>
-                        <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">Slice</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                          <span class="s1">&#39;offset&#39;</span> <span class="o">=&gt;</span> <span class="mf">0.3</span>
-                        <span class="p">))</span>
-                      <span class="p">)</span>
-                  <span class="p">));</span></code></pre></div>
-<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$piechart</span> or <span class="code">$lava</span> to your view to render.</p>
-
-<h3>View</h3>
-<div class="row">
-  <div class="col-sm-6">
-      <h4>Vanilla</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;chart-div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With the chart object</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nv">$piechart</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;chart-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With the lava object</span>
-<span class="cp">&lt;?</span> <span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;PieChart&#39;</span><span class="p">,</span> <span class="s1">&#39;IMDB&#39;</span><span class="p">,</span> <span class="s1">&#39;chart-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-  </div>
-  <div class="col-sm-6">
-    <h4>Laravel</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;chart-div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With Lava class alias</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nx">Lava</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;PieChart&#39;</span><span class="p">,</span> <span class="s1">&#39;IMDB&#39;</span><span class="p">,</span> <span class="s1">&#39;chart-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With Blade Templates</span>
-<span class="x">@piechart(&#39;IMDB&#39;, &#39;chart-div&#39;)</span></code></pre></div>
-  </div>
-</div>
-
-<div class="center example-img">
-  <img src="images/examples/pie.jpg" />
-</div>
-
+    {% include examples/pie.html %}
   </div>
 
   <div id="example-donut" class="sub-section">
-    <h2>DonutChart Example</h2>
-<h3>Controller</h3>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Khill\Lavacharts\Lavacharts</span><span class="p">;</span>
-
-<span class="nv">$lava</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Lavacharts</span><span class="p">;</span> <span class="c1">// See note below for Laravel</span>
-
-<span class="nv">$reasons</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">DataTable</span><span class="p">();</span>
-
-<span class="nv">$reasons</span><span class="o">-&gt;</span><span class="na">addStringColumn</span><span class="p">(</span><span class="s1">&#39;Reasons&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Percent&#39;</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Check Reviews&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Watch Trailers&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;See Actors Other Work&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-        <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Settle Argument&#39;</span><span class="p">,</span> <span class="mi">89</span><span class="p">));</span>
-
-<span class="nv">$donutchart</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">DonutChart</span><span class="p">(</span><span class="s1">&#39;IMDB&#39;</span><span class="p">)</span>
-                   <span class="o">-&gt;</span><span class="na">setOptions</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                     <span class="s1">&#39;datatable&#39;</span> <span class="o">=&gt;</span> <span class="nv">$reasons</span><span class="p">,</span>
-                     <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Reasons I visit IMDB&#39;</span>
-                   <span class="p">));</span></code></pre></div>
-<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$donutchart</span> or <span class="code">$lava</span> to your view to render.</p>
-
-<h3>View</h3>
-<div class="row">
-  <div class="col-sm-6">
-      <h4>Vanilla</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;chart-div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With the chart object</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nv">$donutchart</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;IMDB&#39;</span><span class="p">,</span> <span class="s1">&#39;chart-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With the lava object</span>
-<span class="cp">&lt;?</span> <span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;DonutChart&#39;</span><span class="p">,</span> <span class="s1">&#39;IMDB&#39;</span><span class="p">,</span> <span class="s1">&#39;chart-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-  </div>
-  <div class="col-sm-6">
-    <h4>Laravel</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;chart-div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With Lava class alias</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nx">Lava</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;DonutChart&#39;</span><span class="p">,</span> <span class="s1">&#39;IMDB&#39;</span><span class="p">,</span> <span class="s1">&#39;chart-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With Blade Templates</span>
-<span class="x">@donutchart(&#39;IMDB&#39;, &#39;chart-div&#39;)</span></code></pre></div>
-  </div>
-</div>
-
-<div class="center example-img">
-  <img src="images/examples/donut.jpg" />
-</div>
-
+    {% include examples/donut.html %}
   </div>
 
   <div id="example-geo" class="sub-section">
-    <h2>GeoChart Example</h2>
-<h3>Controller</h3>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Khill\Lavacharts\Lavacharts</span><span class="p">;</span>
-
-<span class="nv">$lava</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Lavacharts</span><span class="p">;</span> <span class="c1">// See note below for Laravel</span>
-
-<span class="nv">$popularity</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">DataTable</span><span class="p">();</span>
-
-<span class="nv">$popularity</span><span class="o">-&gt;</span><span class="na">addStringColumn</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
-           <span class="o">-&gt;</span><span class="na">addNumColumn</span><span class="p">(</span><span class="s1">&#39;Popularity&#39;</span><span class="p">)</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Brazil&#39;</span><span class="p">,</span> <span class="mi">400</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;Canada&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;France&#39;</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
-           <span class="o">-&gt;</span><span class="na">addRow</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;RU&#39;</span><span class="p">,</span> <span class="mi">700</span><span class="p">));</span>
-
-<span class="nv">$geochart</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">GeoChart</span><span class="p">(</span><span class="s1">&#39;Popularity&#39;</span><span class="p">)</span>
-                 <span class="o">-&gt;</span><span class="na">setOptions</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
-                   <span class="s1">&#39;datatable&#39;</span> <span class="o">=&gt;</span> <span class="nv">$popularity</span>
-                 <span class="p">));</span></code></pre></div>
-<p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
-<p>Otherwise, pass <span class="code">$geochart</span> or <span class="code">$lava</span> to your view to render.</p>
-
-<h3>View</h3>
-<div class="row">
-  <div class="col-sm-6">
-      <h4>Vanilla</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;pop-div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With the chart object</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nv">$geochart</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;pop-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With the lava object</span>
-<span class="cp">&lt;?</span> <span class="k">echo</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;GeoChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Popularity&#39;</span><span class="p">,</span> <span class="s1">&#39;pop-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-  </div>
-  <div class="col-sm-6">
-    <h4>Laravel</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;pop-div&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
-<span class="c1">// With Lava class alias</span>
-<span class="o">&lt;?</span> <span class="k">echo</span> <span class="nx">Lava</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;GeoChart&#39;</span><span class="p">,</span> <span class="s1">&#39;Popularity&#39;</span><span class="p">,</span> <span class="s1">&#39;pop-div&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x"></span>
-
-<span class="x">// With Blade Templates</span>
-<span class="x">@geochart(&#39;Popularity&#39;, &#39;pop-div&#39;)</span></code></pre></div>
-  </div>
-</div>
-
-<div class="center example-img">
-  <img src="images/examples/geo.jpg" />
-</div>
-
+    {% include examples/geo.html %}
   </div>
 </div>
 
@@ -1362,437 +163,77 @@ Next, run composer to download and install
 
   <div id="config-howto" class="sub-section">
     <h3>How To Use</h3>
-    <p>All of the config methods return themselves to enable the chaining of options.</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the Config's constructor</p>
-
-<div class="row">
-    <div class="col-sm-4">
-        <h4>Constructor</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">TextStyle</span><span class="p">([</span>
-    <span class="s1">&#39;color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;#F4C6B2&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;fontName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Arial&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;fontSize&#39;</span> <span class="o">=&gt;</span> <span class="mi">16</span>
-<span class="p">]);</span></code></pre></div>
-    </div>
-    <div class="col-sm-4">
-        <h4>Chaining</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">TextStyle</span><span class="p">()</span>
-     <span class="o">-&gt;</span><span class="na">color</span><span class="p">(</span><span class="s1">&#39;#F4C6B2&#39;</span><span class="p">)</span>
-     <span class="o">-&gt;</span><span class="na">fontName</span><span class="p">(</span><span class="s1">&#39;Arial&#39;</span><span class="p">)</span>
-     <span class="o">-&gt;</span><span class="na">fontSize</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span></code></pre></div>      
-    </div>
-    <div class="col-sm-4">
-        <h4>Laravel</h4>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Lava</span><span class="o">::</span><span class="na">TextStyle</span><span class="p">([</span>
-    <span class="s1">&#39;color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;#F4C6B2&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;fontName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Arial&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;fontSize&#39;</span> <span class="o">=&gt;</span> <span class="mi">16</span>
-<span class="p">]);</span></code></pre></div>
-    </div>
-</div>
+    {% include configs/howto.html %}
   </div>
 
   <div id="config-annotation" class="sub-section">
     <h3>Annotation</h3>
-    <p>All of the methods return the <span class="pre">Annotation</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the Annotation's constructor</p>
-
-<div class="pre">
-  <span class="k">highContrast</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$hc</span>)
-  <span class="s1">returns</span> Annotation
-</div>
-<div class="pre">
-  <span class="k">textStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$ts</span>)
-  <span class="s1">returns</span> Annotation
-</div>
+    {% include configs/annotation.html %}
   </div>
 
   <div id="config-backgroundcolor" class="sub-section">
     <h3>BackgroundColor</h3>
-    <p>All of the methods return the <span class="pre">BackgroundColor</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the BackgroundColor's constructor</p>
-
-<div class="pre">
-  <span class="k">stroke</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$s</span>)
-  <span class="s1">returns</span> BackgroundColor
-</div>
-<div class="pre">
-  <span class="k">strokeWidth</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$sw</span>)
-  <span class="s1">returns</span> BackgroundColor
-</div>
-<div class="pre">
-  <span class="k">fill</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$f</span>)
-  <span class="s1">returns</span> BackgroundColor
-</div>
+    {% include configs/backgroundcolor.html %}
   </div>
 
   <div id="config-chartarea" class="sub-section">
     <h3>BoxStyle</h3>
-    <p>All of the methods return the <span class="pre">ChartArea</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the ChartArea's constructor</p>
-
-<div class="pre">
-  <span class="k">left</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$l</span>)
-  <span class="s1">returns</span> ChartArea
-</div>
-<div class="pre">
-  <span class="k">top</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$t</span>)
-  <span class="s1">returns</span> ChartArea
-</div>
-<div class="pre">
-  <span class="k">width</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$w</span>)
-  <span class="s1">returns</span> ChartArea
-</div>
-<div class="pre">
-  <span class="k">height</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$h</span>)
-  <span class="s1">returns</span> ChartArea
-</div>
+    {% include configs/chartarea.html %}
   </div>
 
   <div id="config-coloraxis" class="sub-section">
     <h3>ColorAxis</h3>
-    <p>All of the methods return the <span class="pre">ColorAxis</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the ColorAxis's constructor</p>
-
-<div class="pre">
-  <span class="k">minValue</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$mv</span>)
-  <span class="s1">returns</span> ColorAxis
-</div>
-<div class="pre">
-  <span class="k">maxValue</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$mv</span>)
-  <span class="s1">returns</span> ColorAxis
-</div>
-<div class="pre">
-  <span class="k">values</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$v</span>)
-  <span class="s1">returns</span> ColorAxis
-</div>
-<div class="pre">
-  <span class="k">colors</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$c</span>)
-  <span class="s1">returns</span> ColorAxis
-</div>
+    {% include configs/coloraxis.html %}
   </div>
 
   <div id="config-gradient" class="sub-section">
     <h3>Gradient</h3>
-    <p>All of the methods return the <span class="pre">Gradient</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the Gradient's constructor</p>
-
-<div class="pre">
-  <span class="k">color1</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$c1</span>)
-  <span class="s1">returns</span> Gradient
-</div>
-<div class="pre">
-  <span class="k">color2</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$c2</span>)
-  <span class="s1">returns</span> Gradient
-</div>
-<div class="pre">
-  <span class="k">x1</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="c1">/* representing a percent */</span> <span class="nv">$rx</span>)
-  <span class="s1">returns</span> Gradient
-</div>
-<div class="pre">
-  <span class="k">y1</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="c1">/* representing a percent */</span> <span class="nv">$rx</span>)
-  <span class="s1">returns</span> Gradient
-</div>
-<div class="pre">
-  <span class="k">x2</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="c1">/* representing a percent */</span> <span class="nv">$rx</span>)
-  <span class="s1">returns</span> Gradient
-</div>
-<div class="pre">
-  <span class="k">y2</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="c1">/* representing a percent */</span> <span class="nv">$rx</span>)
-  <span class="s1">returns</span> Gradient
-</div>
+    {% include configs/gradient.html %}
   </div>
 
   <div id="config-horizontalaxis" class="sub-section">
     <h3>HorizontalAxis</h3>
-    <p>All of the methods return the <span class="pre">HorizontalAxis</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the HorizontalAxis's constructor</p>
-
-<div class="pre">
-  <span class="k">allowContainerBoundaryTextCutoff</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$acbtc</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<!--<div class="pre">
-  <span class="k">baseline</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$s</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>-->
-<div class="pre">
-  <span class="k">baselineColor</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$blc</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">direction</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$d</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">format</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$f</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">gridlines</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$g</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">minorGridlines</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$mg</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">logScale</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$ls</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">textPosition</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tp</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">title</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$t</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">titleTextStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$tts</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">maxAlternation</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$ma</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">maxTextLines</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$mtl</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">maxValue</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$mv</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">minValue</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$mv</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">showTextEvery</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$ste</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">slantedText</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$st</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">slantedTextAngle</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$sta</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">viewWindowMode</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$vwm</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
-<div class="pre">
-  <span class="k">viewWindow</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$vw</span>)
-  <span class="s1">returns</span> HorizontalAxis
-</div>
+    {% include configs/horizontalaxis.html %}
   </div>
 
   <div id="config-legend" class="sub-section">
     <h3>Legend</h3>
-    <p>All of the methods return the <span class="pre">Legend</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the Legend's constructor</p>
-
-<div class="pre">
-  <span class="k">position</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$p</span>)
-  <span class="s1">returns</span> Legend
-</div>
-<div class="pre">
-  <span class="k">alignment</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$a</span>)
-  <span class="s1">returns</span> Legend
-</div>
-<div class="pre">
-  <span class="k">textStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$ts</span>)
-  <span class="s1">returns</span> Legend
-</div>
+    {% include configs/legend.html %}
   </div>
 
   <div id="config-magnifyingglass" class="sub-section">
     <h3>MagnifyingGlass</h3>
-    <p>The <span class="pre">MagnifyingGlass</span> object is created by passing an <span class="pree">int</span> to the constructor to set the ZoomFactor</p>
-<p>The default zoomFactor is 5, and can also be set with the named method.</p>
-
-<!--<div class="pre">
-  <span class="k">enable</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$hc</span>)
-  <span class="s1">returns</span> MagnifyingGlass
-</div>-->
-<div class="pre">
-  <span class="k">zoomFactor</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$zf</span>)
-  <span class="s1">returns</span> MagnifyingGlass
-</div>
-
+    {% include configs/magnifyingglass.html %}
   </div>
 
   <div id="config-series" class="sub-section">
     <h3>Series</h3>
-    <p>All of the methods return the <span class="pre">Series</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the Series's constructor</p>
-
-<div class="pre">
-  <span class="k">annotation</span>(<a href="#config-annotation">Annotation</a> <span class="nv">$a</span>)
-  <span class="s1">returns</span> Series
-</div>
-<div class="pre">
-  <span class="k">curveType</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$ct</span>)
-  <span class="s1">returns</span> Series
-</div>
-<div class="pre">
-  <span class="k">seriesTargetAxis</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$sta</span>)
-  <span class="s1">returns</span> Series
-</div>
-<div class="pre">
-  <span class="k">textStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$ts</span>)
-  <span class="s1">returns</span> Series
-</div>
-<div class="pre">
-  <span class="k">type</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$t</span>)
-  <span class="s1">returns</span> Series
-</div>
+    {% include configs/series.html %}
   </div>
 
   <div id="config-sizeaxis" class="sub-section">
     <h3>SizeAxis</h3>
-    <p>All of the methods return the <span class="pre">SizeAxis</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the SizeAxis's constructor</p>
-
-<div class="pre">
-  <span class="k">maxSize</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$ms</span>)
-  <span class="s1">returns</span> SizeAxis
-</div>
-<div class="pre">
-  <span class="k">maxValue</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$mv</span>)
-  <span class="s1">returns</span> SizeAxis
-</div>
-<div class="pre">
-  <span class="k">minSize</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$ms</span>)
-  <span class="s1">returns</span> SizeAxis
-</div>
-<div class="pre">
-  <span class="k">minValue</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$mv</span>)
-  <span class="s1">returns</span> SizeAxis
-</div>
+    {% include configs/sizeaxis.html %}
   </div>
 
   <div id="config-slice" class="sub-section">
     <h3>Slice</h3>
-    <p>All of the methods return the <span class="pre">Slice</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the Slice's constructor</p>
-
-<div class="pre">
-  <span class="k">color</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$c</span>)
-  <span class="s1">returns</span> Slice
-</div>
-<div class="pre">
-  <span class="k">offset</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$o</span>)
-  <span class="s1">returns</span> Slice
-</div>
-<div class="pre">
-  <span class="k">textStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$ts</span>)
-  <span class="s1">returns</span> Slice
-</div>
+    {% include configs/slice.html %}
   </div>
 
   <div id="config-textstyle" class="sub-section">
     <h3>TextStyle</h3>
-    <p>All of the methods return the <span class="pre">TextStyle</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the TextStyle's constructor</p>
-
-<div class="pre">
-  <span class="k">color</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$c</span>)
-  <span class="s1">returns</span> TextStyle
-</div>
-<div class="pre">
-  <span class="k">fontName</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$fn</span>)
-  <span class="s1">returns</span> TextStyle
-</div>
-<div class="pre">
-  <span class="k">fontSize</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$fs</span>)
-  <span class="s1">returns</span> TextStyle
-</div>
+    {% include configs/textstyle.html %}
   </div>
 
   <div id="config-tooltip" class="sub-section">
     <h3>Tooltip</h3>
-    <p>All of the methods return the <span class="pre">Tooltip</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the Tooltip's constructor</p>
-
-<div class="pre">
-  <span class="k">showColorCode</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$scc</span>)
-  <span class="s1">returns</span> Tooltip
-</div>
-<div class="pre">
-  <span class="k">textStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$ts</span>)
-  <span class="s1">returns</span> Tooltip
-</div>
-<div class="pre">
-  <span class="k">trigger</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$t</span>)
-  <span class="s1">returns</span> Tooltip
-</div>
+    {% include configs/tooltip.html %}
   </div>
 
   <div id="config-verticalaxis" class="sub-section">
     <h3>VerticalAxis</h3>
-    <p>All of the methods return the <span class="pre">VerticalAxis</span> object to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the VerticalAxis's constructor</p>
-
-<!--<div class="pre">
-  <span class="k">baseline</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$s</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>-->
-<div class="pre">
-  <span class="k">baselineColor</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$blc</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">direction</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$d</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">format</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$f</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">gridlines</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$g</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">minorGridlines</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$mg</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">logScale</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$ls</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">textPosition</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tp</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">title</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$t</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">titleTextStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$tts</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">maxValue</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$mv</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">minValue</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$mv</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">viewWindowMode</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$vwm</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
-<div class="pre">
-  <span class="k">viewWindow</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$vw</span>)
-  <span class="s1">returns</span> VerticalAxis
-</div>
+    {% include configs/verticalaxis.html %}
   </div>
 </div>
 <!--/Configuration Options-->
@@ -1801,55 +242,8 @@ Next, run composer to download and install
 <!--Events-->
 <div id="events" class="section section-light">
   <h2>Chart Events</h2>
-  <p class="lead">Enable interaction with your charts through events</p>
-<p>Adding an event your chart is as simple as defining a javascript function in your page, then attaching the Lava event object to the chart.</p>
-<p>Pass the event's constructor the function name, and when the chart event is fired, the function will be called.</p>
-<p>As with any chart customization, you can use the named method, <span class="pre">events()</span>, and pass in an array of events.
-<p>Or you can add the key <span class="pre">'events'</span> to a config array with and pass an array of events there.</p>
-
-<div id="events" class="sub-section">
-  <h3>MouseOut</h3>
-  <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$mouseOut</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">MouseOut</span><span class="p">(</span><span class="s1">&#39;mouseOutCallback&#39;</span><span class="p">);</span>  <span class="c1">// Lava::MouseOut() if using Laravel</span></code></pre></div>
-
-  <h3>MouseOver</h3>
-  <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$mouseOver</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">MouseOver</span><span class="p">(</span><span class="s1">&#39;mouseOverCallback&#39;</span><span class="p">);</span>  <span class="c1">// Lava::MouseOver() if using Laravel</span></code></pre></div>
-
-  <h3>Select</h3>
-  <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$select</span> <span class="o">=</span> <span class="nv">$lava</span><span class="o">-&gt;</span><span class="na">Select</span><span class="p">(</span><span class="s1">&#39;selectCallback&#39;</span><span class="p">);</span>  <span class="c1">// Lava::Select() if using Laravel</span></code></pre></div>
-  <p>More information can be found on <a href="https://developers.google.com/chart/interactive/docs/events#The_Select_Event" target="_blank">Google's Website</a></p>
-</div>
-
+  {% include configs/events.html %}
 
   <h2>Javascript</h2>
-  <div id="javascript" class="sub-section">
-  <h3>Event Callbacks</h3>
-  <p>Your callback is passed the javascript event object and a reference to the chart in which the event took place.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">selectCallback</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">chart</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Useful for using chart methods such as chart.getSelection();</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3>Helper Function</h3>
-  <p>Also available for use in javascript, is the lava object which has helper functions.</p>
-  <p>The <em>get</em> function takes a chart label (the label you used when creating the chart) and returns the chart object.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">lava</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;myFancyChart&#39;</span><span class="p">)</span> <span class="nx">returns</span> <span class="nx">Chart</span></code></pre></div>
-    <p>This will let you access the chart outside of a chart event.</p>
+  {% include configs/javascript.html %}
 </div>
-</div>
-
-
-    </div><!--container-->
-	</div><!--warp-->
-
-	<script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-
-      try {
-          var pageTracker = _gat._getTracker("UA-43288838-2");
-          pageTracker._trackPageview();
-      } catch(err) {}
-  </script>
-</body>
-</html>
