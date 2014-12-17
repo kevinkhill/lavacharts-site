@@ -9,32 +9,7 @@
 
 	<div id="wrap">
 		<div class="container">
-			<div class="page-header center">
-        <img src="{{ site.baseurl }}/images/logo.gif" class="img-responsive" style="padding:0 10px; margin:0 auto;" />
-        <h2>Charts and Graphs for PHP<br />Powered by the Google Chart API</h2>
-
-        <div class="my-buttons">
-          <a href="//travis-ci.org/kevinkhill/lavacharts">
-            <img src="//travis-ci.org/kevinkhill/lavacharts.png?branch=2.0">
-          </a>
-          <a href="//coveralls.io/repos/kevinkhill/lavacharts.png?branch=2.0">
-            <img src="//coveralls.io/repos/kevinkhill/lavacharts/badge.png?branch=2.0" />
-          </a>
-          <a href="//coveralls.io/r/kevinkhill/lavacharts?branch=2.0">
-            <img src="//poser.pugx.org/khill/lavacharts/downloads.svg" />
-          </a>
-          <a href="//packagist.org/packages/khill/lavacharts">
-            <img src="//poser.pugx.org/khill/lavacharts/license.svg" />
-          </a>
-        </div>
-        <br />
-        <div class="my-buttons">
-          <iframe src="//ghbtns.com/github-btn.html?user=kevinkhill&amp;repo=lavacharts&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
-          <iframe src="//ghbtns.com/github-btn.html?user=kevinkhill&amp;repo=lavacharts&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
-        </div>
-        <br />
-        <p class="lead">Looking for the old Lavacharts 1.0 Docs? <a href="/v1/index.html">Click Here</a></p>
-      </div>
+			{% include banner.html %}
 
 			{{ content }}
 
