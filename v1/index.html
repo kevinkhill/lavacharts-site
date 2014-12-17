@@ -2,18 +2,18 @@
 
 <html>
     <head>
-        <title>LavaCharts by kevinkhill</title>
+        <title>Lavacharts by kevinkhill</title>
         <meta name="keywords" content="chart, laravel, bundle, package, composer, php" />
         <meta name="description" content="Charts & Graphs for Laravel powered by the Google Chart API." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1 user-scalable=no">
 
-        <link rel="icon" href="public/images/favicon.ico" type="image/x-icon" />
-        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link rel="icon" href="{{ site.baseurl }}/images/v1/favicon.ico" type="image/x-icon" />
+        <link href='//fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
-        <link href="public/master.min.css" rel="stylesheet" type="text/css">
+        <link href="{{ site.baseurl }}/css/v1/master.min.css" rel="stylesheet" type="text/css">
 
-        <script type="text/javascript" src="public/master.min.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/js/v1/master.min.js"></script>
 
         <script type="text/javascript">
             $(function() {
@@ -52,14 +52,14 @@
 
 
     <body>
-        <a href="https://github.com/kevinkhill/LavaCharts" id="forkMe">
-    <img src="public/images/forkme.png" alt="Fork me on GitHub">
+        <a href="//github.com/kevinkhill/lavacharts" id="forkMe">
+    <img src="{{ site.baseurl }}/images/v1/forkme.png" alt="Fork me on GitHub">
 </a>
 
 <div class="wrap">
       <div class="subMenu" >
             <div class="inner">
-                <a href="#" id="sTop" class="subNavBtn">LavaCharts</a>
+                <a href="#" id="sTop" class="subNavBtn">Lavacharts</a>
                 <a href="#" id="s1" class="subNavBtn">Intro</a>
                 <a href="#" id="s2" class="subNavBtn">Installing</a>
                 <a href="#" id="s3" class="subNavBtn">Usage</a>
@@ -75,7 +75,7 @@
                         <tr>
                             <td>
                                 <a href="http://laravel.com" title="Laravel PHP Framework">
-                                    <img src="public/images/laravel.png" alt="Laravel Logo">
+                                    <img src="{{ site.baseurl }}/images/v1/laravel.png" alt="Laravel Logo">
                                 </a>
                             </td>
                             <td style="vertical-align: middle;">
@@ -83,12 +83,12 @@
                             </td>
                             <td>
                                 <a href="https://developers.google.com/chart/interactive/docs/gallery" title="Google Chart Gallery">
-                                    <img src="public/images/googledev.png" alt="Google Developers Logo">
+                                    <img src="{{ site.baseurl }}/images/v1/googledev.png" alt="Google Developers Logo">
                                 </a>
                             </td>
                         </tr>
                     </table>
-                    <h1>Welcome to LavaCharts</h1>
+                    <h1>Welcome to Lavacharts</h1>
                     <h2>Charts & Graphs for Laravel<br />Powered by the Google Chart API</h2>
                 </div>
             </div>
@@ -101,7 +101,7 @@
             <div class="inner left">
                 <h1 class="heading">Intro</h1>
                 <ul class="arrows">
-                    <li>LavaCharts is a PHP Wrapper for the Google Chart API to enable the use of dynamic, beautiful charts with Laravel.</li>
+                    <li>Lavacharts is a PHP Wrapper for the Google Chart API to enable the use of dynamic, beautiful charts with Laravel.</li>
                     <li>Utilizing the power of PHP5.3+ we can render fantastic charts dynamically in page with very little code in the views.</li>
                     <li>Configuration is intuitive and easy to follow since it directly coordinates with Google's Chart API.</li>
                 </ul>
@@ -138,7 +138,7 @@
             <div class="inner left">
                 <h1 class="heading">Usage</h1>
                 <ul class="arrows">
-                    <li>Getting up and running with LavaCharts is a breeze and you can follow along with these easy steps to get you going.</li>
+                    <li>Getting up and running with Lavacharts is a breeze and you can follow along with these easy steps to get you going.</li>
                     <li>You can also view the examples if you want to dive right in and look under the hood.</li>
                     <li>These steps will show you how to put a simple line chart into your project.</li>
                 </ul>
@@ -189,8 +189,8 @@ Lava::LineChart('Stocks')->setConfig($config);</pre><br/>
 
                 <h3>On to The View</h3>
                 <p>There are two ways to get your chart to display on your page.</p>
-                <p>With the first method, LavaCharts will generate everything you need.</p>
-                <p>In the second method, LavaCharts will output into a div with a set "id"</p>
+                <p>With the first method, Lavacharts will generate everything you need.</p>
+                <p>In the second method, Lavacharts will output into a div with a set "id"</p>
                 <pre class="prettyprint inline">
 //Example #1, have the library create the div
 echo Lava::LineChart('Stocks')->outputInto('stocks_div');
