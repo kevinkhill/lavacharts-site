@@ -5,10 +5,9 @@ destination: ./_site
 highlighter: pygments
 
 # Handling Reading
-safe:         false
-include:      [".htaccess"]
+safe:         true
 exclude:      ['src','scripts']
-keep_files:   [".git", ".svn"]
+keep_files:   [".git"]
 encoding:     "utf-8"
 markdown_ext: "md"
 
