@@ -1,6 +1,3 @@
-site:
-  name: Lavacharts
-
 # Where things are
 source:      ./public
 destination: ./_site
