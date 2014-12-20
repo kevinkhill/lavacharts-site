@@ -8,8 +8,8 @@ $lava = new Lavacharts; // See note below for Laravel
 $finances = $lava->DataTable();
 
 $finances->addDateColumn('Year')
-         ->addNumColumn('Sales')
-         ->addNumColumn('Expenses')
+         ->addNumberColumn('Sales')
+         ->addNumberColumn('Expenses')
          ->setDateTimeFormat('Y')
          ->addRow(array('2004', 1000, 400))
          ->addRow(array('2005', 1170, 460))

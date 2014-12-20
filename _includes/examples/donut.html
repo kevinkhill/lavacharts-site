@@ -8,7 +8,7 @@ $lava = new Lavacharts; // See note below for Laravel
 $reasons = $lava->DataTable();
 
 $reasons->addStringColumn('Reasons')
-        ->addNumColumn('Percent')
+        ->addNumberColumn('Percent')
         ->addRow(array('Check Reviews', 5))
         ->addRow(array('Watch Trailers', 2))
         ->addRow(array('See Actors Other Work', 4))

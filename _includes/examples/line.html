@@ -8,9 +8,9 @@ $lava = new Lavacharts; // See note below for Laravel
 $temperatures = $lava->DataTable();
 
 $temperatures->addDateColumn('Date')
-             ->addNumColumn('Max Temp')
-             ->addNumColumn('Mean Temp')
-             ->addNumColumn('Min Temp')
+             ->addNumberColumn('Max Temp')
+             ->addNumberColumn('Mean Temp')
+             ->addNumberColumn('Min Temp')
              ->addRow(array('2014-10-1', 67, 65, 62))
              ->addRow(array('2014-10-2', 68, 65, 61))
              ->addRow(array('2014-10-3', 68, 62, 55))

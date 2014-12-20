@@ -8,7 +8,7 @@ $lava = new Lavacharts; // See note below for Laravel
 $popularity = $lava->DataTable();
 
 $popularity->addStringColumn('Country')
-           ->addNumColumn('Popularity')
+           ->addNumberColumn('Popularity')
            ->addRow(array('Germany', 200))
            ->addRow(array('United States', 300))
            ->addRow(array('Brazil', 400))
@@ -19,7 +19,7 @@ $popularity->addStringColumn('Country')
 $geochart = $lava->GeoChart('Popularity')
                  ->setOptions(array(
                    'datatable' => $popularity
-                 ));                  
+                 ));
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
 <p>Otherwise, pass <span class="code">$geochart</span> or <span class="code">$lava</span> to your view to render.</p>

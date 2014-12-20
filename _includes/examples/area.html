@@ -8,7 +8,7 @@ $lava = new Lavacharts; // See note below for Laravel
 $population = $lava->DataTable();
 
 $population->addDateColumn('Year')
-           ->addNumColumn('Number of People')
+           ->addNumberColumn('Number of People')
            ->addRow(array('2006', 623452))
            ->addRow(array('2007', 685034))
            ->addRow(array('2008', 716845))
@@ -24,7 +24,7 @@ $areachart = $lava->AreaChart('Population')
                     'datatable' => $population,
                     'title' => 'Population Growth',
                     'legend' => $lava->Legend(array(
-                      'position' => 'in' 
+                      'position' => 'in'
                     ))
                   ));
 {% endhighlight %}

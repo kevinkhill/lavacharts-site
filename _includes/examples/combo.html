@@ -8,9 +8,9 @@ $lava = new Lavacharts; // See note below for Laravel
 $finances = $lava->DataTable();
 
 $finances->addDateColumn('Year')
-         ->addNumColumn('Sales')
-         ->addNumColumn('Expenses')
-         ->addNumColumn('Net Worth')
+         ->addNumberColumn('Sales')
+         ->addNumberColumn('Expenses')
+         ->addNumberColumn('Net Worth')
          ->addRow(array('2009-1-1', 1100, 490, 1324))
          ->addRow(array('2010-1-1', 1000, 400, 1524))
          ->addRow(array('2011-1-1', 1400, 450, 1351))
@@ -36,7 +36,7 @@ $combochart = $lava->ComboChart('Finances')
                      )
                    ));
 // Note: In the series config, '2' correlates to the 3rd horizontal axis dataset.
-// The DateColumn is the VerticalAxis, so 'Net Worth' is the 3rd, key 2, in the series.                    
+// The DateColumn is the VerticalAxis, so 'Net Worth' is the 3rd, key 2, in the series.
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
 <p>Otherwise, pass <span class="code">$combochart</span> or <span class="code">$lava</span> to your view to render.</p>
