@@ -64,5 +64,29 @@ $linechart = $lava->LineChart('Temps')
 </div>
 
 <div class="center example-img">
+  <h3>Rendered Chart</h3>
   <img src="images/examples/line.jpg" />
 </div>
+<br/>
+
+<h3>Javascript Output</h3>
+<div class="js-well">
+{% highlight javascript startinline %}
+lava.charts.LineChart.Temps.draw = function() {
+var $this = lava.charts.LineChart.Temps;
+
+$this.data = new google.visualization.DataTable({"cols":[{"type":"date","label":"Date"},{"type":"number","label":"Max Temp"},{"type":"number","label":"Mean Temp"},{"type":"number","label":"Min Temp"}],"rows":[{"c":[{"v":new Date(2014,9,1,0,0,0)},{"v":67},{"v":65},{"v":62}]},{"c":[{"v":new Date(2014,9,2,0,0,0)},{"v":68},{"v":65},{"v":61}]},{"c":[{"v":new Date(2014,9,3,0,0,0)},{"v":68},{"v":62},{"v":55}]},{"c":[{"v":new Date(2014,9,4,0,0,0)},{"v":72},{"v":62},{"v":52}]},{"c":[{"v":new Date(2014,9,5,0,0,0)},{"v":61},{"v":54},{"v":47}]},{"c":[{"v":new Date(2014,9,6,0,0,0)},{"v":70},{"v":58},{"v":45}]},{"c":[{"v":new Date(2014,9,7,0,0,0)},{"v":74},{"v":70},{"v":65}]},{"c":[{"v":new Date(2014,9,8,0,0,0)},{"v":75},{"v":69},{"v":62}]},{"c":[{"v":new Date(2014,9,9,0,0,0)},{"v":69},{"v":63},{"v":56}]},{"c":[{"v":new Date(2014,9,10,0,0,0)},{"v":64},{"v":58},{"v":52}]},{"c":[{"v":new Date(2014,9,11,0,0,0)},{"v":59},{"v":55},{"v":50}]},{"c":[{"v":new Date(2014,9,12,0,0,0)},{"v":65},{"v":56},{"v":46}]},{"c":[{"v":new Date(2014,9,13,0,0,0)},{"v":66},{"v":56},{"v":46}]},{"c":[{"v":new Date(2014,9,14,0,0,0)},{"v":75},{"v":70},{"v":64}]},{"c":[{"v":new Date(2014,9,15,0,0,0)},{"v":76},{"v":72},{"v":68}]},{"c":[{"v":new Date(2014,9,16,0,0,0)},{"v":71},{"v":66},{"v":60}]},{"c":[{"v":new Date(2014,9,17,0,0,0)},{"v":72},{"v":66},{"v":60}]},{"c":[{"v":new Date(2014,9,18,0,0,0)},{"v":63},{"v":62},{"v":62}]}]}, 0.6);
+
+$this.options = {"title":"Weather in October"};
+
+$this.chart = new google.visualization.LineChart(document.getElementById('chart'));
+
+$this.chart.draw($this.data, $this.options);
+};
+
+google.load('visualization', '1', {'packages':['corechart']});
+google.setOnLoadCallback(lava.charts.LineChart.Temps.draw);
+{% endhighlight %}
+</div>
+
+<div class="orange-divider"></div>

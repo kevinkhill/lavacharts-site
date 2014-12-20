@@ -50,5 +50,33 @@ $donutchart = $lava->DonutChart('IMDB')
 </div>
 
 <div class="center example-img">
+  <h3>Rendered Chart</h3>
   <img src="images/examples/donut.jpg" />
 </div>
+<br/>
+
+<h3>Javascript Output</h3>
+<div class="js-well">
+{% highlight javascript startinline %}
+lava.charts.DonutChart = {"IMDB":{chart:null,draw:null,data:null,options:null,formats:[]}};
+
+if (!document.getElementById('chart')){console.error('[Lavaharts] No matching element was found with ID "chart"');}
+
+lava.charts.DonutChart.IMDB.draw = function() {
+var $this = lava.charts.DonutChart.IMDB;
+
+$this.data = new google.visualization.DataTable({"cols":[{"type":"string","label":"Reasons"},{"type":"number","label":"Percent"}],"rows":[{"c":[{"v":"Check Reviews"},{"v":5}]},{"c":[{"v":"Watch Trailers"},{"v":2}]},{"c":[{"v":"See Actors Other Work"},{"v":4}]},{"c":[{"v":"Settle Argument"},{"v":89}]}]}, 0.6);
+
+$this.options = {"pieHole":0.5,"title":"Reasons I visit IMDB"};
+
+$this.chart = new google.visualization.PieChart(document.getElementById('chart'));
+
+$this.chart.draw($this.data, $this.options);
+};
+
+google.load('visualization', '1', {'packages':['corechart']});
+google.setOnLoadCallback(lava.charts.DonutChart.IMDB.draw);
+{% endhighlight %}
+</div>
+
+<div class="orange-divider"></div>

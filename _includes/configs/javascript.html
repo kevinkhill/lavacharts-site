@@ -14,4 +14,38 @@ function selectCallback (event, chart) {
 lava.get('myFancyChart') returns Chart
 {% endhighlight %}
     <p>This will let you access the chart outside of a chart event.</p>
+<br/>
+
+<h3>Javascript Output</h3>
+{% highlight javascript startinline %}
+var lava = lava || {get:null,event:null,charts:{}};
+    lava.get = function (chartLabel) {
+        var chartTypes = Object.keys(lava.charts),
+            chart;
+
+        if (typeof chartLabel === 'string') {
+            if (Array.isArray(chartTypes)) {
+                chartTypes.some(function (e) {
+                    if (typeof lava.charts[e][chartLabel] !== 'undefined') {
+                        chart = lava.charts[e][chartLabel].chart;
+
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+            } else {
+                return false;
+            }
+        } else {
+            console.error('[Lavacharts] The input for lava.get() must be a string.');
+
+            return false;
+        }
+    };
+
+    lava.event = function (event, chart, callback) {
+        return callback(event, chart);
+    };
+{% endhighlight %}
 </div>

@@ -56,5 +56,33 @@ $columnchart = $lava->ColumnChart('Finances')
 </div>
 
 <div class="center example-img">
+  <h3>Rendered Chart</h3>
   <img src="images/examples/column.jpg" />
 </div>
+<br/>
+
+<h3>Javascript Output</h3>
+<div class="js-well">
+{% highlight javascript startinline %}
+lava.charts.AreaChart = {"Population":{chart:null,draw:null,data:null,options:null,formats:[]}};
+
+if (!document.getElementById('chart')){console.error('[Lavaharts] No matching element was found with ID "chart"');}
+
+lava.charts.AreaChart.Population.draw = function() {
+var $this = lava.charts.AreaChart.Population;
+
+$this.data = new google.visualization.DataTable({"cols":[{"type":"date","label":"Year","id":"date"},{"type":"number","label":"Number of People","id":"pop"}],"rows":[{"c":[{"v":new Date(2014,11,19,20,6,0)},{"v":623452}]},{"c":[{"v":new Date(2014,11,19,20,7,0)},{"v":685034}]},{"c":[{"v":new Date(2014,11,19,20,8,0)},{"v":716845}]},{"c":[{"v":new Date(2014,11,19,20,9,0)},{"v":757254}]},{"c":[{"v":new Date(2014,11,19,20,10,0)},{"v":778034}]},{"c":[{"v":new Date(2014,11,19,20,11,0)},{"v":792353}]},{"c":[{"v":new Date(2014,11,19,20,12,0)},{"v":839657}]},{"c":[{"v":new Date(2014,11,19,20,13,0)},{"v":842367}]},{"c":[{"v":new Date(2014,11,19,20,14,0)},{"v":873490}]}]}, 0.6);
+
+$this.options = {"title":"Population Growth","legend":{"position":"in"}};
+
+$this.chart = new google.visualization.AreaChart(document.getElementById('chart'));
+
+$this.chart.draw($this.data, $this.options);
+};
+
+google.load('visualization', '1', {'packages':['corechart']});
+google.setOnLoadCallback(lava.charts.AreaChart.Population.draw);
+{% endhighlight %}
+</div>
+
+<div class="orange-divider"></div>

@@ -1,6 +1,25 @@
 /* Logo Red: #991C1F */
 /* Logo Yellow: #F3971F */
 
+.js-well {
+    height: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color: #333;
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.js-well .highlight pre {
+    border: none;
+}
+
+.orange-divider {
+    margin: 80px auto 0px;
+    width: 60%;
+    border-bottom: 2px solid #F3971F;
+}
+
 .hll { background-color: #222222 }
 .c { color: #000080 } /* Comment */
 .err { color: #cccccc; border: 1px solid #FF0000 } /* Error */
