@@ -5,6 +5,11 @@
 <p>Or you can add the key <span class="pre">'events'</span> to a config array with and pass an array of events there.</p>
 
 <div id="events" class="sub-section">
+  <h3>Ready</h3>
+  {% highlight php startinline %}
+  $ready = $lava->Ready('readyCallback');  // Lava::Ready() if using Laravel
+  {% endhighlight %}
+
   <h3>MouseOut</h3>
   {% highlight php startinline %}
   $mouseOut = $lava->MouseOut('mouseOutCallback');  // Lava::MouseOut() if using Laravel
