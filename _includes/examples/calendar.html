@@ -5,7 +5,7 @@ use Khill\Lavacharts\Lavacharts;
 
 $lava = new Lavacharts; // See note below for Laravel
 
-$sales  = Lava::DataTable();
+$sales = $lava->DataTable();
 
 $sales->addDateColumn('Date')
       ->addNumberColumn('Orders');
@@ -21,21 +21,21 @@ $calendarchart = $lava->CalendarChart('Sales')
                       ->setOptions(array(
                           'datatable' => $sales,
                           'title' => 'Cars Sold',
-                          'unusedMonthOutlineColor' => Lava::Stroke(array(
+                          'unusedMonthOutlineColor' => $lava->Stroke(array(
                               'stroke'        => '#ECECEC',
                               'strokeOpacity' => 0.75,
                               'strokeWidth'   => 1
                           )),
-                          'dayOfWeekLabel' => Lava::TextStyle(array(
+                          'dayOfWeekLabel' => $lava->TextStyle(array(
                               'color' => '#4f5b0d',
                               'fontSize' => 16,
                               'italic' => true
                           )),
-                          'noDataPattern' => Lava::Color(array(
+                          'noDataPattern' => $lava->Color(array(
                               'color' => '#DDD',
                               'backgroundColor' => '#11FFFF'
                           )),
-                          'colorAxis' => Lava::ColorAxis(array(
+                          'colorAxis' => $lava->ColorAxis(array(
                               'values' => array(0, 100),
                               'colors' => array('black', 'green')
                           ))
@@ -72,7 +72,7 @@ $calendarchart = $lava->CalendarChart('Sales')
 
 <div class="center example-img">
   <h3>Rendered Chart</h3>
-  <img src="images/examples/column.jpg" />
+  <img src="images/examples/area.jpg" />
 </div>
 <br/>
 
@@ -86,9 +86,9 @@ if (!document.getElementById("chart")){console.error("[Lavacharts] No matching e
 lava.charts.CalendarChart["Sales"].draw = function() {
 var $this = lava.charts.CalendarChart["Sales"];
 
-$this.data = new google.visualization.DataTable({"cols":[{"type":"date","label":"Date"},{"type":"number","label":"Orders"}],"rows":[{"c":[{"v":new Date(2014,1,28,0,0,0)},{"v":33}]},{"c":[{"v":new Date(2014,1,11,0,0,0)},{"v":27}]},{"c":[{"v":new Date(2014,1,7,0,0,0)},{"v":96}]},{"c":[{"v":new Date(2014,1,18,0,0,0)},{"v":96}]},
-/* Some data left out for brevity */
-{"c":[{"v":new Date(2014,4,6,0,0,0)},{"v":28}]},{"c":[{"v":new Date(2014,4,3,0,0,0)},{"v":67}]},{"c":[{"v":new Date(2014,4,21,0,0,0)},{"v":53}]},{"c":[{"v":new Date(2014,4,28,0,0,0)},{"v":9}]},{"c":[{"v":new Date(2014,4,10,0,0,0)},{"v":21}]},{"c":[{"v":new Date(2014,4,9,0,0,0)},{"v":24}]},{"c":[{"v":new Date(2014,4,27,0,0,0)},{"v":55}]},{"c":[{"v":new Date(2014,4,15,0,0,0)},{"v":44}]},{"c":[{"v":new Date(2014,4,9,0,0,0)},{"v":78}]}]}, 0.6);
+$this.data = new google.visualization.DataTable({"cols":[{"type":"date","label":"Date"},{"type":"number","label":"Orders"}],"rows":[{"c":[{"v":new Date(2014,1,28,0,0,0)},{"v":33}]},{"c":[{"v":new Date(2014,1,11,0,0,0)},{"v":27}]},{"c":[{"v":new Date(2014,1,7,0,0,0)},{"v":96}]},{"c":[{"v":new Date(2014,1,18,0,0,0)},{"v":96}]},{"c":[{"v":new Date(2014,1,14,0,0,0)},{"v":76}]},{"c":[{"v":new Date(2014,1,21,0,0,0)},{"v":25}]},{"c":[{"v":new Date(2014,1,24,0,0,0)},{"v":57}]},{"c":[{"v":new Date(2014,1,13,0,0,0)},{"v":79}]},{"c":[{"v":new Date(2014,1,17,0,0,0)},{"v":20}]},
+/* Some data omitted for brevity */
+{"c":[{"v":new Date(2014,1,20,0,0,0)},{"v":17}]},{"c":[{"v":new Date(2014,1,5,0,0,0)},{"v":59}]},{"c":[{"v":new Date(2014,1,11,0,0,0)},{"v":83}]},{"c":[{"v":new Date(2014,1,26,0,0,0)},{"v":6}]},{"c":[{"v":new Date(2014,1,7,0,0,0)},{"v":37}]},{"c":[{"v":new Date(2014,1,23,0,0,0)},{"v":4}]},{"c":[{"v":new Date(2014,2,1,0,0,0)},{"v":69}]},{"c":[{"v":new Date(2014,4,3,0,0,0)},{"v":67}]},{"c":[{"v":new Date(2014,4,21,0,0,0)},{"v":53}]},{"c":[{"v":new Date(2014,4,28,0,0,0)},{"v":9}]},{"c":[{"v":new Date(2014,4,10,0,0,0)},{"v":21}]},{"c":[{"v":new Date(2014,4,9,0,0,0)},{"v":24}]},{"c":[{"v":new Date(2014,4,27,0,0,0)},{"v":55}]},{"c":[{"v":new Date(2014,4,15,0,0,0)},{"v":44}]},{"c":[{"v":new Date(2014,4,9,0,0,0)},{"v":78}]}]}, 0.6);
 
 $this.options = {"calendar":{"unusedMonthOutlineColor":{"stroke":"#ECECEC","strokeOpacity":0.75,"strokeWidth":1},"dayOfWeekLabel":{"color":"#4f5b0d","fontSize":16,"italic":true}},"title":"Cars Sold","noDataPattern":{"color":"#DDD","backgroundColor":"#11FFFF"},"colorAxis":{"values":[0,100],"colors":["black","green"]}};
 
