@@ -4,4 +4,4 @@ Lavacharts is a graphing / chart library for PHP5.3+ that wraps the Google Chart
 
 
 # Documentation
-[Lavacharts](http://kevinkhill.github.io/lavacharts/)
+[Lavacharts](http://lavacharts.com)
