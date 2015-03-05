@@ -1,9 +1,15 @@
 <div id="javascript" class="sub-section">
   <h3>Event Callbacks</h3>
-  <p>Your callback is passed the javascript event object and a reference to the chart in which the event took place.</p>
+  <p>To use events with your charts, follow these two easy steps:</p>
+  <ul>
+    <li>Define a javascript function within your page, before the rendering of any charts. In the example below, the function is called "selectHandler"</li>
+    <li>While configuring your chart in PHP, pass the event object the name of your javascript function, as seen in the above examples.</li>
+  </ul>
+  <p>When the chart is rendered, your defined function will be wrapped with lava.event() which gives your function access to the event and chart objects.</p>
 {% highlight javascript startinline %}
-function selectCallback (event, chart) {
+function selectHandler (event, chart) {
   // Useful for using chart methods such as chart.getSelection();
+  console.log(chart.getSelection());
 }
 {% endhighlight %}
 
@@ -11,9 +17,9 @@ function selectCallback (event, chart) {
   <p>Also available for use in javascript, is the lava object which has helper functions.</p>
   <p>The <em>get</em> function takes a chart label (the label you used when creating the chart) and returns the chart object.</p>
 {% highlight javascript startinline %}
-lava.get('myFancyChart') returns Chart
+lava.get('myFancyChart') returns chart
 {% endhighlight %}
-    <p>This will let you access the chart outside of a chart event.</p>
+    <p>This will let you access the chart and its methods outside of a chart event.</p>
 <br/>
 
 <h3>Javascript Output</h3>
