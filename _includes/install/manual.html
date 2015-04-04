@@ -1,14 +1,16 @@
-<p>First, grab the most recent copy of the source from Github using a link below</p>
-<div id="github-download-links">
-  <noscript>
-    <a href="https://github.com/kevinkhill/Lavacharts/releases">Github Releases Page</a>
-  </noscript>
-</div>
-<br />
+<p>First, grab the most recent copy of the source from Github using the this link:
+  <a href="//github.com/kevinkhill/lavacharts/releases">
+    <img src="//img.shields.io/github/release/kevinkhill/lavacharts.svg?style=plastic" />
+  </a>
+</p>
+<p>You will also need to get a copy of the <a href="https://github.com/briannesbitt/Carbon">Carbon Library</a> since it is a dependency of DataTables.</p>
+<p>Then, include Carbon and Lavacharts and create a new instance.</p>
 
-<p>Then, include the Lavacharts library into your project and create a new instance.</p>
 {% highlight php startinline %}
-include('src/Khill/Lavacharts/Lavacharts.php');
+include(/* path to unzipped carbon archive */ . '/src/Carbon/Carbon.php')
+include(/* path to unzipped lavacharts archive */ . '/src/Lavacharts.php');
 
-$lava = new \Khill\Lavacharts\Lavacharts;
+use \Khill\Lavacharts\Lavacharts;
+
+$lava = new Lavacharts;
 {% endhighlight %}
