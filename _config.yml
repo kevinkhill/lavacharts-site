@@ -2,7 +2,7 @@
 destination: ./_site
 highlighter: pygments
 
-composer_version: 2.4.*
+composer_version: 2.5.*
 google_analytics_id: UA-43288838-2
 repository: https://github.com/kevinkhill/lavacharts
 

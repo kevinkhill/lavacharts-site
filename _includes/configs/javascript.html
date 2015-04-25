@@ -12,46 +12,60 @@ function selectHandler (event, chart) {
   console.log(chart.getSelection());
 }
 {% endhighlight %}
+    <br/>
 
-  <h3>Helper Function</h3>
-  <p>Also available for use in javascript, is the lava object which has helper functions.</p>
+  <h3>Helper Functions</h3>
   <p>The <em>get</em> function takes a chart label (the label you used when creating the chart) and returns the chart object.</p>
+  <h4>lava.get(chartLabel, callback)</h4>
 {% highlight javascript startinline %}
-lava.get('myFancyChart') returns chart
+lava.get('myFancyChart', function (chart) {
+    console.log(chart);
+});
 {% endhighlight %}
     <p>This will let you access the chart and its methods outside of a chart event.</p>
-<br/>
+    <br />
 
-<h3>Javascript Output</h3>
+    <h4>lava.loadData(chartLabel, dataTableJson, callback)</h4>
 {% highlight javascript startinline %}
-var lava = lava || {get:null,event:null,charts:{}};
-    lava.get = function (chartLabel) {
-        var chartTypes = Object.keys(lava.charts),
-            chart;
+lava.loadData('myFancyChart', {dataTableJsonObject}, function (chart) {
+    console.log(chart);
+});
+{% endhighlight %}
+    <p>This will allow you to update charts via ajax, loading data using a datatable's <a href="#datatable-utility">toJson()</a> method.</p>
+    <br />
 
-        if (typeof chartLabel === 'string') {
-            if (Array.isArray(chartTypes)) {
-                chartTypes.some(function (e) {
-                    if (typeof lava.charts[e][chartLabel] !== 'undefined') {
-                        chart = lava.charts[e][chartLabel].chart;
+    <h3 id="javascript-ajax">Ajax Data Loading</h3>
+    <p>Here is an example of how to reload charts with ajax, using jQuery.</p>
 
-                        return true;
-                    } else {
-                        return false;
-                    }
-                });
-            } else {
-                return false;
-            }
-        } else {
-            console.error('[Lavacharts] The input for lava.get() must be a string.');
+    <br/>
+    <h4>Server Side</h4>
+{% highlight php startinline %}
+$temps = $lava->DataTable('America/Los_Angeles');
 
-            return false;
-        }
-    };
+$temps->addDateColumn('Date')
+      ->addNumberColumn('Max Temp')
+      ->addNumberColumn('Mean Temp')
+      ->addNumberColumn('Min Temp');
 
-    lava.event = function (event, chart, callback) {
-        return callback(event, chart);
-    };
+foreach(range(1, 30) as $day) {
+    $temps->addRow(array(
+        '2014-10-'.$day,
+        rand(50,90),
+        rand(50,90),
+        rand(50,90)
+    ));
+}
+
+return $temps->toJson();
+{% endhighlight %}
+
+    <br/>
+    <h4>Page Script</h4>
+{% highlight javascript startinline %}
+$.getJSON('http://my.cool.site.com/api/whatever/getDataTableJson', function (dataTableJson) {
+  lava.loadData('Chart1', dataTableJson, function (chart) {
+    console.log(chart);
+  });
+});
 {% endhighlight %}
 </div>

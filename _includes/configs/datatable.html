@@ -1,4 +1,4 @@
-<h3>Columns</h3>
+<h3 id="datatable-columns">Columns</h3>
 <p>There are many ways to add columns to the DataTable, using strings, arrays, or an array of arrays.</p>
 <ul>
     <li>Type - Defines the type of data that will be in the column.</li>
@@ -48,7 +48,7 @@
 <br />
 <br />
 
-<h3>Rows</h3>
+<h3 id="datatable-rows">Rows</h3>
 <p>Add rows either by chaining the single row command, or batch adding with the addRows() method.</p>
 <ul><li>Note: Each row array added, must have the same number of data points as the number of columns.</li></ul>
 <div class="pre">
@@ -73,7 +73,7 @@
 <br />
 <br />
 
-<h3 id="format">Formats</h3>
+<h3 id="datatable-formats">Formats</h3>
 <p>Columns can have formats applied so the data/labels will be shown according to the format definition. The two available are:</p>
 <ul>
     <li>DateFormat</li>
@@ -137,7 +137,7 @@
 <br />
 <br />
 
-<h3>Utility Methods</h3>
+<h3 id="datatable-utility">Utility Methods</h3>
 <p>Set the timezone to be used for Date columns, defaults to <span class="pre">America/Los_Angeles</pre></p>
 <div class="pre">
   <span class="k">setTimezone</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tz</span> )
@@ -151,4 +151,12 @@
   <span class="k">setDateTimeFormat</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$dtf</span> )
   <span class="s1">returns</span> DataTable
 </div>
+<br />
+
+<p>Get the JSON representation of a DataTable, useful for reloading charts via AJAX. (<a href="#javascript-ajax">See Example</a>)</p>
+<div class="pre">
+  <span class="k">toJson</span>()
+  <span class="s1">returns</span> JSON Object
+</div>
+<br />
 
