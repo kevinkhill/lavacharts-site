@@ -1,27 +1,13 @@
 module.exports = function (grunt) {
     var path = require('path');
 
-    var server_pid = 0;
-
     grunt.util.linefeed = '\n';
 
     grunt.initConfig({
-
-        php: {
-            test: {
-                options: {
-                    base: path.resolve(__dirname + '../../../'),
-                    port: 8000,
-                    keepalive: true,
-                    //open: true
-                }
-            }
-        },
-
         watch: {
-            theme: {
+            main: {
                 files: ['sass/**/*.sass'],
-                tasks: ['sass:theme']
+                tasks: ['sass:main']
             },
             foundation: {
                 files: ['scss/*.scss'],
@@ -32,9 +18,7 @@ module.exports = function (grunt) {
                     livereload: true
                 },
                 files: [
-                    'sass/**/*.sass',
-                    'partials/*.twig',
-                    '*.twig'
+                    'sass/**/*.sass'
                 ],
             }
         },
@@ -54,28 +38,14 @@ module.exports = function (grunt) {
                     'css/foundation.css': 'scss/foundation.scss'
                 }
             },
-            theme: {
+            main: {
                 files: {
-                    'css/theme.css': 'sass/theme.sass'
-                }
-            }
-        },
-
-        concurrent: {
-            watchserver: ['php', 'watch']
-        },
-
-        notify: {
-            watch: {
-                options: {
-                    title: 'Watchfile has changed',
-                    message: 'Reloading ...'
+                    'css/main.css': 'sass/main.sass'
                 }
             }
         }
 
     });
-
 
     require('load-grunt-tasks')(grunt);
 
@@ -83,10 +53,4 @@ module.exports = function (grunt) {
         'sass',
         'watch'
     ]);
-
-    grunt.registerTask('serve', [
-        'sass',
-        'concurrent'
-    ]);
-
 };
