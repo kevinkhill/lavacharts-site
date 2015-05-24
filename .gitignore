@@ -2,6 +2,7 @@ vendor/
 _site/
 tmp/
 node_modules/
+bower_components/
 build/
 cache/
 docs/

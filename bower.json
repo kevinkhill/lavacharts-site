@@ -1,0 +1,20 @@
+{
+  "name": "lavadocs",
+  "version": "3.0.0",
+  "authors": [
+    "Kevin Hill <kevinkhill@gmail.com>"
+  ],
+  "description": "Lavacharts Site",
+  "license": "MIT",
+  "homepage": "lavacharts.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}
