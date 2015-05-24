@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "lavadocs",
   "version": "3.0.0",
   "description": "Lavacharts Site",
@@ -28,41 +27,4 @@
     "url": "https://github.com/kevinkhill/lavacharts/issues"
   },
   "homepage": "https://github.com/kevinkhill/lavacharts#readme"
-=======
-  "name": "lavacharts",
-  "version": "2.5.1",
-  "description": "Wrapper library for the Google Chart API",
-  "homepage": "http://lavacharts.com",
-  "author": "Kevin Hill",
-  "license": "MIT",
-  "private": true,
-  "engines": {
-    "node": "10.*"
-  },
-  "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-bump": "^0.3.0",
-    "gulp-jshint": "^1.10.0",
-    "gulp-replace": "^0.5.3",
-    "gulp-watch": "^4.2.4",
-    "jasmine-core": "^2.2.0",
-    "karma": "^0.12.31",
-    "karma-chrome-launcher": "^0.1.8",
-    "karma-firefox-launcher": "^0.1.4",
-    "karma-jasmine": "^0.3.5",
-    "karma-phantomjs-launcher": "^0.1.4",
-    "sh": "0.0.3",
-    "yargs": "^3.6.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kevinkhill/lavacharts.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kevinkhill/lavacharts/issues"
-  },
-  "scripts": {
-    "test": "./node_modules/karma/bin/karma start configs/karma.conf.js --browsers PhantomJS --single-run"
-  }
->>>>>>> origin/3.0
 }
