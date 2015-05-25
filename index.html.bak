@@ -1,5 +1,5 @@
 ---
-layout: main
+layout: default
 title: Lavacharts
 ---
 
@@ -19,6 +19,7 @@ title: Lavacharts
   </p>
   <div class="vspace"></div>
 </div>
+
 
 <!--Installing-->
 <div id="install" class="section section-light">

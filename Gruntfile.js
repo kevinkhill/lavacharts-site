@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
     var path = require('path');
+    var autoprefixer = require('autoprefixer-core');
 
     grunt.util.linefeed = '\n';
 
@@ -9,9 +10,9 @@ module.exports = function (grunt) {
                 files: ['sass/**/*.sass'],
                 tasks: ['sass:main']
             },
-            foundation: {
+            bootstrap: {
                 files: ['scss/*.scss'],
-                tasks: ['sass:foundation']
+                tasks: ['sass:bootstrap']
             },
             livereload: {
                 options: {
@@ -27,15 +28,15 @@ module.exports = function (grunt) {
             options: {
                 style: 'compressed',
                 lineNumbers: false,
-                precision: 5,
-                update: true
+                precision: 5//,
+                //update: true
             },
-            foundation: {
+            bootstrap: {
                 options: {
-                    includePaths: ['bower_components/foundation/scss']
+                    includePaths: ['bower_components/bootstrap-sass/stylesheets']
                 },
                 files: {
-                    'css/foundation.css': 'scss/foundation.scss'
+                    'css/bootstrap.css': 'scss/_bootstrap.scss'
                 }
             },
             main: {
@@ -43,6 +44,15 @@ module.exports = function (grunt) {
                     'css/main.css': 'sass/main.sass'
                 }
             }
+        },
+
+        postcss: {
+            options: {
+                processors: [
+                  autoprefixer({ browsers: ['last 2 version'] }).postcss
+                ]
+            },
+            dist: { src: 'css/*.css' }
         }
 
     });
@@ -51,6 +61,11 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'sass',
+        'postcss'
+    ]);
+
+    grunt.registerTask('watch', [
+        'default',
         'watch'
     ]);
 };
