@@ -30,7 +30,7 @@
 .o { color: #AA5303 } /* Operator */
 .x { color: #cccccc } /* Other */
 .p { color: #cccccc } /* Punctuation */
-.cm { color: #000080 } /* Comment.Multiline */
+.cm { color: #337AB7 } /* Comment.Multiline */
 .cp { color: #AA5303 } /* Comment.Preproc */
 .c1 { color: #555555 } /* Comment.Single */
 .cs { color: #cd0000; font-weight: bold } /* Comment.Special */
