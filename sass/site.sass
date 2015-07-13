@@ -43,6 +43,10 @@ body
   display: block
   height: 100px
 
+.vspace-50
+  display: block
+  height: 50px
+
 .highlight pre
   font-family: 'Inconsolata', monospace
   padding: 10px
@@ -83,3 +87,14 @@ body
 .sub-section
   padding-top: 5px
   margin: 0 0 80px 20px
+
+  .sub-section
+    padding-top: 5px
+    margin: 0 0 80px 20px
+
+h2:before, h3:before
+  display: block
+  content: " "
+  margin-top: -200px
+  height: 200px
+  visibility: hidden

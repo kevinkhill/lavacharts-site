@@ -4,7 +4,7 @@ title: Lavacharts
 ---
 
 <div class="section section-dark">
-  <h2>Introduction</h2>
+  <h2 id="intro">Introduction</h2>
   <p class="lead">Lavacharts abstracts Google's Javascript Chart API to PHP</p>
   <ul class="arrows">
     <li>The Lavachart library takes away the need for manual writing of Javascript in your views</li>
@@ -21,8 +21,8 @@ title: Lavacharts
 </div>
 
 <!--Installing-->
-<div id="install" class="section section-light">
-  <h2>Installation</h2>
+<div class="section section-light">
+  <h2 id="install">Installation</h2>
   <p class="lead">Get up and running within minutes, using the PHP package manager, Composer.</p>
   <p><a href="https://getcomposer.org">Click Here</a> to check out Composer, if you haven't heard of it</p>
   <br />
@@ -48,8 +48,8 @@ title: Lavacharts
 
 
 <!--Usage-->
-<div id="quickstart" class="section section-dark">
-  <h2>Quickstart</h2>
+<div class="section section-dark">
+  <h2 id="quickstart">Quickstart</h2>
   <ul class="arrows">
       <li>Getting up and running with Lavacharts is a breeze and you can follow along with these easy steps to get you going.</li>
       <li>You can also view the examples if you want to dive right in and look under the hood.</li>
@@ -77,24 +77,25 @@ title: Lavacharts
 
 
 <!--Usage-->
-<div id="lavacharts" class="section section-light">
-  <h2>Lavacharts</h2>
+<div class="section section-light">
+  <h2 id="lavacharts">Lavacharts</h2>
   {% include configs/lavacharts.html %}
   <div class="vspace"></div>
 </div>
 
-<div id="datatable" class="section section-light">
-  <h2>DataTables</h2>
+<div class="section section-light">
+  <h2 id="datatables">DataTables</h2>
   {% include configs/datatable.html %}
   <div class="vspace"></div>
 </div>
 
 
 <!--Charts-->
-<div id="charts" class="section section-dark">
-  <h2>Charts</h2>
-  <p class="lead">Select a chart from the dropdown menu to see the different configuration methods / options available.</p>
-  <p>All of the methods below are also available to all of the charts, as the each extend the parent <span class="pre">Chart</span></p>
+<div class="section section-dark">
+  <h2 id="charts">Charts</h2>
+  <p class="lead">Select a chart from the dropdown or sidebar menu to see the different configuration methods / options available.</p>
+  <p>Create a new chart by calling from the top level Lava object, <span class="pre">$lava-></span> if not using Laravel, or <span class="pre">Lava::</span> when using the alias via service provider.
+  <p>All of the methods below are also available to all of the charts, as all charts extend the parent <span class="pre">Chart</span></p>
 
   <div id="chart-parent" class="sub-section">
     <h3>Parent Chart</h3>
@@ -153,9 +154,31 @@ title: Lavacharts
 </div>
 <!--/Charts-->
 
+<!--Dashboards-->
+<div class="section section-light">
+  <h2 id="dashboards">Dashboards</h2>
+  {% include dashboards/dashboards.html %}
+  <div class="vspace-50"></div>
+
+  <div class="sub-section">
+    <h3 id="dashboards-wrappers-chart">Chart Wrappers</h3>
+    {% include dashboards/chart-wrappers.html %}
+    <div class="vspace-50"></div>
+  
+    <h3 id="dashboards-wrappers-control">Control Wrappers</h3>
+    {% include dashboards/control-wrappers.html %}
+    <div class="vspace-50"></div>
+  
+    <h3 id="dashboards-filters">Filters</h3>
+    {% include dashboards/filters.html %}
+  </div>
+</div>
 
 <!--Examples-->
-<div id="examples" class="section section-light">
+<div class="section section-dark">
+  <h2 id="examples">Examples</h2>
+  <p class="lead">Here are a few examples of the types of charts you can create.</p>
+
   <div id="example-line" class="sub-section">
     {% include examples/line.html %}
   </div>
@@ -199,8 +222,10 @@ title: Lavacharts
 
 
 <!--Configuration Options-->
-<div id="configs" class="section section-dark">
-  <h2>Configuration Options</h2>
+<div class="section section-light">
+  <h2 id="configs">Configuration Options</h2>
+  <p class="lead">This is the master list of configuration options available.</p>
+  <p>Not all options are available to each chart, so check the specific chart for which you can use to customize.</p>
 
   <div id="config-howto" class="sub-section">
     <h3>How To Use</h3>
@@ -294,12 +319,11 @@ title: Lavacharts
 </div>
 <!--/Configuration Options-->
 
-
 <!--Events-->
-<div id="events" class="section section-light">
-  <h2>Chart Events</h2>
+<div class="section section-dark">
+  <h2 id="events">Chart Events</h2>
   {% include configs/events.html %}
 
-  <h2>Javascript</h2>
+  <h2 id="javascript">Javascript</h2>
   {% include configs/javascript.html %}
 </div>

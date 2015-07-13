@@ -19,6 +19,7 @@ module.exports = function (grunt) {
                     livereload: true
                 },
                 files: [
+                    '_includes/**/*.html',
                     'sass/**/*.sass'
                 ],
             }
@@ -31,17 +32,17 @@ module.exports = function (grunt) {
                 precision: 5//,
                 //update: true
             },
+            main: {
+                files: {
+                    'css/main.css': 'sass/main.sass'
+                }
+            },
             bootstrap: {
                 options: {
                     includePaths: ['bower_components/bootstrap-sass/stylesheets']
                 },
                 files: {
                     'css/bootstrap.css': 'scss/_bootstrap.scss'
-                }
-            },
-            main: {
-                files: {
-                    'css/main.css': 'sass/main.sass'
                 }
             }
         },

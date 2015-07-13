@@ -8,7 +8,7 @@ repository: https://github.com/kevinkhill/lavacharts
 
 # Handling Reading
 safe:         true
-exclude:      ['src','scripts']
+exclude:      ['src','scripts', 'css']
 keep_files:   [".git"]
 encoding:     "utf-8"
 markdown_ext: "md"

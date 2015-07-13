@@ -2,8 +2,12 @@
 <p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
 
 <div class="pre">
-  <span class="k">datatable</span>(<a href="#config-datatable">Datatable</a> <span class="nv">$dt</span>)
+  <span class="k">__construct</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$label</span>, <a href="#config-datatable">Datatable</a> <span class="nv">$dt</span>)
   <span class="s1">returns</span> Chart
+</div>
+<div class="pre">
+  <span class="k">datatable</span>(<a href="#config-datatable">Datatable</a> <span class="nv">$dt</span>)
+  <span class="s1">returns</span> Chart <span class="pull-right badge alert-danger">DEPRECIATED</span>
 </div>
 <div class="pre">
   <span class="k">setOptions</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span>)
@@ -34,7 +38,7 @@
   <span class="s1">returns</span> Chart
 </div>
 <div class="pre">
-  <span class="k">events</span>()
+  <span class="k">events</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="c1">/* of <a href="#config-event">Event</a> objects */</span> <span class="nv">$e</span>)
   <span class="s1">returns</span> Chart
 </div>
 <div class="pre">
