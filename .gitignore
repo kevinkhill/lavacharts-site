@@ -1,16 +1,19 @@
-node_modules/
-vendor/
-_site/
 tmp/
+_site/
+vendor/
 node_modules/
 bower_components/
+
 build/
 cache/
 docs/
 .idea/
+.vagrant/
 
 bootstrap/compiled.php
 composer.phar
 composer.lock
 
 *DS_Store
+
+*.sublime-*
