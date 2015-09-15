@@ -1,11 +1,12 @@
 module.exports = function (grunt) {
-    var path = require('path');
-    var autoprefixer = require('autoprefixer-core');
-
     grunt.util.linefeed = '\n';
 
     grunt.initConfig({
         watch: {
+            source: {
+                files: ['_includes/**/*.html'],
+                tasks: ['jekyll:site']
+            },
             main: {
                 files: ['sass/**/*.sass'],
                 tasks: ['sass:main']
@@ -39,7 +40,9 @@ module.exports = function (grunt) {
             },
             bootstrap: {
                 options: {
-                    includePaths: ['bower_components/bootstrap-sass/stylesheets']
+                    includePaths: [
+                        'bower_components/bootstrap-sass/stylesheets'
+                    ]
                 },
                 files: {
                     'css/bootstrap.css': 'scss/_bootstrap.scss'
@@ -49,11 +52,24 @@ module.exports = function (grunt) {
 
         postcss: {
             options: {
+                map: true,
                 processors: [
-                  autoprefixer({ browsers: ['last 2 version'] }).postcss
+                  //require('autoprefixer-core')({ browsers: ['last 2 version'] }),
+                  require('cssnano')()
                 ]
             },
-            dist: { src: 'css/*.css' }
+            dist: {
+                src: 'css/*.css'
+            }
+        },
+
+        jekyll: {
+            site: {
+                options: {
+                   dest: '_site',
+                   config: '_config.yml'
+                }
+            }
         }
 
     });
@@ -62,7 +78,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'sass',
-        'postcss'
+        'postcss',
+        'jekyll'
     ]);
 
     grunt.registerTask('watch', [

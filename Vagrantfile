@@ -1,23 +1,35 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+GIST_BASE = "https://gist.githubusercontent.com/kevinkhill/"
+php_vagrant_provisioner  = "ffb8f3f4a53a053f67a1"
+apache_vhost_provisioner = "ad836db19d3c5ef89076"
+
 Vagrant.configure("2") do |config|
 
     config.vm.box = "scotch/box"
-    config.vm.network "private_network", ip: "192.168.33.10"
     config.vm.hostname = "scotchbox"
-    config.vm.synced_folder ".", "/var/www", :mount_options => ["dmode=777", "fmode=666"]
-    config.vm.provision "shell" do |s|
-        s.privileged = false
-        s.path = "https://gist.githubusercontent.com/kevinkhill/ffb8f3f4a53a053f67a1/raw/lavacharts-vagrant-provisioner.sh"
-    end
+    config.vm.network "private_network", ip: "192.168.33.10"
+
+    config.vm.synced_folder "_site/", "/var/www/lavadocs/public",
+        type: "rsync",
+        create: true,
+        rsync__exclude: ".git/",
+        :mount_options => ["dmode=777", "fmode=666"]
 
     config.vm.provider "virtualbox" do |v|
-      v.memory = 2048
-      v.cpus = 2
+      v.memory = 512
+      v.cpus = 1
     end
 
-    # Optional NFS. Make sure to remove other synced_folder line too
-    #config.vm.synced_folder ".", "/var/www", :nfs => { :mount_options => ["dmode=777","fmode=666"] }
+    config.vm.provision "phpenv", type: "shell" do |s|
+        s.privileged = false
+        s.path = GIST_BASE + php_vagrant_provisioner + "/raw"
+    end
+
+    config.vm.provision "vhost", type: "shell" do |s|
+        s.privileged = true
+        s.path = GIST_BASE + apache_vhost_provisioner + "/raw"
+    end
 
 end
