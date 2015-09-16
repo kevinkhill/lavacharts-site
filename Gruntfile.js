@@ -35,7 +35,7 @@ module.exports = function (grunt) {
             },
             main: {
                 files: {
-                    'css/main.css': 'sass/main.sass'
+                    'build/css/main.css': 'sass/main.sass'
                 }
             },
             bootstrap: {
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files: {
-                    'css/bootstrap.css': 'scss/_bootstrap.scss'
+                    'build/css/bootstrap.css': 'scss/_bootstrap.scss'
                 }
             }
         },
@@ -55,12 +55,24 @@ module.exports = function (grunt) {
                 map: true,
                 processors: [
                   //require('autoprefixer-core')({ browsers: ['last 2 version'] }),
-                  require('cssnano')()
+                  require('cssnano')(),
+                  require("css-mqpacker")()
                 ]
             },
             dist: {
-                src: 'css/*.css'
+                src: '_site/css/*.css'
             }
+        },
+
+        copy: {
+            css: {
+                expand: true,
+                cwd: 'build/css',
+                src: '*.css',
+                dest: 'dest/',
+                flatten: true,
+                filter: 'isFile',
+            },
         },
 
         jekyll: {

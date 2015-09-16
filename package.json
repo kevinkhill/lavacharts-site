@@ -10,18 +10,33 @@
     "graphs",
     "google"
   ],
+  "dependencies": {
+    "bootstrap": "^3.3.5"
+  },
   "devDependencies": {
     "autoprefixer-core": "^5.1.11",
+    "css-mqpacker": "^4.0.0",
     "cssnano": "^3.0.1",
     "grunt": "^0.4.5",
     "grunt-concurrent": "^1.0.1",
+    "grunt-contrib-copy": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jekyll": "^0.4.2",
     "grunt-notify": "^0.4.1",
     "grunt-postcss": "^0.6.0",
     "grunt-sass": "^1.0.0",
+    "gulp": "^3.8.11",
+    "gulp-bower": "0.0.10",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.3",
+    "gulp-run": "^1.6.11",
+    "gulp-sass": "^2.0.4",
     "load-grunt-tasks": "^3.1.0",
     "node-sass": "^2.1.1"
+  },
+  "scripts": {
+    "jekyll:build": "jekyll build -d /var/www/lavadocs.local/public"
   },
   "repository": {
     "type": "git",

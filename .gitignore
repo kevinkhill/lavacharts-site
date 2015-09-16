@@ -5,8 +5,8 @@ node_modules/
 bower_components/
 
 build/
-cache/
 docs/
+.cache/
 .idea/
 .vagrant/
 

@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
         :disabled => true,
         :id => "vagrant-root"
 
-    config.vm.synced_folder "_site/", "/var/www/lavadocs/public",
+    config.vm.synced_folder "_site/", "/var/www/lavadocs.local/public",
         type: "rsync",
         create: true,
         rsync__exclude: ".git/",
