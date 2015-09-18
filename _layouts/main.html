@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>Lavacharts</title>
+
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="Charts and Graphs for PHP powered by the Google Chart API" />
-		<meta name="keywords" content="chart, laravel, bundle, package, composer, php" />
+		<meta name="keywords" content="php, chart, graph, laravel, bundle, package, composer" />
 		<meta name="author" content="Kevin Hill" />
 
-		<title>Lavacharts</title>
-
 		<link rel="icon" href="{{ site.baseurl }}/images/favicon.ico" type="image/x-icon" />
-		<link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet" type='text/css' />
-		<link href="{{ site.baseurl }}/css/main.css" rel="stylesheet" type='text/css' />
-		<link href='//fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+		<link href="{{ site.baseurl }}/css/style.min.css" rel="stylesheet" type='text/css' />
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -47,14 +45,14 @@
 	                <div class="bs-docs-section">
 				        {{ content }}
 				    </div>
-				</div>	  
+				</div>
 		        <div class="col-md-3" role="complementary">
 					{% include menu-stack.html %}
 		    	</div>
 		    </div>
 		</div>
 
-		{% include footer.html %}
+		<script src="{{ site.baseurl }}/js/bundle.min.js"></script>
 
 	</body>
 </html>
