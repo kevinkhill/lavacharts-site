@@ -9,39 +9,21 @@
 sourcemaps = require('gulp-sourcemaps'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
-   process = require('process');
+browserify = require('browserify'),
+debowerify = require('debowerify'),
+     shims = require('browserify-shim');
 
 //process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
 
-var browserify = require('browserify');
-var debowerify = require('debowerify');
-var browserify_shim = require('browserify-shim');
+var config = (function() {
+    var basePath = './resources';
 
-var config = {
-    sassPath: './resources/sass',
-    bowerDir: './bower_components'
-};
-
-gulp.task('browserify', function() {
-    return browserify({
-            debug: true,
-            entries: './resources/js/app.js',
-            transform: [
-                browserify_shim,
-                debowerify
-            ]
-        })
-        .bundle()
-        .pipe(source('bundle.js'))
-        .pipe(buffer())
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(rename({
-            extname: ".min.js"
-        }))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./_site/js'));
-});
+    return {
+        bowerDir: './bower_components',
+        scriptPath: basePath+'/js',
+        stylePath: basePath+'/sass',
+    };
+})();
 
 gulp.task('bower', function() {
     return bower().pipe(gulp.dest(config.bowerDir));
@@ -63,7 +45,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('css', function() {
-    return sass(config.sassPath + '/style.sass', {
+    return sass(config.stylePath + '/style.sass', {
         style: 'compressed',
         cacheLocation: './.cache/',
         loadPath: [
@@ -83,14 +65,50 @@ gulp.task('css', function() {
     .pipe(gulp.dest('./_site/css'));
 });
 
+gulp.task('js', function() {
+    return browserify({
+            debug: true,
+            entries: './resources/js/app.js',
+            transform: [
+                shims,
+                debowerify
+            ]
+        })
+        .bundle()
+        .pipe(source('bundle.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(rename({
+            extname: ".min.js"
+        }))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./_site/js'));
+});
+
 gulp.task('jekyll', shell.task([
     'jekyll build -d /var/www/lavadocs.local/public'
 ]));
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-    gulp.watch(config.sassPath + '/**/*.sass', ['css']);
-    gulp.watch('./_includes/**.*', ['jekyll']);
+    gulp.watch(config.stylePath + '/**/*.s(a|c)ss', [
+        'css'
+    ]);
+
+    gulp.watch(config.scriptPath + '/**/*.js', [
+        'js'
+    ]);
+
+    gulp.watch('./_includes/**.(md|html)', [
+        'jekyll'
+    ]);
 });
 
-gulp.task('default', ['bower', 'icons', 'css']);
+
+gulp.task('default', [
+    'bower',
+    'icons',
+    'css',
+    'images'
+]);
