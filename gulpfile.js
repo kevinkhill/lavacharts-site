@@ -5,6 +5,7 @@
      shell = require('gulp-shell'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
+   plumber = require('gulp-plumber'),
   imagemin = require('gulp-imagemin'),
 sourcemaps = require('gulp-sourcemaps'),
     source = require('vinyl-source-stream'),
@@ -16,59 +17,64 @@ debowerify = require('debowerify'),
 //process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
 
 var config = (function() {
-    var basePath = './resources';
+    var resources = './resources';
 
     return {
-        bowerDir: './bower_components',
-        scriptPath: basePath+'/js',
-        stylePath: basePath+'/sass',
+        paths: {
+            src     : resources,
+            dest    : '_site',
+            cache   : './.cache',
+            scripts : resources+'/js',
+            styles  : resources+'/sass',
+            images  : resources+'/images',
+            bower   : './bower_components',
+        }
     };
 })();
 
 gulp.task('bower', function() {
-    return bower().pipe(gulp.dest(config.bowerDir));
+    return bower().pipe(gulp.dest(config.paths.bower));
 });
 
 gulp.task('icons', function() {
-    return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*')
-               .pipe(gulp.dest('./_site/fonts'));
+    return gulp.src(config.paths.bower + '/fontawesome/fonts/**')
+               .pipe(gulp.dest(config.paths.dest+'/fonts'));
 });
 
 gulp.task('images', function() {
-    return gulp.src('./resources/images/**')
+    return gulp.src(config.paths.images+'/**')
+               .pipe(plumber())
                .pipe(imagemin({
                     optimizationLevel: 5,
                     progressive: true,
                     interlaced: true
                 }))
-               .pipe(gulp.dest('./_site/images'));
+               .pipe(gulp.dest(config.paths.dest+'/images'));
 });
 
 gulp.task('css', function() {
-    return sass(config.stylePath + '/style.sass', {
+    return sass(config.paths.styles+'/style.sass', {
         style: 'compressed',
-        cacheLocation: './.cache/',
+        cacheLocation: config.paths.cache,
         loadPath: [
-            './resources/sass',
-            config.bowerDir + '/bootstrap-sass-official/assets/stylesheets',
-            config.bowerDir + '/fontawesome/sass',
+            config.paths.styles,
+            config.paths.bower + '/bootstrap-sass-official/assets/stylesheets',
+            config.paths.bower + '/fontawesome/sass',
         ]
     })
-    .on("error", notify.onError(function (error) {
-        return "Error: " + error.message;
-    }))
+    .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(rename({
         extname: ".min.css"
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./_site/css'));
+    .pipe(gulp.dest(config.paths.dest+'/css'));
 });
 
 gulp.task('js', function() {
     return browserify({
             debug: true,
-            entries: './resources/js/app.js',
+            entries: config.paths.scripts+'/app.js',
             transform: [
                 shims,
                 debowerify
@@ -83,7 +89,7 @@ gulp.task('js', function() {
             extname: ".min.js"
         }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./_site/js'));
+        .pipe(gulp.dest(config.paths.dest+'/js'));
 });
 
 gulp.task('jekyll', shell.task([
@@ -91,8 +97,8 @@ gulp.task('jekyll', shell.task([
 ]));
 
 // Rerun the task when a file changes
-gulp.task('watch', function() {
-    gulp.watch(config.stylePath + '/**/*.s(a|c)ss', [
+gulp.task('watch', ['default'], function() {
+    gulp.watch(config.paths.styles+'/**/*.s(a|c)ss', [
         'css'
     ]);
 
@@ -104,7 +110,6 @@ gulp.task('watch', function() {
         'jekyll'
     ]);
 });
-
 
 gulp.task('default', [
     'bower',
