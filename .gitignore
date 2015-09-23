@@ -3,17 +3,13 @@ _site/
 vendor/
 node_modules/
 bower_components/
-
 build/
 docs/
 .cache/
 .idea/
 .vagrant/
 
-bootstrap/compiled.php
+.jekyll-metadata
 composer.phar
 composer.lock
-
-*DS_Store
-
 *.sublime-*

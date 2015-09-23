@@ -1,7 +1,8 @@
 {
-  "name": "lavadocs",
+  "name": "lavacharts-site",
   "version": "3.0.0",
   "description": "Lavacharts Site",
+  "homepage": "http://lavacharts.com",
   "author": "Kevin Hill",
   "license": "MIT",
   "keywords": [
@@ -22,6 +23,7 @@
   "browserify-shim": {
     "jquery": "$",
     "bootstrap": {
+      "exports": "bootstrap",
       "depends": [
         "jquery:$"
       ]
@@ -35,6 +37,7 @@
     "gulp": "^3.8.11",
     "gulp-bower": "0.0.10",
     "gulp-imagemin": "^2.3.0",
+    "gulp-newer": "^0.5.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
@@ -45,12 +48,6 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "scripts": {
-    "jekyll:build": "vagrant ssh -c 'cd /vagrant && jekyll build -d /var/www/lavadocs.local/public'",
-    "jekyll:watch": "vagrant ssh -c 'cd /vagrant && jekyll build --watch -d /var/www/lavadocs.local/public'",
-    "vagrant:npm:install": "vagrant ssh -c 'cd /vagrant && npm install'",
-    "vagrant:npm:update": "vagrant ssh -c 'cd /vagrant && npm update'"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevinkhill/lavacharts.git"
@@ -58,5 +55,8 @@
   "bugs": {
     "url": "https://github.com/kevinkhill/lavacharts/issues"
   },
-  "homepage": "https://github.com/kevinkhill/lavacharts#readme"
+  "scripts" : {
+    "jekyll:build": "bundle exec jekyll build",
+    "jekyll:serve": "bundle exec jekyll serve --watch"
+  }
 }

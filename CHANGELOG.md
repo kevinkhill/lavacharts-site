@@ -8,8 +8,7 @@
     - ControlWrappers
   - Added support for reading csv files into DataTables
     - Add separate package to composer "khill/datatableplus":"dev-master"
-  - Added ScatterChart (WIP)
-  - Added Material Charts (WIP)
+  - Added ScatterChart, TableChart and trendlines
   - lava.js has been refactored:
     - lava.get() replaced with:
       - getChart(label, callback) -> callback(Google chartObj, Lava chartObj)

@@ -1,3 +1,7 @@
+var $ = require('jquery')(window);
+global.jQuery = require("jquery");
+var bootstrap = require('bootstrap');
+
 $(function() {
 
   $('body').scrollspy({
@@ -11,5 +15,5 @@ $(function() {
     }
   });
 
-  require('./prettify.run.min');
+  //require('./prettify.run.min');
 });

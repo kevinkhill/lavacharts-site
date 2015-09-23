@@ -5,6 +5,7 @@
      shell = require('gulp-shell'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
+     newer = require('gulp-newer'),
    plumber = require('gulp-plumber'),
   imagemin = require('gulp-imagemin'),
 sourcemaps = require('gulp-sourcemaps'),
@@ -43,6 +44,7 @@ gulp.task('icons', function() {
 
 gulp.task('images', function() {
     return gulp.src(config.paths.images+'/**')
+               .pipe(newer(config.paths.dest+'/images'))
                .pipe(plumber())
                .pipe(imagemin({
                     optimizationLevel: 5,
@@ -92,11 +94,7 @@ gulp.task('js', function() {
         .pipe(gulp.dest(config.paths.dest+'/js'));
 });
 
-gulp.task('jekyll', shell.task([
-    'jekyll build -d /var/www/lavadocs.local/public'
-]));
 
-// Rerun the task when a file changes
 gulp.task('watch', ['default'], function() {
     gulp.watch(config.paths.styles+'/**/*.s(a|c)ss', [
         'css'
@@ -114,6 +112,7 @@ gulp.task('watch', ['default'], function() {
 gulp.task('default', [
     'bower',
     'icons',
+    'js',
     'css',
     'images'
 ]);
