@@ -1,8 +1,7 @@
-var $ = require('jquery')(window);
-global.jQuery = require("jquery");
+var $ = jQuery = require('jquery');
 var bootstrap = require('bootstrap');
 
-$(function() {
+jQuery(function ($) {
 
   $('body').scrollspy({
     target: '.lava-sidebar',

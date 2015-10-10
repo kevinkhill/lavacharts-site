@@ -16,12 +16,12 @@
   },
   "browserify": {
     "transform": [
-      "browserify-shim",
-      "debowerify"
+      "debowerify",
+      "browserify-shim"
     ]
   },
   "browserify-shim": {
-    "jquery": "$",
+    "jquery": "global:$",
     "bootstrap": {
       "exports": "bootstrap",
       "depends": [
@@ -55,7 +55,7 @@
   "bugs": {
     "url": "https://github.com/kevinkhill/lavacharts/issues"
   },
-  "scripts" : {
+  "scripts": {
     "jekyll:build": "bundle exec jekyll build",
     "jekyll:serve": "bundle exec jekyll serve --watch"
   }

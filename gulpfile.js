@@ -13,7 +13,7 @@ sourcemaps = require('gulp-sourcemaps'),
     buffer = require('vinyl-buffer'),
 browserify = require('browserify'),
 debowerify = require('debowerify'),
-     shims = require('browserify-shim');
+   shimify = require('browserify-shim');
 
 //process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
 
@@ -75,22 +75,17 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
     return browserify({
-            debug: true,
-            entries: config.paths.scripts+'/app.js',
-            transform: [
-                shims,
-                debowerify
-            ]
+            entries: [config.paths.scripts+'/app.js']
         })
         .bundle()
         .pipe(source('bundle.js'))
         .pipe(buffer())
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
+        //.pipe(sourcemaps.init())
+        //.pipe(uglify())
+        //.pipe(sourcemaps.write())
         .pipe(rename({
             extname: ".min.js"
         }))
-        .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.paths.dest+'/js'));
 });
 
@@ -100,12 +95,8 @@ gulp.task('watch', ['default'], function() {
         'css'
     ]);
 
-    gulp.watch(config.scriptPath + '/**/*.js', [
+    gulp.watch(config.paths.scripts + '/**/*.js', [
         'js'
-    ]);
-
-    gulp.watch('./_includes/**.(md|html)', [
-        'jekyll'
     ]);
 });
 
