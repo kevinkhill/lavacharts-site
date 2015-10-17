@@ -91,7 +91,7 @@ gulp.task('js', function() {
 
 
 gulp.task('watch', ['default'], function() {
-    gulp.watch(config.paths.styles+'/**/*.s(a|c)ss', [
+    gulp.watch(config.paths.styles+'/**/*ss', [
         'css'
     ]);
 

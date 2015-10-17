@@ -5,7 +5,7 @@ jQuery(function ($) {
 
   $('body').scrollspy({
     target: '.lava-sidebar',
-    offset: 550
+    offset: 100
   });
 
   $("#sidebar").affix({
