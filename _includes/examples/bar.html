@@ -9,16 +9,13 @@ $votes  = $lava->DataTable();
 
 $votes->addStringColumn('Food Poll')
       ->addNumberColumn('Votes')
-      ->addRow(array('Tacos', rand(1000,5000)))
-      ->addRow(array('Salad', rand(1000,5000)))
-      ->addRow(array('Pizza', rand(1000,5000)))
-      ->addRow(array('Apples', rand(1000,5000)))
-      ->addRow(array('Fish', rand(1000,5000)));
+      ->addRow(['Tacos',  rand(1000,5000)])
+      ->addRow(['Salad',  rand(1000,5000)])
+      ->addRow(['Pizza',  rand(1000,5000)])
+      ->addRow(['Apples', rand(1000,5000)])
+      ->addRow(['Fish',   rand(1000,5000)]);
 
-$lava->BarChart('Votes')
-     ->setOptions(array(
-         'datatable' => $votes
-     ));
+$lava->BarChart('Votes', $votes);
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
 <p>Otherwise, pass <span class="code">$barchart</span> or <span class="code">$lava</span> to your view to render.</p>
@@ -29,9 +26,6 @@ $lava->BarChart('Votes')
       <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="poll_div"></div>
-// With the chart object
-<? echo $barchart->render('poll_div') ?>
-
 // With the lava object
 <? echo $lava->render('BarChart', 'Food Poll', 'poll_div') ?>
 {% endhighlight %}
@@ -54,29 +48,5 @@ $lava->BarChart('Votes')
   <img src="images/examples/bar.png" />
 </div>
 <br/>
-
-<h3>Javascript Output</h3>
-<div class="js-well">
-{% highlight javascript startinline %}
-lava.charts.BarChart["Votes"] = {chart:null,draw:null,data:null,options:null,formats:[]};
-
-if (!document.getElementById("chart")){console.error("[Lavacharts] No matching element was found with ID \"chart\"");}
-
-lava.charts.BarChart["Votes"].draw = function() {
-var $this = lava.charts.BarChart["Votes"];
-
-$this.data = new google.visualization.DataTable({"cols":[{"type":"string","label":"Food"},{"type":"number","label":"Votes"}],"rows":[{"c":[{"v":"Tacos"},{"v":1448}]},{"c":[{"v":"Salad"},{"v":2690}]},{"c":[{"v":"Pizza"},{"v":3353}]},{"c":[{"v":"Apples"},{"v":4465}]},{"c":[{"v":"Fish"},{"v":3231}]}]}, 0.6);
-
-$this.options = [];
-
-$this.chart = new google.visualization.BarChart(document.getElementById("chart"));
-
-$this.chart.draw($this.data, $this.options);
-};
-
-google.load('visualization', '1', {'packages':['corechart']});
-google.setOnLoadCallback(lava.charts.BarChart["Votes"].draw);
-{% endhighlight %}
-</div>
 
 <div class="orange-divider"></div>

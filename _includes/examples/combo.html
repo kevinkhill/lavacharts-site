@@ -11,30 +11,26 @@ $finances->addDateColumn('Year')
          ->addNumberColumn('Sales')
          ->addNumberColumn('Expenses')
          ->addNumberColumn('Net Worth')
-         ->addRow(array('2009-1-1', 1100, 490, 1324))
-         ->addRow(array('2010-1-1', 1000, 400, 1524))
-         ->addRow(array('2011-1-1', 1400, 450, 1351))
-         ->addRow(array('2012-1-1', 1250, 600, 1243))
-         ->addRow(array('2013-1-1', 1100, 550, 1462));
+         ->addRow(['2009-1-1', 1100, 490, 1324])
+         ->addRow(['2010-1-1', 1000, 400, 1524])
+         ->addRow(['2011-1-1', 1400, 450, 1351])
+         ->addRow(['2012-1-1', 1250, 600, 1243])
+         ->addRow(['2013-1-1', 1100, 550, 1462]);
 
-$combochart = $lava->ComboChart('Finances')
-                   ->setOptions(array(
-                     'datatable' => $finances,
-                     'title' => 'Company Performance',
-                     'titleTextStyle' => $lava->TextStyle(array(
-                       'color' => 'rgb(123, 65, 89)',
-                       'fontSize' => 16
-                     )),
-                     'legend' => $lava->Legend(array(
-                       'position' => 'in'
-                     )),
-                     'seriesType' => 'bars',
-                     'series' => array(
-                       2 => $lava->Series(array(
-                         'type' => 'line'
-                       ))
-                     )
-                   ));
+$lava->ComboChart('Finances', $finances, [
+    'title' => 'Company Performance',
+    'titleTextStyle' => [
+        'color'    => 'rgb(123, 65, 89)',
+        'fontSize' => 16
+    ],
+    'legend' => [
+        'position' => 'in'
+    ],
+    'seriesType' => 'bars',
+    'series' => [
+        2 => ['type' => 'line']
+    ]
+]);
 // Note: In the series config, '2' correlates to the 3rd horizontal axis dataset.
 // The DateColumn is the VerticalAxis, so 'Net Worth' is the 3rd, key 2, in the series.
 {% endhighlight %}
@@ -47,9 +43,6 @@ $combochart = $lava->ComboChart('Finances')
       <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="finances-div"></div>
-// With the chart object
-<? echo $combochart->render('finances-div') ?>
-
 // With the lava object
 <? echo $lava->render('ComboChart', 'Finances', 'finances-div') ?>
 {% endhighlight %}
@@ -72,29 +65,5 @@ $combochart = $lava->ComboChart('Finances')
   <img src="images/examples/combo.jpg" />
 </div>
 <br/>
-
-<h3>Javascript Output</h3>
-<div class="js-well">
-{% highlight javascript startinline %}
-lava.charts.ColumnChart = {"Finances":{chart:null,draw:null,data:null,options:null,formats:[]}};
-
-if (!document.getElementById('chart')){console.error('[Lavaharts] No matching element was found with ID "chart"');}
-
-lava.charts.ColumnChart.Finances.draw = function() {
-var $this = lava.charts.ColumnChart.Finances;
-
-$this.data = new google.visualization.DataTable({"cols":[{"type":"date","label":"Year"},{"type":"number","label":"Sales"},{"type":"number","label":"Expenses"}],"rows":[{"c":[{"v":new Date(2004,11,19,22,34,51)},{"v":1000},{"v":400}]},{"c":[{"v":new Date(2005,11,19,22,34,51)},{"v":1170},{"v":460}]},{"c":[{"v":new Date(2006,11,19,22,34,51)},{"v":660},{"v":1120}]},{"c":[{"v":new Date(2007,11,19,22,34,51)},{"v":1030},{"v":54}]}]}, 0.6);
-
-$this.options = {"title":"Company Performance","titleTextStyle":{"color":"#eb6b2c","fontSize":14}};
-
-$this.chart = new google.visualization.ColumnChart(document.getElementById('chart'));
-
-$this.chart.draw($this.data, $this.options);
-};
-
-google.load('visualization', '1', {'packages':['corechart']});
-google.setOnLoadCallback(lava.charts.ColumnChart.Finances.draw);
-{% endhighlight %}
-</div>
 
 <div class="orange-divider"></div>
