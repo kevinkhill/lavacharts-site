@@ -7,7 +7,6 @@ build/
 docs/
 .cache/
 .idea/
-.vagrant/
 
 .jekyll-metadata
 composer.phar

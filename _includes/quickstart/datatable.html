@@ -6,8 +6,11 @@
   <li>Next, add some columns, defining the structure of the chart's data.
 	  <ul>
     	  <li><span class="pre">addDateColumn($description)</span> for dates</li>
-          <li><span class="pre">addNumberColumn($description)</span> for numbers</li>
-          <li><span class="pre">addStringColumn($description)</span> for strings</li>
+        <li><span class="pre">addTimeOfDayColumn($description)</span> for times of the day</li>
+        <li><span class="pre">addNumberColumn($description)</span> for numbers</li>
+        <li><span class="pre">addStringColumn($description)</span> for strings</li>
+        <li><span class="pre">addBooleanColumn($description)</span> for boolean values</li>
+        <li><span class="pre">addRoleColumn($description)</span> for roles</li>
 	  </ul>
   </li>
   <li>In this example, the first column is the horizontal axis, then then next two columns are the two sets of data.</li>
@@ -25,9 +28,9 @@ $stocksTable->addDateColumn('Day of Month')
 // Random Data For Example
 for ($a = 1; $a < 30; $a++)
 {
-    $rowData = array(
+    $rowData = [
       "2014-8-$a", rand(800,1000), rand(800,1000)
-    );
+    ];
 
     $stocksTable->addRow($rowData);
 }

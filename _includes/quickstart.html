@@ -1,0 +1,89 @@
+<h2 id="quickstart">Quickstart</h2>
+<ul class="arrows">
+  <li>Getting up and running with Lavacharts is a breeze and you can follow along with these easy steps to get you going.</li>
+  <li>You can also view the examples if you want to dive right in and look under the hood.</li>
+  <li>These steps will show you how to put a simple line chart into your project.</li>
+</ul>
+<br />
+
+<div id="quickstart-datatable" class="sub-section">
+<h3>DataTables</h3>
+<p class="lead">Creating a new DataTable</p>
+<p>The following is a simple example, just to get you up and running.</p>
+<p>For an in-depth look at DataTables, <a href="#datatable">Click Here</a> or use the link from the menu.</p>
+<ul>
+  <li>First, create a new DataTable object using the method from Lavcharts.</li>
+  <li>Next, add some columns, defining the structure of the chart's data.
+      <ul>
+        <li><span class="pre">addDateColumn($description)</span> for dates</li>
+        <ul>
+          <li><span class="pre">addDateTimeColumn($description)</span> for dates</li>
+          <li><span class="pre">addTimeOfDayColumn($description)</span> for dates</li>
+        </ul>
+        <li><span class="pre">addNumberColumn($description)</span> for numbers</li>
+        <li><span class="pre">addStringColumn($description)</span> for strings</li>
+        <li><span class="pre">addBooleanColumn($description)</span> for booleans</li>
+      </ul>
+  </li>
+  <li>In this example, the first column is the horizontal axis, then then next two columns are the two sets of data.</li>
+  <li>The <span class="pre">addRow()</span> method signature, follows the order in which the columns were added.
+  <br />So here, data[0] is for 'day', data[1] is for 'projected' and data[2] is for 'official'</li>
+</ul>
+
+{% highlight php startinline %}
+$stocksTable = $lava->DataTable();  // Lava::DataTable() if using Laravel
+
+$stocksTable->addDateColumn('Day of Month')
+            ->addNumberColumn('Projected')
+            ->addNumberColumn('Official');
+
+// Random Data For Example
+for ($a = 1; $a < 30; $a++) {
+    $rowData = [
+      "2015-10-$a", rand(800,1000), rand(800,1000)
+    ];
+
+    $stocksTable->addRow($rowData);
+}
+{% endhighlight %}
+</div>
+
+<div id="quickstart-chart" class="sub-section">
+<h3>Creating a Chart</h3>
+<ul class="arrows">
+  <li>Select which chart you will be generating.</li>
+  <li>Assign the chart a label.</li>
+  <li>Assign the datatable to the chart.</li>
+  <li>Continue on to render the chart.</li>
+</ul>
+{% highlight php startinline %}
+$chart = $lava->LineChart('myFancyChart', $stocksTable);
+// $chart = Lava::LineChart() if using Laravel
+{% endhighlight %}
+</div>
+
+<div id="quickstart-output" class="sub-section">
+<h3>Output</h3>
+<p class="lead">Rendering the chart</p>
+<p>There are two ways to get your chart to display on your page.</p>
+<ol>
+    <li>The library will generate only the javascript, and render into a div with a set elementId</li>
+    <li>The library will generate everything you need, div and javascript.</li>
+</ol>
+
+<p>Syntax: <span class="pre">render(chartType, chartLabel, elementId <em>[, bool | array(height, width)]</em>)</span></p>
+
+{% highlight php startinline %}
+// Example #1, output into a div you already created
+// <div id="myStocks"></div>
+echo $lava->render('LineChart', 'myFancyChart', 'myStocks');
+
+// Example #2, have the library create the div
+echo $lava->render('LineChart', 'myFancyChart', 'myStocks', true);
+
+// Example #3, have the library create the div with a fixed size
+echo $lava->render('LineChart', 'myFancyChart', 'myStocks', ['height'=>300, 'width'=>600]);
+{% endhighlight %}
+</div>
+
+<div class="vspace"></div>

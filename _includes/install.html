@@ -1,0 +1,63 @@
+<h2 id="install">Installation</h2>
+<p class="lead">Get up and running within minutes, using the PHP package manager, Composer.</p>
+<p><a href="https://getcomposer.org">Click Here</a> to check out Composer, if you haven't heard of it</p>
+<br />
+
+
+<div id="install-composer" class="sub-section">
+  <h3>With Composer</h3>
+  <p>First, copy this line into your project's composer.json file, in the <span class="pre">"require": {}</span> section</p>
+
+  {% highlight php startinline %}
+  "khill/lavacharts" : "{{ site.composer_version }}"
+  {% endhighlight %}
+  <br />
+
+  Next, run composer to download and install
+  {% highlight php startinline %}
+  composer update
+  {% endhighlight %}
+  <br />
+
+  <p>Finally, <span class="pre">require 'vendor/autoload.php';</span> in your project and you are good to go!</p>
+</div>
+
+
+<div id="install-laravel" class="sub-section">
+  <h3>Laravel</h3>
+  <p class="lead">If you are using Laravel...</p>
+
+  <p>Do not require the <span class="pre">vendor/autoload.php</span> file, since Laravel takes care of that.</p>
+  <p>And also, register the service provider by adding this line to the providers array in <span class="pre">app/config/app.php</span></p>
+  {% highlight php startinline %}
+  "Khill\Lavacharts\Laravel\LavachartsServiceProvider"
+  {% endhighlight %}
+
+  <p>Don't worry about adding the class alias, it is loaded automatically.</p>
+
+  <p class="lead">Remember, while using Laravel, replace <span class="pre">$lava-></span> with <span class="pre">Lava::</span></p>
+</div>
+
+
+<div id="install-manual" class="sub-section">
+  <h3>Manual (Non Composer)</h3>
+  <p>First, grab the most recent copy of the source from Github using this link:
+    <a href="//github.com/kevinkhill/lavacharts/releases">
+      <img src="//img.shields.io/github/release/kevinkhill/lavacharts.svg?style=plastic" />
+    </a>
+  </p>
+  <p>You will also need to get a copy of the <a href="https://github.com/briannesbitt/Carbon">Carbon Library</a> since it the DataTables depend on Carbon.</p>
+  <p>Then, include Carbon and Lavacharts and create a new instance of the library.</p>
+
+  {% highlight php startinline %}
+  include(/* path to unzipped carbon archive */ . '/src/Carbon/Carbon.php')
+  include(/* path to unzipped lavacharts archive */ . '/src/Lavacharts.php');
+
+  use \Khill\Lavacharts\Lavacharts;
+
+  $lava = new Lavacharts;
+  {% endhighlight %}
+</div>
+
+
+<div class="vspace"></div>  
