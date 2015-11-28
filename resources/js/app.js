@@ -7,12 +7,12 @@ jQuery(function ($) {
     target: '.lava-sidebar',
     offset: 100
   });
-
+/*
   $("#sidebar").affix({
     offset: {
       top: 550
     }
   });
-
+*/
   //require('./prettify.run.min');
 });

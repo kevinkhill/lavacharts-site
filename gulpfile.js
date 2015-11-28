@@ -9,6 +9,7 @@
    plumber = require('gulp-plumber'),
   imagemin = require('gulp-imagemin'),
 sourcemaps = require('gulp-sourcemaps'),
+livereload = require('gulp-livereload'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
 browserify = require('browserify'),
@@ -70,7 +71,8 @@ gulp.task('css', function() {
         extname: ".min.css"
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.paths.dest+'/css'));
+    .pipe(gulp.dest(config.paths.dest+'/css'))
+    .pipe(livereload());
 });
 
 gulp.task('js', function() {
@@ -86,11 +88,14 @@ gulp.task('js', function() {
         .pipe(rename({
             extname: ".min.js"
         }))
-        .pipe(gulp.dest(config.paths.dest+'/js'));
+        .pipe(gulp.dest(config.paths.dest+'/js'))
+        .pipe(livereload());
 });
 
 
 gulp.task('watch', ['default'], function() {
+    livereload.listen();
+
     gulp.watch(config.paths.styles+'/**/*ss', [
         'css'
     ]);

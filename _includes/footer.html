@@ -1,1 +1,9 @@
-<script src="{{ site.baseurl }}/js/bundle.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/bundle.min.js"></script>
+
+<!-- Menu Toggle Script -->
+<script type="text/javascript">
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>

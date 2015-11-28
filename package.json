@@ -37,6 +37,7 @@
     "gulp": "^3.8.11",
     "gulp-bower": "0.0.10",
     "gulp-imagemin": "^2.3.0",
+    "gulp-livereload": "^3.8.1",
     "gulp-newer": "^0.5.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
