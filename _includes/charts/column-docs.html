@@ -1,29 +1,23 @@
-<p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
+<p>Currently supported configuration options:</p>
 
-<div class="pre">
-  <span class="k">axisTitlesPosition</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$atp</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">barGroupWidth</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> | <a href="http://php.net/manual/en/language.types.string.php">string <span class="c1">/* representing a percent */</span></a> <span class="nv">$bgw</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">hAxis</span>(<a href="#config-horizontalaxis">HorizontalAxis</a> <span class="nv">$ha</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">isStacked</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$is</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pointSize</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$ps</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">vAxis</span>(<a href="#config-verticalaxis">VerticalAxis</a> <span class="nv">$va</span>)
-  <span class="s1">returns</span> Chart
-</div>
+{% highlight php startinline %}
+$lava->{{ type | capitalize }}Chart('Title', $DataTable, [
+    'axisTitlesPosition' => 'string',
+    'barGroupWidth'      => int | 'string'  //As a percent, "33%",'
+    'hAxis'              => [array],        //HorizontalAxis Options
+    'isStacked'          => bool,
+    'pointSize'          => int,
+    'vAxis'              => [array],        //VerticalAxis Options
+]);
+{% endhighlight %}
 
-<p>Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/columnchart#Configuration_Options">Google's Config Docs</a></p>
+<p>Learn more about:</p>
+<ul>
+    <li><a href="#datatables">DataTables</a></li>
+    <li><a href="#config-annotation">Annotation Options</a></li>
+    <li><a href="#config-horizontalaxis">HorizontalAxis Options</a></li>
+    <li><a href="#config-verticalaxis">VerticalAxis Options</a></li>
+</ul>
+
+<p>Explanations for each of the configuration options can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/{{ type }}chart#Configuration_Options">Google's Documentation</a></p>
+

@@ -47,54 +47,22 @@ title: Lavacharts
 
 <!--Charts-->
 <div class="section section-dark">
-  <h2 id="charts">Charts</h2>
-  <p class="lead">Select a chart from the dropdown or sidebar menu to see the different configuration methods / options available.</p>
-  <p>Create a new chart by calling from the top level Lava object, <span class="pre">$lava-></span> if not using Laravel, or <span class="pre">Lava::</span> when using the alias via service provider.
-  <p>All of the methods below are also available to all of the charts, as all charts extend the parent <span class="pre">Chart</span></p>
+    <h2 id="charts">Charts</h2>
+    <p class="lead">Select a chart from the dropdown or sidebar menu to see the different configuration methods / options available.</p>
+    <p>Create a new chart by calling from the top level Lava object, <span class="pre">$lava-></span> if not using Laravel, or <span class="pre">Lava::</span> when using the alias via service provider.
+    <p>All of the methods below are also available to all of the charts, as all charts extend the parent <span class="pre">Chart</span></p>
 
-  <div id="chart-parent" class="sub-section">
-    <h3>Parent Chart</h3>
-    {% include charts/parent-methods.html %}
-  </div>
+    <div id="chart-parent" class="sub-section">
+       <h3>Parent Chart</h3>
+        {% include charts/parent-methods.html %}
+    </div>
 
-  {% for type in site.data.chartTypes %}
-    {% include charts/{{ type }}-docs.html param=type %}
-  {% endfor %}
-
-  <div id="chart-column" class="sub-section">
-    <h3>ColumnChart</h3>
-    {% include charts/column-docs.html %}
-  </div>
-
-  <div id="chart-combo" class="sub-section">
-    <h3>ComboChart</h3>
-    {% include charts/combo-docs.html %}
-  </div>
-
-  <div id="chart-pie" class="sub-section">
-    <h3>PieChart</h3>
-    {% include charts/pie-docs.html %}
-  </div>
-
-  <div id="chart-donut" class="sub-section">
-    <h3>DonutChart</h3>
-    {% include charts/donut-docs.html %}
-  </div>
-
-  <div id="chart-geo" class="sub-section">
-    <h3>GeoChart</h3>
-    {% include charts/geo-docs.html %}
-  </div>
-
-  <div id="chart-calendar" class="sub-section">
-    <h3>CalendarChart</h3>
-    {% include charts/calendar-docs.html %}
-  </div>
-
-  <div id="chart-gauge" class="sub-section">
-    <h3>GaugeChart</h3>
-    {% include charts/gauge-docs.html %}
-  </div>
+    {% for type in site.data.chartTypes %}
+        <div id="chart-{{ type }}" class="sub-section">
+            <h3>{{ type | capitalize }}Chart</h3>
+            {% include charts/{{ type }}-docs.html param=type %}
+        </div>
+    {% endfor %}
 </div>
 <!--/Charts-->
 

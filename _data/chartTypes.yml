@@ -1,4 +1,11 @@
 # Supported chart types
 - area
 - bar
+- calendar
+- column
+- donut
+- gauge
+- geo
+- pie
 - line
+- scatter
