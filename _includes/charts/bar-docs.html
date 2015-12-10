@@ -1,61 +1,34 @@
-<p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
+<div id="chart-{{ type }}" class="sub-section">
+    <h2>{{ type | capitalize }}Chart</h2>
+    <p>Currently supported configuration options:</p>
 
-<div class="pre">
-  <span class="k">annotations</span>(<a href="#config-annotation">Annotation</a> <span class="nv">$a</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">axisTitlesPosition</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$atp</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">barGroupWidth</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> | <a href="http://php.net/manual/en/language.types.string.php">string <span class="c1">/* representing a percent */</span></a> <span class="nv">$bgw</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">dataOpacity</span>(<a href="http://php.net/manual/en/language.types.float.php">float</a> <span class="nv">$do</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">enableInteractivity</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$ei</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">focusTarget</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$ft</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">forceIFrame</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$fif</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">hAxes</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="c1">/* of <a href="#config-verticalaxis">HorizontalAxis</a> objects */</span> <span class="nv">$va</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">hAxis</span>(<a href="#config-horizontalaxis">HorizontalAxis</a> <span class="nv">$ha</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">orientation</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$o</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">isStacked</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$is</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">reverseCategories</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$rc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">series</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="c1">/* of <a href="#config-series">Series</a> objects */</span> <span class="nv">$s</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">theme</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$t</span>)
-  <span class="s1">returns</span> Chart
-</div>
+{% highlight php startinline %}
+$lava->{{ type | capitalize }}Chart('Title', $DataTable, [
+    'annotations'         => [array],
+    'axisTitlesPosition'  => 'string',
+    'barGroupWidth'       => int | 'string representing a percent, 33%',
+    'dataOpacity'         => float,
+    'enableInteractivity' => bool,
+    'focusTarget'         => 'string',
+    'forceIFrame'         => bool,
+    'hAxes'               => [array],
+    'hAxis'               => [array],
+    'orientation'         => 'string',
+    'isStacked'           => bool,
+    'reverseCategories'   => bool,
+    'series'              => [array],
+    'theme'               => 'string',
+    'vAxis'               => [array],
+]);
+{% endhighlight %}
 
-<p>Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/barchart#Configuration_Options">Google's Config Docs</a></p>
+    <p>Learn more about:</p>
+    <ul>
+        <li><a href="#datatables">DataTables</a></li>
+        <li><a href="#config-annotation">Annotation Options</a></li>
+        <li><a href="#config-horizontalaxis">hAxis Options</a></li>
+        <li><a href="#config-verticalaxis">vAxis Options</a></li>
+    </ul>
+
+    <p>Explanations for each of the configuration options can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/{{ type }}chart#Configuration_Options">Google's Documentation</a></p>
+</div>

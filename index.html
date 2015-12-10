@@ -57,20 +57,9 @@ title: Lavacharts
     {% include charts/parent-methods.html %}
   </div>
 
-  <div id="chart-line" class="sub-section">
-    <h2>LineChart</h2>
-    {% include charts/line-docs.html %}
-  </div>
-
-  <div id="chart-area" class="sub-section">
-    <h3>AreaChart</h3>
-    {% include charts/area-docs.html %}
-  </div>
-
-  <div id="chart-bar" class="sub-section">
-    <h3>BarChart</h3>
-    {% include charts/bar-docs.html %}
-  </div>
+  {% for type in site.data.chartTypes %}
+    {% include charts/{{ type }}-docs.html param=type %}
+  {% endfor %}
 
   <div id="chart-column" class="sub-section">
     <h3>ColumnChart</h3>
