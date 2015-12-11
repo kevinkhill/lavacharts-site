@@ -37,12 +37,12 @@ var config = (function() {
 gulp.task('bower', function() {
     return bower().pipe(gulp.dest(config.paths.bower));
 });
-
+/*
 gulp.task('icons', function() {
     return gulp.src(config.paths.bower + '/fontawesome/fonts/**')
                .pipe(gulp.dest(config.paths.dest+'/fonts'));
 });
-
+*/
 gulp.task('images', function() {
     return gulp.src(config.paths.images+'/**')
                .pipe(newer(config.paths.dest+'/images'))
@@ -62,7 +62,7 @@ gulp.task('css', function() {
         loadPath: [
             config.paths.styles,
             config.paths.bower + '/bootstrap-sass-official/assets/stylesheets',
-            config.paths.bower + '/fontawesome/sass',
+            //config.paths.bower + '/fontawesome/sass',
         ]
     })
     .pipe(plumber())
@@ -107,7 +107,7 @@ gulp.task('watch', ['default'], function() {
 
 gulp.task('default', [
     'bower',
-    'icons',
+    //'icons',
     'js',
     'css',
     'images'
