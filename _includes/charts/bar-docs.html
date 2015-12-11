@@ -2,21 +2,21 @@
 
 {% highlight php startinline %}
 $lava->{{ type | capitalize }}Chart('Title', $DataTable, [
-    'annotations'         => [array],       //Annotation Options
+    'annotations'         => [array],        //Annotation Options
     'axisTitlesPosition'  => 'string',
-    'barGroupWidth'       => int | 'string' //As a percent, "33%",
+    'barGroupWidth'       => int | 'string'  //As a percent, "33%"
     'dataOpacity'         => float,
     'enableInteractivity' => bool,
     'focusTarget'         => 'string',
     'forceIFrame'         => bool,
-    'hAxes'               => [array],       //Arrays of HorizontalAxis Options
-    'hAxis'               => [array],       //HorizontalAxis Options
+    'hAxes'               => [array],        //Arrays of HorizontalAxis Options
+    'hAxis'               => [array],        //HorizontalAxis Options
     'orientation'         => 'string',
     'isStacked'           => bool,
     'reverseCategories'   => bool,
-    'series'              => [array],       //Numerically indexed, arrays of Series Options
+    'series'              => [array],        //Numerically indexed, arrays of Series Options
     'theme'               => 'string',
-    'vAxis'               => [array],       //VerticalAxis Options
+    'vAxis'               => [array],        //VerticalAxis Options
 ]);
 {% endhighlight %}
 

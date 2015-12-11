@@ -10,19 +10,17 @@
 <h3>DataTables</h3>
 <p class="lead">Creating a new DataTable</p>
 <p>The following is a simple example, just to get you up and running.</p>
-<p>For an in-depth look at DataTables, <a href="#datatable">Click Here</a> or use the link from the menu.</p>
+<p>For an in-depth look at DataTables, <a href="#datatables">Click Here</a> or use the link from the menu.</p>
 <ul>
   <li>First, create a new DataTable object using the method from Lavcharts.</li>
   <li>Next, add some columns, defining the structure of the chart's data.
       <ul>
-        <li><span class="pre">addDateColumn($description)</span> for dates</li>
-        <ul>
-          <li><span class="pre">addDateTimeColumn($description)</span> for dates</li>
-          <li><span class="pre">addTimeOfDayColumn($description)</span> for dates</li>
-        </ul>
-        <li><span class="pre">addNumberColumn($description)</span> for numbers</li>
-        <li><span class="pre">addStringColumn($description)</span> for strings</li>
-        <li><span class="pre">addBooleanColumn($description)</span> for booleans</li>
+        <li><code>addDateColumn($description)</code> for dates</li>
+        <li><code>addTimeOfDayColumn($description)</code> for times of the day</li>
+        <li><code>addNumberColumn($description)</code> for numbers</li>
+        <li><code>addStringColumn($description)</code> for strings</li>
+        <li><code>addBooleanColumn($description)</code> for boolean values</li>
+        <li><code>addRoleColumn($description)</code> for roles</li>
       </ul>
   </li>
   <li>In this example, the first column is the horizontal axis, then then next two columns are the two sets of data.</li>

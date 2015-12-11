@@ -4,7 +4,7 @@ title: Lavacharts
 ---
 
 <div class="section section-dark">
-  <h2 id="intro">Introduction</h2>
+  <h1 id="intro">Introduction</h1>
   <p class="lead">Lavacharts abstracts Google's Javascript Chart API to PHP</p>
   <ul class="arrows">
     <li>The Lavachart library takes away the need for manual writing of Javascript in your views</li>
@@ -34,13 +34,13 @@ title: Lavacharts
 <!--Usage-->
 <div class="section section-light">
   <h2 id="lavacharts">Lavacharts</h2>
-  {% include configs/lavacharts.html %}
+  {% include lavacharts.html %}
   <div class="vspace"></div>
 </div>
 
 <div class="section section-light">
   <h2 id="datatables">DataTables</h2>
-  {% include configs/datatable.html %}
+  {% include datatable.html %}
   <div class="vspace"></div>
 </div>
 
@@ -91,45 +91,11 @@ title: Lavacharts
   <h2 id="examples">Examples</h2>
   <p class="lead">Here are a few examples of the types of charts you can create.</p>
 
-  <div id="example-line" class="sub-section">
-    {% include examples/line.html %}
-  </div>
-
-  <div id="example-area" class="sub-section">
-    {% include examples/area.html %}
-  </div>
-
-  <div id="example-bar" class="sub-section">
-    {% include examples/bar.html %}
-  </div>
-
-  <div id="example-column" class="sub-section">
-    {% include examples/column.html %}
-  </div>
-
-  <div id="example-combo" class="sub-section">
-    {% include examples/combo.html %}
-  </div>
-
-  <div id="example-pie" class="sub-section">
-    {% include examples/pie.html %}
-  </div>
-
-  <div id="example-donut" class="sub-section">
-    {% include examples/donut.html %}
-  </div>
-
-  <div id="example-geo" class="sub-section">
-    {% include examples/geo.html %}
-  </div>
-
-  <div id="example-calendar" class="sub-section">
-    {% include examples/calendar.html %}
-  </div>
-
-  <div id="example-gauge" class="sub-section">
-    {% include examples/gauge.html %}
-  </div>
+  {% for type in site.data.chartTypes %}
+      <div id="example-{{ type }}" class="sub-section">
+        {% include examples/{{ type }}.html %}
+      </div>
+  {% endfor %}
 </div>
 
 <!--Events-->
