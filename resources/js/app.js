@@ -14,5 +14,11 @@ jQuery(function ($) {
     }
   });
 */
-  //require('./prettify.run.min');
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+
+  require('./prettify.run.min');
+
 });

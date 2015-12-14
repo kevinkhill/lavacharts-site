@@ -29,11 +29,7 @@
         </script>
     </head>
 
-    <body>
-        <header id="top" role="banner">
-            {% include top-nav.html %}
-        </header>
-
+    <body data-spy="scroll" data-target=".lava-sidebar">
         <div id="wrapper">
 
             <!-- Sidebar -->
@@ -70,7 +66,6 @@
         </div>
         <!-- /#wrapper -->
 
-        {% include footer.html %}
-
+        <script type="text/javascript" src="{{ site.baseurl }}/js/bundle.min.js"></script>
     </body>
 </html>
