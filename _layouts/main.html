@@ -29,20 +29,20 @@
         </script>
     </head>
 
-    <body data-spy="scroll" data-target=".lava-sidebar">
+    <body>
         <div id="wrapper">
 
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
-                <ul class="sidebar-nav lava-sidebar">
-                    <li class="sidebar-brand">
-                        <a href="#">
-                            <!--<img src="/images/slim-logo.gif" />-->
-                            Lavacharts
-                        </a>
-                    </li>
-                    {% include menu-stack.html %}
-                </ul>
+                <a class="sidebar-brand" href="/">
+                    <!--<img src="/images/slim-logo.gif" />-->
+                    Lavacharts
+                </a>
+                <nav class="lava-sidebar">
+                    <ul class="nav sidebar-nav">
+                        {% include menu-stack.html %}
+                    </ul>
+                </nav>
             </div>
             <!-- /#sidebar-wrapper -->
 

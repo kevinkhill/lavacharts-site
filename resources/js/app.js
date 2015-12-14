@@ -2,23 +2,13 @@ var $ = jQuery = require('jquery');
 var bootstrap = require('bootstrap');
 
 jQuery(function ($) {
-
-  $('body').scrollspy({
-    target: '.lava-sidebar',
+  $('#page-content-wrapper').scrollspy({
+    target: '#sidebar-wrapper',
     offset: 100
   });
-/*
-  $("#sidebar").affix({
-    offset: {
-      top: 550
-    }
-  });
-*/
+
   $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
   });
-
-  require('./prettify.run.min');
-
 });

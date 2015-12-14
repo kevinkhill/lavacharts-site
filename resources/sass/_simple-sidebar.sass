@@ -4,8 +4,9 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-/* Toggle Styles */
+$wrapper-width: 200px
 
+/* Toggle Styles */
 #wrapper
   padding-left: 0
   -webkit-transition: all 0.5s ease
@@ -13,16 +14,17 @@
   -o-transition: all 0.5s ease
   transition: all 0.5s ease
   &.toggled
-    padding-left: 200px
+    padding-left: $wrapper-width
 
 #sidebar-wrapper
   z-index: 1000
   position: fixed
-  left: 200px
+  left: $wrapper-width
   width: 0
   height: 100%
-  margin-left: -200px
+  margin-left: -$wrapper-width
   overflow-y: auto
+  overflow-x: hidden
   background: #000
   -webkit-transition: all 0.5s ease
   -moz-transition: all 0.5s ease
@@ -30,22 +32,36 @@
   transition: all 0.5s ease
 
 #wrapper.toggled #sidebar-wrapper
-  width: 200px
+  width: $wrapper-width
 
 #page-content-wrapper
+  height: 100%
   width: 100%
   position: absolute
   padding: 15px
+  overflow-y: scroll
 
 #wrapper.toggled #page-content-wrapper
   position: absolute
-  margin-right: -200px
+  margin-right: -$wrapper-width
 
 /* Sidebar Styles */
+.sidebar-brand
+  text-decoration: none
+  height: 45px
+  padding-left: 20px
+  font-size: 22px
+  line-height: 60px
+  color: $link-grey
+  &:hover
+    color: $lava-red
+    background: none
+    text-decoration: none
+
 .sidebar-nav
   position: absolute
-  top: 0
-  width: 200px
+  top: 60px
+  width: $wrapper-width
   margin: 0
   padding: 0
   list-style: none
@@ -55,31 +71,31 @@
     a
       display: block
       text-decoration: none
-      color: #999999
+      color: $link-grey
       &:hover
         text-decoration: none
         color: #fff
         background: rgba(255, 255, 255, 0.2)
       &:active, &:focus
         text-decoration: none
-  > .sidebar-brand
-    height: 45px
-    padding-left: 20px
-    font-size: 22px
-    line-height: 60px
-    a
-      color: #999999
-      &:hover
-        color: #fff
-        background: none
+//  > .sidebar-brand
+//    height: 45px
+//    padding-left: 20px
+//    font-size: 22px
+//    line-height: 60px
+//    a
+//      color: #999999
+//      &:hover
+//        color: #fff
+//        background: none
 
 @media (min-width: 768px)
   #wrapper
-    padding-left: 200px
+    padding-left: $wrapper-width
     &.toggled
       padding-left: 0
   #sidebar-wrapper
-    width: 200px
+    width: $wrapper-width
   #wrapper.toggled #sidebar-wrapper
     width: 0
   #page-content-wrapper
