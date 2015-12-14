@@ -4,6 +4,7 @@ namespace Khill\Lavacharts\Exceptions;
 
 class InvalidOption extends \Exception
 {
+<<<<<<< HEAD
     public function __construct($option, $options)
     {
         $shortest = -1;
@@ -20,5 +21,14 @@ class InvalidOption extends \Exception
         $message = "'$option' is not a valid option, did you mean '$intended'?";
 
         parent::__construct($message);
+=======
+    public function __construct($option, $choices)
+    {
+        if (is_string($option) === false) {
+            $option = gettype($option);
+        }
+
+        parent::__construct("'$option' is not a valid option, must be one of [ ".implode(' | ', $choices).' ]');
+>>>>>>> origin/3.0
     }
 }

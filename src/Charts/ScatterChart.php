@@ -2,7 +2,13 @@
 
 namespace Khill\Lavacharts\Charts;
 
+<<<<<<< HEAD
 use \Khill\Lavacharts\Configs\DataTable;
+=======
+use \Khill\Lavacharts\Values\Label;
+use \Khill\Lavacharts\Options;
+use \Khill\Lavacharts\DataTables\DataTable;
+>>>>>>> origin/3.0
 
 /**
  * ScatterChart Class
@@ -14,7 +20,11 @@ use \Khill\Lavacharts\Configs\DataTable;
  * Use the series property to specify properties of each series individually.
  *
  *
+<<<<<<< HEAD
  * @package    Lavacharts
+=======
+ * @package    Khill\Lavacharts
+>>>>>>> origin/3.0
  * @subpackage Charts
  * @since      3.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -44,6 +54,10 @@ class ScatterChart extends Chart
     use \Khill\Lavacharts\Traits\SelectionModeTrait;
     use \Khill\Lavacharts\Traits\SeriesTrait;
     use \Khill\Lavacharts\Traits\ThemeTrait;
+<<<<<<< HEAD
+=======
+    use \Khill\Lavacharts\Traits\TrendlinesTrait;
+>>>>>>> origin/3.0
     use \Khill\Lavacharts\Traits\VerticalAxisTrait;
 
     /**
@@ -75,6 +89,7 @@ class ScatterChart extends Chart
     const VIZ_CLASS = 'google.visualization.ScatterChart';
 
     /**
+<<<<<<< HEAD
      * Builds a new chart with the given label.
      *
      * @param  string $chartLabel Identifying label for the chart.
@@ -104,5 +119,44 @@ class ScatterChart extends Chart
             'theme',
             'vAxis'
         ];
+=======
+     * Default configuration options for the chart.
+     *
+     * @var array
+     */
+    private $scatterDefaults = [
+        'annotations',
+        'axisTitlesPosition',
+        'crosshair',
+        'curveType',
+        'dataOpacity',
+        'enableInteractivity',
+        'forceIFrame',
+        'hAxis',
+        'lineWidth',
+        'orientation',
+        'pointShape',
+        'pointSize',
+        'reverseCategories',
+        'selectionMode',
+        'series',
+        'theme',
+        'trendlines',
+        'vAxis'
+    ];
+
+    /**
+     * Builds a new ScatterChart with the given label, datatable and options.
+     *
+     * @param  \Khill\Lavacharts\Values\Label         $chartLabel Identifying label for the chart.
+     * @param  \Khill\Lavacharts\DataTables\DataTable $datatable DataTable used for the chart.
+     * @param array                                   $config
+     */
+    public function __construct(Label $chartLabel, DataTable $datatable, $config = [])
+    {
+        $options = new Options($this->scatterDefaults);
+
+        parent::__construct($chartLabel, $datatable, $options, $config);
+>>>>>>> origin/3.0
     }
 }

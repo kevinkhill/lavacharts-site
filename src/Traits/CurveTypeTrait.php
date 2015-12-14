@@ -2,8 +2,11 @@
 
 namespace Khill\Lavacharts\Traits;
 
+<<<<<<< HEAD
 use \Khill\Lavacharts\Utils;
 
+=======
+>>>>>>> origin/3.0
 trait CurveTypeTrait
 {
     /**
@@ -24,6 +27,7 @@ trait CurveTypeTrait
             'function'
         ];
 
+<<<<<<< HEAD
         if (in_array($curveType, $values, true) === false) {
             throw $this->invalidConfigValue(
                 __FUNCTION__,
@@ -33,5 +37,8 @@ trait CurveTypeTrait
         }
 
         return $this->addOption([__FUNCTION__ => $curveType]);
+=======
+        return $this->setStringInArrayOption(__FUNCTION__, $curveType, $values);
+>>>>>>> origin/3.0
     }
 }

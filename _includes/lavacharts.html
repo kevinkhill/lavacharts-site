@@ -1,14 +1,10 @@
-<h3>Methods</h3>
-<p>These are the methods available via the main Lavacharts class.</p>
-<br/>
+<p class="lead">These are the methods available via the main Lavacharts class.</p>
 
-<p>This method with output the script tag to the google jsapi, along with some core javascript for lavacharts.</p>
-<p>Use with Angular so the script tag is not placed inside an ng-view and can be manually placed in the header.</p>
+<h3><code>jsapi()</code></h3>
+<p>This method with output the script tag for the google jsapi, along with lava.js; A custom module for lavacharts.</p>
+<p>Used with Angular so the script tag is not placed inside an ng-view and can be manually placed in the header / footer.</p>
 <p>If you do not need manual placement, ignore this method and the render methods will automatically add the script tags.</p>
-<div class="pre">
-  <span class="k">jsapi</span>()
-  <span class="s1">returns</span> String
-</div>
+
 <div class="pre">
   <span class="k">render</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$chartType</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$chartLabel</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$divId</span>[, <a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$div</span> | <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$divDimensions</span> ] )
   <span class="s1">returns</span> String
@@ -21,30 +17,26 @@
 </div>
 <br />
 
-<p>Any valid chart object, capitalized: LineChart, BarChart, PieChart, etc...</p>
 <div class="pre">
-  <span class="k">*Chart</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$title</span> )
-  <span class="s1">returns</span> Chart
+  <span class="k">Dashboard</span>( [<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$label</span>] )
+  <span class="s1">returns</span> Dashboard
 </div>
 <br />
 
-<p>Any valid config object, capitalized: TextStyle, HorizontalAxis, Annotation, etc...</p>
-<div class="pre">
-  <span class="k">*</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span> )
-  <span class="s1">returns</span> ConfigObject
-</div>
+<h3>Charts</h3>
+{% for type in site.data.chartTypes %}
+  <div class="pre">
+    <span class="k">{{ type | capitalize }}Chart</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$title</span> )
+    <span class="s1">returns</span> Chart
+  </div>
+{% endfor %}
 <br />
 
-<p>Any valid format object, capitalized: DateFormat, NumberFormat</p>
-<div class="pre">
-  <span class="k">*</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span> )
-  <span class="s1">returns</span> Format
-</div>
-<br />
-
-<p>Any valid event object, capitalized: Ready, MouseOver, etc...</p>
-<div class="pre">
-  <span class="k">*</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$callback</span> )
-  <span class="s1">returns</span> Event
-</div>
+<h3>Formats</h3>
+{% for type in site.data.formatTypes %}
+  <div class="pre">
+    <span class="k">{{ type | capitalize }}Format</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span> )
+    <span class="s1">returns</span> Format
+  </div>
+{% endfor %}
 <br />

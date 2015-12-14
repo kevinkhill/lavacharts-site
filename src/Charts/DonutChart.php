@@ -3,7 +3,14 @@
 namespace Khill\Lavacharts\Charts;
 
 use \Khill\Lavacharts\Utils;
+<<<<<<< HEAD
 use \Khill\Lavacharts\Configs\DataTable;
+=======
+use \Khill\Lavacharts\Values\Label;
+use \Khill\Lavacharts\Options;
+use \Khill\Lavacharts\DataTables\DataTable;
+use \Khill\Lavacharts\Exceptions\InvalidConfigValue;
+>>>>>>> origin/3.0
 
 /**
  * DonutChart Class
@@ -12,7 +19,11 @@ use \Khill\Lavacharts\Configs\DataTable;
  * tooltips when hovering over slices.
  *
  *
+<<<<<<< HEAD
  * @package    Lavacharts
+=======
+ * @package    Khill\Lavacharts
+>>>>>>> origin/3.0
  * @subpackage Charts
  * @since      1.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -51,6 +62,7 @@ class DonutChart extends PieChart
      */
     const VIZ_CLASS = 'google.visualization.PieChart';
 
+<<<<<<< HEAD
     /**
      * Builds a new chart with the given label.
      *
@@ -75,17 +87,59 @@ class DonutChart extends PieChart
      *
      * @param  integer|float  $pieHole Size of the pie hole.
      * @return DonutChart
+=======
+    private $donutDefaults = [
+        'pieHole'
+    ];
+
+    /**
+     * Builds a new chart with the given label and DataTable.
+     *
+     * @param  \Khill\Lavacharts\Values\Label $chartLabel Identifying label for the chart.
+     * @param  \Khill\Lavacharts\DataTables\DataTable $datatable DataTable used for the chart.
+     * @param  array $config Array of options to set for the chart.
+     * @return \Khill\Lavacharts\Charts\DonutChart
+     */
+    public function __construct(Label $chartLabel, DataTable $datatable, $config = [])
+    {
+        $options = new Options($this->donutDefaults);
+        $options->set('pieHole', 0.5);
+
+        parent::__construct($chartLabel, $datatable, $config);
+
+        $this->options->merge($options);
+    }
+
+    /**
+     * If between 0 and 1, displays a donut chart.
+     *
+     * The hole with have a radius equal to $pieHole times the radius of the chart.
+     *
+     *
+     * @param  integer|float $pieHole Size of the pie hole.
+     * @return \Khill\Lavacharts\Charts\DonutChart
+     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
+>>>>>>> origin/3.0
      */
     public function pieHole($pieHole)
     {
         if (Utils::between(0.0, $pieHole, 1.0) === false) {
+<<<<<<< HEAD
             throw $this->invalidConfigValue(
                 __FUNCTION__,
+=======
+            throw new InvalidConfigValue(
+                static::TYPE . '->' . __FUNCTION__,
+>>>>>>> origin/3.0
                 'float',
                 'while, 0 < pieHole < 1 '
             );
         }
 
+<<<<<<< HEAD
         return $this->addOption([__FUNCTION__ => $pieHole]);
+=======
+        return $this->setOption(__FUNCTION__, $pieHole);
+>>>>>>> origin/3.0
     }
 }

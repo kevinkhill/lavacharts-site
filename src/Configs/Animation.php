@@ -2,8 +2,13 @@
 
 namespace Khill\Lavacharts\Configs;
 
+<<<<<<< HEAD
 use \Khill\Lavacharts\Utils;
 use \Khill\Lavacharts\Exceptions\InvalidConfigValue;
+=======
+use \Khill\Lavacharts\JsonConfig;
+use \Khill\Lavacharts\Options;
+>>>>>>> origin/3.0
 
 /**
  * Animation ConfigObject
@@ -12,7 +17,11 @@ use \Khill\Lavacharts\Exceptions\InvalidConfigValue;
  * be passed into the chart's options.
  *
  *
+<<<<<<< HEAD
  * @package    Lavacharts
+=======
+ * @package    Khill\Lavacharts
+>>>>>>> origin/3.0
  * @subpackage Configs
  * @since      2.2.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -21,6 +30,7 @@ use \Khill\Lavacharts\Exceptions\InvalidConfigValue;
  * @link       http://lavacharts.com                   Official Docs Site
  * @license    http://opensource.org/licenses/MIT MIT
  */
+<<<<<<< HEAD
 class Animation extends ConfigObject
 {
     /**
@@ -43,6 +53,27 @@ class Animation extends ConfigObject
      * @var bool
      */
     public $startup;
+=======
+class Animation extends JsonConfig
+{
+    /**
+     * Type of JsonConfig object
+     *
+     * @var string
+     */
+    const TYPE = 'Animation';
+
+    /**
+     * Default options for Animation
+     *
+     * @var array
+     */
+    private $defaults = [
+        'duration',
+        'easing',
+        'startup'
+    ];
+>>>>>>> origin/3.0
 
     /**
      * Builds the Animation object.
@@ -50,11 +81,20 @@ class Animation extends ConfigObject
      * @param  array $config Associative array containing key => value pairs for the various configuration options.
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigProperty
+<<<<<<< HEAD
      * @return self
      */
     public function __construct($config = [])
     {
         parent::__construct($this, $config);
+=======
+     */
+    public function __construct($config = [])
+    {
+        $options = new Options($this->defaults);
+
+        parent::__construct($options, $config);
+>>>>>>> origin/3.0
     }
 
     /**
@@ -63,6 +103,7 @@ class Animation extends ConfigObject
      * For details, see the animation documentation.
      *
      * @see    https://developers.google.com/chart/interactive/docs/animation
+<<<<<<< HEAD
      * @param  integer       $d
      * @return self
      */
@@ -78,6 +119,15 @@ class Animation extends ConfigObject
         }
 
         return $this;
+=======
+     * @param  integer $duration
+     * @return \Khill\Lavacharts\Configs\Animation
+     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
+     */
+    public function duration($duration)
+    {
+        return $this->setIntOption(__FUNCTION__, $duration);
+>>>>>>> origin/3.0
     }
 
     /**
@@ -89,10 +139,18 @@ class Animation extends ConfigObject
      * 'out' - Ease out - Start fast and slow down.
      * 'inAndOut' - Ease in and out - Start slow, speed up, then slow down.
      *
+<<<<<<< HEAD
      * @param  string    $e
      * @return self
      */
     public function easing($e)
+=======
+     * @param  string $easing
+     * @return \Khill\Lavacharts\Configs\Animation
+     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
+     */
+    public function easing($easing)
+>>>>>>> origin/3.0
     {
         $values = [
             'linear',
@@ -101,6 +159,7 @@ class Animation extends ConfigObject
             'inAndOut'
         ];
 
+<<<<<<< HEAD
         if (in_array($e, $values, true)) {
             $this->easing = $e;
         } else {
@@ -112,6 +171,9 @@ class Animation extends ConfigObject
         }
 
         return $this;
+=======
+        return $this->setStringInArrayOption(__FUNCTION__, $easing, $values);
+>>>>>>> origin/3.0
     }
 
     /**
@@ -119,6 +181,7 @@ class Animation extends ConfigObject
      *
      * If true, the chart will start at the baseline and animate to its final state.
      *
+<<<<<<< HEAD
      * @param  bool       $s
      * @return self
      */
@@ -134,5 +197,14 @@ class Animation extends ConfigObject
         }
 
         return $this;
+=======
+     * @param  bool $startup
+     * @return \Khill\Lavacharts\Configs\Animation
+     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
+     */
+    public function startup($startup)
+    {
+        return $this->setBoolOption(__FUNCTION__, $startup);
+>>>>>>> origin/3.0
     }
 }

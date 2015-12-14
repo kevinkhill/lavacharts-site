@@ -3,7 +3,13 @@
 namespace Khill\Lavacharts\Charts;
 
 use \Khill\Lavacharts\Utils;
+<<<<<<< HEAD
 use \Khill\Lavacharts\Configs\DataTable;
+=======
+use \Khill\Lavacharts\Values\Label;
+use \Khill\Lavacharts\Options;
+use \Khill\Lavacharts\DataTables\DataTable;
+>>>>>>> origin/3.0
 
 /**
  * ComboChart Class
@@ -15,7 +21,11 @@ use \Khill\Lavacharts\Configs\DataTable;
  * Use the series property to specify properties of each series individually.
  *
  *
+<<<<<<< HEAD
  * @package    Lavacharts
+=======
+ * @package    Khill\Lavacharts
+>>>>>>> origin/3.0
  * @subpackage Charts
  * @since      2.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -82,6 +92,7 @@ class ComboChart extends Chart
     const VIZ_CLASS = 'google.visualization.ComboChart';
 
     /**
+<<<<<<< HEAD
      * Builds a new chart with the given label.
      *
      * @param  string $chartLabel Identifying label for the chart.
@@ -118,10 +129,56 @@ class ComboChart extends Chart
             'vAxes',
             'vAxis'
         ], $this->defaults);
+=======
+     * Default configuration options for the chart.
+     *
+     * @var array
+     */
+    private $comboDefaults = [
+        'annotations',
+        'areaOpacity',
+        'axisTitlesPosition',
+        'barGroupWidth',
+        'crosshair',
+        'curveType',
+        'dataOpacity',
+        'enableInteractivity',
+        'focusTarget',
+        'forceIFrame',
+        'hAxis',
+        'interpolateNulls',
+        'isStacked',
+        'lineWidth',
+        'orientation',
+        'pointShape',
+        'pointSize',
+        'reverseCategories',
+        'selectionMode',
+        'series',
+        'seriesType',
+        'theme',
+        'vAxes',
+        'vAxis'
+    ];
+
+    /**
+     * Builds a new ComboChart with the given label, datatable and options.
+     *
+     * @param  \Khill\Lavacharts\Values\Label         $chartLabel Identifying label for the chart.
+     * @param  \Khill\Lavacharts\DataTables\DataTable $datatable DataTable used for the chart.
+     * @param array                                   $config
+     */
+    public function __construct(Label $chartLabel, DataTable $datatable, $config = [])
+    {
+        $options = new Options($this->comboDefaults);
+
+        parent::__construct($chartLabel, $datatable, $options, $config);
+>>>>>>> origin/3.0
     }
 
     /**
      * The default line type for any series not specified in the series property.
+<<<<<<< HEAD
      * Available values are:
      * 'line', 'area', 'bars', 'candlesticks' and 'steppedArea'
      *
@@ -130,6 +187,18 @@ class ComboChart extends Chart
      * @return ComboChart
      */
     public function seriesType($type)
+=======
+     *
+     *
+     * Available values are:
+     * line, area, bars, candlesticks, and steppedArea
+     *
+     * @param  string $seriesType
+     * @return \Khill\Lavacharts\Charts\ComboChart
+     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
+     */
+    public function seriesType($seriesType)
+>>>>>>> origin/3.0
     {
         $values = [
             'line',
@@ -139,6 +208,7 @@ class ComboChart extends Chart
             'steppedArea'
         ];
 
+<<<<<<< HEAD
         if (in_array($type, $values, true) === false) {
             throw $this->invalidConfigValue(
                 __FUNCTION__,
@@ -160,3 +230,8 @@ candlestick.risingColor.fill - string - auto (white or the series color, dependi
 candlestick.risingColor.stroke - string - auto (the series color or white, depending on hollowIsRising) - [[The stroke color of rising candles, as an HTML color string.]]
 candlestick.risingColor.strokeWidth - number - 2 - [[The stroke width of rising candles, as an HTML color string.]]
 */
+=======
+        $this->setStringInArrayOption(__FUNCTION__, $seriesType, $values);
+    }
+}
+>>>>>>> origin/3.0

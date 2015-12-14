@@ -35,13 +35,13 @@ title: Lavacharts
 
 <!--Usage-->
 <div class="section section-light">
-  <h2 id="lavacharts">Lavacharts</h2>
+  <h1 id="lavacharts">Lavacharts</h1>
   {% include lavacharts.html %}
   <div class="vspace"></div>
 </div>
 
 <div class="section section-light">
-  <h2 id="datatables">DataTables</h2>
+  <h1 id="datatables">DataTables</h1>
   {% include datatable.html %}
   <div class="vspace"></div>
 </div>
@@ -49,13 +49,13 @@ title: Lavacharts
 
 <!--Charts-->
 <div class="section section-dark">
-    <h2 id="charts">Charts</h2>
+    <h1 id="charts">Charts</h1>
     <p class="lead">Select a chart from the dropdown or sidebar menu to see the different configuration methods / options available.</p>
     <p>Create a new chart by calling from the top level Lava object, <span class="pre">$lava-></span> if not using Laravel, or <span class="pre">Lava::</span> when using the alias via service provider.
     <p>All of the methods below are also available to all of the charts, as all charts extend the parent <span class="pre">Chart</span></p>
 
     <div id="chart-parent" class="sub-section">
-       <h3>Parent Chart</h3>
+       <h2>Parent Chart</h2>
         {% include charts/parent-methods.html %}
     </div>
 
@@ -70,7 +70,7 @@ title: Lavacharts
 
 <!--Dashboards-->
 <div class="section section-light">
-  <h2 id="dashboards">Dashboards</h2>
+  <h1 id="dashboards">Dashboards</h1>
   {% include dashboards/dashboards.html %}
   <div class="vspace-50"></div>
 
@@ -90,7 +90,7 @@ title: Lavacharts
 
 <!--Examples-->
 <div class="section section-dark">
-  <h2 id="examples">Examples</h2>
+  <h1 id="examples">Examples</h1>
   <p class="lead">Here are a few examples of the types of charts you can create.</p>
 
   {% for type in site.data.chartTypes %}
@@ -102,6 +102,10 @@ title: Lavacharts
 
 <!--Events-->
 <div class="section section-dark">
+  <h1 id="events">Lava.js</h1>
+  <p class="lead">
+    Providing extra functionality to your charts and dashboards
+  </p>
   <h2 id="events">Chart Events</h2>
   {% include configs/events.html %}
 

@@ -2,7 +2,11 @@
 
 namespace Khill\Lavacharts\Traits;
 
+<<<<<<< HEAD
 use \Khill\Lavacharts\Utils;
+=======
+
+>>>>>>> origin/3.0
 
 trait ThemeTrait
 {
@@ -29,6 +33,7 @@ trait ThemeTrait
             'maximized'
         ];
 
+<<<<<<< HEAD
         if (in_array($theme, $values, true) === false) {
             throw $this->invalidConfigValue(
                 __FUNCTION__,
@@ -38,5 +43,8 @@ trait ThemeTrait
         }
 
         return $this->addOption([__FUNCTION__ => $theme]);
+=======
+        return $this->setStringInArrayOption(__FUNCTION__, $theme, $values);
+>>>>>>> origin/3.0
     }
 }

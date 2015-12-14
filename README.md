@@ -1,0 +1,161 @@
+# Lavacharts
+[![Total Downloads](https://img.shields.io/packagist/dt/khill/lavacharts.svg?style=plastic)](https://packagist.org/packages/khill/lavacharts)
+[![License](https://img.shields.io/packagist/l/khill/lavacharts.svg?style=plastic)](http://opensource.org/licenses/MIT)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.4-8892BF.svg?style=plastic)](https://php.net/)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kevinkhill/lavacharts?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![PayPayl](https://img.shields.io/badge/paypal-donate-yellow.svg?style=plastic)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FLP6MYY3PYSFQ) 
+
+Lavacharts is a graphing / chart library for PHP5.4+ that wraps the Google Chart API
+
+Stable:
+[![Current Release](https://img.shields.io/github/release/kevinkhill/lavacharts.svg?style=plastic)](https://github.com/kevinkhill/lavacharts/releases)
+[![Build Status](https://img.shields.io/travis/kevinkhill/lavacharts/master.svg?style=plastic)](https://travis-ci.org/kevinkhill/lavacharts)
+[![Coverage Status](https://img.shields.io/coveralls/kevinkhill/lavacharts/master.svg?style=plastic)](https://coveralls.io/r/kevinkhill/lavacharts?branch=master)
+
+Dev:
+[![Current Release](https://img.shields.io/badge/release-dev--3.0-brightgreen.svg?style=plastic)](https://github.com/kevinkhill/lavacharts/tree/3.0)
+[![Build Status](https://img.shields.io/travis/kevinkhill/lavacharts/3.0.svg?style=plastic)](https://travis-ci.org/kevinkhill/lavacharts)
+[![Coverage Status](https://img.shields.io/coveralls/kevinkhill/lavacharts/3.0.svg?style=plastic)](https://coveralls.io/r/kevinkhill/lavacharts?branch=3.0)
+
+## Version 3.0 is still a work in progress, but mostly stable.
+Check here for notes on how to  [upgrade from 2.5.x to 3.0.x](https://github.com/kevinkhill/lavacharts/wiki/Upgrading-from-2.5-to-3.0)
+
+## Package Features
+- Blade template extensions for laravel
+- Lava.js module for interacting with charts client-side
+  - AJAX data reloading
+  - Fetching charts
+  - Events integration
+- DataTable addColumn aliases
+- DataTable column formatters
+- [Carbon](https://github.com/briannesbitt/Carbon) support for date columns
+- Supports string, number, date, and timeofday columns
+- Now supporting 12 Charts!
+  - Area, Bar, Calendar, Column, Combo, Donut, Gauge, Geo, Line, Pie, Scatter, Table
+- [DataTablePlus](https://github.com/kevinkhill/datatableplus) package can be added to parse CSV files or Eloquent collections into DataTables.
+
+## For complete documentation, please visit [lavacharts.com](http://lavacharts.com/)
+
+---
+
+## Installing
+In your project's main ```composer.json``` file, add this line to the requirements:
+
+  ```
+  "khill/lavacharts": "3.0.x-dev"
+  ```
+
+Run Composer to install Lavacharts:
+
+  ```
+  composer update
+  ```
+
+## Laravel Service Provider
+### Laravel 5.x
+Register Lavacharts in your app by adding this line to the end of the providers array in ```config/app.php```:
+  ```
+  'providers' => [
+      ...
+
+      Khill\Lavacharts\Laravel\LavachartsServiceProvider::class
+  ],
+  ```
+The ```Lava::``` alias will be registered automatically via the service provider.
+
+### Laravel 4.x
+Register Lavacharts in your app by adding this line to the end of the providers array in ```app/config/app.php```:
+
+  ```
+  'providers' => array(
+      ...
+
+      "Khill\Lavacharts\Laravel\LavachartsServiceProvider"
+  ),
+  ```
+The ```Lava::``` alias will be registered automatically via the service provider.
+
+## Non-Laravel
+If you are using Lavacharts with Composer and not in Laravel, that's fine, just make sure to:
+```require 'vendor/autoload.php';``` within you project.
+
+Create an instance of Lavacharts: ```$lava = new Khill\Lavacharts\Lavacharts;```
+
+Replace all of the ```Lava::``` aliases in the examples, by chaining from the Lavacharts object you created.
+
+Ex: ```$dt = $lava->DataTable();``` instead of ```$dt = Lava::DataTable();```
+
+
+# Usage
+The creation of charts is separated into two parts:
+First, within a route or controller, you define the chart, the data table, and the customization of the output.
+
+Second, within a view, you use one line and the library will output all the necessary javascript code for you.
+
+## Basic Example
+Here is an example of the simplest chart you can create: A line chart with one dataset and a title, no configuration.
+
+### Controller
+```
+    $stocksTable = $lava->DataTable();  // Lava::DataTable() if using Laravel
+
+    $stocksTable->addDateColumn('Day of Month')
+                ->addNumberColumn('Projected')
+                ->addNumberColumn('Official');
+
+    // Random Data For Example
+    for ($a = 1; $a < 30; $a++)
+    {
+        $rowData = [
+          "2014-8-$a", rand(800,1000), rand(800,1000)
+        ];
+
+        $stocksTable->addRow($rowData);
+    }
+```
+
+Arrays work for datatables as well...
+```
+  $stocksTable->addColumns([
+    ['date', 'Day of Month'],
+    ['number', 'Projected'],
+    ['number', 'Official']
+  ]];
+```
+
+...and for setting chart options!
+```
+  $lava->LineChart('Stocks', $stocksTable, ['title' => 'Stock Market Trends']);
+```
+
+## View
+If you are using Laravel and the Blade templating engine, there are some nifty extensions thrown in for a cleaner view
+
+  ```
+  @linechart('Stocks', 'stocks-div');
+  // Behind the scenes this just calls Lava::renderLineChart('Stocks', 'stocks-div')
+  // which is an alias for the render method, seen below
+  ```
+
+Or you can use the new render method, passing in the chart type, label, and element id.
+
+  ```
+  echo Lava::render('LineChart', 'Stocks', 'stocks-div');
+  ```
+
+This is all assuming you already have a div in your page with the id "stocks-div":
+```<div id="stocks-div"></div>```
+
+If you don't have a div ready to accept the charts, add one more parameter to ```@linechart()``` or ```render()``` and it will be created for you.
+
+Add ```true``` to for the library to create a plain div, or an array with keys ```width & height```
+
+Example:
+```
+  @linechart('Stocks', 'stocks-div', true)
+  // Or
+  echo Lava::render('LineChart', 'Stocks', 'stocks-div', ['width'=>1024, 'height'=>768]);
+```
+
+# Changelog
+The complete changelog can be found [here](https://github.com/kevinkhill/lavacharts/wiki/Changelog)

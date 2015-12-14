@@ -2,7 +2,13 @@
 
 namespace Khill\Lavacharts\Charts;
 
+<<<<<<< HEAD
 use \Khill\Lavacharts\Configs\DataTable;
+=======
+use \Khill\Lavacharts\Values\Label;
+use \Khill\Lavacharts\Options;
+use \Khill\Lavacharts\DataTables\DataTable;
+>>>>>>> origin/3.0
 
 /**
  * AreaChart Class
@@ -11,7 +17,11 @@ use \Khill\Lavacharts\Configs\DataTable;
  * tips when hovering over points.
  *
  *
+<<<<<<< HEAD
  * @package    Lavacharts
+=======
+ * @package    Khill\Lavacharts
+>>>>>>> origin/3.0
  * @subpackage Charts
  * @since      1.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -64,6 +74,7 @@ class AreaChart extends Chart
      */
     const VIZ_CLASS = 'google.visualization.AreaChart';
 
+<<<<<<< HEAD
     /**
      * Builds a new chart with the given label.
      *
@@ -87,5 +98,32 @@ class AreaChart extends Chart
             'vAxes',
             'vAxis'
         ], $this->defaults);
+=======
+    private $areaDefaults = [
+        'areaOpacity',
+        'axisTitlesPosition',
+        'focusTarget',
+        'hAxis',
+        'isStacked',
+        'interpolateNulls',
+        'lineWidth',
+        'pointSize',
+        'vAxes',
+        'vAxis'
+    ];
+
+    /**
+     * Builds a new AreaChart with the given label, datatable and options.
+     *
+     * @param  \Khill\Lavacharts\Values\Label         $chartLabel Identifying label for the chart.
+     * @param  \Khill\Lavacharts\DataTables\DataTable $datatable DataTable used for the chart.
+     * @param array                                   $config
+     */
+    public function __construct(Label $chartLabel, DataTable $datatable, $config = [])
+    {
+        $options = new Options($this->areaDefaults);
+
+        parent::__construct($chartLabel, $datatable, $options, $config);
+>>>>>>> origin/3.0
     }
 }

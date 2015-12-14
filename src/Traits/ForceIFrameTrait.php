@@ -15,6 +15,7 @@ trait ForceIFrameTrait
      */
     public function forceIFrame($iframe)
     {
+<<<<<<< HEAD
         if (is_bool($iframe) === false) {
             throw $this->invalidConfigValue(
                 __FUNCTION__,
@@ -23,5 +24,8 @@ trait ForceIFrameTrait
         }
 
         return $this->addOption([__FUNCTION__ => $iframe]);
+=======
+        return $this->setBoolOption(__FUNCTION__, $iframe);
+>>>>>>> origin/3.0
     }
 }

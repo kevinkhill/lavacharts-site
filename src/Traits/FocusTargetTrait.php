@@ -2,7 +2,11 @@
 
 namespace Khill\Lavacharts\Traits;
 
+<<<<<<< HEAD
 use \Khill\Lavacharts\Utils;
+=======
+
+>>>>>>> origin/3.0
 
 trait FocusTargetTrait
 {
@@ -30,6 +34,7 @@ trait FocusTargetTrait
             'category'
         ];
 
+<<<<<<< HEAD
         if (in_array($focusTarget, $values, true) === false) {
             throw $this->invalidConfigValue(
                 __FUNCTION__,
@@ -39,5 +44,8 @@ trait FocusTargetTrait
         }
 
         return $this->addOption([__FUNCTION__ => $focusTarget]);
+=======
+        return $this->setStringInArrayOption(__FUNCTION__, $focusTarget, $values);
+>>>>>>> origin/3.0
     }
 }

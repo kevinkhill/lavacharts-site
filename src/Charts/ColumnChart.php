@@ -2,7 +2,13 @@
 
 namespace Khill\Lavacharts\Charts;
 
+<<<<<<< HEAD
 use \Khill\Lavacharts\Configs\DataTable;
+=======
+use \Khill\Lavacharts\Values\Label;
+use \Khill\Lavacharts\Options;
+use \Khill\Lavacharts\DataTables\DataTable;
+>>>>>>> origin/3.0
 
 /**
  * ColumnChart Class
@@ -12,7 +18,11 @@ use \Khill\Lavacharts\Configs\DataTable;
  * chart, see the Bar Chart.
  *
  *
+<<<<<<< HEAD
  * @package    Lavacharts
+=======
+ * @package    Khill\Lavacharts
+>>>>>>> origin/3.0
  * @subpackage Charts
  * @since      1.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -30,6 +40,11 @@ class ColumnChart extends Chart
     use \Khill\Lavacharts\Traits\BarGroupWidthTrait;
     use \Khill\Lavacharts\Traits\HorizontalAxisTrait;
     use \Khill\Lavacharts\Traits\IsStackedTrait;
+<<<<<<< HEAD
+=======
+    use \Khill\Lavacharts\Traits\TrendlinesTrait;
+    use \Khill\Lavacharts\Traits\VerticalAxesTrait;
+>>>>>>> origin/3.0
     use \Khill\Lavacharts\Traits\VerticalAxisTrait;
 
     /**
@@ -61,6 +76,7 @@ class ColumnChart extends Chart
     const VIZ_CLASS = 'google.visualization.ColumnChart';
 
     /**
+<<<<<<< HEAD
      * Builds a new chart with the given label.
      *
      * @param  string $chartLabel Identifying label for the chart.
@@ -80,5 +96,35 @@ class ColumnChart extends Chart
             //'vAxes',
             'vAxis'
         ], $this->defaults);
+=======
+     * Default configuration options for the chart.
+     *
+     * @var array
+     */
+    private $columnDefaults = [
+        'axisTitlesPosition',
+        'barGroupWidth',
+        'focusTarget',
+        'hAxis',
+        'isHtml',
+        'isStacked',
+        'trendlines',
+        'vAxes',
+        'vAxis'
+    ];
+
+    /**
+     * Builds a new ColumnChart with the given label, datatable and options.
+     *
+     * @param  \Khill\Lavacharts\Values\Label         $chartLabel Identifying label for the chart.
+     * @param  \Khill\Lavacharts\DataTables\DataTable $datatable DataTable used for the chart.
+     * @param array                                   $config
+     */
+    public function __construct(Label $chartLabel, DataTable $datatable, $config = [])
+    {
+        $options = new Options($this->columnDefaults);
+
+        parent::__construct($chartLabel, $datatable, $options, $config);
+>>>>>>> origin/3.0
     }
 }
