@@ -1,26 +1,14 @@
-<<<<<<< HEAD
-=======
-node_modules/
-vendor/
-_site/
->>>>>>> origin/3.0
-tmp/
-_site/
 vendor/
 node_modules/
 bower_components/
+tmp/
+_site/
 build/
 docs/
-<<<<<<< HEAD
 .cache/
 .idea/
-=======
-.idea/
 
-*.sublime-*
 npm-debug.log
->>>>>>> origin/3.0
-
 .jekyll-metadata
 composer.phar
 composer.lock
