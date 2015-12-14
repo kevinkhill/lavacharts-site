@@ -1,29 +1,38 @@
-<p class="lead">These are the methods available via the main Lavacharts class.</p>
+<p class="lead">These methods are available from the main Lavacharts class.</p>
+<br />
 
-<h3><code>jsapi()</code></h3>
+<h3 id="lavacharts-utility">Utility Methods</h3>
+<div class="pre">
+  <span class="k">jsapi</span>( [<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$timezone</span>] )
+  <span class="s1">returns</span> string
+</div>
 <p>This method with output the script tag for the google jsapi, along with lava.js; A custom module for lavacharts.</p>
 <p>Used with Angular so the script tag is not placed inside an ng-view and can be manually placed in the header / footer.</p>
 <p>If you do not need manual placement, ignore this method and the render methods will automatically add the script tags.</p>
+<br />
 
 <div class="pre">
   <span class="k">render</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$chartType</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$chartLabel</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$divId</span>[, <a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$div</span> | <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$divDimensions</span> ] )
-  <span class="s1">returns</span> String
+  <span class="s1">returns</span> string
 </div>
+<p>Output the necessary javascript tags for getting the chart onto the page.</p>
 <br />
 
 <div class="pre">
   <span class="k">DataTable</span>( [<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$timezone</span>] )
   <span class="s1">returns</span> DataTable
 </div>
+<p>Creates new instance of a DataTable.</p>
 <br />
 
 <div class="pre">
   <span class="k">Dashboard</span>( [<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$label</span>] )
   <span class="s1">returns</span> Dashboard
 </div>
+<p>Creates new instance of a dashboard.</p>
 <br />
 
-<h3>Charts</h3>
+<h3 id="lavacharts-charts">Charts</h3>
 {% for type in site.data.chartTypes %}
   <div class="pre">
     <span class="k">{{ type | capitalize }}Chart</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$title</span> )
@@ -32,7 +41,7 @@
 {% endfor %}
 <br />
 
-<h3>Formats</h3>
+<h3 id="lavacharts-formats">Formats</h3>
 {% for type in site.data.formatTypes %}
   <div class="pre">
     <span class="k">{{ type | capitalize }}Format</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span> )
