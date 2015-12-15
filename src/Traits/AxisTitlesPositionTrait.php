@@ -2,11 +2,7 @@
 
 namespace Khill\Lavacharts\Traits;
 
-<<<<<<< HEAD
-use \Khill\Lavacharts\Utils;
-=======
 
->>>>>>> origin/3.0
 
 trait AxisTitlesPositionTrait
 {
@@ -30,18 +26,6 @@ trait AxisTitlesPositionTrait
             'none'
         ];
 
-<<<<<<< HEAD
-        if (in_array($position, $values, true) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'string',
-                'with a value of '.Utils::arrayToPipedString($values)
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $position]);
-=======
         return $this->setStringInArrayOption(__FUNCTION__, $position, $values);
->>>>>>> origin/3.0
     }
 }

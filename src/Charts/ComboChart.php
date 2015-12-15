@@ -3,13 +3,9 @@
 namespace Khill\Lavacharts\Charts;
 
 use \Khill\Lavacharts\Utils;
-<<<<<<< HEAD
-use \Khill\Lavacharts\Configs\DataTable;
-=======
 use \Khill\Lavacharts\Values\Label;
 use \Khill\Lavacharts\Options;
 use \Khill\Lavacharts\DataTables\DataTable;
->>>>>>> origin/3.0
 
 /**
  * ComboChart Class
@@ -21,11 +17,7 @@ use \Khill\Lavacharts\DataTables\DataTable;
  * Use the series property to specify properties of each series individually.
  *
  *
-<<<<<<< HEAD
- * @package    Lavacharts
-=======
  * @package    Khill\Lavacharts
->>>>>>> origin/3.0
  * @subpackage Charts
  * @since      2.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -92,44 +84,6 @@ class ComboChart extends Chart
     const VIZ_CLASS = 'google.visualization.ComboChart';
 
     /**
-<<<<<<< HEAD
-     * Builds a new chart with the given label.
-     *
-     * @param  string $chartLabel Identifying label for the chart.
-     * @param  \Khill\Lavacharts\Configs\DataTable $datatable Datatable used for the chart.
-     * @return self
-     */
-    public function __construct($chartLabel, DataTable $datatable)
-    {
-        parent::__construct($chartLabel, $datatable);
-
-        $this->defaults = array_merge([
-            'annotations',
-            'areaOpacity',
-            'axisTitlesPosition',
-            'barGroupWidth',
-            'crosshair',
-            'curveType',
-            'dataOpacity',
-            'enableInteractivity',
-            'focusTarget',
-            'forceIFrame',
-            'hAxis',
-            'interpolateNulls',
-            'isStacked',
-            'lineWidth',
-            'orientation',
-            'pointShape',
-            'pointSize',
-            'reverseCategories',
-            'selectionMode',
-            'series',
-            'seriesType',
-            'theme',
-            'vAxes',
-            'vAxis'
-        ], $this->defaults);
-=======
      * Default configuration options for the chart.
      *
      * @var array
@@ -173,21 +127,10 @@ class ComboChart extends Chart
         $options = new Options($this->comboDefaults);
 
         parent::__construct($chartLabel, $datatable, $options, $config);
->>>>>>> origin/3.0
     }
 
     /**
      * The default line type for any series not specified in the series property.
-<<<<<<< HEAD
-     * Available values are:
-     * 'line', 'area', 'bars', 'candlesticks' and 'steppedArea'
-     *
-     * @param  string             $type
-     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return ComboChart
-     */
-    public function seriesType($type)
-=======
      *
      *
      * Available values are:
@@ -198,7 +141,6 @@ class ComboChart extends Chart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
      */
     public function seriesType($seriesType)
->>>>>>> origin/3.0
     {
         $values = [
             'line',
@@ -208,30 +150,6 @@ class ComboChart extends Chart
             'steppedArea'
         ];
 
-<<<<<<< HEAD
-        if (in_array($type, $values, true) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'string',
-                'with a value of '.Utils::arrayToPipedString($values)
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $type]);
-    }
-}
-
-/*
-candlestick.hollowIsRising - bool - false (will later be changed to true) - [[If true, rising candles will appear hollow and falling candles will appear solid, otherwise, the opposite.]]
-candlestick.fallingColor.fill - string - auto (depends on the series color and hollowIsRising) - [[The fill color of falling candles, as an HTML color string.]]
-candlestick.fallingColor.stroke - string - auto (the series color) - [[The stroke color of falling candles, as an HTML color string.]]
-candlestick.fallingColor.strokeWidth - number - 2 - [[The stroke width of falling candles, as an HTML color string.]]
-candlestick.risingColor.fill - string - auto (white or the series color, depending on hollowIsRising) - [[The fill color of rising candles, as an HTML color string.]]
-candlestick.risingColor.stroke - string - auto (the series color or white, depending on hollowIsRising) - [[The stroke color of rising candles, as an HTML color string.]]
-candlestick.risingColor.strokeWidth - number - 2 - [[The stroke width of rising candles, as an HTML color string.]]
-*/
-=======
         $this->setStringInArrayOption(__FUNCTION__, $seriesType, $values);
     }
 }
->>>>>>> origin/3.0

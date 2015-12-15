@@ -2,13 +2,8 @@
 
 namespace Khill\Lavacharts\Configs;
 
-<<<<<<< HEAD:src/Configs/Legend.php
-use \Khill\Lavacharts\Utils;
-use \Khill\Lavacharts\Exceptions\InvalidConfigValue;
-=======
 use \Khill\Lavacharts\JsonConfig;
 use \Khill\Lavacharts\Options;
->>>>>>> origin/3.0:src/Configs/Legend.php
 
 /**
  * Legend ConfigObject
@@ -25,11 +20,7 @@ use \Khill\Lavacharts\Options;
  * @link       http://lavacharts.com                   Official Docs Site
  * @license    http://opensource.org/licenses/MIT MIT
  */
-<<<<<<< HEAD:src/Configs/Legend.php
-class Legend extends ConfigObject
-=======
 class Legend extends JsonConfig
->>>>>>> origin/3.0:src/Configs/Legend.php
 {
     /**
      * Type of JsonConfig object
@@ -52,16 +43,9 @@ class Legend extends JsonConfig
     /**
      * Builds the legend object when passed an array of configuration options.
      *
-<<<<<<< HEAD:src/Configs/Legend.php
-     * @param  array                 $config Options for the legend
-     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @throws \Khill\Lavacharts\Exceptions\InvalidConfigProperty
-     * @return self
-=======
      * @param  array $config Options for the legend
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigProperty
->>>>>>> origin/3.0:src/Configs/Legend.php
      */
     public function __construct($config = [])
     {
@@ -81,12 +65,8 @@ class Legend extends JsonConfig
      * 'none'   - No legend is displayed.
      *
      * @param  string $position Location of legend.
-<<<<<<< HEAD:src/Configs/Legend.php
-     * @return self
-=======
      * @return \Khill\Lavacharts\Configs\Legend
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
->>>>>>> origin/3.0:src/Configs/Legend.php
      */
     public function position($position)
     {
@@ -98,21 +78,7 @@ class Legend extends JsonConfig
             'none'
         ];
 
-<<<<<<< HEAD:src/Configs/Legend.php
-        if (is_string($position) && in_array($position, $values)) {
-            $this->position = $position;
-        } else {
-            throw new InvalidConfigValue(
-                __FUNCTION__,
-                'string',
-                'with a value of '.Utils::arrayToPipedString($values)
-            );
-        }
-
-        return $this;
-=======
         return $this->setStringInArrayOption(__FUNCTION__, $position, $values);
->>>>>>> origin/3.0:src/Configs/Legend.php
     }
 
     /**
@@ -131,12 +97,8 @@ class Legend extends JsonConfig
      * the default is 'center'; other legends default to 'start'.
      *
      * @param  string $alignment Alignment of the legend.
-<<<<<<< HEAD:src/Configs/Legend.php
-     * @return self
-=======
      * @return \Khill\Lavacharts\Configs\Legend
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
->>>>>>> origin/3.0:src/Configs/Legend.php
      */
     public function alignment($alignment)
     {
@@ -145,19 +107,6 @@ class Legend extends JsonConfig
             'center',
             'end'
         ];
-<<<<<<< HEAD:src/Configs/Legend.php
-
-        if (is_string($alignment) && in_array($alignment, $values)) {
-            $this->alignment = $alignment;
-        } else {
-            throw new InvalidConfigValue(
-                __FUNCTION__,
-                'string',
-                'with a value of '.Utils::arrayToPipedString($values)
-            );
-        }
-=======
->>>>>>> origin/3.0:src/Configs/Legend.php
 
         return $this->setStringInArrayOption(__FUNCTION__, $alignment, $values);
     }
@@ -165,14 +114,9 @@ class Legend extends JsonConfig
     /**
      * An array that specifies the legend text style options.
      *
-<<<<<<< HEAD:src/Configs/Legend.php
-     * @param  TextStyle $textStyle Style of the legend
-     * @return self
-=======
      * @param  array $textStyleConfig
      * @return \Khill\Lavacharts\Configs\Legend
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
->>>>>>> origin/3.0:src/Configs/Legend.php
      */
     public function textStyle($textStyleConfig)
     {

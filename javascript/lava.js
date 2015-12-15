@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-var lava = {
-  charts            : [],
-  dashboards        : [],
-  registeredCharts  : [],
-  registeredActions : [],
-  readyCallback     : function(){},
-
-  Chart: function() {
-    this.draw    = null;
-=======
 /**
  * lava.js
  *
@@ -36,17 +25,10 @@ var lava = lava || {};
    */
   this.Chart = function() {
     var self = this;
->>>>>>> origin/3.0
     this.data    = null;
     this.chart   = null;
     this.options = null;
     this.formats = [];
-<<<<<<< HEAD
-  },
-  
-  Dashboard: function() {
-    this.draw      = null;
-=======
     this.render  = function(){};
     this.setData = function(){};
     this.redraw  = function(){};
@@ -66,47 +48,10 @@ var lava = lava || {};
    */
   this.Dashboard = function() {
     this.render    = null;
->>>>>>> origin/3.0
     this.data      = null;
     this.bindings  = [];
     this.dashboard = null;
     this.callbacks = [];
-<<<<<<< HEAD
-  },
-  
-  Callback: function (label, func) {
-    this.label = label;
-    this.func  = func;
-  },
-
-  ready: function (callback) { 
-    lava.readyCallback = callback;
-  },
-/*
-  action: function (label) {
-    lava.registeredActions[label] = 
-  },
-*/
-  event: function (event, chart, callback) {
-    return callback(event, chart);
-  },
-
-  registerChart: function(type, label) {
-    this.registeredCharts.push(type + ':' + label);
-  },
-
-  loadData: function (chartLabel, dataTableJson, callback) {
-    lava.getChart(chartLabel, function (googleChart, lavaChart) {
-      lavaChart.data = new google.visualization.DataTable(dataTableJson, '0.6');
-
-      googleChart.draw(lavaChart.data, lavaChart.options);
-
-      return callback(googleChart, lavaChart);
-    });
-  },
-
-  getDashboard: function (label, callback) {
-=======
   };
 
   this.Callback = function (label, func) {
@@ -182,25 +127,12 @@ var lava = lava || {};
   };
 
   this.getDashboard = function (label, callback) {
->>>>>>> origin/3.0
     if (typeof lava.dashboards[label] === 'undefined') {
       throw new Error('[Lavacharts] Dashboard "' + label + '" was not found.');
     }
 
     var lavaDashboard = lava.dashboards[label];
 
-<<<<<<< HEAD
-    callback(lavaDashboard.dashboard, lavaDashboard);
-  },
-
-  getChart: function (chartLabel, callback) {
-    var chartTypes = Object.keys(lava.charts);
-    var lavaChart;
-
-    var search = chartTypes.some(function (type) {
-      if (typeof lava.charts[type][chartLabel] !== 'undefined') {
-        lavaChart = lava.charts[type][chartLabel];
-=======
     if (typeof callback !== 'function') {
       throw new Error('[Lavacharts] ' + typeof callback + ' is not a valid callback.');
     }
@@ -246,7 +178,6 @@ var lava = lava || {};
     var search = chartTypes.some(function (type) {
       if (typeof lava.charts[type][chartLabel] !== 'undefined') {
         LavaChart = lava.charts[type][chartLabel];
->>>>>>> origin/3.0
 
         return true;
       } else {
@@ -256,14 +187,6 @@ var lava = lava || {};
 
     if (search === false) {
       throw new Error('[Lavacharts] Chart "' + chartLabel + '" was not found.');
-<<<<<<< HEAD
-    } else {
-      callback(lavaChart.chart, lavaChart);
-    }
-  },
-
-  redrawCharts: function() {
-=======
     }
 
     callback(LavaChart.chart, LavaChart);
@@ -277,7 +200,6 @@ var lava = lava || {};
    * to make the charts responsive to the browser resizing.
    */
   this.redrawCharts = function() {
->>>>>>> origin/3.0
     var timer, delay = 300;
 
     clearTimeout(timer);
@@ -286,17 +208,6 @@ var lava = lava || {};
       for(var c = 0; c < lava.registeredCharts.length; c++) {
         var parts = lava.registeredCharts[c].split(':');
 
-<<<<<<< HEAD
-        lava.charts[parts[0]][parts[1]].chart.draw(
-          lava.charts[parts[0]][parts[1]].data,
-          lava.charts[parts[0]][parts[1]].options
-        );
-      }
-    }, delay);
-  }
-};
-
-=======
         lava.charts[parts[0]][parts[1]].redraw();
       }
     }, delay);
@@ -307,5 +218,4 @@ var lava = lava || {};
 /**
  * Adding the resize event listener for redrawing charts.
  */
->>>>>>> origin/3.0
 window.addEventListener("resize", window.lava.redrawCharts);

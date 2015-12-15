@@ -6,8 +6,6 @@ use \Khill\Lavacharts\Lavacharts;
 use \Illuminate\Support\ServiceProvider;
 use \Illuminate\Foundation\AliasLoader;
 
-<<<<<<< HEAD
-=======
 /**
  * Lavacharts Service Provider
  *
@@ -23,18 +21,13 @@ use \Illuminate\Foundation\AliasLoader;
  * @link       http://lavacharts.com                   Official Docs Site
  * @license    http://opensource.org/licenses/MIT MIT
  */
->>>>>>> origin/3.0
 class LavachartsServiceProvider extends ServiceProvider
 {
     protected $defer = false;
 
     public function boot()
     {
-<<<<<<< HEAD
-        /*
-=======
         /**
->>>>>>> origin/3.0
          * If the package method exists, we're using Laravel 4
          */
         if (method_exists($this, 'package')) {
@@ -47,11 +40,7 @@ class LavachartsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app['lavacharts'] = $this->app->share(
-<<<<<<< HEAD
-            function ($app) {
-=======
             function () {
->>>>>>> origin/3.0
                 return new Lavacharts;
             }
         );

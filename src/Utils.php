@@ -1,36 +1,6 @@
 <?php
 
 namespace Khill\Lavacharts;
-<<<<<<< HEAD:src/Utils.php
-
-class Utils
-{
-    /**
-     * Magic method as an alias to is_a($object, $type)
-     *
-     * @param string $function
-     * @param object $configObject
-     *
-     * @return bool
-     */
-    public static function __callStatic($function, $configObject)
-    {
-        if (preg_match('/^is/', $function)) {
-            $is_a = substr($function, 2);
-
-            if (is_object($configObject[0])) {
-                $class = new \ReflectionClass($configObject[0]);
-
-                return preg_match("/{$is_a}/", $class->getShortname()) ? true : false;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
-=======
->>>>>>> origin/3.0:src/Utils.php
 
 class Utils
 {
@@ -164,10 +134,6 @@ class Utils
      * @param int|float $test          The number to test
      * @param int|float $upper         The upper limit
      * @param bool      $includeLimits Set whether to include limits
-<<<<<<< HEAD:src/Utils.php
-     *
-=======
->>>>>>> origin/3.0:src/Utils.php
      * @return bool
      */
     public static function between($lower, $test, $upper, $includeLimits = true)
@@ -191,10 +157,6 @@ class Utils
      * Checks if variable is a non-empty string
      *
      * @param  string $var
-<<<<<<< HEAD:src/Utils.php
-     *
-=======
->>>>>>> origin/3.0:src/Utils.php
      * @return bool
      */
     public static function nonEmptyString($var)
@@ -218,23 +180,6 @@ class Utils
         $arrayCheck = (is_array($arr) === true && in_array($var, $arr) === true);
 
         if (self::nonEmptyString($var) && $arrayCheck) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Checks if variable is a non-empty string within an array of values
-     *
-     * @param  string $var
-     * @param  array  $arr
-     *
-     * @return bool
-     */
-    public static function nonEmptyStringInArray($var, $arr)
-    {
-        if ((is_string($var) && ! empty($var)) && in_array($var, $arr)) {
             return true;
         } else {
             return false;

@@ -16,17 +16,6 @@ trait LineWidthTrait
      */
     public function lineWidth($width)
     {
-<<<<<<< HEAD
-        if (is_int($width) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'int'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $width]);
-=======
         return $this->setIntOption(__FUNCTION__, $width);
->>>>>>> origin/3.0
     }
 }

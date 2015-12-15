@@ -15,17 +15,6 @@ trait ReverseCategoriesTrait
      */
     public function reverseCategories($reverseCategories)
     {
-<<<<<<< HEAD
-        if (is_bool($reverseCategories) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'bool'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $reverseCategories]);
-=======
         return $this->setBoolOption(__FUNCTION__, $reverseCategories);
->>>>>>> origin/3.0
     }
 }

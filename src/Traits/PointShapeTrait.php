@@ -2,11 +2,7 @@
 
 namespace Khill\Lavacharts\Traits;
 
-<<<<<<< HEAD
-use \Khill\Lavacharts\Utils;
-=======
 
->>>>>>> origin/3.0
 
 trait PointShapeTrait
 {
@@ -31,18 +27,6 @@ trait PointShapeTrait
             'polygon'
         ];
 
-<<<<<<< HEAD
-        if (in_array($shape, $values, true) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'string',
-                'Accepted values include '.Utils::arrayToPipedString($values)
-            );
-        }
-
-        return  $this->addOption([__FUNCTION__ => $shape]);
-=======
         return  $this->setStringInArrayOption(__FUNCTION__, $shape, $values);
->>>>>>> origin/3.0
     }
 }

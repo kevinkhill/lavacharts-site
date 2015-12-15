@@ -2,11 +2,13 @@
 
 namespace Khill\Lavacharts\Exceptions;
 
+use \Khill\Lavacharts\Charts\Chart;
+
 class DataTableNotFound extends \Exception
 {
-    public function __construct($chart, $code = 0)
+    public function __construct(Chart $chart, $code = 0)
     {
-        $message = "$chart->type('$chart->label') has no DataTable.";
+        $message = $chart::TYPE . '(' . $chart->getLabel() . ') has no DataTable.';
 
         parent::__construct($message, $code);
     }

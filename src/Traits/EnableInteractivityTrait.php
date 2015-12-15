@@ -2,11 +2,6 @@
 
 namespace Khill\Lavacharts\Traits;
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/3.0
 trait EnableInteractivityTrait
 {
     /**
@@ -22,17 +17,6 @@ trait EnableInteractivityTrait
      */
     public function enableInteractivity($enableInteractivity)
     {
-<<<<<<< HEAD
-        if (is_bool($enableInteractivity) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'bool'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $enableInteractivity]);
-=======
         return $this->setBoolOption(__FUNCTION__, $enableInteractivity);
->>>>>>> origin/3.0
     }
 }

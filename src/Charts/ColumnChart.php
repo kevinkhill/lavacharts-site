@@ -2,13 +2,9 @@
 
 namespace Khill\Lavacharts\Charts;
 
-<<<<<<< HEAD
-use \Khill\Lavacharts\Configs\DataTable;
-=======
 use \Khill\Lavacharts\Values\Label;
 use \Khill\Lavacharts\Options;
 use \Khill\Lavacharts\DataTables\DataTable;
->>>>>>> origin/3.0
 
 /**
  * ColumnChart Class
@@ -18,11 +14,7 @@ use \Khill\Lavacharts\DataTables\DataTable;
  * chart, see the Bar Chart.
  *
  *
-<<<<<<< HEAD
- * @package    Lavacharts
-=======
  * @package    Khill\Lavacharts
->>>>>>> origin/3.0
  * @subpackage Charts
  * @since      1.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -40,11 +32,8 @@ class ColumnChart extends Chart
     use \Khill\Lavacharts\Traits\BarGroupWidthTrait;
     use \Khill\Lavacharts\Traits\HorizontalAxisTrait;
     use \Khill\Lavacharts\Traits\IsStackedTrait;
-<<<<<<< HEAD
-=======
     use \Khill\Lavacharts\Traits\TrendlinesTrait;
     use \Khill\Lavacharts\Traits\VerticalAxesTrait;
->>>>>>> origin/3.0
     use \Khill\Lavacharts\Traits\VerticalAxisTrait;
 
     /**
@@ -76,27 +65,6 @@ class ColumnChart extends Chart
     const VIZ_CLASS = 'google.visualization.ColumnChart';
 
     /**
-<<<<<<< HEAD
-     * Builds a new chart with the given label.
-     *
-     * @param  string $chartLabel Identifying label for the chart.
-     * @param  \Khill\Lavacharts\Configs\DataTable $datatable Datatable used for the chart.
-     * @return self
-     */
-    public function __construct($chartLabel, DataTable $datatable)
-    {
-        parent::__construct($chartLabel, $datatable);
-
-        $this->defaults = array_merge([
-            'axisTitlesPosition',
-            'barGroupWidth',
-            'focusTarget',
-            'hAxis',
-            'isHtml',
-            //'vAxes',
-            'vAxis'
-        ], $this->defaults);
-=======
      * Default configuration options for the chart.
      *
      * @var array
@@ -125,6 +93,5 @@ class ColumnChart extends Chart
         $options = new Options($this->columnDefaults);
 
         parent::__construct($chartLabel, $datatable, $options, $config);
->>>>>>> origin/3.0
     }
 }

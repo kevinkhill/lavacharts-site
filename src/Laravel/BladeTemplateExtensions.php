@@ -4,8 +4,6 @@ namespace Khill\Lavacharts\Laravel;
 
 use Illuminate\Support\Facades\App;
 
-<<<<<<< HEAD
-=======
 /**
  * Blade Template Extensions
  *
@@ -24,7 +22,6 @@ use Illuminate\Support\Facades\App;
  * @license    http://opensource.org/licenses/MIT MIT
  */
 
->>>>>>> origin/3.0
 $app   = App::getFacadeApplication();
 $blade = $app['view']->getEngineResolver()->resolve('blade')->getCompiler();
 
@@ -43,15 +40,6 @@ $charts = [
     'ScatterChart'
 ];
 
-<<<<<<< HEAD
-foreach ($charts as $chart) {
-    $blade->extend(function ($view, $compiler) use ($chart) {
-        $pattern = $compiler->createMatcher(strtolower($chart));
-        $output  = '$1<?php echo Lava::render'.$chart.'$2; ?>';
-
-        return preg_replace($pattern, $output, $view);
-    });
-=======
 /**
  * If the directive method exists, we're using Laravel 5
  */
@@ -71,5 +59,4 @@ if (method_exists($blade, 'directive')) {
             }
         );
     }
->>>>>>> origin/3.0
 }

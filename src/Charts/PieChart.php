@@ -3,9 +3,11 @@
 namespace Khill\Lavacharts\Charts;
 
 use \Khill\Lavacharts\Utils;
-use \Khill\Lavacharts\Configs\DataTable;
-use \Khill\Lavacharts\Configs\Slice;
+use \Khill\Lavacharts\Values\Label;
+use \Khill\Lavacharts\Options;
+use \Khill\Lavacharts\DataTables\DataTable;
 use \Khill\Lavacharts\Configs\TextStyle;
+use \Khill\Lavacharts\Exceptions\InvalidConfigValue;
 
 /**
  * PieChart Class
@@ -14,7 +16,7 @@ use \Khill\Lavacharts\Configs\TextStyle;
  * tooltips when hovering over slices.
  *
  *
- * @package    Lavacharts
+ * @package    Khill\Lavacharts
  * @subpackage Charts
  * @since      1.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -54,75 +56,70 @@ class PieChart extends Chart
     const VIZ_CLASS = 'google.visualization.PieChart';
 
     /**
-     * Builds a new chart with the given label.
+     * Default configuration options for the chart.
      *
-     * @param  string $chartLabel Identifying label for the chart.
-     * @param  \Khill\Lavacharts\Configs\DataTable $datatable Datatable used for the chart.
-     * @return self
+     * @var array
      */
-    public function __construct($chartLabel, DataTable $datatable)//, $options = [])
-    {
-        parent::__construct($chartLabel, $datatable);
+    private $pieDefaults = [
+        'is3D',
+        'slices',
+        'pieSliceBorderColor',
+        'pieSliceText',
+        'pieSliceTextStyle',
+        'pieStartAngle',
+        'reverseCategories',
+        'sliceVisibilityThreshold',
+        'pieResidueSliceColor',
+        'pieResidueSliceLabel'
+    ];
 
-        $this->defaults = array_merge($this->defaults, [
-            'is3D',
-            'slices',
-            'pieSliceBorderColor',
-            'pieSliceText',
-            'pieSliceTextStyle',
-            'pieStartAngle',
-            'reverseCategories',
-            'sliceVisibilityThreshold',
-            'pieResidueSliceColor',
-            'pieResidueSliceLabel'
-        ]);
+    /**
+     * Builds a new PieChart with the given label, datatable and options.
+     *
+     * @param  \Khill\Lavacharts\Values\Label         $chartLabel Identifying label for the chart.
+     * @param  \Khill\Lavacharts\DataTables\DataTable $datatable DataTable used for the chart.
+     * @param array                                   $config
+     */
+    public function __construct(Label $chartLabel, DataTable $datatable, $config = [])
+    {
+        $options = new Options($this->pieDefaults);
+
+        parent::__construct($chartLabel, $datatable, $options, $config);
     }
 
     /**
      * If set to true, displays a three-dimensional chart.
      *
-     * @param  bool               $is3D
+     * @param  bool $is3D
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
     public function is3D($is3D)
     {
-        if (is_bool($is3D) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'bool'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $is3D]);
+        return $this->setBoolOption(__FUNCTION__, $is3D);
     }
 
     /**
      * An array of slice objects, each describing the format of the
-     * corresponding slice in the pie. To use default values for a slice,
-     * specify a null. If a slice or a value is not specified, the global
-     * value will be used.
+     * corresponding slice in the pie.
+     *
+     * To use default values for a slice, specify a null. If a slice or a value is not specified,
+     * the global value will be used.
      *
      * The values of the array keys will correspond to each numbered piece
      * of the pie, starting from 0. You can skip slices by assigning the
      * keys of the array as (int)s.
      *
-     * This would apply slice values to the first and fourth slice of the pie
-     * Example: array(
-     *              0 => new Slice(),
-     *              3 => new Slice()
-     *          );
      *
-     *
-     * @param  array              $slices Array of slice objects
+     * @param  array $slices Array of slice objects
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
     public function slices($slices)
     {
-        if (is_array($slices) === false || empty($slices) === true) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
+        if (Utils::arrayIsMulti($slices) === false) {
+            throw new InvalidConfigValue(
+                static::TYPE . '->' . __FUNCTION__,
                 'array',
                 'as (int) => (Slice)'
             );
@@ -130,42 +127,24 @@ class PieChart extends Chart
 
         $pie = [];
 
-        foreach ($slices as $key => $slice) {
-            $pie[$key] = $this->addSlice($slice);
+        foreach ($slices as $index => $slice) {
+            $pie[$index] = $slice;
         }
 
-        return $this->addOption([__FUNCTION__ => $pie]);
-    }
-
-    /**
-     * Supplemental function to add slices
-     *
-     * @param  Slice $slice
-     * @return array
-     */
-    private function addSlice(Slice $slice)
-    {
-        return $slice->getValues();
+        return $this->setOption(__FUNCTION__, $pie);
     }
 
     /**
      * The color of the slice borders. Only applicable when the chart is
      * two-dimensional; is3D == false || null
      *
-     * @param  string             $pieSliceBorderColor Valid HTML color
+     * @param  string $pieSliceBorderColor Valid HTML color
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
     public function pieSliceBorderColor($pieSliceBorderColor)
     {
-        if (Utils::nonEmptyString($pieSliceBorderColor) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'string'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $pieSliceBorderColor]);
+        return $this->setStringOption(__FUNCTION__, $pieSliceBorderColor);
     }
 
     /**
@@ -176,9 +155,10 @@ class PieChart extends Chart
      * 'label' - The name of the slice.
      * 'none' - No text is displayed.
      *
-     * @param  string             $pieSliceText
+     *
+     * @param  string $pieSliceText
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
     public function pieSliceText($pieSliceText)
     {
@@ -189,68 +169,46 @@ class PieChart extends Chart
             'none'
         ];
 
-        if (in_array($pieSliceText, $values, true) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'string',
-                'with a value of '.Utils::arrayToPipedString($values)
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $pieSliceText]);
+        return $this->setStringInArrayOption(__FUNCTION__, $pieSliceText, $values);
     }
 
     /**
      * An object that specifies the slice text style. create a new textStyle()
      * object, set the values then pass it to this function or to the constructor.
      *
-     * @param  TextStyle          $textStyle
+     * @param  array $textStyleConfig
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
-    public function pieSliceTextStyle(TextStyle $textStyle)
+    public function pieSliceTextStyle($textStyleConfig)
     {
-        return $this->addOption($textStyle->toArray(__FUNCTION__));
+        return $this->setOption(__FUNCTION__, new TextStyle($textStyleConfig));
     }
 
     /**
      * The angle, in degrees, to rotate the chart by. The default of 0 will
      * orient the leftmost edge of the first slice directly up.
      *
-     * @param  integer                $pieStartAngle Starting angle
+     * @param  int $pieStartAngle Starting angle
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
     public function pieStartAngle($pieStartAngle)
     {
-        if (is_int($pieStartAngle) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'int'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $pieStartAngle]);
+        return $this->setIntOption(__FUNCTION__, $pieStartAngle);
     }
 
     /**
      * If set to true, will draw slices counterclockwise. The default is to
      * draw clockwise.
      *
-     * @param  bool               $reverseCategories
+     * @param  bool $reverseCategories
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
     public function reverseCategories($reverseCategories)
     {
-        if (is_bool($reverseCategories) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'bool'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $reverseCategories]);
+        return $this->setBoolOption(__FUNCTION__, $reverseCategories);
     }
 
     /**
@@ -259,60 +217,38 @@ class PieChart extends Chart
      * single slice, whose size is the sum of all their sizes. Default is not
      * to show individually any slice which is smaller than half a degree.
      *
-     * @param  integer|float          $sliceVizThreshold
+     * @param  integer|float $sliceVizThreshold
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
     public function sliceVisibilityThreshold($sliceVizThreshold)
     {
-        if (is_numeric($sliceVizThreshold) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'numeric'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $sliceVizThreshold]);
+        return $this->setNumericOption(__FUNCTION__, $sliceVizThreshold);
     }
 
     /**
      * Color for the combination slice that holds all slices below
      * sliceVisibilityThreshold.
      *
-     * @param  string             $pieResidueSliceColor
+     * @param  string $pieResidueSliceColor
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
     public function pieResidueSliceColor($pieResidueSliceColor)
     {
-        if (Utils::nonEmptyString($pieResidueSliceColor) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'string',
-                'representing a valid HTML color'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $pieResidueSliceColor]);
+        return $this->setStringOption(__FUNCTION__, $pieResidueSliceColor);
     }
 
     /**
      * A label for the combination slice that holds all slices below
      * sliceVisibilityThreshold.
      *
-     * @param  string             $pieResidueSliceLabel
+     * @param  string $pieResidueSliceLabel
+     * @return \Khill\Lavacharts\Charts\PieChart
      * @throws \Khill\Lavacharts\Exceptions\InvalidConfigValue
-     * @return PieChart
      */
     public function pieResidueSliceLabel($pieResidueSliceLabel)
     {
-        if (Utils::nonEmptyString($pieResidueSliceLabel) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'string'
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $pieResidueSliceLabel]);
+        return $this->setStringOption(__FUNCTION__, $pieResidueSliceLabel);
     }
 }

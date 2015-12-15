@@ -2,11 +2,6 @@
 
 namespace Khill\Lavacharts\Traits;
 
-<<<<<<< HEAD
-use \Khill\Lavacharts\Utils;
-
-=======
->>>>>>> origin/3.0
 trait OrientationTrait
 {
     /**
@@ -26,18 +21,6 @@ trait OrientationTrait
             'vertical'
         ];
 
-<<<<<<< HEAD
-        if (in_array($orientation, $values, true) === false) {
-            throw $this->invalidConfigValue(
-                __FUNCTION__,
-                'string',
-                'must be one of '.Utils::arrayToPipedString($values)
-            );
-        }
-
-        return $this->addOption([__FUNCTION__ => $orientation]);
-=======
         return $this->setStringInArrayOption(__FUNCTION__, $orientation, $values);
->>>>>>> origin/3.0
     }
 }

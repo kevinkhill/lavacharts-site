@@ -2,13 +2,9 @@
 
 namespace Khill\Lavacharts\Charts;
 
-<<<<<<< HEAD
-use \Khill\Lavacharts\Configs\DataTable;
-=======
 use \Khill\Lavacharts\Values\Label;
 use \Khill\Lavacharts\Options;
 use \Khill\Lavacharts\DataTables\DataTable;
->>>>>>> origin/3.0
 
 /**
  * ScatterChart Class
@@ -20,11 +16,7 @@ use \Khill\Lavacharts\DataTables\DataTable;
  * Use the series property to specify properties of each series individually.
  *
  *
-<<<<<<< HEAD
- * @package    Lavacharts
-=======
  * @package    Khill\Lavacharts
->>>>>>> origin/3.0
  * @subpackage Charts
  * @since      3.0.0
  * @author     Kevin Hill <kevinkhill@gmail.com>
@@ -54,10 +46,7 @@ class ScatterChart extends Chart
     use \Khill\Lavacharts\Traits\SelectionModeTrait;
     use \Khill\Lavacharts\Traits\SeriesTrait;
     use \Khill\Lavacharts\Traits\ThemeTrait;
-<<<<<<< HEAD
-=======
     use \Khill\Lavacharts\Traits\TrendlinesTrait;
->>>>>>> origin/3.0
     use \Khill\Lavacharts\Traits\VerticalAxisTrait;
 
     /**
@@ -89,37 +78,6 @@ class ScatterChart extends Chart
     const VIZ_CLASS = 'google.visualization.ScatterChart';
 
     /**
-<<<<<<< HEAD
-     * Builds a new chart with the given label.
-     *
-     * @param  string $chartLabel Identifying label for the chart.
-     * @param  \Khill\Lavacharts\Configs\DataTable $datatable Datatable used for the chart.
-     * @return self
-     */
-    public function __construct($chartLabel, DataTable $datatable)
-    {
-        parent::__construct($chartLabel, $datatable);
-
-        $this->extraOptions = [
-            'annotations',
-            'axisTitlesPosition',
-            'crosshair',
-            'curveType',
-            'dataOpacity',
-            'enableInteractivity',
-            'forceIFrame',
-            'hAxis',
-            'lineWidth',
-            'orientation',
-            'pointShape',
-            'pointSize',
-            'reverseCategories',
-            'selectionMode',
-            'series',
-            'theme',
-            'vAxis'
-        ];
-=======
      * Default configuration options for the chart.
      *
      * @var array
@@ -157,6 +115,5 @@ class ScatterChart extends Chart
         $options = new Options($this->scatterDefaults);
 
         parent::__construct($chartLabel, $datatable, $options, $config);
->>>>>>> origin/3.0
     }
 }
