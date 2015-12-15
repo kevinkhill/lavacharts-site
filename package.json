@@ -54,7 +54,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
-    "jekyll:build": "bundle exec jekyll build",
-    "jekyll:serve": "bundle exec jekyll serve --watch"
+    "build": "bundle exec jekyll build --watch",
+    "serve": "bundle exec jekyll serve --watch"
   }
 }
