@@ -1,6 +1,5 @@
   var gulp = require('gulp'),
       sass = require('gulp-ruby-sass'),
-     bower = require('gulp-bower'),
     notify = require('gulp-notify'),
      shell = require('gulp-shell'),
     rename = require('gulp-rename'),
@@ -13,7 +12,6 @@ livereload = require('gulp-livereload'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
 browserify = require('browserify'),
-debowerify = require('debowerify'),
    shimify = require('browserify-shim');
 
 //process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
@@ -26,23 +24,20 @@ var config = (function() {
             src     : resources,
             dest    : '_site',
             cache   : './.cache',
+            node    : './node_modules',
             scripts : resources+'/js',
             styles  : resources+'/sass',
             images  : resources+'/images',
-            bower   : './bower_components',
         }
     };
 })();
 
-gulp.task('bower', function() {
-    return bower().pipe(gulp.dest(config.paths.bower));
-});
-/*
-gulp.task('icons', function() {
-    return gulp.src(config.paths.bower + '/fontawesome/fonts/**')
+
+gulp.task('fonts', function() {
+    return gulp.src(config.paths.node+'/bootstrap-sass/assets/fonts/bootstrap/*')
                .pipe(gulp.dest(config.paths.dest+'/fonts'));
 });
-*/
+
 gulp.task('images', function() {
     return gulp.src(config.paths.images+'/**')
                .pipe(newer(config.paths.dest+'/images'))
@@ -61,7 +56,7 @@ gulp.task('css', function() {
         cacheLocation: config.paths.cache,
         loadPath: [
             config.paths.styles,
-            config.paths.bower + '/bootstrap-sass-official/assets/stylesheets',
+            config.paths.node + '/bootstrap-sass/assets/stylesheets',
             //config.paths.bower + '/fontawesome/sass',
         ]
     })
@@ -92,7 +87,6 @@ gulp.task('js', function() {
         .pipe(livereload());
 });
 
-
 gulp.task('watch', ['default'], function() {
     livereload.listen();
 
@@ -106,9 +100,6 @@ gulp.task('watch', ['default'], function() {
 });
 
 gulp.task('default', [
-    'bower',
-    //'icons',
-    'js',
     'css',
-    'images'
+    'js'
 ]);
