@@ -2,8 +2,9 @@ vendor/
 _site/
 tmp/
 node_modules/
+bower_components/
 build/
-cache/
+.cache/
 docs/
 .idea/
 
@@ -12,3 +13,4 @@ composer.phar
 composer.lock
 
 *DS_Store
+*.sublime-*
