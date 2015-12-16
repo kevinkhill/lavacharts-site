@@ -8,10 +8,29 @@ repository:          https://github.com/kevinkhill/lavacharts
 
 # Handling Reading
 safe:         true
-exclude:      ['src', 'javascript', 'resources', 'bower_components', 'node_modules', 'CONTRIBUTING.md', 'CHANGELOG.md', 'CNAME', 'LICENSE', 'gulpfile.js', '*.json', 'sami.cfg.php', '*.sublime-*', 'Gemfile*']
-keep_files:   ['js', 'css', 'images', 'fonts']
 encoding:     "utf-8"
 markdown_ext: "md"
+keep_files:
+ - 'js'
+ - 'css'
+ - 'images'
+ - 'fonts'
+exclude:
+ - 'src'
+ - 'tests'
+ - 'configs'
+ - 'javascript'
+ - 'resources'
+ - 'bower_components'
+ - 'node_modules'
+ - 'CNAME'
+ - 'LICENSE'
+ - 'sami.cfg.php'
+ - 'gulpfile.js'
+ - '*.json'
+ - '*.md'
+ - '*.sublime-*'
+ - 'Gemfile*'
 
 # Filtering Content
 show_drafts: nil

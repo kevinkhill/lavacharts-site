@@ -68,7 +68,7 @@ gulp.task('css', function() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(rename({
-        extname: ".min.css"
+        extname: ".v3.min.css"
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.paths.dest+'/css'))
@@ -86,7 +86,7 @@ gulp.task('js', function() {
         //.pipe(uglify())
         //.pipe(sourcemaps.write())
         .pipe(rename({
-            extname: ".min.js"
+            extname: ".v3.min.js"
         }))
         .pipe(gulp.dest(config.paths.dest+'/js'))
         .pipe(livereload());
