@@ -8,6 +8,8 @@ docs/
 .cache/
 .idea/
 
+scotch.box
+Vagrantfile
 npm-debug.log
 .jekyll-metadata
 composer.phar

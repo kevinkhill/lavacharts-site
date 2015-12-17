@@ -3,39 +3,33 @@
 
 <div class="sub-section">
   <h2 id="datatable-columns">Columns</h2>
-  <p>There are many ways to add columns to the DataTable, using strings, arrays, or multi-dimensional arrays.</p>
+  <p>For convenience, the common column types have their own dedicated methods. They are alias methods, which will internally call the <code>addColumn()</code> method, with some values automatically filled; Type and Label.</p>
+
+  {% for type in site.data.columnTypes %}
+    <div class="pre">
+      <span class="k">add{{ type }}Column</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> ]] )
+      <span class="s1">returns</span> DataTable
+    </div>
+  {% endfor %}
+    <br />
+
+  <p>If you want to explicitly add columns, then there are methods for you to do so. You can using strings, arrays, or multi-dimensional arrays.</p>
   <ul>
-      <li>Type - Defines the type of data that will be in the column.</li>
-      <li>colDesc - The description of the column. (optional)</li>
-      <li>colLabel - A label used to access specific columns. (optional)</li>
-      <li>format - The desired format for the column. (optional)</li>
+      <li><code>Type</code> Defines the type of data that will be in the column.</li>
+      <li><code>Description</code> The description of the column. (optional)</li>
+      <li><code>Label</code> A label used to access specific columns. (optional)</li>
+      <li><code>Format</code> The desired format for the column. (optional)</li>
   </ul>
   <div class="pre">
-    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ]]] )
+    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> ]]]] )
     <span class="s1">returns</span> DataTable
   </div>
   <div class="pre">
-    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ]]]) )
+    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> ] ]]]) )
     <span class="s1">returns</span> DataTable
   </div>
   <div class="pre">
     <span class="k">addColumns</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of column arrays, see above */</span> ) )
-    <span class="s1">returns</span> DataTable
-  </div>
-  <br />
-
-  <p>Also provided are simplified, alias methods, which will automatically fill the type and colLabel.</p>
-  <ul><li>Note: The first columns label with be "col_1", then "col_2", etc.</li></ul>
-  <div class="pre">
-    <span class="k">addDateColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ] )
-    <span class="s1">returns</span> DataTable
-  </div>
-  <div class="pre">
-    <span class="k">addNumberColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="#format">Format</a> <span class="nv">$format</span> ] )
-    <span class="s1">returns</span> DataTable
-  </div>
-  <div class="pre">
-    <span class="k">addStringColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> )
     <span class="s1">returns</span> DataTable
   </div>
   <br />
