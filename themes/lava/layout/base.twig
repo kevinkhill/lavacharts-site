@@ -1,0 +1,8 @@
+{# layout/base.twig #}
+
+{% extends "default/layout/base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+    <link rel="icon" href="{{ path('images/favicon.ico') }}" type="image/x-icon">
+{% endblock %}

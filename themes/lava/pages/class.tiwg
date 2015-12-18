@@ -1,0 +1,5 @@
+{# pages/class.twig #}
+
+{% extends 'default/pages/class.twig' %}
+
+{% block title %}Class {{ parent() }}{% endblock %}
