@@ -14,8 +14,6 @@ livereload = require('gulp-livereload'),
 browserify = require('browserify'),
    shimify = require('browserify-shim');
 
-//process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
-
 var config = (function() {
     var resources = './resources';
 
@@ -32,10 +30,40 @@ var config = (function() {
     };
 })();
 
+//process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
 
-gulp.task('fonts', function() {
-    return gulp.src(config.paths.node+'/bootstrap-sass/assets/fonts/bootstrap/*')
-               .pipe(gulp.dest(config.paths.dest+'/fonts'));
+gulp.task('css', function() {
+    return sass(config.paths.styles+'/style.sass', {
+        style: 'compressed',
+        cacheLocation: config.paths.cache,
+        loadPath: [
+            config.paths.styles,
+            config.paths.node + '/bootstrap-sass/assets/stylesheets'
+        ]
+    })
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(rename({
+        extname: ".v3.min.css"
+    }))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(config.paths.dest+'/css'))
+    .pipe(livereload());
+});
+
+gulp.task('js', function() {
+    return browserify(config.paths.scripts+'/app.js')
+        .bundle()
+        .pipe(source('bundle.js'))
+        .pipe(buffer())
+        //.pipe(sourcemaps.init())
+        //.pipe(uglify())
+        //.pipe(sourcemaps.write())
+        .pipe(rename({
+            extname: ".v3.min.js"
+        }))
+        .pipe(gulp.dest(config.paths.dest+'/js'))
+        .pipe(livereload());
 });
 
 gulp.task('images', function() {
@@ -50,41 +78,9 @@ gulp.task('images', function() {
                .pipe(gulp.dest(config.paths.dest+'/images'));
 });
 
-gulp.task('css', function() {
-    return sass(config.paths.styles+'/style.sass', {
-        style: 'compressed',
-        cacheLocation: config.paths.cache,
-        loadPath: [
-            config.paths.styles,
-            config.paths.node + '/bootstrap-sass/assets/stylesheets',
-            //config.paths.bower + '/fontawesome/sass',
-        ]
-    })
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(rename({
-        extname: ".v3.min.css"
-    }))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.paths.dest+'/css'))
-    .pipe(livereload());
-});
-
-gulp.task('js', function() {
-    return browserify({
-            entries: [config.paths.scripts+'/app.js']
-        })
-        .bundle()
-        .pipe(source('bundle.js'))
-        .pipe(buffer())
-        //.pipe(sourcemaps.init())
-        //.pipe(uglify())
-        //.pipe(sourcemaps.write())
-        .pipe(rename({
-            extname: ".v3.min.js"
-        }))
-        .pipe(gulp.dest(config.paths.dest+'/js'))
-        .pipe(livereload());
+gulp.task('fonts', function() {
+    return gulp.src(config.paths.node+'/bootstrap-sass/assets/fonts/bootstrap/*')
+               .pipe(gulp.dest(config.paths.dest+'/fonts'));
 });
 
 gulp.task('watch', ['default'], function() {

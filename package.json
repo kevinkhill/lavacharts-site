@@ -11,21 +11,16 @@
     "google"
   ],
   "browser": {
-    "bootstrap": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
-    "jquery": "./node_modules/jquery/dist/jquery.js"
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "bootstrap": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"
   },
   "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
+    "transform": ["browserify-shim"]
   },
   "browserify-shim": {
-    "jquery": "global:$",
+    "jquery": "$",
     "bootstrap": {
-      "exports": "bootstrap",
-      "depends": [
-        "jquery:$"
-      ]
+      "depends": ["jquery"]
     }
   },
   "dependencies": {
