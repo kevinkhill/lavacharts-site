@@ -73,7 +73,7 @@
 
   <h2 id="datatable-formats">Formats</h2>
   <p class="lead">Customize the appearance of your data</p>
-  <p>Columns can have formats applied so the data/labels will be shown according to the format definition. The two available are:</p>
+  <p>Columns can have formats applied so the data/labels will be shown according to the format definition.</p>
   <div class="sub-section">
     {% for type in site.data.formatTypes %}
       <h3>{{ type | capitalize }}Format</h3>
@@ -81,11 +81,9 @@
       {% include formats/{{type}}.html param=type %}
     {% endfor %}
   </div>
-  <br />
-  <br />
 
   <h2 id="datatable-utility">Utility Methods</h2>
-  <p>Set the timezone to be used for Date columns, defaults to <span class="pre">America/Los_Angeles</pre></p>
+  <p>Set the timezone to be used for Date, DateTime, and TimeOfDay columns. Defaults to <code>America/Los_Angeles</code></p>
   <div class="pre">
     <span class="k">setTimezone</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tz</span> )
     <span class="s1">returns</span> DataTable
