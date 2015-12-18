@@ -1,0 +1,20 @@
+<h1 id="faq">Frequently Asked Questions</h1>
+<p class="lead">Here are some solutions to real world problems.</p>
+
+<div id="faq-cell-format" class="sub-section">
+    <h2>Formatting a single cell</h2>
+    <p>If you don't want to apply a format to an entire column, you can manually create a DataCell object with the value and format string.</p>
+
+    <h3>Example</h3>
+{% highlight php startinline %}
+$data = $lava->DataTable();
+
+$data->addNumberColumn('Values')
+     ->addRow([15])
+     ->addRow([22])
+     ->addRow([26])
+     ->addRow($lava->DataCell(31, 'Thirty One'))
+     ->addRow([43])
+
+{% endhighlight %}
+</div>

@@ -2,24 +2,8 @@
 layout: main
 title: Lavacharts
 ---
-
 <div class="section section-dark">
-  <h1 id="intro">Introduction</h1>
-  <p class="lead">Lavacharts is a wrapper for Google's powerful Javascript Chart API</p>
-  <ul class="arrows">
-    <li>The Lavachart library takes away the need for manual writing of Javascript in your views</li>
-    <li>The library wraps the work of generating the proper Javascript, so you can focus on the data and not the JS in page.</li>
-    <li>Configuration is intuitive and easy to follow since it correlates 1:1 with the Google Chart API.</li>
-    <li>Designed to work with any PHP project, but some bonus features were added for Laravel users.</li>
-    <li>Laravel specific features include: A ServiceProvider, Facade, and Blade template extensions.</li>
-  </ul>
-  <div class="vspace"></div>
-  <p class="lead center">
-    Found a <a href="//github.com/kevinkhill/lavacharts/issues">bug</a>? Have an <a href="//github.com/kevinkhill/lavacharts/issues">issue</a>?
-  </p>
-  <p class="lead center">
-    Come visit the project on <a href="//github.com/kevinkhill/lavacharts">Github</a> and let me know.
-  </p>
+    {% include intro.html %}
 </div>
 
 
@@ -27,45 +11,32 @@ title: Lavacharts
     {% include install.html %}
 </div>
 
-<div class="section section-light">
+
+<div class="section section-dark">
     {% include quickstart.html %}
 </div>
 
-<div class="section section-dark">
+
+<div class="section section-light">
     {% include upgrade.html %}
 </div>
 
-<!--Usage-->
+
 <div class="section section-dark">
   {% include lavacharts.html %}
 </div>
 
+
 <div class="section section-light">
   {% include datatable.html %}
-  <div class="vspace"></div>
 </div>
 
 
 <!--Charts-->
 <div class="section section-dark">
-    <h1 id="charts">Charts</h1>
-    <p class="lead">Select a chart from the dropdown or sidebar menu to see the different configuration methods / options available.</p>
-    <p>Create a new chart by calling from the top level Lava object, <span class="pre">$lava-></span> if not using Laravel, or <span class="pre">Lava::</span> when using the alias via service provider.
-    <p>All of the methods below are also available to all of the charts, as all charts extend the parent <span class="pre">Chart</span></p>
-
-    <div id="chart-parent" class="sub-section">
-       <h2>Parent Chart</h2>
-        {% include charts/parent-methods.html %}
-    </div>
-
-    {% for type in site.data.chartTypes %}
-        <div id="chart-{{ type }}" class="sub-section">
-            <h3>{{ type | capitalize }}Chart</h3>
-            {% include charts/{{ type }}-docs.html param=type %}
-        </div>
-    {% endfor %}
+    {% include charts.html %}
 </div>
-<!--/Charts-->
+
 
 <!--Dashboards-->
 <div class="section section-light">
@@ -87,27 +58,30 @@ title: Lavacharts
   </div>
 </div>
 
+
 <!--Examples-->
 <div class="section section-dark">
-  <h1 id="examples">Examples</h1>
-  <p class="lead">Here are a few examples of the types of charts you can create.</p>
-
-  {% for type in site.data.chartTypes %}
-      <div id="example-{{ type }}" class="sub-section">
-        {% include examples/{{ type }}.html %}
-      </div>
-  {% endfor %}
+    {% include examples.html %}
 </div>
 
+
 <!--Events-->
-<div class="section section-dark">
+<div class="section section-light">
   <h1 id="events">Lava.js</h1>
   <p class="lead">
-    Providing extra functionality to your charts and dashboards
+    Extra functionality for your charts and dashboards
   </p>
-  <h2 id="events">Chart Events</h2>
-  {% include configs/events.html %}
 
-  <h2 id="javascript">Javascript</h2>
-  {% include configs/javascript.html %}
+  <div class="sub-section">
+    {% include events.html %}
+  </div>
+
+  <div class="sub-section">
+    {% include javascript.html %}
+  </div>
+</div>
+
+
+<div class="section section-dark">
+    {% include faqs.html %}
 </div>
