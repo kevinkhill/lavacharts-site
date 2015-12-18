@@ -4,6 +4,7 @@ _site/
 .build/
 .cache/
 .idea/
+.vagrant/
 
 scotch.box
 Vagrantfile
