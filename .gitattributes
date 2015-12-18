@@ -1,6 +1,6 @@
 # Export Ignores
 tests/ export-ignore
-cache/ export-ignore
+.cache/ export-ignore
 build/ export-ignore
 .idea/ export-ignore
 configs/ export-ignore

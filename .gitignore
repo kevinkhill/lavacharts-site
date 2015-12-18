@@ -1,10 +1,7 @@
 vendor/
 node_modules/
-bower_components/
-tmp/
 _site/
-build/
-docs/
+.build/
 .cache/
 .idea/
 
@@ -13,3 +10,4 @@ npm-debug.log
 composer.phar
 composer.lock
 *.sublime-*
+*.swp
