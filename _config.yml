@@ -15,6 +15,7 @@ keep_files:
  - css
  - images
  - fonts
+ - api
 exclude:
  - src
  - tests
