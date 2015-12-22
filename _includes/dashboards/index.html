@@ -1,0 +1,33 @@
+<h1 id="dashboards">Dashboards</h1>
+<p class="lead">Create dynamic data displays.</p>
+<p>Dashboards are charts that have controls and filters attached to them to enable altering the view of the data through the controls.</p>
+
+
+<div class="pre">
+  <span class="k">__construct</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$label</span>)
+  <span class="s1">returns</span> Dashboard
+</div>
+
+<div class="pre">
+  <span class="k">bind</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$label</span>, <a href="#dashboards-wrappers-control">ControlWrapper</a> <span class="nv">$cw</span>, <a href="#dashboards-wrappers-chart">ChartWrapper</a> <span class="nv">$cw</span>)
+</div>
+
+<div class="pre">
+  <span class="k">bind</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$label</span>, <a href="#dashboards-wrappers-control">ControlWrapper</a> <span class="nv">$cw</span>, <a href="#dashboards-wrappers-chart">ChartWrapper</a> <span class="nv">$cw</span>)
+</div>
+
+
+<div class="vspace-50"></div>
+
+<div class="sub-section">
+  <h3 id="dashboards-wrappers-chart">Chart Wrappers</h3>
+  {% include dashboards/chart-wrappers.html %}
+  <div class="vspace-50"></div>
+
+  <h3 id="dashboards-wrappers-control">Control Wrappers</h3>
+  {% include dashboards/control-wrappers.html %}
+  <div class="vspace-50"></div>
+
+  <h3 id="dashboards-filters">Filters</h3>
+  {% include dashboards/filters.html %}
+</div>
