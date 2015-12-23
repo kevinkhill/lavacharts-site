@@ -1,11 +1,15 @@
 <h1 id="dashboards">Dashboards</h1>
 <p class="lead">Create dynamic data displays.</p>
 <p>Dashboards are charts that have controls and filters attached to them to enable altering the view of the data through the controls.</p>
+<p>For example, You want to view a sub-set of your data, you can attach a number filter, and change the display of the chart through number sliders.</p>
 
-
-<div class="pre">
-  <span class="k">__construct</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$label</span>)
-  <span class="s1">returns</span> Dashboard
+<div class="sub-section">
+    <h2>Creation</h2>
+    <p>Same as charts, dashboards need a label. Pass this as the only parameter to the constructor.</p>
+    <div class="pre">
+      <span class="k">__construct</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$label</span>)
+      <span class="s1">returns</span> Dashboard
+    </div>
 </div>
 
 <div class="pre">
@@ -21,12 +25,23 @@
 
 <div class="sub-section">
   <h3 id="dashboards-wrappers-chart">Chart Wrappers</h3>
-  {% include dashboards/chart-wrappers.html %}
+  <p>Add a chart into the dashboard by wrapping it first..</p>
+  <p>Pass in your created chart and the HTML element id where the dashboard's chart is to be rendered.</p>
+
+  <div class="pre">
+    <span class="k">__construct</span>(<a href="#chart">Chart</a> <span class="nv">$chart</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
+    <span class="s1">returns</span> ChartWrapper
+  </div>
   <div class="vspace-50"></div>
 
   <h3 id="dashboards-wrappers-control">Control Wrappers</h3>
-  {% include dashboards/control-wrappers.html %}
-  <div class="vspace-50"></div>
+  <p>After creating a filter, you wrap it with a control that will allow the view of the chart to be changed.</p>
+  <p>Pass in a filter and the HTML element id where the dashboard's control is to be rendered.</p>
+
+  <div class="pre">
+    <span class="k">__construct</span>(<a href="#dashboards-filters">Filter</a> <span class="nv">$filter</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
+    <span class="s1">returns</span> ControlWrapper
+  </div>
 
   <h3 id="dashboards-filters">Filters</h3>
   {% include dashboards/filters.html %}
