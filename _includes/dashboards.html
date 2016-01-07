@@ -26,18 +26,18 @@ $dashboard = $lava->Dashboard('MyDash');
     <div class="alert alert-danger">
       <strong>Note:</strong> There are four types of bindings <code>OneToOne</code>, <code>OneToMany</code>, <code>ManyToOne</code>, and  <code>ManyToMany</code>. This is why the <code>bind()</code> method accepts arrays as well as objects.
     </div>
-
+    <div class="vspace-50"></div>
 
     <h2 id="dashboards-filters">Filters</h2>
     <p>Filters are used alter the appearance of a <a href="#charts"><code>Chart</code></a> by filtering the <a href="#datatables">DataTable</a>. Used within a <code>ControlWrapper()</code>, filters work with the controls to alter the chart's display.</p>
     <p>All filters need a previously created <a href="#charts"><code>Chart</code></a> with a <a href="#datatables">DataTable</a>.</p>
-    <p>The first parameter is either the DataTable's column index or label, and the second, and optional array of customization options.</p>
+    <p>The first parameter is either the DataTable's column index or label, and the second parameter is an optional array of customization options.</p>
     <br />
     <p>For example:</p>
 {% highlight php startinline %}
-$filter = $lava->NumberRangeFilter(1 [, array ]);
+$filter = $lava->NumberRangeFilter(1 [, arrayOfOptions ]);
 // OR
-$filter = $lava->NumberRangeFilter('ThisSpecificColumn' [, array ]);
+$filter = $lava->NumberRangeFilter('ThisSpecificColumn' [, arrayOfOptions ]);
 {% endhighlight %}
 
     <div class="sub-section">
@@ -66,47 +66,58 @@ $chartRange = $lava->ChartRangeFilter(int|'string', [
 
       <h3>DateRange</h3>
 {% highlight php startinline %}
-$dateRange = $lava->DateRangeFilter(int|'string', []);
+$dateRange = $lava->DateRangeFilter(int|'string', [
+    'minValue' => int|float,
+    'maxValue' => int|float,
+    'format'   => 'string'
+]);
 {% endhighlight %}
 
       <h3>NumberRange</h3>
 {% highlight php startinline %}
-$numberRange = $lava->NumberRangeFilter(int|'string', []);
+$numberRange = $lava->NumberRangeFilter(int|'string', [
+    'minValue' => int|float,
+    'maxValue' => int|float,
+    'format'   => 'string'
+]);
 {% endhighlight %}
 
       <h3>String</h3>
 {% highlight php startinline %}                     
-$string = $lava->StringFilter(int|'string', []);
+$string = $lava->StringFilter(int|'string', [
+    'matchType'         => 'string',
+    'caseSensitive'     => bool,
+    'useFormattedValue' => bool,
+    'realtimeTrigger'   => 'string'
+]);
 {% endhighlight %}
 
       <p>More information can be found on <a href="https://developers.google.com/chart/interactive/docs/gallery/controls#controls-gallery" target="_blank">Google's Website</a></p>
     </div>
 </div>
 
-
-
 <div class="vspace-50"></div>
 
 <div class="sub-section">
-  <h3 id="dashboards-wrappers-chart">Chart Wrappers</h3>
-  <p>Add a chart into the dashboard by wrapping it first..</p>
+
+  <h3 id="dashboards-wrappers-control">ControlWrappers</h3>
+  <p>After creating a filter, you wrap it with a control that will allow the view of the chart to be changed.</p>
+  <p>Pass in one of the filters and the HTML element id where the dashboard's control is to be rendered.</p>
+  <div class="pre">
+    <span class="k">__construct</span>(<a href="#dashboards-filter">Filter</a> <span class="nv">$filter</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
+    <span class="s1">returns</span> ControlWrapper
+  </div>
+
+  <div class="vspace-50"></div>
+
+
+  <h3 id="dashboards-wrappers-chart">ChartWrappers</h3>
+  <p>Next step is to add a chart to the dashboard. (This should have already been created with your options and data)</p>
   <p>Pass in your created chart and the HTML element id where the dashboard's chart is to be rendered.</p>
 
   <div class="pre">
     <span class="k">__construct</span>(<a href="#chart">Chart</a> <span class="nv">$chart</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
     <span class="s1">returns</span> ChartWrapper
   </div>
-  <div class="vspace-50"></div>
 
-  <h3 id="dashboards-wrappers-control">Control Wrappers</h3>
-  <p>After creating a filter, you wrap it with a control that will allow the view of the chart to be changed.</p>
-  <p>Pass in a filter and the HTML element id where the dashboard's control is to be rendered.</p>
-
-  <div class="pre">
-    <span class="k">__construct</span>(<a href="#dashboards-filters">Filter</a> <span class="nv">$filter</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
-    <span class="s1">returns</span> ControlWrapper
-  </div>
-
-  <h3 id="dashboards-filters">Filters</h3>
-  {% include dashboards/filters.html %}
 </div>
