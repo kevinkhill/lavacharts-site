@@ -57,7 +57,7 @@ $categoryFilter = $lava->CategoryFilter(int|'string', [
 {% highlight php startinline %}
 $chartRange = $lava->ChartRangeFilter(int|'string', [
     'chartType'    => 'string',
-    'chartOptions' => //Not yet implemented, 
+    'chartOptions' => //Not yet implemented,
     'chartView'    => //Not yet implemented,
     'minRangeSize' => int|float,
     'snapToData'   => bool
@@ -83,7 +83,7 @@ $numberRange = $lava->NumberRangeFilter(int|'string', [
 {% endhighlight %}
 
       <h3>String</h3>
-{% highlight php startinline %}                     
+{% highlight php startinline %}
 $string = $lava->StringFilter(int|'string', [
     'matchType'         => 'string',
     'caseSensitive'     => bool,
@@ -98,26 +98,47 @@ $string = $lava->StringFilter(int|'string', [
 
 <div class="vspace-50"></div>
 
-<div class="sub-section">
 
-  <h3 id="dashboards-wrappers-control">ControlWrappers</h3>
+<div class="sub-section">
+  <h2 id="dashboards-wrappers-control">ControlWrappers</h2>
   <p>After creating a filter, you wrap it with a control that will allow the view of the chart to be changed.</p>
   <p>Pass in one of the filters and the HTML element id where the dashboard's control is to be rendered.</p>
   <div class="pre">
     <span class="k">__construct</span>(<a href="#dashboards-filter">Filter</a> <span class="nv">$filter</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
     <span class="s1">returns</span> ControlWrapper
   </div>
+  <div class="vspace"></div>
 
-  <div class="vspace-50"></div>
 
-
-  <h3 id="dashboards-wrappers-chart">ChartWrappers</h3>
+  <h2 id="dashboards-wrappers-chart">ChartWrappers</h2>
   <p>Next step is to add a chart to the dashboard. (This should have already been created with your options and data)</p>
   <p>Pass in your created chart and the HTML element id where the dashboard's chart is to be rendered.</p>
-
   <div class="pre">
     <span class="k">__construct</span>(<a href="#chart">Chart</a> <span class="nv">$chart</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
     <span class="s1">returns</span> ChartWrapper
   </div>
+  <div class="vspace"></div>
+
+
+  <h2 id="dashboards-binding">Binding</h2>
+  <p>Lastly, bind the control to the chart into the dashboard.</p>
+  <p>It helps to remember the syntax that you bind a control to a chart, not a chart to a control.</p>
+{% highlight php startinline %}
+$dashboard->bind($controlWrapper, $chartWrapper);
+{% endhighlight %}
+  <div class="vspace"></div>
+
+
+  <h2 id="dashboards-rendering">Rendering</h2>
+  <p>The render method from the lava object will render dashboards too.</p>
+  <p>Instead of a chart type, put <code>Dashboard</code> for the first parameter, then the dashboard label, and an element id.</p>
+{% highlight php startinline %}
+$lava->render('Dashboard', 'MyDash', 'dash-elem');
+{% endhighlight %}
+  <div class="vspace"></div>
+
+
+  <h2 id="dashboards-example">Example</h2>
+  {% gist kevinkhill/3c3944bfe9672231ff69 %}
 
 </div>
