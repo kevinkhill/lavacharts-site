@@ -114,7 +114,7 @@ $string = $lava->StringFilter(int|'string', [
   <p>Next step is to add a chart to the dashboard. (This should have already been created with your options and data)</p>
   <p>Pass in your created chart and the HTML element id where the dashboard's chart is to be rendered.</p>
   <div class="pre">
-    <span class="k">__construct</span>(<a href="#chart">Chart</a> <span class="nv">$chart</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
+    <span class="k">__construct</span>(<a href="#charts">Chart</a> <span class="nv">$chart</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
     <span class="s1">returns</span> ChartWrapper
   </div>
   <div class="vspace"></div>
@@ -135,10 +135,16 @@ $dashboard->bind($controlWrapper, $chartWrapper);
 {% highlight php startinline %}
 $lava->render('Dashboard', 'MyDash', 'dash-elem');
 {% endhighlight %}
-  <div class="vspace"></div>
+  <div class="alert alert-danger">
+    <strong>Note:</strong> The html structure for a dashboard needs to be nested. The chart and controls need to be inside the div for the dashboard. See the example below.
+  </div>
 
+  <p>Here is a working example of the a simple dashboard.</p>
+  <div class="sub-section">
+    <h3>Controller</h3>
+    {% gist kevinkhill/3c3944bfe9672231ff69 %}
 
-  <h2 id="dashboards-example">Example</h2>
-  {% gist kevinkhill/3c3944bfe9672231ff69 %}
-
+    <h3>View</h3>
+    {% gist kevinkhill/32bccf605f749efe70c7 %}
+  </div>
 </div>
