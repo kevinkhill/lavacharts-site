@@ -6,9 +6,12 @@ build/
 cache/
 docs/
 .idea/
+.cache/
 
 bootstrap/compiled.php
 composer.phar
 composer.lock
+
+*.sublime-*
 
 *DS_Store
