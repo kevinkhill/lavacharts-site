@@ -1,4 +1,6 @@
   var gulp = require('gulp'),
+       del = require('del'),
+      exec = require('child_process').exec,
       sass = require('gulp-ruby-sass'),
     notify = require('gulp-notify'),
      shell = require('gulp-shell'),
@@ -83,6 +85,14 @@ gulp.task('fonts', function() {
                .pipe(gulp.dest(config.paths.dest+'/fonts'));
 });
 
+gulp.task('api', function() {
+    del(['./_site/api/**/*']);
+
+    return exec('./vendor/bin/sami.php update ./sami.cfg.php', function (err, stout, sterr) {
+        console.log(stout);
+    });
+});
+
 gulp.task('watch', ['default'], function() {
     livereload.listen();
 
@@ -99,3 +109,4 @@ gulp.task('default', [
     'css',
     'js'
 ]);
+

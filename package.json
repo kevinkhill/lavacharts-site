@@ -15,12 +15,16 @@
     "bootstrap": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"
   },
   "browserify": {
-    "transform": ["browserify-shim"]
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "browserify-shim": {
     "jquery": "$",
     "bootstrap": {
-      "depends": ["jquery"]
+      "depends": [
+        "jquery"
+      ]
     }
   },
   "dependencies": {
@@ -30,6 +34,7 @@
   "devDependencies": {
     "browserify": "^11.1.0",
     "browserify-shim": "^3.8.10",
+    "del": "^2.2.0",
     "gulp": "^3.8.11",
     "gulp-imagemin": "^2.3.0",
     "gulp-livereload": "^3.8.1",
