@@ -139,12 +139,20 @@ $lava->render('Dashboard', 'MyDash', 'dash-elem');
     <strong>Note:</strong> The html structure for a dashboard needs to be nested. The chart and controls need to be inside the div for the dashboard. See the example below.
   </div>
 
-  <p>Here is a working example of the a simple dashboard.</p>
+  <p class="lead">Here is a working example of the a simple dashboard.</p>
   <div class="sub-section">
-    <h3>Controller</h3>
-    {% gist kevinkhill/3c3944bfe9672231ff69 %}
-
-    <h3>View</h3>
-    {% gist kevinkhill/32bccf605f749efe70c7 %}
+    <div class="row">
+      <div class="col-lg-6">
+        <h3>Controller</h3>
+        {% gist kevinkhill/3c3944bfe9672231ff69 %}
+      </div>
+      <div class="col-lg-6">
+        <h3>View</h3>
+        {% gist kevinkhill/32bccf605f749efe70c7 %}
+        <div class="center">
+          <img src="{{ site.baseurl }}/images/examples/dashboard.gif" />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
