@@ -49,7 +49,7 @@ $lava->CalendarChart('Sales', $sales, [
 {% highlight php startinline %}
 <div id="sales_div"></div>
 // With the lava object
-<? echo $lava->render('CalendarChart', 'Sales', 'sales_div') ?>
+<?= $lava->render('CalendarChart', 'Sales', 'sales_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -57,7 +57,7 @@ $lava->CalendarChart('Sales', $sales, [
 {% highlight php startinline %}
 <div id="sales_div"></div>
 // With Lava class alias
-<? echo Lava::render('CalendarChart', 'Sales', 'sales_div') ?>
+<?= Lava::render('CalendarChart', 'Sales', 'sales_div') ?>
 
 // With Blade Templates
 @calendarchart('Sales', 'sales_div')

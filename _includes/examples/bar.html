@@ -27,7 +27,7 @@ $lava->BarChart('Votes', $votes);
 {% highlight php startinline %}
 <div id="poll_div"></div>
 // With the lava object
-<? echo $lava->render('BarChart', 'Food Poll', 'poll_div') ?>
+<?= $lava->render('BarChart', 'Food Poll', 'poll_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -35,7 +35,7 @@ $lava->BarChart('Votes', $votes);
 {% highlight php startinline %}
 <div id="poll_div"></div>
 // With Lava class alias
-<? echo Lava::render('BarChart', 'Food Poll', 'poll_div') ?>
+<?= Lava::render('BarChart', 'Food Poll', 'poll_div') ?>
 
 // With Blade Templates
 @barchart('Food Poll', 'poll_div')

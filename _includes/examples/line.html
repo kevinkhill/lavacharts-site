@@ -41,22 +41,22 @@ $lava->LineChart('Temps'), $temperatures, [
 <div class="row">
   <div class="col-sm-6">
     <h4>Vanilla</h4>
-    {% highlight php startinline %}
-    <div id="temps_div"></div>
-    // With the lava object
-    <? echo $lava->render('LineChart', 'Temps', 'temps_div') ?>
-    {% endhighlight %}
+{% highlight php startinline %}
+<div id="temps_div"></div>
+// With the lava object
+<?= $lava->render('LineChart', 'Temps', 'temps_div') ?>
+{% endhighlight %}
   </div>
   <div class="col-sm-6">
     <h4>Laravel</h4>
-    {% highlight php startinline %}
-    <div id="temps_div"></div>
-    // With Lava class alias
-    <? echo Lava::render('LineChart', 'Temps', 'temps_div') ?>
+{% highlight php startinline %}
+<div id="temps_div"></div>
+// With Lava class alias
+<?= Lava::render('LineChart', 'Temps', 'temps_div') ?>
 
-    // With Blade Templates
-    @linechart('Temps', 'temps_div')
-    {% endhighlight %}
+// With Blade Templates
+@linechart('Temps', 'temps_div')
+{% endhighlight %}
   </div>
 </div>
 

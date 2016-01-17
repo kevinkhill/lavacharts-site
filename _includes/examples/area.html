@@ -36,7 +36,7 @@ $lava->AreaChart('Population', $population, [
 {% highlight php startinline %}
 <div id="pop_div"></div>
 // With the lava object
-<? echo $lava->render('AreaChart', 'Population', 'pop_div') ?>
+<?= $lava->render('AreaChart', 'Population', 'pop_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -44,7 +44,7 @@ $lava->AreaChart('Population', $population, [
 {% highlight php startinline %}
 <div id="pop_div"></div>
 // With Lava class alias
-<? echo Lava::render('AreaChart', 'Population', 'pop_div') ?>
+<?= Lava::render('AreaChart', 'Population', 'pop_div') ?>
 
 // With Blade Templates
 @areachart('Population', 'pop_div')

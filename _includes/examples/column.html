@@ -34,7 +34,7 @@ $lava->ColumnChart('Finances', $finances, [
 {% highlight php startinline %}
 <div id="perf_div"></div>
 // With the lava object
-<? echo $lava->render('ColumnChart', 'Finances', 'perf_div') ?>
+<?= $lava->render('ColumnChart', 'Finances', 'perf_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -42,7 +42,7 @@ $lava->ColumnChart('Finances', $finances, [
 {% highlight php startinline %}
 <div id="perf_div"></div>
 // With Lava class alias
-<? echo Lava::render('ColumnChart', 'Finances', 'perf_div') ?>
+<?= Lava::render('ColumnChart', 'Finances', 'perf_div') ?>
 
 // With Blade Templates
 @columnchart('Finances', 'perf_div')

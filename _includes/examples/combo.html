@@ -44,7 +44,7 @@ $lava->ComboChart('Finances', $finances, [
 {% highlight php startinline %}
 <div id="finances-div"></div>
 // With the lava object
-<? echo $lava->render('ComboChart', 'Finances', 'finances-div') ?>
+<?= $lava->render('ComboChart', 'Finances', 'finances-div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -52,7 +52,7 @@ $lava->ComboChart('Finances', $finances, [
 {% highlight php startinline %}
 <div id="finances-div"></div>
 // With Lava class alias
-<? echo Lava::render('ComboChart', 'Finances', 'finances-div') ?>
+<?= Lava::render('ComboChart', 'Finances', 'finances-div') ?>
 
 // With Blade Templates
 @combochart('Finances', 'finances-div')

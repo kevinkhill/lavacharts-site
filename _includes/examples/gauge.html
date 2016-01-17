@@ -37,7 +37,7 @@ $lava->GaugeChart('Temps', $temps, [
 {% highlight php startinline %}
 <div id="temps_div"></div>
 // With the lava object
-<? echo $lava->render('GaugeChart', 'Temps', 'temps_div') ?>
+<?= $lava->render('GaugeChart', 'Temps', 'temps_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -45,7 +45,7 @@ $lava->GaugeChart('Temps', $temps, [
 {% highlight php startinline %}
 <div id="temps_div"></div>
 // With Lava class alias
-<? echo Lava::render('GaugeChart', 'Temps', 'temps_div') ?>
+<?= Lava::render('GaugeChart', 'Temps', 'temps_div') ?>
 
 // With Blade Templates
 @gaugechart('Temps', 'temps_div')

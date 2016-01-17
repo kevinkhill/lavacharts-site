@@ -28,7 +28,7 @@ $lava->GeoChart('Popularity', $popularity);
 {% highlight php startinline %}
 <div id="pop-div"></div>
 // With the lava object
-<? echo $lava->render('GeoChart', 'Popularity', 'pop-div') ?>
+<?= $lava->render('GeoChart', 'Popularity', 'pop-div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -36,7 +36,7 @@ $lava->GeoChart('Popularity', $popularity);
 {% highlight php startinline %}
 <div id="pop-div"></div>
 // With Lava class alias
-<? echo Lava::render('GeoChart', 'Popularity', 'pop-div') ?>
+<?= Lava::render('GeoChart', 'Popularity', 'pop-div') ?>
 
 // With Blade Templates
 @geochart('Popularity', 'pop-div')
