@@ -10,6 +10,10 @@
     "graphs",
     "google"
   ],
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/kevinkhill/lavacharts-site.git"
+  },
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
     "bootstrap": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"

@@ -3,11 +3,7 @@ node_modules/
 _site/
 .build/
 .cache/
-.idea/
-.vagrant/
 
-scotch.box
-Vagrantfile
 npm-debug.log
 .jekyll-metadata
 composer.phar
