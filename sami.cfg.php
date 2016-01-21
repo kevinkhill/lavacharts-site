@@ -6,7 +6,7 @@ use Sami\Version\GitVersionCollection;
 use Symfony\Component\Finder\Finder;
 
 $dir = realpath(__DIR__.'/../../php/lavacharts/src');
-echo $dir;exit;
+
 $iterator = Finder::create()
     ->files()
     ->name('*.php')
