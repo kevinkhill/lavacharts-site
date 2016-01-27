@@ -14,6 +14,7 @@ $iterator = Finder::create()
     ->in($dir);
 
 $versions = GitVersionCollection::create($dir)
+    ->add('master', 'Master Branch')
     ->add('3.0', '3.0 Branch')
     ->add('2.5', '2.5 Branch');
 
@@ -23,7 +24,7 @@ $options = [
     'theme'                => 'lava',
     'versions'             => $versions,
     'title'                => 'Lavacharts API',
-    'build_dir'            => __DIR__.'/_site/api/%version%',
+    'build_dir'            => __DIR__.'/api/%version%',
     'cache_dir'            => __DIR__.'/.cache/%version%',
     'template_dirs'        => [__DIR__.'/resources/sami-themes/'],
     'remote_repository'    => $githubRepo,
