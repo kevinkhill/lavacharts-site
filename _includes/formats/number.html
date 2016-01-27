@@ -1,0 +1,14 @@
+{% highlight php startinline %}
+$lava->{{ type | capitalize }}Format([
+    'decimalSymbol'  => 'string',
+    'fractionDigits' => int,
+    'groupingSymbol' => 'string',
+    'negativeColor'  => 'string',
+    'negativeParens' => bool,
+    'pattern'        => 'string',
+    'prefix'         => 'string',
+    'suffix'         => 'string'
+]);
+{% endhighlight %}
+
+<p>Explanations of each of the configuration options can be found in <a href="https://developers.google.com/chart/interactive/docs/reference#numberformatter">Google's Documentation</a></p>

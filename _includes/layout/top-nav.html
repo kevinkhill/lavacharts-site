@@ -1,0 +1,77 @@
+<nav class="navbar navbar-inverse navbar-fixed-top visible-xs" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#lava-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Lavacharts</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="lava-navbar">
+    <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quickstart <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              {% include menu-links/quickstart.html %}
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">DataTables <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              {% include menu-links/datatables.html %}
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Charts <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              {% include menu-links/charts.html %}
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dashboards <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              {% include menu-links/dashboards.html %}
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              {% include menu-links/examples.html %}
+            </ul>
+          </li>
+<!--
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customize <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              {% include menu-links/configs.html %}
+            </ul>
+          </li>
+-->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Javascript<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              {% include menu-links/javascript.html %}
+            </ul>
+          </li>
+
+  <!--
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="api/2.0/index.html">Version 2.0</a></li>
+              <li><a href="api/1.0/index.html">Version 1.0</a></li>
+            </ul>
+          </li>
+  -->
+        </ul><!--/nav.navbar-nav-->
+    </div>
+  </div>
+</nav>

@@ -9,24 +9,22 @@ $population = $lava->DataTable();
 
 $population->addDateColumn('Year')
            ->addNumberColumn('Number of People')
-           ->addRow(array('2006', 623452))
-           ->addRow(array('2007', 685034))
-           ->addRow(array('2008', 716845))
-           ->addRow(array('2009', 757254))
-           ->addRow(array('2010', 778034))
-           ->addRow(array('2011', 792353))
-           ->addRow(array('2012', 839657))
-           ->addRow(array('2013', 842367))
-           ->addRow(array('2014', 873490));
+           ->addRow(['2006', 623452])
+           ->addRow(['2007', 685034])
+           ->addRow(['2008', 716845])
+           ->addRow(['2009', 757254])
+           ->addRow(['2010', 778034])
+           ->addRow(['2011', 792353])
+           ->addRow(['2012', 839657])
+           ->addRow(['2013', 842367])
+           ->addRow(['2014', 873490]);
 
-$areachart = $lava->AreaChart('Population')
-                  ->setOptions(array(
-                    'datatable' => $population,
-                    'title' => 'Population Growth',
-                    'legend' => $lava->Legend(array(
-                      'position' => 'in'
-                    ))
-                  ));
+$lava->AreaChart('Population', $population, [
+    'title' => 'Population Growth',
+    'legend' => [
+        'position' => 'in'
+    ]
+]);
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
 <p>Otherwise, pass <span class="code">$areachart</span> or <span class="code">$lava</span> to your view to render.</p>
@@ -37,11 +35,8 @@ $areachart = $lava->AreaChart('Population')
       <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="pop_div"></div>
-// With the chart object
-<? echo $areachart->render('pop_div') ?>
-
 // With the lava object
-<? echo $lava->render('AreaChart', 'Population', 'pop_div') ?>
+<?= $lava->render('AreaChart', 'Population', 'pop_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -49,7 +44,7 @@ $areachart = $lava->AreaChart('Population')
 {% highlight php startinline %}
 <div id="pop_div"></div>
 // With Lava class alias
-<? echo Lava::render('AreaChart', 'Population', 'pop_div') ?>
+<?= Lava::render('AreaChart', 'Population', 'pop_div') ?>
 
 // With Blade Templates
 @areachart('Population', 'pop_div')
@@ -62,29 +57,5 @@ $areachart = $lava->AreaChart('Population')
   <img src="images/examples/area.jpg" />
 </div>
 <br/>
-
-<h3>Javascript Output</h3>
-<div class="js-well">
-{% highlight javascript startinline %}
-lava.charts.AreaChart = {"Population":{chart:null,draw:null,data:null,options:null,formats:[]}};
-
-if (!document.getElementById('chart')){console.error('[Lavaharts] No matching element was found with ID "chart"');}
-
-lava.charts.AreaChart.Population.draw = function() {
-var $this = lava.charts.AreaChart.Population;
-
-$this.data = new google.visualization.DataTable({"cols":[{"type":"date","label":"Year","id":"date"},{"type":"number","label":"Number of People","id":"pop"}],"rows":[{"c":[{"v":new Date(2014,11,19,20,6,0)},{"v":623452}]},{"c":[{"v":new Date(2014,11,19,20,7,0)},{"v":685034}]},{"c":[{"v":new Date(2014,11,19,20,8,0)},{"v":716845}]},{"c":[{"v":new Date(2014,11,19,20,9,0)},{"v":757254}]},{"c":[{"v":new Date(2014,11,19,20,10,0)},{"v":778034}]},{"c":[{"v":new Date(2014,11,19,20,11,0)},{"v":792353}]},{"c":[{"v":new Date(2014,11,19,20,12,0)},{"v":839657}]},{"c":[{"v":new Date(2014,11,19,20,13,0)},{"v":842367}]},{"c":[{"v":new Date(2014,11,19,20,14,0)},{"v":873490}]}]}, 0.6);
-
-$this.options = {"title":"Population Growth","legend":{"position":"in"}};
-
-$this.chart = new google.visualization.AreaChart(document.getElementById('chart'));
-
-$this.chart.draw($this.data, $this.options);
-};
-
-google.load('visualization', '1', {'packages':['corechart']});
-google.setOnLoadCallback(lava.charts.AreaChart.Population.draw);
-{% endhighlight %}
-</div>
 
 <div class="orange-divider"></div>

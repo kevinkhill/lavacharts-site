@@ -9,28 +9,20 @@ $reasons = $lava->DataTable();
 
 $reasons->addStringColumn('Reasons')
         ->addNumberColumn('Percent')
-        ->addRow(array('Check Reviews', 5))
-        ->addRow(array('Watch Trailers', 2))
-        ->addRow(array('See Actors Other Work', 4))
-        ->addRow(array('Settle Argument', 89));
+        ->addRow(['Check Reviews', 5])
+        ->addRow(['Watch Trailers', 2])
+        ->addRow(['See Actors Other Work', 4])
+        ->addRow(['Settle Argument', 89]);
 
-$piechart = $lava->PieChart('IMDB')
-                 ->setOptions(array(
-                   'datatable' => $reasons,
-                   'title' => 'Reasons I visit IMDB',
-                   'is3D' => true,
-                     'slices' => array(
-                        $lava->Slice(array(
-                          'offset' => 0.2
-                        )),
-                        $lava->Slice(array(
-                          'offset' => 0.25
-                        )),
-                        $lava->Slice(array(
-                          'offset' => 0.3
-                        ))
-                      )
-                  ));
+$lava->PieChart('IMDB', $reasons, [
+    'title'  => 'Reasons I visit IMDB',
+    'is3D'   => true,
+    'slices' => [
+        ['offset' => 0.2],
+        ['offset' => 0.25],
+        ['offset' => 0.3]
+    ]
+]);
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
 <p>Otherwise, pass <span class="code">$piechart</span> or <span class="code">$lava</span> to your view to render.</p>
@@ -38,14 +30,11 @@ $piechart = $lava->PieChart('IMDB')
 <h3>View</h3>
 <div class="row">
   <div class="col-sm-6">
-      <h4>Vanilla</h4>
+    <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="chart-div"></div>
-// With the chart object
-<? echo $piechart->render('chart-div') ?>
-
 // With the lava object
-<? echo $lava->render('PieChart', 'IMDB', 'chart-div') ?>
+<?= $lava->render('PieChart', 'IMDB', 'chart-div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -53,7 +42,7 @@ $piechart = $lava->PieChart('IMDB')
 {% highlight php startinline %}
 <div id="chart-div"></div>
 // With Lava class alias
-<? echo Lava::render('PieChart', 'IMDB', 'chart-div') ?>
+<?= Lava::render('PieChart', 'IMDB', 'chart-div') ?>
 
 // With Blade Templates
 @piechart('IMDB', 'chart-div')
@@ -66,29 +55,5 @@ $piechart = $lava->PieChart('IMDB')
   <img src="images/examples/pie.jpg" />
 </div>
 <br/>
-
-<h3>Javascript Output</h3>
-<div class="js-well">
-{% highlight javascript startinline %}
-lava.charts.PieChart = {"IMDB":{chart:null,draw:null,data:null,options:null,formats:[]}};
-
-if (!document.getElementById('chart')){console.error('[Lavaharts] No matching element was found with ID "chart"');}
-
-lava.charts.PieChart.IMDB.draw = function() {
-var $this = lava.charts.PieChart.IMDB;
-
-$this.data = new google.visualization.DataTable({"cols":[{"type":"string","label":"Reasons"},{"type":"number","label":"Percent"}],"rows":[{"c":[{"v":"Check Reviews"},{"v":5}]},{"c":[{"v":"Watch Trailers"},{"v":2}]},{"c":[{"v":"See Actors Other Work"},{"v":4}]},{"c":[{"v":"Settle Argument"},{"v":89}]}]}, 0.6);
-
-$this.options = {"title":"Reasons I visit IMDB","is3D":true,"slices":[{"offset":0.2},{"offset":0.25},{"offset":0.3}]};
-
-$this.chart = new google.visualization.PieChart(document.getElementById('chart'));
-
-$this.chart.draw($this.data, $this.options);
-};
-
-google.load('visualization', '1', {'packages':['corechart']});
-google.setOnLoadCallback(lava.charts.PieChart.IMDB.draw);
-{% endhighlight %}
-</div>
 
 <div class="orange-divider"></div>

@@ -1,8 +1,11 @@
 # Lavacharts
-Lavacharts is a graphing / chart library for PHP5.3+ that wraps the Google Chart API
+Lavacharts is a graphing library for PHP5.4+ that wraps the Google Chart's Javascript API
 
 # Documentation
-[Lavacharts](http://lavacharts.com)
+Please visit [lavacharts.com](http://lavacharts.com) for the complete documentation.
 
-# Errors?
+## Errors?
 Please feel free to open an issue or fork if you find any documentation errors.
+
+## Looking for the Library?
+[Lavacharts on Github](https://github.com/kevinkhill/lavacharts)

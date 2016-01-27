@@ -1,0 +1,108 @@
+<h1 id="datatables">DataTables</h1>
+<p class="lead">What's a chart without data?</p>
+
+<div class="sub-section">
+  <h2 id="datatable-columns">Columns</h2>
+  <p>For convenience, the common column types have their own dedicated methods. They are alias methods, which will internally call the <code>addColumn()</code> method, with some values automatically filled; Type and Label.</p>
+
+  {% for type in site.data.columnTypes %}
+    <div class="pre">
+      <span class="k">add{{ type }}Column</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> ]] )
+      <span class="s1">returns</span> DataTable
+    </div>
+  {% endfor %}
+    <br />
+
+  <p>If you want to explicitly add columns, then there are methods for you to do so. You can using strings, arrays, or multi-dimensional arrays.</p>
+  <ul>
+      <li><code>Type</code> Defines the type of data that will be in the column.</li>
+      <li><code>Description</code> The description of the column. (optional)</li>
+      <li><code>Label</code> A label used to access specific columns. (optional)</li>
+      <li><code>Format</code> The desired format for the column. (optional)</li>
+  </ul>
+  <div class="pre">
+    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> ]]]] )
+    <span class="s1">returns</span> DataTable
+  </div>
+  <div class="pre">
+    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> ]]]]) )
+    <span class="s1">returns</span> DataTable
+  </div>
+  <div class="pre">
+    <span class="k">addColumns</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of column arrays, see above */</span> ) )
+    <span class="s1">returns</span> DataTable
+  </div>
+  <br />
+
+  <p>Other column related methods</p>
+  <div class="pre">
+    <span class="k">getColumns</span>()
+    <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.array.php">array</a>
+  </div>
+  <div class="pre">
+    <span class="k">getNumberOfColumns</span>()
+    <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.int.php">int</a>
+  </div>
+  <br />
+  <br />
+
+  <h2 id="datatable-rows">Rows</h2>
+  <p>Add rows either by chaining the single row command, or batch adding with the addRows() method.</p>
+  <ul><li>Note: Each row array added, must have the same number of data points as the number of columns.</li></ul>
+  <div class="pre">
+    <span class="k">addRow</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="nv">$c1</span> [, <span class="nv">$c2</span> [, <span class="nv">$cN</span> ]]) )
+    <span class="s1">returns</span> DataTable
+  </div>
+  <div class="pre">
+    <span class="k">addRows</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of row arrays, see above */</span> ) )
+    <span class="s1">returns</span> DataTable
+  </div>
+  <br />
+
+  <p>Other row related methods</p>
+  <div class="pre">
+    <span class="k">getRows</span>()
+    <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.array.php">array</a>
+  </div>
+  <div class="pre">
+    <span class="k">getNumberOfRows</span>()
+    <span class="s1">returns</span> <a href="http://php.net/manual/en/language.types.int.php">int</a>
+  </div>
+  <br />
+  <br />
+
+  <h2 id="datatable-formats">Formats</h2>
+  <p class="lead">Customize the appearance of your data</p>
+  <p>Columns can have formats applied so the data/labels will be shown according to the format definition.</p>
+  <div class="sub-section">
+    {% for type in site.data.formatTypes %}
+      <h3>{{ type | capitalize }}Format</h3>
+      <p>Currently supported configuration options:</p>
+      {% include formats/{{type}}.html param=type %}
+    {% endfor %}
+  </div>
+
+  <h2 id="datatable-utility">Utility Methods</h2>
+  <p>Set the timezone to be used for Date, DateTime, and TimeOfDay columns. Defaults to <code>America/Los_Angeles</code></p>
+  <div class="pre">
+    <span class="k">setTimezone</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$tz</span> )
+    <span class="s1">returns</span> DataTable
+  </div>
+  <br />
+
+  <p>If using string dates, maybe to represent only years such as "2000" and they are not being interpreted correctly, then use this method to set the format string for the whole DataTable.</p>
+  <p>Use a format string following the <a href="http://php.net/manual/en/datetime.createfromformat.php">DateTime format</a></p>
+  <div class="pre">
+    <span class="k">setDateTimeFormat</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$dtf</span> )
+    <span class="s1">returns</span> DataTable
+  </div>
+  <br />
+
+  <p>Get the JSON representation of a DataTable, useful for loading chart data via AJAX. (<a href="#javascript-ajax">See Example</a>)</p>
+  <div class="pre">
+    <span class="k">toJson</span>()
+    <span class="s1">returns</span> JSON Object
+  </div>
+</div>
+
+<div class="vspace"></div>

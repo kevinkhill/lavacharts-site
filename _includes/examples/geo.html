@@ -16,10 +16,7 @@ $popularity->addStringColumn('Country')
            ->addRow(array('France', 600))
            ->addRow(array('RU', 700));
 
-$geochart = $lava->GeoChart('Popularity')
-                 ->setOptions(array(
-                   'datatable' => $popularity
-                 ));
+$lava->GeoChart('Popularity', $popularity);
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
 <p>Otherwise, pass <span class="code">$geochart</span> or <span class="code">$lava</span> to your view to render.</p>
@@ -30,11 +27,8 @@ $geochart = $lava->GeoChart('Popularity')
       <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="pop-div"></div>
-// With the chart object
-<? echo $geochart->render('pop-div') ?>
-
 // With the lava object
-<? echo $lava->render('GeoChart', 'Popularity', 'pop-div') ?>
+<?= $lava->render('GeoChart', 'Popularity', 'pop-div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -42,7 +36,7 @@ $geochart = $lava->GeoChart('Popularity')
 {% highlight php startinline %}
 <div id="pop-div"></div>
 // With Lava class alias
-<? echo Lava::render('GeoChart', 'Popularity', 'pop-div') ?>
+<?= Lava::render('GeoChart', 'Popularity', 'pop-div') ?>
 
 // With Blade Templates
 @geochart('Popularity', 'pop-div')
@@ -56,26 +50,4 @@ $geochart = $lava->GeoChart('Popularity')
 </div>
 <br/>
 
-<h3>Javascript Output</h3>
-<div class="js-well">
-{% highlight javascript startinline %}
-lava.charts.GeoChart = {"Popularity":{chart:null,draw:null,data:null,options:null,formats:[]}};
-
-if (!document.getElementById('chart')){console.error('[Lavaharts] No matching element was found with ID "chart"');}
-
-lava.charts.GeoChart.Popularity.draw = function() {
-var $this = lava.charts.GeoChart.Popularity;
-
-$this.data = new google.visualization.DataTable({"cols":[{"type":"string","label":"Country"},{"type":"number","label":"Popularity"}],"rows":[{"c":[{"v":"Germany"},{"v":200}]},{"c":[{"v":"United States"},{"v":300}]},{"c":[{"v":"Brazil"},{"v":400}]},{"c":[{"v":"Canada"},{"v":500}]},{"c":[{"v":"France"},{"v":600}]},{"c":[{"v":"RU"},{"v":700}]}]}, 0.6);
-
-$this.options = [];
-
-$this.chart = new google.visualization.GeoChart(document.getElementById('chart'));
-
-$this.chart.draw($this.data, $this.options);
-};
-
-google.load('visualization', '1', {'packages':['geochart']});
-google.setOnLoadCallback(lava.charts.GeoChart.Popularity.draw);
-{% endhighlight %}
-</div>
+<div class="orange-divider"></div>

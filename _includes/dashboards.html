@@ -1,0 +1,158 @@
+<h1 id="dashboards">Dashboards</h1>
+<p class="lead">Create dynamic data displays.</p>
+<p>Dashboards are charts that have controls and filters attached to them to enable altering the view of the data through the controls.</p>
+<p>For example, You want to view a sub-set of your data, you can attach a number filter, and change the display of the chart through number sliders.</p>
+<p>To break it down into parts, a dashboard is created by:
+<ul>
+  <li>Creating a chart, or charts, to display in the dashboard.</li>
+  <li>Creating Filters to alter the Chart's display.</li>
+  <li>Wrapping the Filters in <code>ControlWrappers()</code></li>
+  <li>Wrapping the Charts in <code>ChartWrappers()</code></li>
+  <li>Binding the Control to the Chart and adding to the Dashboard.</li>
+</ul>
+
+<div class="sub-section">
+    <h2>Creation</h2>
+    <p>Same as charts, dashboards need a label. Pass this as the only parameter to the constructor.</p>
+{% highlight php startinline %}
+$dashboard = $lava->Dashboard('MyDash');
+{% endhighlight %}
+    <p>The one method you will need from the Dashboard is <code>bind()</code> to attach a <code>ControlWrapper</code> to a <code>ChartWrapper</code> and add it to the dashboard.</p>
+    <div class="pre">
+      <span class="k">bind</span>(<a href="#dashboards-controls">ControlWrapper</a>|array of ControlWrappers <span class="nv">$controls</span>, <a href="#dashboards-chartwraps">ChartWrappers</a>|array of ChartWrappers <span class="nv">$charts</span>)
+      <span class="s1">returns</span> Dashboard
+    </div>
+    <br />
+    <div class="alert alert-danger">
+      <strong>Note:</strong> There are four types of bindings <code>OneToOne</code>, <code>OneToMany</code>, <code>ManyToOne</code>, and  <code>ManyToMany</code>. This is why the <code>bind()</code> method accepts arrays as well as objects.
+    </div>
+    <div class="vspace-50"></div>
+
+    <h2 id="dashboards-filters">Filters</h2>
+    <p>Filters are used alter the appearance of a <a href="#charts"><code>Chart</code></a> by filtering the <a href="#datatables">DataTable</a>. Used within a <code>ControlWrapper()</code>, filters work with the controls to alter the chart's display.</p>
+    <p>All filters need a previously created <a href="#charts"><code>Chart</code></a> with a <a href="#datatables">DataTable</a>.</p>
+    <p>The first parameter is either the DataTable's column index or label, and the second parameter is an optional array of customization options.</p>
+    <br />
+    <p>For example:</p>
+{% highlight php startinline %}
+$filter = $lava->NumberRangeFilter(1 [, arrayOfOptions ]);
+// OR
+$filter = $lava->NumberRangeFilter('ThisSpecificColumn' [, arrayOfOptions ]);
+{% endhighlight %}
+
+    <div class="sub-section">
+      <h3>Category</h3>
+{% highlight php startinline %}
+$categoryFilter = $lava->CategoryFilter(int|'string', [
+    'caption'              => 'string',
+    'sortValues'           => bool,
+    'selectedValuesLayout' => 'string',
+    'allowNone'            => bool,
+    'allowMultiple'        => bool,
+    'allowTyping'          => bool
+]);
+{% endhighlight %}
+
+      <h3>ChartRange</h3>
+{% highlight php startinline %}
+$chartRange = $lava->ChartRangeFilter(int|'string', [
+    'chartType'    => 'string',
+    'chartOptions' => //Not yet implemented,
+    'chartView'    => //Not yet implemented,
+    'minRangeSize' => int|float,
+    'snapToData'   => bool
+]);
+{% endhighlight %}
+
+      <h3>DateRange</h3>
+{% highlight php startinline %}
+$dateRange = $lava->DateRangeFilter(int|'string', [
+    'minValue' => int|float,
+    'maxValue' => int|float,
+    'format'   => 'string'
+]);
+{% endhighlight %}
+
+      <h3>NumberRange</h3>
+{% highlight php startinline %}
+$numberRange = $lava->NumberRangeFilter(int|'string', [
+    'minValue' => int|float,
+    'maxValue' => int|float,
+    'format'   => 'string'
+]);
+{% endhighlight %}
+
+      <h3>String</h3>
+{% highlight php startinline %}
+$string = $lava->StringFilter(int|'string', [
+    'matchType'         => 'string',
+    'caseSensitive'     => bool,
+    'useFormattedValue' => bool,
+    'realtimeTrigger'   => 'string'
+]);
+{% endhighlight %}
+
+      <p>More information can be found on <a href="https://developers.google.com/chart/interactive/docs/gallery/controls#controls-gallery" target="_blank">Google's Website</a></p>
+    </div>
+</div>
+
+<div class="vspace-50"></div>
+
+
+<div class="sub-section">
+  <h2 id="dashboards-wrappers-control">ControlWrappers</h2>
+  <p>After creating a filter, you wrap it with a control that will allow the view of the chart to be changed.</p>
+  <p>Pass in one of the filters and the HTML element id where the dashboard's control is to be rendered.</p>
+  <div class="pre">
+    <span class="k">__construct</span>(<a href="#dashboards-filter">Filter</a> <span class="nv">$filter</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
+    <span class="s1">returns</span> ControlWrapper
+  </div>
+  <div class="vspace"></div>
+
+
+  <h2 id="dashboards-wrappers-chart">ChartWrappers</h2>
+  <p>Next step is to add a chart to the dashboard. (This should have already been created with your options and data)</p>
+  <p>Pass in your created chart and the HTML element id where the dashboard's chart is to be rendered.</p>
+  <div class="pre">
+    <span class="k">__construct</span>(<a href="#charts">Chart</a> <span class="nv">$chart</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$elementId</span>)
+    <span class="s1">returns</span> ChartWrapper
+  </div>
+  <div class="vspace"></div>
+
+
+  <h2 id="dashboards-binding">Binding</h2>
+  <p>Lastly, bind the control to the chart into the dashboard.</p>
+  <p>It helps to remember the syntax that you bind a control to a chart, not a chart to a control.</p>
+{% highlight php startinline %}
+$dashboard->bind($controlWrapper, $chartWrapper);
+{% endhighlight %}
+  <div class="vspace"></div>
+
+
+  <h2 id="dashboards-rendering">Rendering</h2>
+  <p>The render method from the lava object will render dashboards too.</p>
+  <p>Instead of a chart type, put <code>Dashboard</code> for the first parameter, then the dashboard label, and an element id.</p>
+{% highlight php startinline %}
+$lava->render('Dashboard', 'MyDash', 'dash-elem');
+{% endhighlight %}
+  <div class="alert alert-danger">
+    <strong>Note:</strong> The html structure for a dashboard needs to be nested. The chart and controls need to be inside the div for the dashboard. See the example below.
+  </div>
+
+  <p class="lead">Here is a working example of the a simple dashboard.</p>
+  <div class="sub-section">
+    <div class="row">
+      <div class="col-lg-6">
+        <h3>Controller</h3>
+        {% gist kevinkhill/3c3944bfe9672231ff69 %}
+      </div>
+      <div class="col-lg-6">
+        <h3>View</h3>
+        {% gist kevinkhill/32bccf605f749efe70c7 %}
+        <div class="center">
+          <img src="{{ site.baseurl }}/images/examples/dashboard.gif" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

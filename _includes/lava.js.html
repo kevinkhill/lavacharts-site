@@ -1,0 +1,77 @@
+<h2 id="lava-js">Lava.js</h2>
+  <p>This is a module that will be added to the page, which is used by the library. It also provides some extra functionality to interact with your charts via javascript.
+
+  <h3>Methods</h3>
+  <div class="sub-section">
+    <h4><code>lava.getChart(chartLabel, callback)</code></h4>
+    <p>Pass in a chart label and a callback, to get access to the google chart, and the lavachart.</p>
+{% highlight javascript startinline %}
+lava.getChart('myFancyChart', function (googleChart, lavaChart) {
+    console.log(googleChart);
+    console.log(lavaChart);
+});
+{% endhighlight %}
+    <div class="alert alert-danger">
+      <strong>To Clarify:</strong>The first object returned to the callback a <em>property</em> of the lavaChart. It was added as a shortcut to avoid typing googleChart.chart to access google's chart methods. The second object returned to the callback is the lavaChart, which holds the googleChart, formats, events, data, etc. It was added to not restrict the user only getting the googleChart returned, if they need access to the lavachart properties.
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h4><code>lava.getDashboard(dashboardLabel, callback)</code></h4>
+    <p>Pass in a dashboard label and a callback, to get access to the google dashboard object, and the lavachart.</p>
+{% highlight javascript startinline %}
+lava.getDashboard('myFancyDashboard', function (googleDashboard, lavaDashboard) {
+    console.log(googleDashboard);
+    console.log(lavaDashboard);
+});
+{% endhighlight %}
+    <div class="alert alert-danger">
+      <strong>To Clarify:</strong>The first object returned to the callback a <em>property</em> of the lavaDashboard. It was added as a shortcut to avoid typing googleDashboard.dashboard to access google's dashboard methods. The second object returned to the callback is the lavaChart, which holds the googleChart, formats, events, data, etc. It was added to not restrict the user only getting the googleChart returned, if they need access to the lavachart properties.
+    </div>
+  </div>
+
+    <h4><code>lava.loadData(chartLabel, dataTableJson, callback)</code></h4>
+    <p>This method will allow you to update charts via ajax, loading data using a datatable's <a href="#datatable-utility">toJson()</a> method.</p>
+{% highlight javascript startinline %}
+lava.loadData('myFancyChart', {dataTableJsonObject}, function (chart) {
+    console.log(chart);
+});
+{% endhighlight %}
+
+    <br />
+
+    <h3 id="javascript-ajax">Ajax Data Loading</h3>
+    <p>Here is an example of how to load charts with ajax, using jQuery.</p>
+
+    <br/>
+    <h4>Server Side</h4>
+{% highlight php startinline %}
+$temps = $lava->DataTable('America/Los_Angeles');
+
+$temps->addDateColumn('Date')
+      ->addNumberColumn('Max Temp')
+      ->addNumberColumn('Mean Temp')
+      ->addNumberColumn('Min Temp');
+
+foreach(range(1, 30) as $day) {
+    $temps->addRow(array(
+        '2014-10-'.$day,
+        rand(50,90),
+        rand(50,90),
+        rand(50,90)
+    ));
+}
+
+return $temps->toJson();
+{% endhighlight %}
+
+    <br/>
+    <h4>Page Script</h4>
+{% highlight javascript startinline %}
+$.getJSON('http://my.cool.site.com/api/whatever/getDataTableJson', function (dataTableJson) {
+  lava.loadData('Chart1', dataTableJson, function (chart) {
+    console.log(chart);
+  });
+});
+{% endhighlight %}
+</div>

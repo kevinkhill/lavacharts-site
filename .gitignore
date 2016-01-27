@@ -1,19 +1,14 @@
 vendor/
-_site/
-tmp/
 node_modules/
-bower_components/
-build/
-.cache/
-docs/
-.idea/
+_site/
+.build/
 .cache/
 
-bootstrap/compiled.php
+npm-debug.log
+.jekyll-metadata
 composer.phar
 composer.lock
 
 *.sublime-*
-
-*DS_Store
-*.sublime-*
+*.swp
+>>>>>>> ghp3.0

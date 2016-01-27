@@ -1,0 +1,60 @@
+/* sidebar */
+.lava-sidebar
+  //padding-left: 20px
+  margin-top: 20px
+  margin-bottom: 20px
+  font-weight: 700
+
+  .nav>li.active
+    background-color: #cacaca
+
+    li>a
+      color: #000
+
+  /* all links */
+  .nav>li>a
+    color: #999
+    border-left: 2px solid transparent
+    padding: 4px 10px
+    font-size: 14px
+    font-weight: 400
+
+  /* nested links */
+  .nav .nav
+    background-color: #eaeaea
+
+  .nav .nav>li>a
+    padding-top: 1px
+    padding-bottom: 1px
+    padding-left: 30px
+    font-size: 14px
+    background-color: #eaeaea
+
+  /* active & hover links */
+  .nav>.active>a,
+  .nav>li>a:hover,
+  .nav>li>a:focus
+    color: $lava-red
+    text-decoration: none
+    background-color: transparent
+    border-left-color: $lava-red
+
+  /* all active links */
+  .nav>.active>a,
+  .nav>.active:hover>a,
+  .nav>.active:focus>a
+    font-weight: 700
+
+  /* nested active links */
+  .nav .nav>.active>a,
+  .nav .nav>.active:hover>a,
+  .nav .nav>.active:focus>a
+    font-weight: 500
+
+  /* hide inactive nested list */
+  .nav ul.nav
+    display: none
+
+  /* show active nested list */
+  .nav>.active>ul.nav
+    display: block

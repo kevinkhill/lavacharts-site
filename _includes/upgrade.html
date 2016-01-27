@@ -1,0 +1,66 @@
+<h1 id="upgrade">Upgrade Guide</h1>
+<p class="lead"><code>Upgrading from 2.5.x -> 3.0.x</code></p>
+<p>In an effort to keep chart creation terse, the chart constructor has been extended. Charts now set the DataTable with the second parameter, and options if needed with the third.</p>
+
+<div id="upgrade-charts" class="sub-section">
+  <h2>Chart Constructor</h2>
+  <p>The constructor now takes two more arguments, the DataTable and optional configuration options.</p>
+
+  <h3>2.5.x method</h3>
+{% highlight php startinline %}
+$data = Lava::DataTable();
+
+Lava::LineChart('StockPrices')
+    ->setOptions(array(
+        'title'     => 'Github Stock Price',
+        'datatable' => $data
+    ));
+{% endhighlight %}
+
+    <h3>3.0.x method</h3>
+{% highlight php startinline %}
+$data = Lava::DataTable();
+
+Lava::LineChart('StockPrices', $data, [
+    'title' => 'Github Stock Price'
+]);
+{% endhighlight %}
+</div>
+
+<div id="upgrade-configs" class="sub-section">
+  <h2>Config Objects</h2>
+  <p>Following the effort to reduce typing for the developer, ConfigObjects are no longer required to be instantiated manually. Just pass in the same config array you would have passed to the constructor, as a value to the key. Internally, a ConfigObject will be created and options will be checked/verified/assigned and applied to the chart, same as before.</p>
+
+  <h3>2.5.x method</h3>
+{% highlight php startinline %}
+$data = Lava::DataTable();
+
+Lava::LineChart('StockPrices')->setOptions(array(
+    'datatable' => $data,
+    'titleTextStyle' => Lava::TextStyle(array(
+        'fontName'  => 'Arial',
+        'fontColor' => 'blue'
+    )),
+    'legend' => Lava::Legend(array(
+        'position' => 'top'
+    ))
+));
+{% endhighlight %}
+
+    <h3>3.0.x method</h3>
+{% highlight php startinline %}
+$data = Lava::DataTable();
+
+Lava::LineChart('StockPrices', $data, [
+    'titleTextStyle' => [
+        'fontName' => 'Arial',
+        'fontColor' => 'blue'
+    ],
+    'legend' => [
+        'position' => 'top'
+    ]
+]);
+{% endhighlight %}
+</div>
+
+<div class="vspace"></div>

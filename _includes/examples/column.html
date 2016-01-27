@@ -11,20 +11,18 @@ $finances->addDateColumn('Year')
          ->addNumberColumn('Sales')
          ->addNumberColumn('Expenses')
          ->setDateTimeFormat('Y')
-         ->addRow(array('2004', 1000, 400))
-         ->addRow(array('2005', 1170, 460))
-         ->addRow(array('2006', 660, 1120))
-         ->addRow(array('2007', 1030, 54));
+         ->addRow(['2004', 1000, 400])
+         ->addRow(['2005', 1170, 460])
+         ->addRow(['2006', 660, 1120])
+         ->addRow(['2007', 1030, 54]);
 
-$columnchart = $lava->ColumnChart('Finances')
-                    ->setOptions(array(
-                      'datatable' => $finances,
-                      'title' => 'Company Performance',
-                      'titleTextStyle' => $lava->TextStyle(array(
-                        'color' => '#eb6b2c',
-                        'fontSize' => 14
-                      ))
-                    ));
+$lava->ColumnChart('Finances', $finances, [
+    'title' => 'Company Performance',
+    'titleTextStyle' => [
+        'color'    => '#eb6b2c',
+        'fontSize' => 14
+    ]
+]);
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
 <p>Otherwise, pass <span class="code">$columnchart</span> or <span class="code">$lava</span> to your view to render.</p>
@@ -35,11 +33,8 @@ $columnchart = $lava->ColumnChart('Finances')
       <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="perf_div"></div>
-// With the chart object
-<? echo $columnchart->render('perf_div') ?>
-
 // With the lava object
-<? echo $lava->render('ColumnChart', 'Finances', 'perf_div') ?>
+<?= $lava->render('ColumnChart', 'Finances', 'perf_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -47,7 +42,7 @@ $columnchart = $lava->ColumnChart('Finances')
 {% highlight php startinline %}
 <div id="perf_div"></div>
 // With Lava class alias
-<? echo Lava::render('ColumnChart', 'Finances', 'perf_div') ?>
+<?= Lava::render('ColumnChart', 'Finances', 'perf_div') ?>
 
 // With Blade Templates
 @columnchart('Finances', 'perf_div')
@@ -60,29 +55,5 @@ $columnchart = $lava->ColumnChart('Finances')
   <img src="images/examples/column.jpg" />
 </div>
 <br/>
-
-<h3>Javascript Output</h3>
-<div class="js-well">
-{% highlight javascript startinline %}
-lava.charts.AreaChart = {"Population":{chart:null,draw:null,data:null,options:null,formats:[]}};
-
-if (!document.getElementById('chart')){console.error('[Lavaharts] No matching element was found with ID "chart"');}
-
-lava.charts.AreaChart.Population.draw = function() {
-var $this = lava.charts.AreaChart.Population;
-
-$this.data = new google.visualization.DataTable({"cols":[{"type":"date","label":"Year","id":"date"},{"type":"number","label":"Number of People","id":"pop"}],"rows":[{"c":[{"v":new Date(2014,11,19,20,6,0)},{"v":623452}]},{"c":[{"v":new Date(2014,11,19,20,7,0)},{"v":685034}]},{"c":[{"v":new Date(2014,11,19,20,8,0)},{"v":716845}]},{"c":[{"v":new Date(2014,11,19,20,9,0)},{"v":757254}]},{"c":[{"v":new Date(2014,11,19,20,10,0)},{"v":778034}]},{"c":[{"v":new Date(2014,11,19,20,11,0)},{"v":792353}]},{"c":[{"v":new Date(2014,11,19,20,12,0)},{"v":839657}]},{"c":[{"v":new Date(2014,11,19,20,13,0)},{"v":842367}]},{"c":[{"v":new Date(2014,11,19,20,14,0)},{"v":873490}]}]}, 0.6);
-
-$this.options = {"title":"Population Growth","legend":{"position":"in"}};
-
-$this.chart = new google.visualization.AreaChart(document.getElementById('chart'));
-
-$this.chart.draw($this.data, $this.options);
-};
-
-google.load('visualization', '1', {'packages':['corechart']});
-google.setOnLoadCallback(lava.charts.AreaChart.Population.draw);
-{% endhighlight %}
-</div>
 
 <div class="orange-divider"></div>

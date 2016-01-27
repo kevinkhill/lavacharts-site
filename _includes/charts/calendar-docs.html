@@ -1,61 +1,32 @@
-<p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
+<p>Currently supported configuration options:</p>
 
-<div class="pre">
-  <span class="k">cellColor</span>(<a href="#config-stoke">Stroke</a> <span class="nv">$cc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">cellSize</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$cs</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">dayOfWeekLabel</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$l</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">dayOfWeekRightSpace</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$s</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">daysOfWeek</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$dow</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">focusedCellColor</span>(<a href="#config-stoke">Stroke</a> <span class="nv">$fcc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">monthLabel</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$ml</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">monthOutlineColor</span>(<a href="#config-stoke">Stroke</a> <span class="nv">$moc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">underMonthSpace</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$ums</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">underYearSpace</span>(<a href="http://php.net/manual/en/language.types.integer.php">int</a> <span class="nv">$uys</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">unusedMonthOutlineColor</span>(<a href="#config-stoke">Stroke</a> <span class="nv">$umoc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">colorAxis</span>(<a href="#config-coloraxis">ColorAxis</a> <span class="nv">$ca</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">forceIFrame</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$fif</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">noDataPattern</span>(<a href="#config-color">Color</a> <span class="nv">$c</span>)
-  <span class="s1">returns</span> Chart
-</div>
+{% highlight php startinline %}
+$lava->{{ type | capitalize }}Chart('Title', $DataTable, [s
+    'cellColor'               => [array],   //Stroke options
+    'cellSize'                => int,
+    'dayOfWeekLabel'          => [array],   //TextStyle options
+    'dayOfWeekRightSpace'     => int,
+    'daysOfWeek'              => 'string',
+    'focusedCellColor'        => [array],   //Stroke options
+    'monthLabel'              => [array],   //TextStyle options
+    'monthOutlineColor'       => [array],   //Stroke options
+    'underMonthSpace'         => int,
+    'underYearSpace'          => int,
+    'unusedMonthOutlineColor' => [array],   //Stroke options
+    'colorAxis'               => [array],   //ColorAxis options
+    'forceIFrame'             => bool,
+    'noDataPattern'           => [array],   //Color options
 
-<p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/calendar#Configuration_Options">Google's Config Docs</a></p>
+]);
+{% endhighlight %}
+
+<p>Learn more about:</p>
+<ul>
+    <li><a href="#datatables">DataTables</a></li>
+    <li><a href="#config-color">Color Options</a></li>
+    <li><a href="#config-colorAxis">ColorAxis Options</a></li>
+    <li><a href="#config-stroke">Stroke Options</a></li>
+    <li><a href="#config-textstyle">TextStyle Options</a></li>
+</ul>
+
+<p>Explanations for each of the configuration options can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/{{ type }}chart#Configuration_Options">Google's Documentation</a></p>

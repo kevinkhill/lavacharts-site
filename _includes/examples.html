@@ -1,0 +1,8 @@
+<h1 id="examples">Examples</h1>
+<p class="lead">Here are a few examples of the types of charts you can create.</p>
+
+{% for type in site.data.chartTypes %}
+  <div id="example-{{ type }}" class="sub-section">
+    {% include examples/{{ type }}.html %}
+  </div>
+{% endfor %}

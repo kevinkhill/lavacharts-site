@@ -1,0 +1,11 @@
+name:   lava
+parent: default
+
+static:
+    'css/lava.css':         'css/lava.css'
+    'images/favicon.ico':   'images/favicon.ico'
+    'images/lava-logo.gif': 'images/lava-logo.gif'
+
+global:
+    'layout/base.twig':   'layout/base.twig'
+    'layout/layout.twig': 'layout/layout.twig'

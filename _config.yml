@@ -1,17 +1,42 @@
-# Where things are
+# Paths
 destination: ./_site
-highlighter: pygments
 
-composer_version: 2.5.*
+# Template Vars
+composer_version:    3.0.*
 google_analytics_id: UA-43288838-2
-repository: https://github.com/kevinkhill/lavacharts
+repository:          https://github.com/kevinkhill/lavacharts
 
 # Handling Reading
 safe:         true
-exclude:      ['src','scripts']
-keep_files:   [".git"]
 encoding:     "utf-8"
 markdown_ext: "md"
+keep_files:
+ - js
+ - css
+ - images
+ - fonts
+ - api
+exclude:
+ - src
+ - tests
+ - configs
+ - javascript
+ - resources
+ - node_modules
+ - themes
+ - CNAME
+ - LICENSE
+ - sami.cfg.php
+ - gulpfile.js
+ - '*.json'
+ - '*.md'
+ - '*.log'
+ - '*.sublime-*'
+ - Gemfile*
+ - scotch.box
+ - Vagrantfile
+ignore_paths:
+ - node_modules
 
 # Filtering Content
 show_drafts: nil
@@ -24,6 +49,8 @@ markdown:    kramdown
 highlighter: pygments
 lsi:         false
 excerpt_separator: "\n\n"
+kramdown:
+  input: GFM
 
 # Serving
 detach:  false

@@ -1,0 +1,38 @@
+<h2 id="events">Events</h2>
+<p>Enable interaction or add custom functions to charts with javascript events.</p>
+<p>Adding an event your chart is as simple as defining a javascript callback / function in your page, then attaching the event to the chart.</p>
+
+<h3>Defining</h3>
+<p>To use events with your charts, follow these two easy steps:</p>
+<ol>
+  <li>Define a javascript function within your page, before the any php render method. In the example below, the function is called "selectCallback"</li>
+  <li>While configuring your chart in PHP, pass the event as an array key with the name of your javascript function as the value.</li>
+</ol>
+<p>Acceptable events include:</p>
+<ul>
+  <li>animationfinish</li>
+  <li>error</li>
+  <li>onmouseover</li>
+  <li>onmouseout</li>
+  <li>ready</li>
+  <li>select</li>
+  <li>statechange</li>
+</ul>
+{% highlight php startinline %}
+// Server side
+$lava->PieChart('MyChart', $data, [
+    'events' => [
+        'select' => 'selectCallback'
+    ]
+])
+{% endhighlight %}
+
+{% highlight javascript startinline %}
+// In the view
+function selectCallback (event, chart) {
+  // Useful for using chart methods such as chart.getSelection();
+  console.log(chart.getSelection());
+}
+{% endhighlight %}
+<div class="alert alert-danger">
+<strong>Note:</strong> When the chart is rendered, your function will be wrapped with lava.event() which will give your function access to the event and chart objects.</p>

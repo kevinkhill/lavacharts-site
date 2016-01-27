@@ -1,45 +1,27 @@
-<p>All of the methods return the <span class="pre">Chart</span> to enable the chaining of configuration options</p>
-<p>Alternatively, you can build an associative array, using the method names as keys, and pass the array into the chart's <span class="pre">setOptions()</span> method</p>
+<p>Currently supported configuration options:</p>
 
-<div class="pre">
-  <span class="k">is3D</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$i</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">slices</span>(<a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="c1">/* of <a href="#config-slice">Slice</a> objects */</span> <span class="nv">$s</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieSliceBorderColor</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$psbc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieSliceText</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$pst</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieSliceTextStyle</span>(<a href="#config-textstyle">TextStyle</a> <span class="nv">$psts</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieStartAngle</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> <span class="nv">$psa</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">reverseCategories</span>(<a href="http://php.net/manual/en/language.types.boolean.php">bool</a> <span class="nv">$rc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">sliceVisibilityThreshold</span>(<a href="http://php.net/manual/en/language.types.int.php">int</a> | <a href="http://php.net/manual/en/language.types.float.php">float</a> <span class="nv">$svt</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieResidueSliceColor</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$prsc</span>)
-  <span class="s1">returns</span> Chart
-</div>
-<div class="pre">
-  <span class="k">pieResidueSliceLabel</span>(<a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$prsl</span>)
-  <span class="s1">returns</span> Chart
-</div>
+{% highlight php startinline %}
+$lava->{{ type | capitalize }}Chart('Title', $DataTable, [
+    'is3D'                     => bool,
+    'slices'                   => [array],   //Arrays of Slice Options
+    'pieSliceBorderColor'      => 'string',
+    'pieSliceText'             => 'string',
+    'pieSliceTextStyle'        => [array],   //TextStyle options
+    'pieStartAngle'            => int,
+    'reverseCategories'        => bool,
+    'sliceVisibilityThreshold' => int | float,
+    'pieResidueSliceColor'     => 'string',
+    'pieResidueSliceLabel'     => 'string'
+]);
+{% endhighlight %}
 
-<p class="lead">Explanations for each configuration option can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/piechart#Configuration_Options">Google's Config Docs</a></p>
+<p>Learn more about:</p>
+<ul>
+    <li><a href="#datatables">DataTables</a></li>
+    <li><a href="#config-coloraxis">ColorAxis Options</a></li>
+    <li><a href="#config-magnifyingglass">MagnifyingGlass Options</a></li>
+    <li><a href="#config-sizeaxis">SizeAxis Options</a></li>
+    <li><a href="#config-textstyle">TextStyle Options</a></li>
+</ul>
+
+<p>Explanations for each of the configuration options can be found in <a href="https://developers.google.com/chart/interactive/docs/gallery/{{ type }}chart#Configuration_Options">Google's Documentation</a></p>

@@ -1,0 +1,60 @@
+{
+  "name": "lavacharts-site",
+  "version": "3.0.0",
+  "description": "Lavacharts Site",
+  "homepage": "http://lavacharts.com",
+  "author": "Kevin Hill",
+  "license": "MIT",
+  "keywords": [
+    "charts",
+    "graphs",
+    "google"
+  ],
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/kevinkhill/lavacharts-site.git"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "bootstrap": "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "bootstrap": {
+      "depends": [
+        "jquery"
+      ]
+    }
+  },
+  "dependencies": {
+    "bootstrap-sass": "3.3.5",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {
+    "browserify": "^11.1.0",
+    "browserify-shim": "^3.8.10",
+    "del": "^2.2.0",
+    "gulp": "^3.8.11",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-newer": "^0.5.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.3",
+    "gulp-shell": "^0.4.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "build": "bundle exec jekyll build --watch",
+    "serve": "bundle exec jekyll serve --watch"
+  }
+}

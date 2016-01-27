@@ -9,25 +9,23 @@ $temps = $lava->DataTable();
 
 $temps->addStringColumn('Type')
       ->addNumberColumn('Value')
-      ->addRow(array('CPU', rand(0,100)))
-      ->addRow(array('Case', rand(0,100)))
-      ->addRow(array('Graphics', rand(0,100)));
+      ->addRow(['CPU', rand(0,100)])
+      ->addRow(['Case', rand(0,100)])
+      ->addRow(['Graphics', rand(0,100)]);
 
-$lava->GaugeChart('Temps')
-     ->setOptions(array(
-         'datatable' => $temps,
-         'width' => 400,
-         'greenFrom' => 0,
-         'greenTo' => 69,
-         'yellowFrom' => 70,
-         'yellowTo' => 89,
-         'redFrom' => 90,
-         'redTo' => 100,
-         'majorTicks' => array(
-             'Safe',
-             'Critical'
-         )
-     ));
+$lava->GaugeChart('Temps', $temps, [
+    'width'      => 400,
+    'greenFrom'  => 0,
+    'greenTo'    => 69,
+    'yellowFrom' => 70,
+    'yellowTo'   => 89,
+    'redFrom'    => 90,
+    'redTo'      => 100,
+    'majorTicks' => [
+        'Safe',
+        'Critical'
+    ]
+]);
 {% endhighlight %}
 <p class="lead">For Laravel, omit "$lava = new Lavacharts" and replace "$lava->" with "Lava::"</p>
 <p>Otherwise, pass <span class="code">$gaugechart</span> or <span class="code">$lava</span> to your view to render.</p>
@@ -38,11 +36,8 @@ $lava->GaugeChart('Temps')
       <h4>Vanilla</h4>
 {% highlight php startinline %}
 <div id="temps_div"></div>
-// With the chart object
-<? echo $gaugechart->render('temps_div') ?>
-
 // With the lava object
-<? echo $lava->render('GaugeChart', 'Temps', 'temps_div') ?>
+<?= $lava->render('GaugeChart', 'Temps', 'temps_div') ?>
 {% endhighlight %}
   </div>
   <div class="col-sm-6">
@@ -50,7 +45,7 @@ $lava->GaugeChart('Temps')
 {% highlight php startinline %}
 <div id="temps_div"></div>
 // With Lava class alias
-<? echo Lava::render('GaugeChart', 'Temps', 'temps_div') ?>
+<?= Lava::render('GaugeChart', 'Temps', 'temps_div') ?>
 
 // With Blade Templates
 @gaugechart('Temps', 'temps_div')
@@ -63,29 +58,5 @@ $lava->GaugeChart('Temps')
   <img src="images/examples/gauge.jpg" />
 </div>
 <br/>
-
-<h3>Javascript Output</h3>
-<div class="js-well">
-{% highlight javascript startinline %}
-lava.charts.GaugeChart["Temps"] = {chart:null,draw:null,data:null,options:null,formats:[]};
-
-if (!document.getElementById("chart")){console.error("[Lavacharts] No matching element was found with ID \"chart\"");}
-
-lava.charts.GaugeChart["Temps"].draw = function() {
-var $this = lava.charts.GaugeChart["Temps"];
-
-$this.data = new google.visualization.DataTable({"cols":[{"type":"string","label":"Type"},{"type":"number","label":"Value"}],"rows":[{"c":[{"v":"CPU"},{"v":65}]},{"c":[{"v":"Case"},{"v":86}]},{"c":[{"v":"Graphics"},{"v":11}]}]}, 0.6);
-
-$this.options = {"width":400,"greenFrom":0,"greenTo":69,"yellowFrom":70,"yellowTo":89,"redFrom":90,"redTo":100,"majorTicks":["Safe","Critical"]};
-
-$this.chart = new google.visualization.Gauge(document.getElementById("chart"));
-
-$this.chart.draw($this.data, $this.options);
-};
-
-google.load('visualization', '1', {'packages':['gauge']});
-google.setOnLoadCallback(lava.charts.GaugeChart["Temps"].draw);
-{% endhighlight %}
-</div>
 
 <div class="orange-divider"></div>

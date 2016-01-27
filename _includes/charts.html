@@ -1,0 +1,16 @@
+<h1 id="charts">Charts</h1>
+<p class="lead">Select a chart from the dropdown or sidebar menu to see the different configuration methods / options available.</p>
+<p>Create a new chart by calling from the top level Lava object, <span class="pre">$lava-></span> if not using Laravel, or <span class="pre">Lava::</span> when using the alias via service provider.
+<p>All of the methods below are also available to all of the charts, as all charts extend the parent <span class="pre">Chart</span></p>
+
+<div id="chart-parent" class="sub-section">
+   <h2>Parent Chart</h2>
+    {% include charts/parent-methods.html %}
+</div>
+
+{% for type in site.data.chartTypes %}
+    <div id="chart-{{ type }}" class="sub-section">
+        <h3>{{ type | capitalize }}Chart</h3>
+        {% include charts/{{ type }}-docs.html param=type %}
+    </div>
+{% endfor %}
