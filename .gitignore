@@ -1,13 +1,13 @@
-vendor/
-node_modules/
-_site/
 .build/
 .cache/
 
-npm-debug.log
+vendor/
+node_modules/
+
+_site/index.html
+
 .jekyll-metadata
 composer.phar
-composer.lock
-
 *.sublime-*
 *.swp
+*.log
