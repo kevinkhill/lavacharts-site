@@ -18,11 +18,12 @@ browserify = require('browserify'),
 
 var config = (function() {
     var resources = './resources';
+    var assets    = './assets'
 
     return {
         paths: {
             src     : resources,
-            dest    : '_site',
+            dest    : assets,
             cache   : './.cache',
             node    : './node_modules',
             scripts : resources+'/js',
