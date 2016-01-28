@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Khill\Lavacharts\Formats\NumberFormat | Lavacharts API</title>
+
+        <link rel="icon" href="../../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/lava.css">
+    <script src="../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/typeahead.min.js"></script>
+    <script src="../../../sami.js"></script>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    
+    </head>
+
+    <body id="class" data-name="class:Khill_Lavacharts_Formats_NumberFormat" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../../master/index.html">Master Branch</option>
+                                            <option value="../../../../3.0/index.html">3.0 Branch</option>
+                                            <option value="../../../../2.5/index.html" selected>2.5 Branch</option>
+                                    </select>
+            </form>
+                <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">
+                    <img src="../../../images/lava-logo.gif" />
+                                    </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                    <li><a href="/">Docs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../../Khill.html">Khill</a></li>
+                                        <li><a href="../../../Khill/Lavacharts.html">Lavacharts</a></li>
+                                        <li><a href="../../../Khill/Lavacharts/Formats.html">Formats</a></li>
+    
+                <li>NumberFormat</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>NumberFormat</h1>
+    </div>
+
+    <p>    class
+    <strong>NumberFormat</strong>        extends <a href="../../../Khill/Lavacharts/Formats/Format.html"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/2.5/src/Formats/NumberFormat.php">View source</a>)
+</p>
+
+    
+    
+            <h2>Constants</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td>TYPE</td>
+                <td class="last">
+                    <p><em>
+</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_decimalSymbol">
+                                                                                
+    string
+                </td>
+                <td>$decimalSymbol</td>
+                <td class="last">Character to use as the decimal marker.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_fractionDigits">
+                                                                                
+    int
+                </td>
+                <td>$fractionDigits</td>
+                <td class="last">How many digits to display after the decimal.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_groupingSymbol">
+                                                                                
+    string
+                </td>
+                <td>$groupingSymbol</td>
+                <td class="last">Character to be used to group digits.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_negativeColor">
+                                                                                
+    string
+                </td>
+                <td>$negativeColor</td>
+                <td class="last">Text color for negative values.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_negativeParens">
+                                                                                
+    boolean
+                </td>
+                <td>$negativeParens</td>
+                <td class="last">Indicates that negative values should be surrounded by parentheses</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_pattern">
+                                                                                
+    string
+                </td>
+                <td>$pattern</td>
+                <td class="last">Format string, as a subset of the ICU pattern set.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_prefix">
+                                                                                
+    string
+                </td>
+                <td>$prefix</td>
+                <td class="last">prefix to assign to values in the visualization.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_suffix">
+                                                                                
+    string
+                </td>
+                <td>$suffix</td>
+                <td class="last">suffix to assign to values in the visualization.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(
+    array $config = array())
+                                            <p>Builds the NumberFormat object with specified options</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getValues">getValues</a>()
+                                            <p>Same as toArray, but without the class name as a key to being multi-dimension.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Formats/Format.html#method_getValues"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toJson">toJson</a>()
+                                            <p>Returns a JSON string representation of the object's properties.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Formats/Format.html#method_toJson"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_decimalSymbol">decimalSymbol</a>(
+    string $ds)
+                                            <p>Sets the character to use as the decimal marker. The default is a dot (.)</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_fractionDigits">fractionDigits</a>(
+    int $fd)
+                                            <p>A number specifying how many digits to display after the decimal.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_groupingSymbol">groupingSymbol</a>(
+    string $gs)
+                                            <p>A character to be used to group digits to the left of the decimal into sets of three.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_negativeColor">negativeColor</a>(
+    string $nc)
+                                            <p>The text color for negative values. No default value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_negativeParens">negativeParens</a>(
+    boolean $np)
+                                            <p>Sets whether negative values should be surrounded by parentheses.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_pattern">pattern</a>(
+    string $p)
+                                            <p>A format string. When provided, all other options are ignored, except negativeColor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_prefix">prefix</a>(
+    string $p)
+                                            <p>Sets the string prefix for the value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_suffix">suffix</a>(
+    string $s)
+                                            <p>Sets the string suffix for the value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line 91</div>
+        <code>                    
+    mixed
+    <strong>__construct</strong>(
+    array $config = array())</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Builds the NumberFormat object with specified options</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$config</td>
+                <td>Array of options.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><abbr title="Khill\Lavacharts\Formats\InvalidConfigProperty">InvalidConfigProperty</abbr></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getValues">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Formats/Format.html#method_getValues"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a> at line 79</div>
+        <code>                    
+    array
+    <strong>getValues</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Same as toArray, but without the class name as a key to being multi-dimension.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>Array of the options of the object.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toJson">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Formats/Format.html#method_toJson"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a> at line 97</div>
+        <code>                    
+    string
+    <strong>toJson</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns a JSON string representation of the object's properties.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_decimalSymbol">
+        <div class="location">at line 103</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+    <strong>decimalSymbol</strong>(
+    string $ds)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Sets the character to use as the decimal marker. The default is a dot (.)</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$ds</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_fractionDigits">
+        <div class="location">at line 127</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+    <strong>fractionDigits</strong>(
+    int $fd)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>A number specifying how many digits to display after the decimal.</p>                    <p>The default is 2. If you specify more digits than the number contains,
+it will display zeros for the smaller values.
+Truncated values will be rounded (5 rounded up).</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    int</td>
+                <td>$fd</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_groupingSymbol">
+        <div class="location">at line 149</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+    <strong>groupingSymbol</strong>(
+    string $gs)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>A character to be used to group digits to the left of the decimal into sets of three.</p>                    <p>Default is a comma (,)</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$gs</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_negativeColor">
+        <div class="location">at line 171</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+    <strong>negativeColor</strong>(
+    string $nc)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>The text color for negative values. No default value.</p>                    <p>Values can be any acceptable HTML color value, such as "red" or "#FF0000".</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$nc</td>
+                <td>Valid HTML color</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_negativeParens">
+        <div class="location">at line 193</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+    <strong>negativeParens</strong>(
+    boolean $np)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Sets whether negative values should be surrounded by parentheses.</p>                    <p>Default is true.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    boolean</td>
+                <td>$np</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_pattern">
+        <div class="location">at line 219</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+    <strong>pattern</strong>(
+    string $p)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>A format string. When provided, all other options are ignored, except negativeColor.</p>                    <p>The format string is a subset of the ICU pattern set.
+For instance, {pattern:'#,###%'} will result in output values
+"1,000%", "750%", and "50%" for values 10, 7.5, and 0.5.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$p</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>http://icu-project.org/apiref/icu4c/classDecimalFormat.html#_details</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_prefix">
+        <div class="location">at line 240</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+    <strong>prefix</strong>(
+    string $p)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Sets the string prefix for the value.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$p</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_suffix">
+        <div class="location">at line 261</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a>
+    <strong>suffix</strong>(
+    string $s)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Sets the string suffix for the value.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$s</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/NumberFormat.html"><abbr title="Khill\Lavacharts\Formats\NumberFormat">NumberFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

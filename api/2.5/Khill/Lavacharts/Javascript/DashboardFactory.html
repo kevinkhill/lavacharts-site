@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Khill\Lavacharts\Javascript\DashboardFactory | Lavacharts API</title>
+
+        <link rel="icon" href="../../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/lava.css">
+    <script src="../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/typeahead.min.js"></script>
+    <script src="../../../sami.js"></script>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    
+    </head>
+
+    <body id="class" data-name="class:Khill_Lavacharts_Javascript_DashboardFactory" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../../master/index.html" selected>Master Branch</option>
+                                            <option value="../../../../3.0/index.html">3.0 Branch</option>
+                                            <option value="../../../../2.5/index.html">2.5 Branch</option>
+                                    </select>
+            </form>
+                <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">
+                    <img src="../../../images/lava-logo.gif" />
+                                    </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                    <li><a href="/">Docs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../../Khill.html">Khill</a></li>
+                                        <li><a href="../../../Khill/Lavacharts.html">Lavacharts</a></li>
+                                        <li><a href="../../../Khill/Lavacharts/Javascript.html">Javascript</a></li>
+    
+                <li>DashboardFactory</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>DashboardFactory</h1>
+    </div>
+
+    <p>    class
+    <strong>DashboardFactory</strong>        extends <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/Javascript/DashboardFactory.php">View source</a>)
+</p>
+
+            <div class="description">
+            <p>DashboardFactory Class</p>            <p>This class takes Chart and Control Wrappers and uses all of the info to build the complete
+javascript blocks for outputting into the page.</p>        </div>
+    
+    
+            <h2>Constants</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td>JS_OPEN</td>
+                <td class="last">
+                    <p><em>Opening javascript tag.</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>JS_CLOSE</td>
+                <td class="last">
+                    <p><em>Closing javascript tag.</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+                    <tr>
+                <td>JSAPI</td>
+                <td class="last">
+                    <p><em>Script block for the Google's Chart API.</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+            </table>
+
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    boolean
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_coreJsRendered">coreJsRendered</a>()
+                                            <p>Returns true|false depending on if the jsapi &amp; lava.js core
+have been added to the output.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_coreJsRendered"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCoreJs">getCoreJs</a>()
+                                            <p>Gets the Google chart api and lava.js core.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_getCoreJs"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getJavascript">getJavascript</a>()
+                                            <p>Parses the javascript template and wraps the output in a script tag.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_getJavascript"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getChartJs">getChartJs</a>(
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Charts\Chart">Chart</abbr> $chart, 
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)
+                                            <p>Checks for an element id to output the chart into and builds the Javascript.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_getChartJs"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDashboardJs">getDashboardJs</a>(
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr> $dashboard, 
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)
+                                            <p>Checks for an element id to output the chart into and builds the Javascript.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_getDashboardJs"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr> $dashboard, 
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)
+                                            <p>Creates a new DashboardFactory with the javascript template.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_processBindings">processBindings</a>()
+                                            <p>Process all the bindings for a Dashboard.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_coreJsRendered">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_coreJsRendered"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a> at line 91</div>
+        <code>                    
+    boolean
+    <strong>coreJsRendered</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns true|false depending on if the jsapi &amp; lava.js core
+have been added to the output.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    boolean</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCoreJs">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_getCoreJs"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a> at line 102</div>
+        <code>                    
+    string
+    <strong>getCoreJs</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Gets the Google chart api and lava.js core.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>Javascript code blocks.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getJavascript">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_getJavascript"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a> at line 120</div>
+        <code>                    
+    string
+    <strong>getJavascript</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Parses the javascript template and wraps the output in a script tag.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>Javascript code block.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getChartJs">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_getChartJs"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a> at line 136</div>
+        <code>                    
+    string
+    <strong>getChartJs</strong>(
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Charts\Chart">Chart</abbr> $chart, 
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks for an element id to output the chart into and builds the Javascript.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Charts\Chart">Chart</abbr></td>
+                <td>$chart</td>
+                <td>Chart to render.</td>
+            </tr>
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr></td>
+                <td>$elementId</td>
+                <td>HTML element id to output the chart into.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>Javascript code block.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDashboardJs">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Javascript/JavascriptFactory.html#method_getDashboardJs"><abbr title="Khill\Lavacharts\Javascript\JavascriptFactory">JavascriptFactory</abbr></a> at line 151</div>
+        <code>                    
+    string
+    <strong>getDashboardJs</strong>(
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr> $dashboard, 
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks for an element id to output the chart into and builds the Javascript.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr></td>
+                <td>$dashboard</td>
+                <td>Dashboard to render.</td>
+            </tr>
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr></td>
+                <td>$elementId</td>
+                <td>HTML element id to output the dashboard into.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>Javascript code block.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line 42</div>
+        <code>                    
+    
+    <strong>__construct</strong>(
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr> $dashboard, 
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Creates a new DashboardFactory with the javascript template.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr></td>
+                <td>$dashboard</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr></td>
+                <td>$elementId</td>
+                <td>HTML element id to output into.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_processBindings">
+        <div class="location">at line 93</div>
+        <code>                    
+    string
+    <strong>processBindings</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Process all the bindings for a Dashboard.</p>                    <p>Turns the chart and control wrappers into new Google Visualization Objects.</p>            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Khill\Lavacharts\Configs\Series | Lavacharts API</title>
+
+        <link rel="icon" href="../../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/lava.css">
+    <script src="../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/typeahead.min.js"></script>
+    <script src="../../../sami.js"></script>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    
+    </head>
+
+    <body id="class" data-name="class:Khill_Lavacharts_Configs_Series" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../../master/index.html">Master Branch</option>
+                                            <option value="../../../../3.0/index.html">3.0 Branch</option>
+                                            <option value="../../../../2.5/index.html" selected>2.5 Branch</option>
+                                    </select>
+            </form>
+                <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">
+                    <img src="../../../images/lava-logo.gif" />
+                                    </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                    <li><a href="/">Docs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../../Khill.html">Khill</a></li>
+                                        <li><a href="../../../Khill/Lavacharts.html">Lavacharts</a></li>
+                                        <li><a href="../../../Khill/Lavacharts/Configs.html">Configs</a></li>
+    
+                <li>Series</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>Series</h1>
+    </div>
+
+    <p>    class
+    <strong>Series</strong>        extends <a href="../../../Khill/Lavacharts/Configs/ConfigObject.html"><abbr title="Khill\Lavacharts\Configs\ConfigObject">ConfigObject</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/2.5/src/Configs/Series.php">View source</a>)
+</p>
+
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_annotation">
+                                                                                
+    <a href="../../../Khill/Lavacharts/Configs/Annotation.html"><abbr title="Khill\Lavacharts\Configs\Annotation">Annotation</abbr></a>
+                </td>
+                <td>$annotation</td>
+                <td class="last">Alignment of the series.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_curveType">
+                                                                                
+    string
+                </td>
+                <td>$curveType</td>
+                <td class="last">Overrides the global curveType value for this series.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_targetAxisIndex">
+                                                                                
+    string
+                </td>
+                <td>$targetAxisIndex</td>
+                <td class="last">Which axis is the target of the series definition.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_textStyle">
+                                                                                
+    <a href="../../../Khill/Lavacharts/Configs/TextStyle.html"><abbr title="Khill\Lavacharts\Configs\TextStyle">TextStyle</abbr></a>
+                </td>
+                <td>$textStyle</td>
+                <td class="last">Text style of the series.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_type">
+                                                                                
+    string
+                </td>
+                <td>$type</td>
+                <td class="last">The type of marker for this series.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(
+    array $config = array())
+                                            <p>Builds the series object when passed an array of configuration options.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toArray">toArray</a>(
+    string $keyName = null)
+                                            <p>Returns an array representation of the object.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Configs/ConfigObject.html#method_toArray"><abbr title="Khill\Lavacharts\Configs\ConfigObject">ConfigObject</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getValues">getValues</a>()
+                                            <p>Same as toArray, but without the class name as a key to being multi-dimension.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Configs/ConfigObject.html#method_getValues"><abbr title="Khill\Lavacharts\Configs\ConfigObject">ConfigObject</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_annotation">annotation</a>(
+    <abbr title="Khill\Lavacharts\Configs\Khill\Lavacharts\Configs\Annotation">Annotation</abbr> $annotation)
+                                            <p>An object to be applied to annotations for this series.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_curveType">curveType</a>(
+    string $curveType)
+                                            <p>Controls the curve of the lines when the line width is not zero.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_targetAxisIndex">targetAxisIndex</a>(
+    int $index)
+                                            <p>Which axis to assign this series to.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_type">type</a>(
+    string $type)
+                                            <p>The default line type for any series not specified in the series property.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_textStyle">textStyle</a>(
+    <abbr title="Khill\Lavacharts\Configs\Khill\Lavacharts\Configs\TextStyle">TextStyle</abbr> $textStyle)
+                                            <p>An object that specifies the series text style.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line 66</div>
+        <code>                    
+    mixed
+    <strong>__construct</strong>(
+    array $config = array())</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Builds the series object when passed an array of configuration options.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$config</td>
+                <td>Array of options.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toArray">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Configs/ConfigObject.html#method_toArray"><abbr title="Khill\Lavacharts\Configs\ConfigObject">ConfigObject</abbr></a> at line 93</div>
+        <code>                    
+    array
+    <strong>toArray</strong>(
+    string $keyName = null)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns an array representation of the object.</p>                    <p>If passed a label, then the array will be returned with the label as the
+key.</p>
+
+<p>Called with no label returns an array with the classname as the key.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$keyName</td>
+                <td>Key name to be applied to generated array.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>Assoc. array of the options of the object.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getValues">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Configs/ConfigObject.html#method_getValues"><abbr title="Khill\Lavacharts\Configs\ConfigObject">ConfigObject</abbr></a> at line 115</div>
+        <code>                    
+    array
+    <strong>getValues</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Same as toArray, but without the class name as a key to being multi-dimension.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>Array of the options of the object.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_annotation">
+        <div class="location">at line 79</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+    <strong>annotation</strong>(
+    <abbr title="Khill\Lavacharts\Configs\Khill\Lavacharts\Configs\Annotation">Annotation</abbr> $annotation)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>An object to be applied to annotations for this series.</p>                    <p>This can be used to control, for instance, the textStyle for the series.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Configs\Khill\Lavacharts\Configs\Annotation">Annotation</abbr></td>
+                <td>$annotation</td>
+                <td>Style of the series annotations</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_curveType">
+        <div class="location">at line 105</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+    <strong>curveType</strong>(
+    string $curveType)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Controls the curve of the lines when the line width is not zero.</p>                    <p>Can be one of the following:
+'none'     - Straight lines without curve.
+'function' - The angles of the line will be smoothed.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$curveType</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_targetAxisIndex">
+        <div class="location">at line 140</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+    <strong>targetAxisIndex</strong>(
+    int $index)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Which axis to assign this series to.</p>                    <p>0 is the default axis, and 1 is the opposite axis.</p>
+
+<p>Default value is 0; set to 1 to define a chart where different series
+are rendered against different axes.</p>
+
+<p>At least one series much be allocated to the default axis.
+You can define a different scale for different axes.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    int</td>
+                <td>$index</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_type">
+        <div class="location">at line 163</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+    <strong>type</strong>(
+    string $type)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>The default line type for any series not specified in the series property.</p>                    <p>Available values are:
+'line', 'area', 'bars', 'candlesticks' and 'steppedArea'</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$type</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_textStyle">
+        <div class="location">at line 193</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a>
+    <strong>textStyle</strong>(
+    <abbr title="Khill\Lavacharts\Configs\Khill\Lavacharts\Configs\TextStyle">TextStyle</abbr> $textStyle)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>An object that specifies the series text style.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Configs\Khill\Lavacharts\Configs\TextStyle">TextStyle</abbr></td>
+                <td>$textStyle</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Configs/Series.html"><abbr title="Khill\Lavacharts\Configs\Series">Series</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Khill\Lavacharts\Utils | Lavacharts API</title>
+
+        <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/lava.css">
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/typeahead.min.js"></script>
+    <script src="../../sami.js"></script>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    
+    </head>
+
+    <body id="class" data-name="class:Khill_Lavacharts_Utils" data-root-path="../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../master/index.html">Master Branch</option>
+                                            <option value="../../../3.0/index.html">3.0 Branch</option>
+                                            <option value="../../../2.5/index.html" selected>2.5 Branch</option>
+                                    </select>
+            </form>
+                <form id="search-form" action="../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../images/lava-logo.gif" />
+                                    </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../classes.html">Classes</a></li>
+                                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../traits.html">Traits</a></li>
+                    <li><a href="../../doc-index.html">Index</a></li>
+                    <li><a href="../../search.html">Search</a></li>
+                    <li><a href="/">Docs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../Khill.html">Khill</a></li>
+                                        <li><a href="../../Khill/Lavacharts.html">Lavacharts</a></li>
+    
+                <li>Utils</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>Utils</h1>
+    </div>
+
+    <p>    class
+    <strong>Utils</strong>        (<a href="https://github.com/kevinkhill/lavacharts/blob/2.5/src/Utils.php">View source</a>)
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___callStatic">__callStatic</a>(
+    string $function, 
+    object $configObject)
+                                            <p>Magic method as an alias to is_a($object, $type)</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_arrayToPipedString">arrayToPipedString</a>(
+    array $defaultValues)
+                                            <p>Takes an array of values and ouputs them as a string between
+brackets and separated by a pipe.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_arrayIsMulti">arrayIsMulti</a>(
+    array $array)
+                                            <p>Simple test to see if array is multi-dimensional.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_arrayValuesCheck">arrayValuesCheck</a>(
+    array $array, 
+    string $type, 
+    string $className = &#039;&#039;)
+                                            <p>Simple test to see if array values are of specified type.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isIntOrPercent">isIntOrPercent</a>(
+    mixed $val)
+                                            <p>Tests input for valid int or percent</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_between">between</a>(
+    mixed $lower, 
+    mixed $test, 
+    mixed $upper, 
+    bool $includeLimits = true)
+                                            <p>Test if a number is between two other numbers.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_nonEmptyString">nonEmptyString</a>(
+    string $var)
+                                            <p>Checks if variable is a non-empty string</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_nonEmptyStringInArray">nonEmptyStringInArray</a>(
+    string $var, 
+    array $arr)
+                                            <p>Checks if variable is a non-empty string within an array of values</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___callStatic">
+        <div class="location">at line 13</div>
+        <code>        static            
+    bool
+    <strong>__callStatic</strong>(
+    string $function, 
+    object $configObject)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Magic method as an alias to is_a($object, $type)</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$function</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>
+    object</td>
+                <td>$configObject</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_arrayToPipedString">
+        <div class="location">at line 38</div>
+        <code>        static            
+    string
+    <strong>arrayToPipedString</strong>(
+    array $defaultValues)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Takes an array of values and ouputs them as a string between
+brackets and separated by a pipe.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$defaultValues</td>
+                <td>Array of default values</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>Converted array to string.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_arrayIsMulti">
+        <div class="location">at line 63</div>
+        <code>        static            
+    bool
+    <strong>arrayIsMulti</strong>(
+    array $array)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Simple test to see if array is multi-dimensional.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$array</td>
+                <td>Array of values.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>Returns true is first element in the array is an array,
+             otherwise false.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_arrayValuesCheck">
+        <div class="location">at line 85</div>
+        <code>        static            
+    bool
+    <strong>arrayValuesCheck</strong>(
+    array $array, 
+    string $type, 
+    string $className = &#039;&#039;)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Simple test to see if array values are of specified type.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$array</td>
+                <td>Array of values.</td>
+            </tr>
+                    <tr>
+                <td>
+    string</td>
+                <td>$type</td>
+                <td>Type to check</td>
+            </tr>
+                    <tr>
+                <td>
+    string</td>
+                <td>$className</td>
+                <td>Named class, if type == 'class'</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>Returns true is all values match type, otherwise false.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isIntOrPercent">
+        <div class="location">at line 134</div>
+        <code>        static            
+    bool
+    <strong>isIntOrPercent</strong>(
+    mixed $val)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Tests input for valid int or percent</p>                    <p>Valid int = 5 or 12
+Valid percent = 32% or 100%</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$val</td>
+                <td>Integer or string.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>Returns true if valid in or percent, otherwise false.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_between">
+        <div class="location">at line 173</div>
+        <code>        static            
+    bool
+    <strong>between</strong>(
+    mixed $lower, 
+    mixed $test, 
+    mixed $upper, 
+    bool $includeLimits = true)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Test if a number is between two other numbers.</p>                    <p>Pass in the number to test, the lower limit and upper limit.
+Defaults to including the limits with &lt;= &amp; >=, set to false to exclude
+the limits with &lt; &amp; ></p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$lower</td>
+                <td>number to test</td>
+            </tr>
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$test</td>
+                <td>lower limit</td>
+            </tr>
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$upper</td>
+                <td>upper limit</td>
+            </tr>
+                    <tr>
+                <td>
+    bool</td>
+                <td>$includeLimits</td>
+                <td>whether to include limits</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_nonEmptyString">
+        <div class="location">at line 197</div>
+        <code>        static            
+    bool
+    <strong>nonEmptyString</strong>(
+    string $var)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks if variable is a non-empty string</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$var</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_nonEmptyStringInArray">
+        <div class="location">at line 214</div>
+        <code>        static            
+    bool
+    <strong>nonEmptyStringInArray</strong>(
+    string $var, 
+    array $arr)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks if variable is a non-empty string within an array of values</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$var</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>
+    array</td>
+                <td>$arr</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

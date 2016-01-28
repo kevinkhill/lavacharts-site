@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Khill\Lavacharts\Formats\DateFormat | Lavacharts API</title>
+
+        <link rel="icon" href="../../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/lava.css">
+    <script src="../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/typeahead.min.js"></script>
+    <script src="../../../sami.js"></script>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    
+    </head>
+
+    <body id="class" data-name="class:Khill_Lavacharts_Formats_DateFormat" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../../master/index.html">Master Branch</option>
+                                            <option value="../../../../3.0/index.html">3.0 Branch</option>
+                                            <option value="../../../../2.5/index.html" selected>2.5 Branch</option>
+                                    </select>
+            </form>
+                <form id="search-form" action="../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">
+                    <img src="../../../images/lava-logo.gif" />
+                                    </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                    <li><a href="/">Docs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../../Khill.html">Khill</a></li>
+                                        <li><a href="../../../Khill/Lavacharts.html">Lavacharts</a></li>
+                                        <li><a href="../../../Khill/Lavacharts/Formats.html">Formats</a></li>
+    
+                <li>DateFormat</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>DateFormat</h1>
+    </div>
+
+    <p>    class
+    <strong>DateFormat</strong>        extends <a href="../../../Khill/Lavacharts/Formats/Format.html"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/2.5/src/Formats/DateFormat.php">View source</a>)
+</p>
+
+    
+    
+            <h2>Constants</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td>TYPE</td>
+                <td class="last">
+                    <p><em>
+</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_formatType">
+                                                                                
+    string
+                </td>
+                <td>$formatType</td>
+                <td class="last">A quick formatting option for the date.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_pattern">
+                                                                                
+    string
+                </td>
+                <td>$pattern</td>
+                <td class="last">Format string, as a subset of the ICU pattern set.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_timeZone">
+                                                                                
+    string
+                </td>
+                <td>$timeZone</td>
+                <td class="last">timeZone to assign to values in the visualization.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    mixed
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(
+    array $config = array())
+                                            <p>Builds the NumberFormat object with specified options</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getValues">getValues</a>()
+                                            <p>Same as toArray, but without the class name as a key to being multi-dimension.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Formats/Format.html#method_getValues"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toJson">toJson</a>()
+                                            <p>Returns a JSON string representation of the object's properties.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Formats/Format.html#method_toJson"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/DateFormat.html"><abbr title="Khill\Lavacharts\Formats\DateFormat">DateFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_formatType">formatType</a>(
+    string $ft)
+                                            <p>Sets a quick formatting option for the date.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/DateFormat.html"><abbr title="Khill\Lavacharts\Formats\DateFormat">DateFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_pattern">pattern</a>(
+    string $p)
+                                            <p>A custom format pattern to apply to the value, similar to the ICU date and time format.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Formats/DateFormat.html"><abbr title="Khill\Lavacharts\Formats\DateFormat">DateFormat</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_timeZone">timeZone</a>(
+    string $tz)
+                                            <p>Sets the time zone in which to display the date value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line 57</div>
+        <code>                    
+    mixed
+    <strong>__construct</strong>(
+    array $config = array())</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Builds the NumberFormat object with specified options</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$config</td>
+                <td>Array of options.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><abbr title="Khill\Lavacharts\Formats\InvalidConfigProperty">InvalidConfigProperty</abbr></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getValues">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Formats/Format.html#method_getValues"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a> at line 79</div>
+        <code>                    
+    array
+    <strong>getValues</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Same as toArray, but without the class name as a key to being multi-dimension.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>Array of the options of the object.</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toJson">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Formats/Format.html#method_toJson"><abbr title="Khill\Lavacharts\Formats\Format">Format</abbr></a> at line 97</div>
+        <code>                    
+    string
+    <strong>toJson</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns a JSON string representation of the object's properties.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_formatType">
+        <div class="location">at line 78</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/DateFormat.html"><abbr title="Khill\Lavacharts\Formats\DateFormat">DateFormat</abbr></a>
+    <strong>formatType</strong>(
+    string $ft)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Sets a quick formatting option for the date.</p>                    <p>The following string values are supported,
+reformatting the date February 28, 2008 as shown:</p>
+
+<p>'short'  - Short format: e.g., "2/28/08"
+'medium' - Medium format: e.g., "Feb 28, 2008"
+'long'   - Long format: e.g., "February 28, 2008"</p>
+
+<p>You cannot specify both formatType and pattern.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$ft</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/DateFormat.html"><abbr title="Khill\Lavacharts\Formats\DateFormat">DateFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_pattern">
+        <div class="location">at line 109</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/DateFormat.html"><abbr title="Khill\Lavacharts\Formats\DateFormat">DateFormat</abbr></a>
+    <strong>pattern</strong>(
+    string $p)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>A custom format pattern to apply to the value, similar to the ICU date and time format.</p>                    <p>For example: new DateFormat({pattern: "EEE, MMM d, ''yy"});</p>
+
+<p>You cannot specify both formatType and pattern.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$p</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/DateFormat.html"><abbr title="Khill\Lavacharts\Formats\DateFormat">DateFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>http://userguide.icu-project.org/formatparse/datetime#TOC-Date-Field-Symbol-Table</td>
+                <td></td>
+            </tr>
+            </table>
+
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_timeZone">
+        <div class="location">at line 139</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Formats/DateFormat.html"><abbr title="Khill\Lavacharts\Formats\DateFormat">DateFormat</abbr></a>
+    <strong>timeZone</strong>(
+    string $tz)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Sets the time zone in which to display the date value.</p>                    <p>This is a numeric value, indicating GMT + this number of time zones (can be negative).
+Date object are created by default with the assumed time zone of the computer on which they are created;
+this option is used to display that value in a different time zone.</p>
+
+<p>For example, if you created a Date object of 5pm noon on a computer located in Greenwich, England,
+and specified timeZone to be -5 (options['timeZone'] = -5, or Eastern Pacific Time in the US),
+the value displayed would be 12 noon.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$tz</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Formats/DateFormat.html"><abbr title="Khill\Lavacharts\Formats\DateFormat">DateFormat</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
