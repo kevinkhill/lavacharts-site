@@ -43,8 +43,9 @@ lava.ready(function() {
     <h3 id="javascript-ajax">Ajax Data Loading</h3>
     <p>Here is an example of how to load charts with ajax, using jQuery.</p>
 
-    <br/>
-    <h4>Server Side</h4>
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Server Side</h4>
 {% highlight php startinline %}
 $temps = $lava->DataTable('America/Los_Angeles');
 
@@ -64,16 +65,18 @@ foreach(range(1, 30) as $day) {
 
 return $temps->toJson();
 {% endhighlight %}
-
-    <br/>
-    <h4>Page Script</h4>
+        </div>
+        <div class="col-lg-6">
+            <h4>Page Script</h4>
 {% highlight javascript startinline %}
 lava.ready(function() {
-    $.getJSON('http://my.cool.site.com/api/whatever/getDataTableJson', function (dataTableJson) {
+    $.getJSON('http://my-site.com/api/getDataTableJson', function (dataTableJson) {
         lava.loadData('Chart1', dataTableJson, function (chart) {
             console.log(chart);
         });
     });
 });
 {% endhighlight %}
+        </div>
+    </div>
 </div>
