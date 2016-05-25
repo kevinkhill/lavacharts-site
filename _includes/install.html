@@ -8,15 +8,15 @@
   <h2>With Composer</h2>
   <p>First, copy this line into your project's composer.json file, in the <code>"require": {}</code> section</p>
 
-  {% highlight php startinline %}
-  "khill/lavacharts" : "{{ site.composer_version }}"
-  {% endhighlight %}
+{% highlight php startinline %}
+"khill/lavacharts" : "{{ site.composer_version }}"
+{% endhighlight %}
   <br />
 
   Next, run composer to download and install
-  {% highlight php startinline %}
-  composer update
-  {% endhighlight %}
+{% highlight php startinline %}
+composer update
+{% endhighlight %}
   <br />
 
   <p>Finally, <code>require 'vendor/autoload.php';</code> in your project and you are good to go!</p>
@@ -29,9 +29,9 @@
 
   <p>Do not require the <code>vendor/autoload.php</code> file, since Laravel takes care of that.</p>
   <p>And also, register the service provider by adding this line to the providers array in <code>app/config/app.php</code></p>
-  {% highlight php startinline %}
-  "Khill\Lavacharts\Laravel\LavachartsServiceProvider"
-  {% endhighlight %}
+{% highlight php startinline %}
+"Khill\Lavacharts\Laravel\LavachartsServiceProvider"
+{% endhighlight %}
 
   <p>Don't worry about adding the class alias, it is loaded automatically.</p>
 

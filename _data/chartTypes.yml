@@ -1,11 +1,19 @@
 # Supported chart types
+#- annotation
 - area
 - bar
+#- bubble
 - calendar
+#- candlestick
 - column
 - donut
 - gauge
 - geo
-- pie
+#- histogram
 - line
+- pie
 - scatter
+#- sankey
+#- steppedarea
+#- timeline
+#- treemap

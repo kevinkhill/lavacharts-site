@@ -25,7 +25,7 @@
   </ul>
 
 {% highlight php startinline %}
-$stocksTable = $lava->DataTable();  // Lava::DataTable() if using Laravel
+$stocksTable = $lava->DataTable();  // \Lava::DataTable() if using Laravel
 
 $stocksTable->addDateColumn('Day of Month')
             ->addNumberColumn('Projected')
@@ -44,7 +44,7 @@ for ($a = 1; $a < 30; $a++) {
 
 
 <div id="quickstart-chart" class="sub-section">
-  <h2>Chart</h2>
+  <h2>Charts</h2>
   <p class="lead">Creating and customizing your chart.</p>
   <p>Select which type of chart you will be creating. In this example, we will use LineChart, but Lavacharts currently supports:
   <ul class="arrows">
@@ -52,12 +52,28 @@ for ($a = 1; $a < 30; $a++) {
       <li><a href="#chart-{{ type }}">{{ type | capitalize }}Charts</a></li>
     {% endfor %}
   </ul>
+  <div class="row">
+    <div class="col-sm-6">
 {% highlight php startinline %}
 $chart = $lava->LineChart('MyStocks', $stocksTable);
-// $chart = Lava::LineChart() if using Laravel
 {% endhighlight %}
+    </div>
+    <div class="col-sm-6">
+{% highlight php startinline %}
+$chart = $lava->ColumnChart('Inventory', $products, [
+    'title' => 'Product Inventory Quantities',
+    'legend' => [
+        'position' => 'in'
+    ]
+]);
+{% endhighlight %}
+    </div>
+  </div>
   <div class="alert alert-danger" role="alert">
-    <strong>Heads up!</strong> Even though the chart's constructor returns a chart object, you do not need to pass the chart object into your views. The library stores created charts internally by type and label, so you do not need access to the chart object directly.
+    <strong>Heads up!</strong> The constructor returns a chart object, which is useful for chaining, but you do not need to pass this to your views. Lavacharts stores the created charts internally, so only the single instance of <code>$lava</code> needs to be passed around.
+  </div>
+  <div class="alert alert-warning" role="alert">
+    <strong>Laravel Users:</strong> Don't even worry about passing <code>$lava</code> around, since it was created in the ServiceProvider, you can use the <code>Lava::</code> alias everywhere.
   </div>
 </div>
 <br />

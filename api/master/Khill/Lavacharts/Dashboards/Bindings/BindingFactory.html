@@ -95,6 +95,19 @@
             <div class="description">
             <p>BindingFactory Class</p>            <p>Creates new bindings for dashboards.</p>        </div>
     
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../../Khill/Lavacharts/Support/Traits/ArrayValuesTestTrait.html"><abbr title="Khill\Lavacharts\Support\Traits\ArrayValuesTestTrait">Khill\Lavacharts\Support\Traits\ArrayValuesTestTrait</abbr></a>
+                                    </div>
+                <div class="col-md-6">
+                    Trait ArrayValuesTestTrait
+                </div>
+            </div>
+            </div>
     
     
     
@@ -103,14 +116,26 @@
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
     <a href="../../../../Khill/Lavacharts/Dashboards/Bindings/Binding.html"><abbr title="Khill\Lavacharts\Dashboards\Bindings\Binding">Binding</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_create">create</a>(
-    mixed $arg1, 
-    mixed $arg2)
+    mixed $controlWraps, 
+    mixed $chartWraps)
                                             <p>Create a new Binding for the dashboard.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_createFromArray">createFromArray</a>(
+    array $bindings)
+                                            <p class="no-description">No description</p>
+                                    </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -122,11 +147,11 @@
                     <div class="method-item">
                     <h3 id="method_create">
         <div class="location">at line 34</div>
-        <code>        static            
+        <code>                    
     <a href="../../../../Khill/Lavacharts/Dashboards/Bindings/Binding.html"><abbr title="Khill\Lavacharts\Dashboards\Bindings\Binding">Binding</abbr></a>
     <strong>create</strong>(
-    mixed $arg1, 
-    mixed $arg2)</code>
+    mixed $controlWraps, 
+    mixed $chartWraps)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -138,13 +163,13 @@
                     <tr>
                 <td>
     mixed</td>
-                <td>$arg1</td>
+                <td>$controlWraps</td>
                 <td>One or array of many ControlWrappers</td>
             </tr>
                     <tr>
                 <td>
     mixed</td>
-                <td>$arg2</td>
+                <td>$chartWraps</td>
                 <td>One or array of many ChartWrappers</td>
             </tr>
             </table>
@@ -172,6 +197,45 @@
             </tr>
             </table>
 
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_createFromArray">
+        <div class="location">at line 62</div>
+        <code>                    
+    array
+    <strong>createFromArray</strong>(
+    array $bindings)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$bindings</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>Array of bindings</td>
+        </tr>
+    </table>
+
+            
             
                     </div>
     </div>

@@ -89,7 +89,7 @@
 
     <p>    class
     <strong>DataTable</strong>        implements
-        <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/DataTables/DataTable.php">View source</a>)
+        <a href="../../../Khill/Lavacharts/Support/Contracts/JsonableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\JsonableInterface">JsonableInterface</abbr></a>, <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/DataTables/DataTable.php">View source</a>)
 </p>
 
             <div class="description">
@@ -103,33 +103,53 @@ whole DataTable. Visualizations can use these to support additional features;
 for example, the Table visualization uses custom properties to let you assign
 arbitrary class names or styles to individual cells.</p>        </div>
     
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../Khill/Lavacharts/Support/Traits/ArrayIsMultiTrait.html"><abbr title="Khill\Lavacharts\Support\Traits\ArrayIsMultiTrait">Khill\Lavacharts\Support\Traits\ArrayIsMultiTrait</abbr></a>
+                                    </div>
+                <div class="col-md-6">
+                    Trait ArrayIsMultiTrait
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../Khill/Lavacharts/Support/Traits/ArrayValuesTestTrait.html"><abbr title="Khill\Lavacharts\Support\Traits\ArrayValuesTestTrait">Khill\Lavacharts\Support\Traits\ArrayValuesTestTrait</abbr></a>
+                                    </div>
+                <div class="col-md-6">
+                    Trait ArrayValuesTestTrait
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../Khill/Lavacharts/Support/Traits/NonEmptyStringTrait.html"><abbr title="Khill\Lavacharts\Support\Traits\NonEmptyStringTrait">Khill\Lavacharts\Support\Traits\NonEmptyStringTrait</abbr></a>
+                                    </div>
+                <div class="col-md-6">
+                    Trait NonEmptyStringTrait
+                </div>
+            </div>
+            </div>
     
-            <h2>Constants</h2>
-
-            <table class="table table-condensed">
-                    <tr>
-                <td>VERSION</td>
-                <td class="last">
-                    <p><em>Google's datatable version</em></p>
-                    <p>
-</p>
-                </td>
-            </tr>
-                    <tr>
-                <td>VIZ_CLASS</td>
-                <td class="last">
-                    <p><em>Google's visualization class name.</em></p>
-                    <p>
-</p>
-                </td>
-            </tr>
-            </table>
-
     
     
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_nonEmptyString">nonEmptyString</a>(
+    string $var)
+                                            <p>Checks if a variable is a string and not empty.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Support/Traits/NonEmptyStringTrait.html#method_nonEmptyString"><abbr title="Khill\Lavacharts\Support\Traits\NonEmptyStringTrait">NonEmptyStringTrait</abbr></a></small></div>
+            </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
@@ -173,9 +193,7 @@ arbitrary class names or styles to individual cells.</p>        </div>
                 <div class="col-md-8 type">
                     <a href="#method_setTimezone">setTimezone</a>(
     string $timezone)
-                                            <p>Sets the Timezone that Carbon will use when parsing dates
-This will use the passed timezone, falling back to the default from php.ini,
-and falling back from that to America/Los_Angeles</p>                </div>
+                                            <p>Sets the Timezone that Carbon will use when parsing dates</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -375,7 +393,7 @@ and falling back from that to America/Los_Angeles</p>                </div>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_addRow">addRow</a>(
-    array $cellArray = array())
+    array $cellArray)
                                             <p>Add a row to the DataTable</p>                </div>
                 <div class="col-md-2"></div>
             </div>
@@ -393,7 +411,7 @@ and falling back from that to America/Los_Angeles</p>                </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    array
+    <a href="../../../Khill/Lavacharts/DataTables/Rows/Row.html"><abbr title="Khill\Lavacharts\DataTables\Rows\Row">Row</abbr></a>[]
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getRows">getRows</a>()
@@ -424,7 +442,7 @@ and falling back from that to America/Los_Angeles</p>                </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    array
+    <a href="../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>[]
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getColumns">getColumns</a>()
@@ -459,7 +477,7 @@ and falling back from that to America/Los_Angeles</p>                </div>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getColumnLabel">getColumnLabel</a>(
-    integer $index)
+    int $index)
                                             <p>Returns the label of a column based on it's index.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
@@ -470,14 +488,14 @@ and falling back from that to America/Los_Angeles</p>                </div>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getColumnType">getColumnType</a>(
-    integer $index)
+    int $index)
                                             <p>Returns the type of a column based on it's index.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    array
+    string[]
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getColumnTypes">getColumnTypes</a>()
@@ -487,7 +505,7 @@ and falling back from that to America/Los_Angeles</p>                </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    array
+    string[]
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getColumnLabels">getColumnLabels</a>()
@@ -497,11 +515,11 @@ and falling back from that to America/Los_Angeles</p>                </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    array
+    <a href="../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>[]
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_getFormattedColumns">getFormattedColumns</a>()
-                                            <p>Returns the column array from the DataTable</p>                </div>
+                                            <p>Returns the formatted columns in an array from the DataTable</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -541,6 +559,48 @@ and falling back from that to America/Los_Angeles</p>                </div>
 
             <div id="method-details">
                     <div class="method-item">
+                    <h3 id="method_nonEmptyString">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Support/Traits/NonEmptyStringTrait.html#method_nonEmptyString"><abbr title="Khill\Lavacharts\Support\Traits\NonEmptyStringTrait">NonEmptyStringTrait</abbr></a> at line 26</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a>
+    <strong>nonEmptyString</strong>(
+    string $var)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks if a variable is a string and not empty.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$var</td>
+                <td>String to check</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method___construct">
         <div class="location">at line 89</div>
         <code>                    
@@ -559,8 +619,7 @@ and falling back from that to America/Los_Angeles</p>                </div>
                 <td>
     string</td>
                 <td>$timezone</td>
-                <td>
-</td>
+                <td>Timezone to use when dealing with dates &amp; times</td>
             </tr>
             </table>
 
@@ -573,7 +632,7 @@ and falling back from that to America/Los_Angeles</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_cell">
-        <div class="location">at line 126</div>
+        <div class="location">at line 113</div>
         <code>        static            
     <a href="../../../Khill/Lavacharts/DataTables/Cells/Cell.html"><abbr title="Khill\Lavacharts\DataTables\Cells\Cell">Cell</abbr></a>
     <strong>cell</strong>(
@@ -583,20 +642,7 @@ and falling back from that to America/Los_Angeles</p>                </div>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Create a new DataCell for a value in a Row</p>                    <p>v: The cell value. The data type should match the column data type.
-If null, the whole object should be empty and have neither v nor f properties.</p>
-
-<p>f: [Optional] A string version of the v value, formatted for display. The
-values should match, so if you specify Date(2008, 0, 1) for v, you should
-specify "January 1, 2008" or some such string for this property. This value
-is not checked against the v value. The visualization will not use this value
-for calculation, only as a label for display. If omitted, a string version
-of v will be used.</p>
-
-<p>p: [Optional] An object that is a map of custom values applied to the cell.
-These values can be of any JavaScript type. If your visualization supports
-any cell-level properties, it will describe them; otherwise, this property
-will be ignored. Example: p:{style: 'border: 1px solid green;'}.</p>            </div>
+                                    <p>Create a new DataCell for a value in a Row</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -635,13 +681,22 @@ will be ignored. Example: p:{style: 'border: 1px solid green;'}.</p>            
 
             
             
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>\Khill\Lavacharts\DataTables\DataFactory::cell</td>
+                <td></td>
+            </tr>
+            </table>
+
                     </div>
     </div>
 
             </div>
                     <div class="method-item">
                     <h3 id="method_createFromJson">
-        <div class="location">at line 146</div>
+        <div class="location">at line 129</div>
         <code>        static            
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>createFromJson</strong>(
@@ -649,11 +704,7 @@ will be ignored. Example: p:{style: 'border: 1px solid green;'}.</p>            
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Parses a string of JSON data into a DataTable.</p>                    <p>Most google examples can be passed to this method with some tweaks.
-PHP requires that only double quotes are used on identifiers.
-For example:
- - {label: 'Team'} would be invalid
- - {"label": "Team"} would be accepted.</p>            </div>
+                                    <p>Parses a string of JSON data into a DataTable.</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -690,13 +741,22 @@ For example:
             </table>
 
             
+                            <h4>See also</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>\Khill\Lavacharts\DataTables\DataFactory::createFromJson</td>
+                <td></td>
+            </tr>
+            </table>
+
                     </div>
     </div>
 
             </div>
                     <div class="method-item">
                     <h3 id="method_setTimezone">
-        <div class="location">at line 183</div>
+        <div class="location">at line 144</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>setTimezone</strong>(
@@ -704,9 +764,8 @@ For example:
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Sets the Timezone that Carbon will use when parsing dates
-This will use the passed timezone, falling back to the default from php.ini,
-and falling back from that to America/Los_Angeles</p>                                </div>
+                                    <p>Sets the Timezone that Carbon will use when parsing dates</p>                    <p>This will use the passed timezone, falling back to the default from php.ini,
+and falling back from that to America/Los_Angeles</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -750,7 +809,7 @@ and falling back from that to America/Los_Angeles</p>                           
             </div>
                     <div class="method-item">
                     <h3 id="method_getTimeZone">
-        <div class="location">at line 205</div>
+        <div class="location">at line 161</div>
         <code>                    
     <a target="_blank" href="http://php.net/DateTimeZone"><abbr title="DateTimeZone">DateTimeZone</abbr></a>
     <strong>getTimeZone</strong>()</code>
@@ -779,7 +838,7 @@ and falling back from that to America/Los_Angeles</p>                           
             </div>
                     <div class="method-item">
                     <h3 id="method_setDateTimeFormat">
-        <div class="location">at line 222</div>
+        <div class="location">at line 177</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>setDateTimeFormat</strong>(
@@ -832,7 +891,7 @@ passed to a cell in a date column, that was parsed incorrectly by Carbon::parse(
             </div>
                     <div class="method-item">
                     <h3 id="method_getDateTimeFormat">
-        <div class="location">at line 243</div>
+        <div class="location">at line 197</div>
         <code>                    
     string
     <strong>getDateTimeFormat</strong>()</code>
@@ -860,7 +919,7 @@ passed to a cell in a date column, that was parsed incorrectly by Carbon::parse(
             </div>
                     <div class="method-item">
                     <h3 id="method_bare">
-        <div class="location">at line 259</div>
+        <div class="location">at line 212</div>
         <code>                    
     <abbr title="Khill\Lavacharts\DataTables\DataTable;">DataTable;</abbr>
     <strong>bare</strong>()</code>
@@ -891,7 +950,7 @@ the chart's format.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addColumn">
-        <div class="location">at line 291</div>
+        <div class="location">at line 243</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addColumn</strong>(
@@ -978,7 +1037,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addColumns">
-        <div class="location">at line 315</div>
+        <div class="location">at line 266</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addColumns</strong>(
@@ -1029,7 +1088,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addBooleanColumn">
-        <div class="location">at line 344</div>
+        <div class="location">at line 293</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addBooleanColumn</strong>(
@@ -1099,7 +1158,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addStringColumn">
-        <div class="location">at line 360</div>
+        <div class="location">at line 308</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addStringColumn</strong>(
@@ -1169,7 +1228,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDateColumn">
-        <div class="location">at line 376</div>
+        <div class="location">at line 323</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addDateColumn</strong>(
@@ -1239,7 +1298,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addDateTimeColumn">
-        <div class="location">at line 393</div>
+        <div class="location">at line 339</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addDateTimeColumn</strong>(
@@ -1309,7 +1368,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addTimeOfDayColumn">
-        <div class="location">at line 410</div>
+        <div class="location">at line 355</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addTimeOfDayColumn</strong>(
@@ -1379,7 +1438,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addNumberColumn">
-        <div class="location">at line 426</div>
+        <div class="location">at line 370</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addNumberColumn</strong>(
@@ -1449,7 +1508,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addRoleColumn">
-        <div class="location">at line 442</div>
+        <div class="location">at line 385</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addRoleColumn</strong>(
@@ -1512,7 +1571,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_dropColumn">
-        <div class="location">at line 473</div>
+        <div class="location">at line 415</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>dropColumn</strong>(
@@ -1564,7 +1623,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_formatColumn">
-        <div class="location">at line 495</div>
+        <div class="location">at line 436</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>formatColumn</strong>(
@@ -1624,7 +1683,7 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_formatColumns">
-        <div class="location">at line 512</div>
+        <div class="location">at line 452</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>formatColumns</strong>(
@@ -1676,11 +1735,11 @@ not value is specified, an empty string is assigned.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_addRow">
-        <div class="location">at line 561</div>
+        <div class="location">at line 500</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addRow</strong>(
-    array $cellArray = array())</code>
+    array $cellArray)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -1756,7 +1815,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_addRows">
-        <div class="location">at line 592</div>
+        <div class="location">at line 530</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>addRows</strong>(
@@ -1822,9 +1881,9 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getRows">
-        <div class="location">at line 614</div>
+        <div class="location">at line 545</div>
         <code>                    
-    array
+    <a href="../../../Khill/Lavacharts/DataTables/Rows/Row.html"><abbr title="Khill\Lavacharts\DataTables\Rows\Row">Row</abbr></a>[]
     <strong>getRows</strong>()</code>
     </h3>
     <div class="details">
@@ -1837,7 +1896,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
                     <table class="table table-condensed">
         <tr>
             <td>
-    array</td>
+    <a href="../../../Khill/Lavacharts/DataTables/Rows/Row.html"><abbr title="Khill\Lavacharts\DataTables\Rows\Row">Row</abbr></a>[]</td>
             <td>
 </td>
         </tr>
@@ -1851,7 +1910,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getRowCount">
-        <div class="location">at line 625</div>
+        <div class="location">at line 555</div>
         <code>                    
     int
     <strong>getRowCount</strong>()</code>
@@ -1880,7 +1939,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getColumn">
-        <div class="location">at line 639</div>
+        <div class="location">at line 568</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>
     <strong>getColumn</strong>(
@@ -1932,9 +1991,9 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getColumns">
-        <div class="location">at line 652</div>
+        <div class="location">at line 580</div>
         <code>                    
-    array
+    <a href="../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>[]
     <strong>getColumns</strong>()</code>
     </h3>
     <div class="details">
@@ -1947,7 +2006,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
                     <table class="table table-condensed">
         <tr>
             <td>
-    array</td>
+    <a href="../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>[]</td>
             <td>
 </td>
         </tr>
@@ -1961,7 +2020,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getColumnsByType">
-        <div class="location">at line 666</div>
+        <div class="location">at line 593</div>
         <code>                    
     array
     <strong>getColumnsByType</strong>(
@@ -2013,7 +2072,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getColumnCount">
-        <div class="location">at line 689</div>
+        <div class="location">at line 613</div>
         <code>                    
     int
     <strong>getColumnCount</strong>()</code>
@@ -2042,11 +2101,11 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getColumnLabel">
-        <div class="location">at line 703</div>
+        <div class="location">at line 626</div>
         <code>                    
     string
     <strong>getColumnLabel</strong>(
-    integer $index)</code>
+    int $index)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -2057,7 +2116,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
                     <table class="table table-condensed">
                     <tr>
                 <td>
-    integer</td>
+    int</td>
                 <td>$index</td>
                 <td>
 </td>
@@ -2094,11 +2153,11 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getColumnType">
-        <div class="location">at line 717</div>
+        <div class="location">at line 639</div>
         <code>                    
     string
     <strong>getColumnType</strong>(
-    integer $index)</code>
+    int $index)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -2109,7 +2168,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
                     <table class="table table-condensed">
                     <tr>
                 <td>
-    integer</td>
+    int</td>
                 <td>$index</td>
                 <td>
 </td>
@@ -2146,9 +2205,9 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getColumnTypes">
-        <div class="location">at line 729</div>
+        <div class="location">at line 650</div>
         <code>                    
-    array
+    string[]
     <strong>getColumnTypes</strong>()</code>
     </h3>
     <div class="details">
@@ -2161,7 +2220,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
                     <table class="table table-condensed">
         <tr>
             <td>
-    array</td>
+    string[]</td>
             <td>
 </td>
         </tr>
@@ -2175,9 +2234,9 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getColumnLabels">
-        <div class="location">at line 745</div>
+        <div class="location">at line 665</div>
         <code>                    
-    array
+    string[]
     <strong>getColumnLabels</strong>()</code>
     </h3>
     <div class="details">
@@ -2190,7 +2249,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
                     <table class="table table-condensed">
         <tr>
             <td>
-    array</td>
+    string[]</td>
             <td>
 </td>
         </tr>
@@ -2204,14 +2263,14 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_getFormattedColumns">
-        <div class="location">at line 761</div>
+        <div class="location">at line 680</div>
         <code>                    
-    array
+    <a href="../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>[]
     <strong>getFormattedColumns</strong>()</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Returns the column array from the DataTable</p>                                </div>
+                                    <p>Returns the formatted columns in an array from the DataTable</p>                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -2219,7 +2278,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
                     <table class="table table-condensed">
         <tr>
             <td>
-    array</td>
+    <a href="../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>[]</td>
             <td>
 </td>
         </tr>
@@ -2233,7 +2292,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_hasFormattedColumns">
-        <div class="location">at line 780</div>
+        <div class="location">at line 698</div>
         <code>                    
     bool
     <strong>hasFormattedColumns</strong>()</code>
@@ -2262,14 +2321,14 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_toJson">
-        <div class="location">at line 792</div>
+        <div class="location">at line 710</div>
         <code>                    
     string
     <strong>toJson</strong>()</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Convert the DataTable to JSON</p>                                </div>
+                                    <p>Convert the DataTable to JSON</p>                    <p>Will include formats if defined</p>            </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -2278,7 +2337,8 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
         <tr>
             <td>
     string</td>
-            <td>JSON representation of the DataTable.</td>
+            <td>
+</td>
         </tr>
     </table>
 
@@ -2290,7 +2350,7 @@ with null for the first two cells, you would specify [null, null, {cell_val}].</
             </div>
                     <div class="method-item">
                     <h3 id="method_jsonSerialize">
-        <div class="location">at line 821</div>
+        <div class="location">at line 739</div>
         <code>                    
     array
     <strong>jsonSerialize</strong>()</code>

@@ -96,32 +96,45 @@
             <p>ColumnFactory Class</p>            <p>The ColumnFactory creates new columns for DataTables. The only mandatory parameter is
 the type of column to create, all others are optional.</p>        </div>
     
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../../Khill/Lavacharts/Support/Traits/NonEmptyStringTrait.html"><abbr title="Khill\Lavacharts\Support\Traits\NonEmptyStringTrait">Khill\Lavacharts\Support\Traits\NonEmptyStringTrait</abbr></a>
+                                    </div>
+                <div class="col-md-6">
+                    Trait NonEmptyStringTrait
+                </div>
+            </div>
+            </div>
     
     
             <h2>Properties</h2>
 
             <table class="table table-condensed">
                     <tr>
-                <td class="type" id="property_TYPES">
-                    static                                                            
+                <td class="type" id="property_types">
+                                                                                
     array
                 </td>
-                <td>$TYPES</td>
+                <td>$types</td>
                 <td class="last">Valid column types</td>
                 <td></td>
             </tr>
                     <tr>
-                <td class="type" id="property_ROLES">
-                    static                                                            
+                <td class="type" id="property_roles">
+                                                                                
     array
                 </td>
-                <td>$ROLES</td>
+                <td>$roles</td>
                 <td class="last">Valid column roles</td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type" id="property_desc">
-                    static                                                            
+                                                                                
     array
                 </td>
                 <td>$desc</td>
@@ -136,7 +149,19 @@ the type of column to create, all others are optional.</p>        </div>
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
+    <a href="../../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_nonEmptyString">nonEmptyString</a>(
+    string $var)
+                                            <p>Checks if a variable is a string and not empty.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Traits/NonEmptyStringTrait.html#method_nonEmptyString"><abbr title="Khill\Lavacharts\Support\Traits\NonEmptyStringTrait">NonEmptyStringTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
     <a href="../../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>
                 </div>
                 <div class="col-md-8 type">
@@ -150,7 +175,7 @@ the type of column to create, all others are optional.</p>        </div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
     <a href="../../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>
                 </div>
                 <div class="col-md-8 type">
@@ -160,6 +185,28 @@ the type of column to create, all others are optional.</p>        </div>
                                             <p>Creates a new Column with the same values, while applying the Format.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_typeCheck">typeCheck</a>(
+    string $type)
+                                            <p>Checks if the given type is a valid column type</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_roleCheck">roleCheck</a>(
+    string $role)
+                                            <p>Checks if the given role is a valid column role</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -167,9 +214,51 @@ the type of column to create, all others are optional.</p>        </div>
 
             <div id="method-details">
                     <div class="method-item">
+                    <h3 id="method_nonEmptyString">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Traits/NonEmptyStringTrait.html#method_nonEmptyString"><abbr title="Khill\Lavacharts\Support\Traits\NonEmptyStringTrait">NonEmptyStringTrait</abbr></a> at line 26</div>
+        <code>                    
+    <a href="../../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a>
+    <strong>nonEmptyString</strong>(
+    string $var)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks if a variable is a string and not empty.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$var</td>
+                <td>String to check</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_create">
-        <div class="location">at line 84</div>
-        <code>        static            
+        <div class="location">at line 86</div>
+        <code>                    
     <a href="../../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>
     <strong>create</strong>(
     string $type, 
@@ -245,8 +334,8 @@ the type of column to create, all others are optional.</p>        </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_applyFormat">
-        <div class="location">at line 122</div>
-        <code>        static            
+        <div class="location">at line 118</div>
+        <code>                    
     <a href="../../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>
     <strong>applyFormat</strong>(
     <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Columns\Column">Column</abbr> $column, 
@@ -288,6 +377,88 @@ the type of column to create, all others are optional.</p>        </div>
     </table>
 
             
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_typeCheck">
+        <div class="location">at line 134</div>
+        <code>                    
+    
+    <strong>typeCheck</strong>(
+    string $type)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks if the given type is a valid column type</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$type</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidColumnType.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidColumnType">InvalidColumnType</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_roleCheck">
+        <div class="location">at line 147</div>
+        <code>                    
+    
+    <strong>roleCheck</strong>(
+    string $role)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks if the given role is a valid column role</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$role</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidColumnRole.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidColumnRole">InvalidColumnRole</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
             
                     </div>
     </div>

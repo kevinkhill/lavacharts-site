@@ -4,30 +4,22 @@
   <h3>Methods</h3>
   <div class="sub-section">
     <h4><code>lava.getChart(chartLabel, callback)</code></h4>
-    <p>Pass in a chart label and a callback, to get access to the google chart, and the lavachart.</p>
+    <p>Pass in a chart label and a callback, to get access to the chart.</p>
 {% highlight javascript startinline %}
-lava.getChart('myFancyChart', function (googleChart, lavaChart) {
-    console.log(googleChart);
-    console.log(lavaChart);
+lava.getChart('myFancyChart', function (chart) {
+    console.log(chart);
 });
 {% endhighlight %}
-    <div class="alert alert-danger">
-      <strong>To Clarify:</strong>The first object returned to the callback a <em>property</em> of the lavaChart. It was added as a shortcut to avoid typing googleChart.chart to access google's chart methods. The second object returned to the callback is the lavaChart, which holds the googleChart, formats, events, data, etc. It was added to not restrict the user only getting the googleChart returned, if they need access to the lavachart properties.
-    </div>
   </div>
 
   <div class="sub-section">
     <h4><code>lava.getDashboard(dashboardLabel, callback)</code></h4>
-    <p>Pass in a dashboard label and a callback, to get access to the google dashboard object, and the lavachart.</p>
+    <p>Pass in a label and callback, to get access to the dashboard.</p>
 {% highlight javascript startinline %}
-lava.getDashboard('myFancyDashboard', function (googleDashboard, lavaDashboard) {
-    console.log(googleDashboard);
-    console.log(lavaDashboard);
+lava.getDashboard('myFancyDashboard', function (dashboard) {
+    console.log(dashboard);
 });
 {% endhighlight %}
-    <div class="alert alert-danger">
-      <strong>To Clarify:</strong>The first object returned to the callback a <em>property</em> of the lavaDashboard. It was added as a shortcut to avoid typing googleDashboard.dashboard to access google's dashboard methods. The second object returned to the callback is the lavaChart, which holds the googleChart, formats, events, data, etc. It was added to not restrict the user only getting the googleChart returned, if they need access to the lavachart properties.
-    </div>
   </div>
 
     <h4><code>lava.loadData(chartLabel, dataTableJson, callback)</code></h4>
@@ -35,6 +27,14 @@ lava.getDashboard('myFancyDashboard', function (googleDashboard, lavaDashboard) 
 {% highlight javascript startinline %}
 lava.loadData('myFancyChart', {dataTableJsonObject}, function (chart) {
     console.log(chart);
+});
+{% endhighlight %}
+
+    <h4><code>lava.ready(callback)</code></h4>
+<p>This method will allow timed interaction with the charts or dashboards. Wrap all <code>lava.method</code> calls within the ready callback, to avoid race conditions.</p>
+{% highlight javascript startinline %}
+lava.ready(function() {
+    // All the charts are ready for interaction...
 });
 {% endhighlight %}
 
@@ -68,10 +68,12 @@ return $temps->toJson();
     <br/>
     <h4>Page Script</h4>
 {% highlight javascript startinline %}
-$.getJSON('http://my.cool.site.com/api/whatever/getDataTableJson', function (dataTableJson) {
-  lava.loadData('Chart1', dataTableJson, function (chart) {
-    console.log(chart);
-  });
+lava.ready(function() {
+    $.getJSON('http://my.cool.site.com/api/whatever/getDataTableJson', function (dataTableJson) {
+        lava.loadData('Chart1', dataTableJson, function (chart) {
+            console.log(chart);
+        });
+    });
 });
 {% endhighlight %}
 </div>

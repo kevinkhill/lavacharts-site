@@ -18,7 +18,7 @@ browserify = require('browserify'),
 
 var config = (function() {
     var resources = './resources';
-    var assets    = './assets'
+    var assets    = './assets';
 
     return {
         paths: {
@@ -28,7 +28,7 @@ var config = (function() {
             node    : './node_modules',
             scripts : resources+'/js',
             styles  : resources+'/sass',
-            images  : resources+'/images',
+            images  : resources+'/images'
         }
     };
 })();
@@ -84,14 +84,6 @@ gulp.task('images', function() {
 gulp.task('fonts', function() {
     return gulp.src(config.paths.node+'/bootstrap-sass/assets/fonts/bootstrap/*')
                .pipe(gulp.dest(config.paths.dest+'/fonts'));
-});
-
-gulp.task('api', function() {
-    del(['./_site/api/**/*']);
-
-    return exec('./vendor/bin/sami.php update ./sami.cfg.php', function (err, stout, sterr) {
-        console.log(stout);
-    });
 });
 
 gulp.task('watch', ['default'], function() {

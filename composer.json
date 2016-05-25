@@ -28,5 +28,8 @@
     "require-dev": {
         "sami/sami": "~3.2"
     },
+    "scripts": {
+        "sami": "sami.php update sami.cfg.php"
+    },
     "minimum-stability": "stable"
 }

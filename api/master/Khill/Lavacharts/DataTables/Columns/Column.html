@@ -96,12 +96,37 @@
             <div class="description">
             <p>Column Object</p>            <p>The Column object is used to define the different columns for a DataTable.</p>        </div>
     
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../../Khill/Lavacharts/Support/Traits/NonEmptyStringTrait.html"><abbr title="Khill\Lavacharts\Support\Traits\NonEmptyStringTrait">Khill\Lavacharts\Support\Traits\NonEmptyStringTrait</abbr></a>
+                                    </div>
+                <div class="col-md-6">
+                    Trait NonEmptyStringTrait
+                </div>
+            </div>
+            </div>
     
     
     
             <h2>Methods</h2>
 
             <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_nonEmptyString">nonEmptyString</a>(
+    string $var)
+                                            <p>Checks if a variable is a string and not empty.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Traits/NonEmptyStringTrait.html#method_nonEmptyString"><abbr title="Khill\Lavacharts\Support\Traits\NonEmptyStringTrait">NonEmptyStringTrait</abbr></a></small></div>
+            </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
@@ -183,8 +208,50 @@
 
             <div id="method-details">
                     <div class="method-item">
+                    <h3 id="method_nonEmptyString">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Traits/NonEmptyStringTrait.html#method_nonEmptyString"><abbr title="Khill\Lavacharts\Support\Traits\NonEmptyStringTrait">NonEmptyStringTrait</abbr></a> at line 26</div>
+        <code>                    
+    <a href="../../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a>
+    <strong>nonEmptyString</strong>(
+    string $var)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks if a variable is a string and not empty.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$var</td>
+                <td>String to check</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 63</div>
+        <div class="location">at line 62</div>
         <code>                    
     
     <strong>__construct</strong>(
@@ -204,7 +271,7 @@
                 <td>
     string</td>
                 <td>$type</td>
-                <td>Type of Column</td>
+                <td>Column type.</td>
             </tr>
                     <tr>
                 <td>
@@ -216,8 +283,7 @@
                 <td>
     <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr></td>
                 <td>$format</td>
-                <td>
-</td>
+                <td>Column format(optional).</td>
             </tr>
                     <tr>
                 <td>
@@ -236,7 +302,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getType">
-        <div class="location">at line 77</div>
+        <div class="location">at line 75</div>
         <code>                    
     string
     <strong>getType</strong>()</code>
@@ -264,7 +330,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLabel">
-        <div class="location">at line 88</div>
+        <div class="location">at line 85</div>
         <code>                    
     string
     <strong>getLabel</strong>()</code>
@@ -292,7 +358,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getFormat">
-        <div class="location">at line 99</div>
+        <div class="location">at line 95</div>
         <code>                    
     <a href="../../../../Khill/Lavacharts/DataTables/Formats/Format.html"><abbr title="Khill\Lavacharts\DataTables\Formats\Format">Format</abbr></a>
     <strong>getFormat</strong>()</code>
@@ -321,7 +387,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_isFormatted">
-        <div class="location">at line 110</div>
+        <div class="location">at line 105</div>
         <code>                    
     boolean
     <strong>isFormatted</strong>()</code>
@@ -350,7 +416,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getRole">
-        <div class="location">at line 121</div>
+        <div class="location">at line 115</div>
         <code>                    
     string
     <strong>getRole</strong>()</code>
@@ -379,7 +445,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_jsonSerialize">
-        <div class="location">at line 132</div>
+        <div class="location">at line 125</div>
         <code>                    
     array
     <strong>jsonSerialize</strong>()</code>

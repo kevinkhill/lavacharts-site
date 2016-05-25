@@ -8,16 +8,21 @@
   <li>Define a javascript function within your page, before the any php render method. In the example below, the function is called "selectCallback"</li>
   <li>While configuring your chart in PHP, pass the event as an array key with the name of your javascript function as the value.</li>
 </ol>
-<p>Acceptable events include:</p>
-<ul>
-  <li>animationfinish</li>
-  <li>error</li>
-  <li>onmouseover</li>
-  <li>onmouseout</li>
-  <li>ready</li>
-  <li>select</li>
-  <li>statechange</li>
-</ul>
+
+<div class="row">
+    <div class="col-sm-2">
+        <p>Acceptable events include:</p>
+        <ul>
+            <li><code>animationfinish</code></li>
+            <li><code>error</code></li>
+            <li><code>onmouseover</code></li>
+            <li><code>onmouseout</code></li>
+            <li><code>ready</code></li>
+            <li><code>select</code></li>
+            <li><code>statechange</code></li>
+        </ul>
+    </div>
+    <div class="col-sm-10">
 {% highlight php startinline %}
 // Server side
 $lava->PieChart('MyChart', $data, [
@@ -30,9 +35,13 @@ $lava->PieChart('MyChart', $data, [
 {% highlight javascript startinline %}
 // In the view
 function selectCallback (event, chart) {
-  // Useful for using chart methods such as chart.getSelection();
-  console.log(chart.getSelection());
+    // Useful for using chart methods such as chart.getSelection();
+    console.log(chart.getSelection());
 }
 {% endhighlight %}
+    </div>
+</div>
+
 <div class="alert alert-danger">
 <strong>Note:</strong> When the chart is rendered, your function will be wrapped with lava.event() which will give your function access to the event and chart objects.</p>
+</div>

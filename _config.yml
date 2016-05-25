@@ -23,6 +23,7 @@ exclude:
  - javascript
  - resources
  - node_modules
+ - vendor
  - themes
  - CNAME
  - LICENSE
@@ -32,6 +33,7 @@ exclude:
  - '*.md'
  - '*.log'
  - '*.sublime-*'
+ - 'composer.*'
  - Gemfile*
  - scotch.box
  - Vagrantfile
@@ -49,11 +51,27 @@ markdown:    kramdown
 highlighter: pygments
 lsi:         false
 excerpt_separator: "\n\n"
-kramdown:
-  input: GFM
 
 # Serving
 detach:  false
 port:    4000
 host:    localhost
 baseurl: ""
+
+# Github Pages Config
+github: [metadata]
+kramdown:
+  input: GFM
+  hard_wrap: false
+gems:
+  - jekyll-coffeescript
+  - jekyll-gist
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-coffeescript
+  - jekyll-gist
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-redirect-from

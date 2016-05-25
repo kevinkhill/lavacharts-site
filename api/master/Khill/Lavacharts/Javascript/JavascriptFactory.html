@@ -100,25 +100,9 @@ javascript blocks for outputting into the page.</p>        </div>
 
             <table class="table table-condensed">
                     <tr>
-                <td>JS_OPEN</td>
+                <td>JS_DIR</td>
                 <td class="last">
-                    <p><em>Opening javascript tag.</em></p>
-                    <p>
-</p>
-                </td>
-            </tr>
-                    <tr>
-                <td>JS_CLOSE</td>
-                <td class="last">
-                    <p><em>Closing javascript tag.</em></p>
-                    <p>
-</p>
-                </td>
-            </tr>
-                    <tr>
-                <td>JSAPI</td>
-                <td class="last">
-                    <p><em>Script block for the Google's Chart API.</em></p>
+                    <p><em>Directory to javascript sources.</em></p>
                     <p>
 </p>
                 </td>
@@ -133,22 +117,12 @@ javascript blocks for outputting into the page.</p>        </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    boolean
+    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_coreJsRendered">coreJsRendered</a>()
-                                            <p>Returns true|false depending on if the jsapi &amp; lava.js core
-have been added to the output.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getCoreJs">getCoreJs</a>()
-                                            <p>Gets the Google chart api and lava.js core.</p>                </div>
+                    <a href="#method___construct">__construct</a>(
+    string $outputTemplate)
+                                            <p>Create a new JavascriptFactory based off of an output template.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -161,30 +135,6 @@ have been added to the output.</p>                </div>
                                             <p>Parses the javascript template and wraps the output in a script tag.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getChartJs">getChartJs</a>(
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Charts\Chart">Chart</abbr> $chart, 
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)
-                                            <p>Checks for an element id to output the chart into and builds the Javascript.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    string
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getDashboardJs">getDashboardJs</a>(
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr> $dashboard, 
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)
-                                            <p>Checks for an element id to output the chart into and builds the Javascript.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
             </div>
 
 
@@ -192,57 +142,29 @@ have been added to the output.</p>                </div>
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_coreJsRendered">
-        <div class="location">at line 91</div>
+                    <h3 id="method___construct">
+        <div class="location">at line 55</div>
         <code>                    
-    boolean
-    <strong>coreJsRendered</strong>()</code>
+    
+    <strong>__construct</strong>(
+    string $outputTemplate)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Returns true|false depending on if the jsapi &amp; lava.js core
-have been added to the output.</p>                                </div>
+                                    <p>Create a new JavascriptFactory based off of an output template.</p>                                </div>
                 <div class="tags">
-            
-                            <h4>Return Value</h4>
+                            <h4>Parameters</h4>
 
                     <table class="table table-condensed">
-        <tr>
-            <td>
-    boolean</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getCoreJs">
-        <div class="location">at line 102</div>
-        <code>                    
-    string
-    <strong>getCoreJs</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Gets the Google chart api and lava.js core.</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
+                    <tr>
+                <td>
     string</td>
-            <td>Javascript code blocks.</td>
-        </tr>
-    </table>
+                <td>$outputTemplate</td>
+                <td>Location of the js output template.</td>
+            </tr>
+            </table>
 
+            
             
             
                     </div>
@@ -251,7 +173,7 @@ have been added to the output.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_getJavascript">
-        <div class="location">at line 120</div>
+        <div class="location">at line 68</div>
         <code>                    
     string
     <strong>getJavascript</strong>()</code>
@@ -260,100 +182,6 @@ have been added to the output.</p>                                </div>
                     <div class="method-description">
                                     <p>Parses the javascript template and wraps the output in a script tag.</p>                                </div>
                 <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    string</td>
-            <td>Javascript code block.</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getChartJs">
-        <div class="location">at line 136</div>
-        <code>                    
-    string
-    <strong>getChartJs</strong>(
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Charts\Chart">Chart</abbr> $chart, 
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Checks for an element id to output the chart into and builds the Javascript.</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Charts\Chart">Chart</abbr></td>
-                <td>$chart</td>
-                <td>Chart to render.</td>
-            </tr>
-                    <tr>
-                <td>
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr></td>
-                <td>$elementId</td>
-                <td>HTML element id to output the chart into.</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    string</td>
-            <td>Javascript code block.</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getDashboardJs">
-        <div class="location">at line 151</div>
-        <code>                    
-    string
-    <strong>getDashboardJs</strong>(
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr> $dashboard, 
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Checks for an element id to output the chart into and builds the Javascript.</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr></td>
-                <td>$dashboard</td>
-                <td>Dashboard to render.</td>
-            </tr>
-                    <tr>
-                <td>
-    <abbr title="Khill\Lavacharts\Javascript\Khill\Lavacharts\Values\ElementId">ElementId</abbr></td>
-                <td>$elementId</td>
-                <td>HTML element id to output the dashboard into.</td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
