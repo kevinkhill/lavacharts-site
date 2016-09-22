@@ -5,7 +5,7 @@
 
 $lava->{{ type | capitalize }}Chart('Title', $DataTable, [
     'axisTitlesPosition' => 'string',
-    'barGroupWidth'      => int | 'string'  //As a percent, "33%"
+    'bar'                => [array],        //bar Options i.e 'groupWidth'=> '95%'
     'hAxis'              => [array],        //HorizontalAxis Options
     'isStacked'          => bool,
     'pointSize'          => int,
