@@ -19,6 +19,8 @@
   <li>statechange</li>
 </ul>
 {% highlight php startinline %}
+<?php
+
 // Server side
 $lava->PieChart('MyChart', $data, [
     'events' => [
@@ -28,6 +30,8 @@ $lava->PieChart('MyChart', $data, [
 {% endhighlight %}
 
 {% highlight javascript startinline %}
+<?php
+
 // In the view
 function selectCallback (event, chart) {
   // Useful for using chart methods such as chart.getSelection();

@@ -4,7 +4,7 @@ destination: ./_site
 # Template Vars
 composer_version:    3.0.*
 google_analytics_id: UA-43288838-2
-repository:          https://github.com/kevinkhill/lavacharts
+repository:          kevinkhill/lavacharts-site
 
 # Handling Reading
 safe:         true

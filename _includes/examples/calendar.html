@@ -1,6 +1,8 @@
 <h2>CalendarChart Example</h2>
 <h3>Controller</h3>
 {% highlight php startinline %}
+<?php
+
 use Khill\Lavacharts\Lavacharts;
 
 $lava = new Lavacharts; // See note below for Laravel
@@ -47,6 +49,8 @@ $lava->CalendarChart('Sales', $sales, [
   <div class="col-sm-6">
       <h4>Vanilla</h4>
 {% highlight php startinline %}
+<?php
+
 <div id="sales_div"></div>
 // With the lava object
 <?= $lava->render('CalendarChart', 'Sales', 'sales_div') ?>
@@ -55,6 +59,8 @@ $lava->CalendarChart('Sales', $sales, [
   <div class="col-sm-6">
     <h4>Laravel</h4>
 {% highlight php startinline %}
+<?php
+
 <div id="sales_div"></div>
 // With Lava class alias
 <?= Lava::render('CalendarChart', 'Sales', 'sales_div') ?>

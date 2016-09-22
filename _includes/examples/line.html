@@ -1,6 +1,8 @@
 <h2>LineChart Example</h2>
 <h3>Controller</h3>
 {% highlight php startinline %}
+<?php
+
 use Khill\Lavacharts\Lavacharts;
 
 $lava = new Lavacharts; // See note below for Laravel
@@ -42,6 +44,8 @@ $lava->LineChart('Temps', $temperatures, [
   <div class="col-sm-6">
     <h4>Vanilla</h4>
 {% highlight php startinline %}
+<?php
+
 <div id="temps_div"></div>
 // With the lava object
 <?= $lava->render('LineChart', 'Temps', 'temps_div') ?>
@@ -50,6 +54,8 @@ $lava->LineChart('Temps', $temperatures, [
   <div class="col-sm-6">
     <h4>Laravel</h4>
 {% highlight php startinline %}
+<?php
+
 <div id="temps_div"></div>
 // With Lava class alias
 <?= Lava::render('LineChart', 'Temps', 'temps_div') ?>

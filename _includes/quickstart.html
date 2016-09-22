@@ -1,5 +1,8 @@
 <h1 id="quickstart">Getting Started</h1>
 <p>Getting up and running with Lavacharts is a breeze and if you follow along, you will learn how Lavacharts works. If you want some real working <a href="#examples">examples</a> just jump down and take a look. Following these steps will show you how to create a DataTable, add columns and rows, add data, and finally render the chart into the page.</p>
+<div class="alert alert-info" role="alert">
+  <strong>Note:</strong> There only ever needs to be one instance of the Lavacharts object. All charts & dashboards are stored internally, so once the $lava object is created, it should be passed from controller to view for rendering. A common practice it to instantiate the Lavacharts object into a service container of sorts, and pull when needed. (This how Laravel works)
+</div>
 <br />
 
 <div id="quickstart-datatable" class="sub-section">
@@ -25,6 +28,8 @@
   </ul>
 
 {% highlight php startinline %}
+<?php
+
 $stocksTable = $lava->DataTable();  // Lava::DataTable() if using Laravel
 
 $stocksTable->addDateColumn('Day of Month')
@@ -53,6 +58,8 @@ for ($a = 1; $a < 30; $a++) {
     {% endfor %}
   </ul>
 {% highlight php startinline %}
+<?php
+
 $chart = $lava->LineChart('MyStocks', $stocksTable);
 // $chart = Lava::LineChart() if using Laravel
 {% endhighlight %}
@@ -71,6 +78,8 @@ $chart = $lava->LineChart('MyStocks', $stocksTable);
   <p>Syntax: <code>render(chartType, chartLabel, elementId)</code></p>
 
 {% highlight php startinline %}
+<?php
+
 // If this is the div you want your chart to appear in, then call:
 // <div id="stocks-chart"></div>
 echo $lava->render('LineChart', 'MyStocks', 'stocks-chart');

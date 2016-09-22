@@ -15,6 +15,8 @@
     <h2>Creation</h2>
     <p>Same as charts, dashboards need a label. Pass this as the only parameter to the constructor.</p>
 {% highlight php startinline %}
+<?php
+
 $dashboard = $lava->Dashboard('MyDash');
 {% endhighlight %}
     <p>The one method you will need from the Dashboard is <code>bind()</code> to attach a <code>ControlWrapper</code> to a <code>ChartWrapper</code> and add it to the dashboard.</p>
@@ -35,6 +37,8 @@ $dashboard = $lava->Dashboard('MyDash');
     <br />
     <p>For example:</p>
 {% highlight php startinline %}
+<?php
+
 $filter = $lava->NumberRangeFilter(1 [, arrayOfOptions ]);
 // OR
 $filter = $lava->NumberRangeFilter('ThisSpecificColumn' [, arrayOfOptions ]);
@@ -43,6 +47,8 @@ $filter = $lava->NumberRangeFilter('ThisSpecificColumn' [, arrayOfOptions ]);
     <div class="sub-section">
       <h3>Category</h3>
 {% highlight php startinline %}
+<?php
+
 $categoryFilter = $lava->CategoryFilter(int|'string', [
     'caption'              => 'string',
     'sortValues'           => bool,
@@ -55,6 +61,8 @@ $categoryFilter = $lava->CategoryFilter(int|'string', [
 
       <h3>ChartRange</h3>
 {% highlight php startinline %}
+<?php
+
 $chartRange = $lava->ChartRangeFilter(int|'string', [
     'chartType'    => 'string',
     'chartOptions' => //Not yet implemented,
@@ -66,6 +74,8 @@ $chartRange = $lava->ChartRangeFilter(int|'string', [
 
       <h3>DateRange</h3>
 {% highlight php startinline %}
+<?php
+
 $dateRange = $lava->DateRangeFilter(int|'string', [
     'minValue' => int|float,
     'maxValue' => int|float,
@@ -75,6 +85,8 @@ $dateRange = $lava->DateRangeFilter(int|'string', [
 
       <h3>NumberRange</h3>
 {% highlight php startinline %}
+<?php
+
 $numberRange = $lava->NumberRangeFilter(int|'string', [
     'minValue' => int|float,
     'maxValue' => int|float,
@@ -84,6 +96,8 @@ $numberRange = $lava->NumberRangeFilter(int|'string', [
 
       <h3>String</h3>
 {% highlight php startinline %}
+<?php
+
 $string = $lava->StringFilter(int|'string', [
     'matchType'         => 'string',
     'caseSensitive'     => bool,
@@ -124,6 +138,8 @@ $string = $lava->StringFilter(int|'string', [
   <p>Lastly, bind the control to the chart into the dashboard.</p>
   <p>It helps to remember the syntax that you bind a control to a chart, not a chart to a control.</p>
 {% highlight php startinline %}
+<?php
+
 $dashboard->bind($controlWrapper, $chartWrapper);
 {% endhighlight %}
   <div class="vspace"></div>
@@ -133,6 +149,8 @@ $dashboard->bind($controlWrapper, $chartWrapper);
   <p>The render method from the lava object will render dashboards too.</p>
   <p>Instead of a chart type, put <code>Dashboard</code> for the first parameter, then the dashboard label, and an element id.</p>
 {% highlight php startinline %}
+<?php
+
 $lava->render('Dashboard', 'MyDash', 'dash-elem');
 {% endhighlight %}
   <div class="alert alert-danger">

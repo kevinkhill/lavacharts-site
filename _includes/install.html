@@ -5,21 +5,21 @@
 
 
 <div id="install-composer" class="sub-section">
-  <h2>With Composer</h2>
+  <h2>Composer</h2>
   <p>First, copy this line into your project's composer.json file, in the <code>"require": {}</code> section</p>
 
-```
-  "khill/lavacharts" : "{{ site.composer_version }}"
-```
+  <div class="pre">
+    <span class="nt">"khill/lavacharts" : "{{ site.composer_version }}"</span>
+  </div>
   <br />
 
-  Next, run composer to download and install
-  {% highlight php startinline %}
-  composer update
-  {% endhighlight %}
+  <p>Next, run composer to download and install</p>
+{% highlight shell startinline %}
+$ composer update
+{% endhighlight %}
   <br />
 
-  <p>Finally, <code>require 'vendor/autoload.php';</code> in your project and you are good to go!</p>
+  <p>Finally, <code>require('vendor/autoload.php');</code> in your project and you are good to go!</p>
 </div>
 
 
@@ -29,18 +29,19 @@
 
   <p>Do not require the <code>vendor/autoload.php</code> file, since Laravel takes care of that.</p>
   <p>And also, register the service provider by adding this line to the providers array in <code>app/config/app.php</code></p>
-  {% highlight php startinline %}
-  "Khill\Lavacharts\Laravel\LavachartsServiceProvider"
-  {% endhighlight %}
+{% highlight php startinline %}
+"Khill\Lavacharts\Laravel\LavachartsServiceProvider"
+{% endhighlight %}
 
   <p>Don't worry about adding the class alias, it is loaded automatically.</p>
-
+  
+  <br/>
   <p class="lead">Remember, while using Laravel, replace <code>$lava-></code> with <code>Lava::</code></p>
 </div>
 
 
 <div id="install-manual" class="sub-section">
-  <h2>Manual (Without Composer)</h2>
+  <h2>Manual <small>(w/o Composer)</small></h2>
   <p>First, grab the most recent copy of the source from Github using this link:
     <a href="//github.com/kevinkhill/lavacharts/releases">
       <img src="//img.shields.io/github/release/kevinkhill/lavacharts.svg?style=plastic" />
@@ -50,6 +51,8 @@
   <p>Then, include Carbon and Lavacharts and create a new instance of the library.</p>
 
 {% highlight php startinline %}
+<?php
+
 include(/* path to unzipped carbon archive */     . '/src/Carbon/Carbon.php')
 include(/* path to unzipped lavacharts archive */ . '/src/Lavacharts.php');
 
