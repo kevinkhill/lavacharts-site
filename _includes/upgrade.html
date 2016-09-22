@@ -8,20 +8,24 @@
 
   <h3>2.5.x method</h3>
 {% highlight php startinline %}
-$data = Lava::DataTable();
+<?php
 
-Lava::LineChart('StockPrices')
-    ->setOptions(array(
-        'title'     => 'Github Stock Price',
-        'datatable' => $data
-    ));
+$data = $lava->DataTable();
+
+$lava->LineChart('StockPrices')
+     ->setOptions(array(
+         'title'     => 'Github Stock Price',
+         'datatable' => $data
+     ));
 {% endhighlight %}
 
     <h3>3.0.x method</h3>
 {% highlight php startinline %}
-$data = Lava::DataTable();
+<?php
 
-Lava::LineChart('StockPrices', $data, [
+$data = $lava->DataTable();
+
+$lava->LineChart('StockPrices', $data, [
     'title' => 'Github Stock Price'
 ]);
 {% endhighlight %}
@@ -33,15 +37,17 @@ Lava::LineChart('StockPrices', $data, [
 
   <h3>2.5.x method</h3>
 {% highlight php startinline %}
-$data = Lava::DataTable();
+<?php
 
-Lava::LineChart('StockPrices')->setOptions(array(
+$data = $lava->DataTable();
+
+$lava->LineChart('StockPrices')->setOptions(array(
     'datatable' => $data,
-    'titleTextStyle' => Lava::TextStyle(array(
+    'titleTextStyle' => $lava->TextStyle(array(
         'fontName'  => 'Arial',
         'fontColor' => 'blue'
     )),
-    'legend' => Lava::Legend(array(
+    'legend' => $lava->Legend(array(
         'position' => 'top'
     ))
 ));
@@ -49,9 +55,11 @@ Lava::LineChart('StockPrices')->setOptions(array(
 
     <h3>3.0.x method</h3>
 {% highlight php startinline %}
-$data = Lava::DataTable();
+<?php
 
-Lava::LineChart('StockPrices', $data, [
+$data = $lava->DataTable();
+
+$lava->LineChart('StockPrices', $data, [
     'titleTextStyle' => [
         'fontName' => 'Arial',
         'fontColor' => 'blue'
