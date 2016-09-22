@@ -30,7 +30,7 @@ $temperatures->addDateColumn('Date')
              ->addRow(['2014-10-17', 72, 66, 60])
              ->addRow(['2014-10-18', 63, 62, 62]);
 
-$lava->LineChart('Temps'), $temperatures, [
+$lava->LineChart('Temps', $temperatures, [
     'title' => 'Weather in October'
 ]);
 {% endhighlight %}
