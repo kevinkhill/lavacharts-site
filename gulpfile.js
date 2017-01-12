@@ -1,11 +1,13 @@
   var gulp = require('gulp'),
        del = require('del'),
       exec = require('child_process').exec,
+     spawn = require('child_process').spawn,
       sass = require('gulp-ruby-sass'),
     notify = require('gulp-notify'),
      shell = require('gulp-shell'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
+     gutil = require('gulp-util'),
      newer = require('gulp-newer'),
    plumber = require('gulp-plumber'),
   imagemin = require('gulp-imagemin'),
@@ -91,6 +93,26 @@ gulp.task('api', function() {
 
     return exec('./vendor/bin/sami.php update ./sami.cfg.php', function (err, stout, sterr) {
         console.log(stout);
+    });
+});
+
+gulp.task('serve', function (done) {
+    const jekyll = spawn('bundle', ['exec', 'jekyll', 'serve', '-w']);
+
+    jekyll.stdout.on('data', function (data) {
+        gutil.log(gutil.colors.green('[JEKYLL] ' + data));
+    });
+
+    jekyll.stderr.on('data', function (data) {
+        gutil.log(gutil.colors.red('[JEKYLL] ' + data));
+    });
+
+    jekyll.on('error', function (data) {
+        gutil.log(gutil.colors.red('[JEKYLL] ' + data));
+    });
+
+    jekyll.on('close', function() {
+        done();
     });
 });
 

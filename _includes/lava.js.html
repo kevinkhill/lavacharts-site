@@ -46,6 +46,8 @@ lava.loadData('myFancyChart', {dataTableJsonObject}, function (chart) {
     <br/>
     <h4>Server Side</h4>
 {% highlight php startinline %}
+<?php
+
 $temps = $lava->DataTable('America/Los_Angeles');
 
 $temps->addDateColumn('Date')

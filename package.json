@@ -10,9 +10,9 @@
     "graphs",
     "google"
   ],
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/kevinkhill/lavacharts-site.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinkhill/lavacharts-site.git"
   },
   "browser": {
     "jquery": "./node_modules/jquery/dist/jquery.js",
@@ -50,6 +50,7 @@
     "gulp-shell": "^0.4.3",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.4.1",
+    "gulp-util": "^3.0.8",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
