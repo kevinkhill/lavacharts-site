@@ -18,3 +18,42 @@ $data->addNumberColumn('Values')
 
 {% endhighlight %}
 </div>
+
+<div id="faq-png-output" class="sub-section">
+    <h2>Outputting charts as static PNGs</h2>
+    <p>This freature was commonly requested, and the javascript solution was a little convoluted, so now, it is a simple toggle.</p>
+    <p>It is as simple as adding <code>'png' => true</code> to the options of the chart.</p>
+
+    <h3>Example</h3>
+{% highlight php startinline %}
+$data = $lava->DataTable();
+
+/** Adding columns and rows */
+
+$lava->LineChart('StaticChart', $data, [
+    'png' => true
+], 'output-div');
+
+{% endhighlight %}
+</div>
+
+<div id="faq-material-charts" class="sub-section">
+    <h2>Outputting charts using Material styling</h2>
+    <p>It is as simple as adding <code>'material' => true</code> to the options of the chart.</p>
+
+    <h3>Example</h3>
+{% highlight php startinline %}
+$data = $lava->DataTable();
+
+/** Adding columns and rows */
+
+$lava->LineChart('StaticChart', $data, [
+    'material' => true
+], 'output-div');
+
+{% endhighlight %}
+
+    <div class="alert alert-danger">
+        <strong>Note:</strong> Only Line, Bar and Scatter charts are currently supported for Material design. Until Google updates their charts, I cannot force Material output.
+    </div>
+</div>
