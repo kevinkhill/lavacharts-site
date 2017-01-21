@@ -1,16 +1,22 @@
 <h1 id="charts">Charts</h1>
-<p class="lead">Select a chart from the dropdown or sidebar menu to see the different configuration methods / options available.</p>
-<p>Create a new chart by calling from the top level Lava object, <code>$lava-></code> if not using Laravel, or <code>Lava::</code> when using the alias via service provider.
-<p>All of the methods below are also available to all of the charts, as all charts extend the parent <code>Chart</code></p>
+<p>Create a new chart by calling from the top level Lava object, <code>$lava-></code> if not using Laravel, or <code>\Lava::</code> when using the facade from the service provider.
+<p>All of the methods below are also available to all of the charts, as all charts extend from the parent <code>Chart</code> class.</p>
 
 <div id="chart-parent" class="sub-section">
-   <h2>Parent Chart</h2>
-    {% include charts/parent-methods.html %}
-</div>
+    <h3>Supported Charts</h3>
+    <p>These are the currently supported charts. Follow the links to see a sample rendering.</p>
+    <ul>
+    {% for type in site.data.chartTypes %}
+        <li><a href="#example-{{ type }}">{{ type | capitalize }} Chart</a></li>
+    {% endfor %}
+    </ul>
 
-{% for type in site.data.chartTypes %}
-    <div id="chart-{{ type }}" class="sub-section">
-        <h3>{{ type | capitalize }}Chart</h3>
-        {% include charts/{{ type }}-docs.html param=type %}
-    </div>
-{% endfor %}
+    <h3>Methods</h3>
+    <p>These methods are available to all charts:</p>
+    <ul>
+        <li><code>setOptions()</code></li>
+        <li><code>getDataTableJson()</code></li>
+        <li><code>customize()</code> <small>The third constructor parameter is the same as this method.</small></li>
+    </ul>
+
+</div>
