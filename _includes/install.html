@@ -14,7 +14,7 @@
   <br />
 
   <p>Next, run composer to download and install</p>
-{% highlight shell startinline %}
+{% highlight shell %}
 $ composer update
 {% endhighlight %}
   <br />
@@ -25,36 +25,31 @@ $ composer update
 
 <div id="install-laravel" class="sub-section">
   <h2>Laravel</h2>
-  <p class="lead">If you are using Laravel...</p>
-
   <p>Do not require the <code>vendor/autoload.php</code> file, since Laravel takes care of that.</p>
   <p>And also, register the service provider by adding this line to the providers array in <code>app/config/app.php</code></p>
-{% highlight php startinline %}
+{% highlight php %}
 "Khill\Lavacharts\Laravel\LavachartsServiceProvider"
 {% endhighlight %}
 
   <p>Don't worry about adding the class alias, it is loaded automatically.</p>
-  
+
   <br/>
-  <p class="lead">Remember, while using Laravel, replace <code>$lava-></code> with <code>Lava::</code></p>
+  <p class="lead">Remember, while using Laravel, replace <code>$lava-></code> with <code>\Lava::</code></p>
 </div>
 
 
 <div id="install-manual" class="sub-section">
   <h2>Manual <small>(w/o Composer)</small></h2>
-  <p>First, grab the most recent copy of the source from Github using this link:
-    <a href="//github.com/kevinkhill/lavacharts/releases">
-      <img src="//img.shields.io/github/release/kevinkhill/lavacharts.svg?style=plastic" />
-    </a>
+  <p>First, download the most recent copy of the source <a href="https://github.com/kevinkhill/lavacharts/releases">from Github</a>
   </p>
-  <p>You will also need to get a copy of the <code><a href="https://github.com/briannesbitt/Carbon">Carbon Library</a></code> since it the DataTables depend on Carbon.</p>
+  <p>You will also need to get a copy of the <a href="https://github.com/briannesbitt/Carbon">Carbon Library</a> since it the DataTables depend on Carbon.</p>
   <p>Then, include Carbon and Lavacharts and create a new instance of the library.</p>
 
 {% highlight php startinline %}
 <?php
 
-include(/* path to unzipped carbon archive */     . '/src/Carbon/Carbon.php')
-include(/* path to unzipped lavacharts archive */ . '/src/Lavacharts.php');
+include(/* path to carbon source */     . '/src/Carbon/Carbon.php')
+include(/* path to lavacharts source */ . '/src/Lavacharts.php');
 
 $lava = new \Khill\Lavacharts\Lavacharts;
 {% endhighlight %}

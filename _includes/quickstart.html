@@ -52,16 +52,12 @@ for ($a = 1; $a < 30; $a++) {
   <h2>Chart</h2>
   <p class="lead">Creating and customizing your chart.</p>
   <p>Select which type of chart you will be creating. In this example, we will use LineChart, but Lavacharts currently supports:
-  <ul class="arrows">
-    {% for type in site.data.chartTypes %}
-      <li><a href="#chart-{{ type }}">{{ type | capitalize }}Charts</a></li>
-    {% endfor %}
-  </ul>
+  <p>{% for type in site.data.chartTypes %}{{ type | capitalize }}, {% endfor %}</p>
 {% highlight php startinline %}
 <?php
 
 $chart = $lava->LineChart('MyStocks', $stocksTable);
-// $chart = Lava::LineChart() if using Laravel
+// $chart = \Lava::LineChart() if using Laravel
 {% endhighlight %}
   <div class="alert alert-danger" role="alert">
     <strong>Heads up!</strong> Even though the chart's constructor returns a chart object, you do not need to pass the chart object into your views. The library stores created charts internally by type and label, so you do not need access to the chart object directly.
@@ -78,11 +74,11 @@ $chart = $lava->LineChart('MyStocks', $stocksTable);
   <p>Syntax: <code>render(chartType, chartLabel, elementId)</code></p>
 
 {% highlight php startinline %}
-<?php
-
-// If this is the div you want your chart to appear in, then call:
+// If this is the div you want your chart to appear in.
 // <div id="stocks-chart"></div>
-echo $lava->render('LineChart', 'MyStocks', 'stocks-chart');
+// then call:
+
+<?= $lava->render('LineChart', 'MyStocks', 'stocks-chart'); ?>
 {% endhighlight %}
   <div class="alert alert-danger" role="alert">
     <strong>Take note...</strong> The render method will output two script tags, not the actual chart. This means you don't need to put the render call near the div. The chart will be rendered into the div once the google jsapi has been loaded.

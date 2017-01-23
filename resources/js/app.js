@@ -12,4 +12,11 @@ jQuery(function ($) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
   });
+
+  $("ul.shields li a div").each(function (i, e) {
+    var img = new Image();
+
+    img.onload = function() { e.appendChild(img); };
+    img.src = "https://img.shields.io/" + $(e).data('src');
+  });
 });

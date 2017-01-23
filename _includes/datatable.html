@@ -7,11 +7,15 @@
 
   {% for type in site.data.columnTypes %}
     <div class="pre">
-      <span class="k">add{{ type }}Column</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> ]] )
+      <span class="k">add{{ type }}Column</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> [, <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span> ]]] )
       <span class="s1">returns</span> DataTable
     </div>
   {% endfor %}
-    <br />
+    <div class="pre">
+      <span class="k">addRoleColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span>, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> [, <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span> ] )
+      <span class="s1">returns</span> DataTable
+    </div>
+  <br />
 
   <p>If you want to explicitly add columns, then there are methods for you to do so. You can using strings, arrays, or multi-dimensional arrays.</p>
   <ul>
@@ -19,19 +23,26 @@
       <li><code>Description</code> The description of the column. (optional)</li>
       <li><code>Label</code> A label used to access specific columns. (optional)</li>
       <li><code>Format</code> The desired format for the column. (optional)</li>
+      <li><code>Options</code> The options to modify the column. (optional)</li>
   </ul>
+  <p>Explicit</p>
   <div class="pre">
-    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> ]]]] )
+    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> [, <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span> ]]]]] )
     <span class="s1">returns</span> DataTable
   </div>
+  <br />
+  <p>Explicit Array <small>Wrap all the method parameters from above into an array.</small></p>
   <div class="pre">
-    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> ]]]]) )
+    <span class="k">addColumn</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$type</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colDesc</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$colLabel</span> [, <a href="#format">Format</a> <span class="nv">$format</span> [, <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$role</span> [, <a href="http://php.net/manual/en/language.types.array.php">array</a> <span class="nv">$options</span> ]]]]]) )
     <span class="s1">returns</span> DataTable
   </div>
+  <br />
+  <p>Batch add explicit arrays</p>
   <div class="pre">
     <span class="k">addColumns</span>( <a href="http://php.net/manual/en/language.types.array.php">array</a>( <span class="c1">/* of column arrays, see above */</span> ) )
     <span class="s1">returns</span> DataTable
   </div>
+  <br />
   <br />
 
   <p>Other column related methods</p>
@@ -93,7 +104,7 @@
   <p>If using string dates, maybe to represent only years such as "2000" and they are not being interpreted correctly, then use this method to set the format string for the whole DataTable.</p>
   <p>Use a format string following the <a href="http://php.net/manual/en/datetime.createfromformat.php">DateTime format</a></p>
   <div class="pre">
-    <span class="k">setDateTimeFormat</span>( <a href="http://php.net/manual/en/language.types.string.php">string</a> <span class="nv">$dtf</span> )
+    <span class="k">setDateTimeFormat</span>( {% include params/string.html param="$dtf" %} )
     <span class="s1">returns</span> DataTable
   </div>
   <br />
@@ -104,5 +115,39 @@
     <span class="s1">returns</span> JSON Object
   </div>
 </div>
+
+  <h2 id="datatable-factory">Data Factory</h2>
+  <p>The DataFactory has a few useful methods, that enable the user to build a DataTables faster.</p>
+  <p>Read on to learn more and see examples.</p>
+
+  <div class="sub-section">
+    <h3>DataTable</h3>
+    <p>This method allows the user to build a DataTable in one pass, without the need of length chained methods.</p>
+    <div class="pre">
+      <span class="k">DataTable</span>( {% include params/array.html param="$columns" %}, {% include params/array.html param="$rows" %} [, {% include params/string.html param="$dtf" %} ]]) )
+      <span class="s1">returns</span> DataTable
+    </div>
+    <br />
+
+    <h3>Example</h3>
+{% highlight php %}
+<?php
+use \Khill\Lavacharts\DataTables\DataFactory;
+
+// Underneath the DataFactory, this is just a shortcut to calling
+// addColumns then addRows
+$data = DataFactory::DataTable([
+    ['string', 'name'],
+    ['number', 'donuts']
+],[
+    ['Jim', 4],
+    ['Tom', 3],
+    ['Mary', 2],
+    ['Gary', 3],
+    ['Larry', 1]
+]);
+{% endhighlight %}
+
+  <br />
 
 <div class="vspace"></div>
