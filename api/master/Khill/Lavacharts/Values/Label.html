@@ -106,15 +106,28 @@
     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($value)
-                                            <p class="no-description">No description</p>
-                                    </div>
+                    <a href="#method___construct">__construct</a>(
+    string $value)
+                                            <p>StringValue constructor.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    static&nbsp;
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isNonEmpty">isNonEmpty</a>(
+    string $value)
+                                            <p>Check a value if is string and not empty without creating
+an instance.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Values/StringValue.html#method_isNonEmpty"><abbr title="Khill\Lavacharts\Values\StringValue">StringValue</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     
-    
+    string
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method___toString">__toString</a>()
@@ -122,6 +135,18 @@
                                     </div>
                 <div class="col-md-2"><small>from&nbsp;
     <a href="../../../Khill/Lavacharts/Values/StringValue.html#method___toString"><abbr title="Khill\Lavacharts\Values\StringValue">StringValue</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_jsonSerialize">jsonSerialize</a>()
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/Values/StringValue.html#method_jsonSerialize"><abbr title="Khill\Lavacharts\Values\StringValue">StringValue</abbr></a></small></div>
             </div>
             </div>
 
@@ -131,18 +156,22 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 23</div>
+        <div class="location">at line 22</div>
         <code>                    
     
-    <strong>__construct</strong>($value)</code>
+    <strong>__construct</strong>(
+    string $value)</code>
     </h3>
     <div class="details">
+                    <div class="method-description">
+                                    <p>StringValue constructor.</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
+                <td>
+    string</td>
                 <td>$value</td>
                 <td>
 </td>
@@ -150,6 +179,60 @@
             </table>
 
             
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidStringValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidStringValue">InvalidStringValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isNonEmpty">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Values/StringValue.html#method_isNonEmpty"><abbr title="Khill\Lavacharts\Values\StringValue">StringValue</abbr></a> at line 49</div>
+        <code>        static            
+    bool
+    <strong>isNonEmpty</strong>(
+    string $value)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Check a value if is string and not empty without creating
+an instance.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$value</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -159,14 +242,53 @@
                     <div class="method-item">
                     <h3 id="method___toString">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Values/StringValue.html#method___toString"><abbr title="Khill\Lavacharts\Values\StringValue">StringValue</abbr></a> at line 33</div>
+    <a href="../../../Khill/Lavacharts/Values/StringValue.html#method___toString"><abbr title="Khill\Lavacharts\Values\StringValue">StringValue</abbr></a> at line 63</div>
         <code>                    
-    
+    string
     <strong>__toString</strong>()</code>
     </h3>
     <div class="details">
                 <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_jsonSerialize">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/Values/StringValue.html#method_jsonSerialize"><abbr title="Khill\Lavacharts\Values\StringValue">StringValue</abbr></a> at line 71</div>
+        <code>                    
+    string
+    <strong>jsonSerialize</strong>()</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>

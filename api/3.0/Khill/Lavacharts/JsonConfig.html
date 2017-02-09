@@ -26,8 +26,8 @@
                 <div id="control-panel">
                     <form action="#" method="GET">
                 <select id="version-switcher" name="version">
-                                            <option value="../../../master/index.html" selected>Master Branch</option>
-                                            <option value="../../../3.0/index.html">3.0 Branch</option>
+                                            <option value="../../../master/index.html">Master Branch</option>
+                                            <option value="../../../3.0/index.html" selected>3.0 Branch</option>
                                             <option value="../../../2.5/index.html">2.5 Branch</option>
                                     </select>
             </form>
@@ -88,7 +88,7 @@
 
     <p>    class
     <strong>JsonConfig</strong>        implements
-        <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/JsonConfig.php">View source</a>)
+        <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/3.0/src/JsonConfig.php">View source</a>)
 </p>
 
             <div class="description">
@@ -121,6 +121,19 @@
                     <a href="#method___get">__get</a>(
     string $option)
                                             <p>Get the value of a set option via magic method.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___call">__call</a>(
+    string $method, 
+    string $param)
+                                            <p>Coverall method for the use of chaining any option as a method
+instead of using the constructor.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
@@ -229,7 +242,7 @@ validity against if the option exists.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method___get">
-        <div class="location">at line 64</div>
+        <div class="location">at line 71</div>
         <code>                    
     mixed
     <strong>__get</strong>(
@@ -279,8 +292,57 @@ validity against if the option exists.</p>                </div>
 
             </div>
                     <div class="method-item">
+                    <h3 id="method___call">
+        <div class="location">at line 85</div>
+        <code>                    
+    <a href="../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a>
+    <strong>__call</strong>(
+    string $method, 
+    string $param)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Coverall method for the use of chaining any option as a method
+instead of using the constructor.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$method</td>
+                <td>Option to set</td>
+            </tr>
+                    <tr>
+                <td>
+    string</td>
+                <td>$param</td>
+                <td>Values for the option</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getOptions">
-        <div class="location">at line 75</div>
+        <div class="location">at line 96</div>
         <code>                    
     <a href="../../Khill/Lavacharts/Options.html"><abbr title="Khill\Lavacharts\Options">Options</abbr></a>
     <strong>getOptions</strong>()</code>
@@ -309,7 +371,7 @@ validity against if the option exists.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setOption">
-        <div class="location">at line 90</div>
+        <div class="location">at line 111</div>
         <code>                    
     <a href="../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a>
     <strong>setOption</strong>(
@@ -357,7 +419,7 @@ validity against if the option exists.</p>                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_setOptions">
-        <div class="location">at line 106</div>
+        <div class="location">at line 127</div>
         <code>                    
     
     <strong>setOptions</strong>(
@@ -404,7 +466,7 @@ validity against if the option exists.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_jsonSerialize">
-        <div class="location">at line 275</div>
+        <div class="location">at line 296</div>
         <code>                    
     array
     <strong>jsonSerialize</strong>()</code>

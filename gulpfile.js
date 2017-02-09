@@ -33,7 +33,7 @@ var config = (function() {
             images  : resources+'/images',
         }
     };
-})();
+}());
 
 //process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
 
@@ -49,7 +49,7 @@ gulp.task('css', function() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(rename({
-        extname: ".v3.min.css"
+        extname: ".min.css"
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.paths.dest+'/css'))
@@ -65,7 +65,7 @@ gulp.task('js', function() {
         //.pipe(uglify())
         //.pipe(sourcemaps.write())
         .pipe(rename({
-            extname: ".v3.min.js"
+            extname: ".min.js"
         }))
         .pipe(gulp.dest(config.paths.dest+'/js'))
         .pipe(livereload());
@@ -86,34 +86,6 @@ gulp.task('images', function() {
 gulp.task('fonts', function() {
     return gulp.src(config.paths.node+'/bootstrap-sass/assets/fonts/bootstrap/*')
                .pipe(gulp.dest(config.paths.dest+'/fonts'));
-});
-
-gulp.task('api', function() {
-    del(['./_site/api/**/*']);
-
-    return exec('./vendor/bin/sami.php update ./sami.cfg.php', function (err, stout, sterr) {
-        console.log(stout);
-    });
-});
-
-gulp.task('serve', function (done) {
-    const jekyll = spawn('bundle', ['exec', 'jekyll', 'serve', '-w']);
-
-    jekyll.stdout.on('data', function (data) {
-        gutil.log(gutil.colors.green('[JEKYLL] ' + data));
-    });
-
-    jekyll.stderr.on('data', function (data) {
-        gutil.log(gutil.colors.red('[JEKYLL] ' + data));
-    });
-
-    jekyll.on('error', function (data) {
-        gutil.log(gutil.colors.red('[JEKYLL] ' + data));
-    });
-
-    jekyll.on('close', function() {
-        done();
-    });
 });
 
 gulp.task('watch', ['default'], function() {

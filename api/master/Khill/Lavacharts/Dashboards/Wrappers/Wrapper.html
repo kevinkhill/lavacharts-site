@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Khill\Lavacharts\Dashboards\Wrappers\Wrapper | Lavacharts API</title>
+
+        <link rel="icon" href="../../../../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/lava.css">
+    <script src="../../../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/typeahead.min.js"></script>
+    <script src="../../../../sami.js"></script>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    
+    </head>
+
+    <body id="class" data-name="class:Khill_Lavacharts_Dashboards_Wrappers_Wrapper" data-root-path="../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                    <form action="#" method="GET">
+                <select id="version-switcher" name="version">
+                                            <option value="../../../../../master/index.html" selected>Master Branch</option>
+                                            <option value="../../../../../3.0/index.html">3.0 Branch</option>
+                                            <option value="../../../../../2.5/index.html">2.5 Branch</option>
+                                    </select>
+            </form>
+                <form id="search-form" action="../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../index.html">
+                    <img src="../../../../images/lava-logo.gif" />
+                                    </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../search.html">Search</a></li>
+                    <li><a href="/">Docs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                                                            <li><a href="../../../../Khill.html">Khill</a></li>
+                                        <li><a href="../../../../Khill/Lavacharts.html">Lavacharts</a></li>
+                                        <li><a href="../../../../Khill/Lavacharts/Dashboards.html">Dashboards</a></li>
+                                        <li><a href="../../../../Khill/Lavacharts/Dashboards/Wrappers.html">Wrappers</a></li>
+    
+                <li>Wrapper</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>Wrapper</h1>
+    </div>
+
+    <p>    class
+    <strong>Wrapper</strong>        implements
+        <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>, <a href="../../../../Khill/Lavacharts/Support/Contracts/JsonableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\JsonableInterface">JsonableInterface</abbr></a>, <a href="../../../../Khill/Lavacharts/Support/Contracts/JsClassInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\JsClassInterface">JsClassInterface</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/Dashboards/Wrappers/Wrapper.php">View source</a>)
+</p>
+
+            <div class="description">
+            <p>Class Wrapper</p>            <p>The control and chart wrappers extend this for common methods.</p>        </div>
+    
+            <h2>Traits</h2>
+
+        
+    <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../../../../Khill/Lavacharts/Support/Traits/ElementIdTrait.html"><abbr title="Khill\Lavacharts\Support\Traits\ElementIdTrait">Khill\Lavacharts\Support\Traits\ElementIdTrait</abbr></a>
+                                    </div>
+                <div class="col-md-6">
+                    Trait ElementIdTrait
+                </div>
+            </div>
+            </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setElementId">setElementId</a>(
+    string|<a href="../../../../Khill/Lavacharts/Values/ElementId.html"><abbr title="Khill\Lavacharts\Values\ElementId">ElementId</abbr></a> $elementId)
+                                            <p>Creates and/or sets the ElementId.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Traits/ElementIdTrait.html#method_setElementId"><abbr title="Khill\Lavacharts\Support\Traits\ElementIdTrait">ElementIdTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasElementId">hasElementId</a>()
+                                            <p>Check to see if the class has it's elementId set.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Traits/ElementIdTrait.html#method_hasElementId"><abbr title="Khill\Lavacharts\Support\Traits\ElementIdTrait">ElementIdTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../../Khill/Lavacharts/Values/ElementId.html"><abbr title="Khill\Lavacharts\Values\ElementId">ElementId</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getElementId">getElementId</a>()
+                                            <p>Returns the ElementId.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Traits/ElementIdTrait.html#method_getElementId"><abbr title="Khill\Lavacharts\Support\Traits\ElementIdTrait">ElementIdTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getElementIdStr">getElementIdStr</a>()
+                                            <p>Returns the ElementId as a string.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Traits/ElementIdTrait.html#method_getElementIdStr"><abbr title="Khill\Lavacharts\Support\Traits\ElementIdTrait">ElementIdTrait</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___construct">__construct</a>(
+    <abbr title="Khill\Lavacharts\Dashboards\Wrappers\Khill\Lavacharts\Support\Contracts\WrappableInterface">WrappableInterface</abbr> $itemToWrap, 
+    <abbr title="Khill\Lavacharts\Dashboards\Wrappers\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)
+                                            <p>Builds a new Wrapper object.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../../Khill/Lavacharts/Support/Contracts/WrappableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\WrappableInterface">WrappableInterface</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_unwrap">unwrap</a>()
+                                            <p>Unwraps and returns the wrapped object.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_jsonSerialize">jsonSerialize</a>()
+                                            <p>Custom serialization of the Wrapper.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_toJson">toJson</a>()
+                                            <p>Returns the JSON serialized version of the Wrapper.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getJsClass">getJsClass</a>()
+                                            <p>Returns a javascript string of the visualization class for the Wrapper.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getJsConstructor">getJsConstructor</a>()
+                                            <p>Returns a javascript string with the constructor for the Wrapper.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_setElementId">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Traits/ElementIdTrait.html#method_setElementId"><abbr title="Khill\Lavacharts\Support\Traits\ElementIdTrait">ElementIdTrait</abbr></a> at line 29</div>
+        <code>                    
+    
+    <strong>setElementId</strong>(
+    string|<a href="../../../../Khill/Lavacharts/Values/ElementId.html"><abbr title="Khill\Lavacharts\Values\ElementId">ElementId</abbr></a> $elementId)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Creates and/or sets the ElementId.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string|<a href="../../../../Khill/Lavacharts/Values/ElementId.html"><abbr title="Khill\Lavacharts\Values\ElementId">ElementId</abbr></a></td>
+                <td>$elementId</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidElementId.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidElementId">InvalidElementId</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasElementId">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Traits/ElementIdTrait.html#method_hasElementId"><abbr title="Khill\Lavacharts\Support\Traits\ElementIdTrait">ElementIdTrait</abbr></a> at line 44</div>
+        <code>                    
+    bool
+    <strong>hasElementId</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Check to see if the class has it's elementId set.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getElementId">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Traits/ElementIdTrait.html#method_getElementId"><abbr title="Khill\Lavacharts\Support\Traits\ElementIdTrait">ElementIdTrait</abbr></a> at line 54</div>
+        <code>                    
+    <a href="../../../../Khill/Lavacharts/Values/ElementId.html"><abbr title="Khill\Lavacharts\Values\ElementId">ElementId</abbr></a>
+    <strong>getElementId</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns the ElementId.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../../Khill/Lavacharts/Values/ElementId.html"><abbr title="Khill\Lavacharts\Values\ElementId">ElementId</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getElementIdStr">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Traits/ElementIdTrait.html#method_getElementIdStr"><abbr title="Khill\Lavacharts\Support\Traits\ElementIdTrait">ElementIdTrait</abbr></a> at line 64</div>
+        <code>                    
+    string
+    <strong>getElementIdStr</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns the ElementId as a string.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line 49</div>
+        <code>                    
+    
+    <strong>__construct</strong>(
+    <abbr title="Khill\Lavacharts\Dashboards\Wrappers\Khill\Lavacharts\Support\Contracts\WrappableInterface">WrappableInterface</abbr> $itemToWrap, 
+    <abbr title="Khill\Lavacharts\Dashboards\Wrappers\Khill\Lavacharts\Values\ElementId">ElementId</abbr> $elementId)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Builds a new Wrapper object.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Dashboards\Wrappers\Khill\Lavacharts\Support\Contracts\WrappableInterface">WrappableInterface</abbr></td>
+                <td>$itemToWrap</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\Dashboards\Wrappers\Khill\Lavacharts\Values\ElementId">ElementId</abbr></td>
+                <td>$elementId</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_unwrap">
+        <div class="location">at line 60</div>
+        <code>                    
+    <a href="../../../../Khill/Lavacharts/Support/Contracts/WrappableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\WrappableInterface">WrappableInterface</abbr></a>
+    <strong>unwrap</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Unwraps and returns the wrapped object.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../../Khill/Lavacharts/Support/Contracts/WrappableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\WrappableInterface">WrappableInterface</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_jsonSerialize">
+        <div class="location">at line 70</div>
+        <code>                    
+    array
+    <strong>jsonSerialize</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Custom serialization of the Wrapper.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_toJson">
+        <div class="location">at line 84</div>
+        <code>                    
+    string
+    <strong>toJson</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns the JSON serialized version of the Wrapper.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getJsClass">
+        <div class="location">at line 94</div>
+        <code>                    
+    string
+    <strong>getJsClass</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns a javascript string of the visualization class for the Wrapper.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getJsConstructor">
+        <div class="location">at line 104</div>
+        <code>                    
+    string
+    <strong>getJsConstructor</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns a javascript string with the constructor for the Wrapper.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

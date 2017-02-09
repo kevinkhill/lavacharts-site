@@ -91,7 +91,7 @@
 </p>
 
             <div class="description">
-            <p>Volcano Storage Class</p>            <p>Storage class that holds all defined charts and dashboards.</p>        </div>
+            <p>Class Volcano</p>            <p>Storage class that holds all defined charts and dashboards.</p>        </div>
     
     
     
@@ -102,52 +102,40 @@
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    boolean
+    <a href="../../Khill/Lavacharts/Support/Contracts/RenderableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_storeChart">storeChart</a>(
-    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Charts\Chart">Chart</abbr> $chart)
-                                            <p>Stores a chart in the volcano datastore.</p>                </div>
+                    <a href="#method_store">store</a>(
+    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr> $renderable)
+                                            <p>Stores a Chart or Dashboard in the Volcano.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    boolean
+    <a href="../../Khill/Lavacharts/Support/Contracts/RenderableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_storeDashboard">storeDashboard</a>(
-    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr> $dashboard)
-                                            <p>Stores a dashboard in the volcano datastore.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    <a href="../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getChart">getChart</a>(
+                    <a href="#method_get">get</a>(
     string $type, 
     <abbr title="Khill\Lavacharts\Khill\Lavacharts\Values\Label">Label</abbr> $label)
-                                            <p>Retrieves a chart from the volcano datastore.</p>                </div>
+                                            <p>Fetches an existing Chart or Dashboard from the volcano storage.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    <a href="../../Khill/Lavacharts/Dashboards/Dashboard.html"><abbr title="Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr></a>
+    <a href="../../Khill/Lavacharts/Support/Contracts/RenderableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></a>[]
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getDashboard">getDashboard</a>(
-    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Values\Label">Label</abbr> $label)
-                                            <p>Retrieves a dashboard from the volcano datastore.</p>                </div>
+                    <a href="#method_getAll">getAll</a>()
+                                            <p>Returns all stored charts and dashboards</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    boolean
+    bool
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_checkChart">checkChart</a>(
@@ -159,7 +147,7 @@
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    boolean
+    bool
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_checkDashboard">checkDashboard</a>(
@@ -174,25 +162,26 @@
 
             <div id="method-details">
                     <div class="method-item">
-                    <h3 id="method_storeChart">
-        <div class="location">at line 47</div>
+                    <h3 id="method_store">
+        <div class="location">at line 49</div>
         <code>                    
-    boolean
-    <strong>storeChart</strong>(
-    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Charts\Chart">Chart</abbr> $chart)</code>
+    <a href="../../Khill/Lavacharts/Support/Contracts/RenderableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></a>
+    <strong>store</strong>(
+    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr> $renderable)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Stores a chart in the volcano datastore.</p>                                </div>
+                                    <p>Stores a Chart or Dashboard in the Volcano.</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>
-    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Charts\Chart">Chart</abbr></td>
-                <td>$chart</td>
-                <td>Chart to store in the volcano.</td>
+    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></td>
+                <td>$renderable</td>
+                <td>
+</td>
             </tr>
             </table>
 
@@ -202,7 +191,7 @@
                     <table class="table table-condensed">
         <tr>
             <td>
-    boolean</td>
+    <a href="../../Khill/Lavacharts/Support/Contracts/RenderableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></a></td>
             <td>
 </td>
         </tr>
@@ -215,58 +204,17 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_storeDashboard">
-        <div class="location">at line 60</div>
+                    <h3 id="method_get">
+        <div class="location">at line 72</div>
         <code>                    
-    boolean
-    <strong>storeDashboard</strong>(
-    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr> $dashboard)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Stores a dashboard in the volcano datastore.</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>
-    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr></td>
-                <td>$dashboard</td>
-                <td>Dashboard to store in the volcano.</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    boolean</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getChart">
-        <div class="location">at line 75</div>
-        <code>                    
-    <a href="../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
-    <strong>getChart</strong>(
+    <a href="../../Khill/Lavacharts/Support/Contracts/RenderableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></a>
+    <strong>get</strong>(
     string $type, 
     <abbr title="Khill\Lavacharts\Khill\Lavacharts\Values\Label">Label</abbr> $label)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Retrieves a chart from the volcano datastore.</p>                                </div>
+                                    <p>Fetches an existing Chart or Dashboard from the volcano storage.</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -275,13 +223,13 @@
                 <td>
     string</td>
                 <td>$type</td>
-                <td>Type of chart to store.</td>
+                <td>Type of Chart or Dashboard.</td>
             </tr>
                     <tr>
                 <td>
     <abbr title="Khill\Lavacharts\Khill\Lavacharts\Values\Label">Label</abbr></td>
                 <td>$label</td>
-                <td>Identifying label for the chart.</td>
+                <td>Label of the Chart or Dashboard.</td>
             </tr>
             </table>
 
@@ -291,7 +239,7 @@
                     <table class="table table-condensed">
         <tr>
             <td>
-    <a href="../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a></td>
+    <a href="../../Khill/Lavacharts/Support/Contracts/RenderableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></a></td>
             <td>
 </td>
         </tr>
@@ -306,52 +254,6 @@
                 <td>
 </td>
             </tr>
-            </table>
-
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getDashboard">
-        <div class="location">at line 91</div>
-        <code>                    
-    <a href="../../Khill/Lavacharts/Dashboards/Dashboard.html"><abbr title="Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr></a>
-    <strong>getDashboard</strong>(
-    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Values\Label">Label</abbr> $label)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Retrieves a dashboard from the volcano datastore.</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>
-    <abbr title="Khill\Lavacharts\Khill\Lavacharts\Values\Label">Label</abbr></td>
-                <td>$label</td>
-                <td>Identifying label for the dashboard.</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    <a href="../../Khill/Lavacharts/Dashboards/Dashboard.html"><abbr title="Khill\Lavacharts\Dashboards\Dashboard">Dashboard</abbr></a></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
                     <tr>
                 <td><a href="../../Khill/Lavacharts/Exceptions/DashboardNotFound.html"><abbr title="Khill\Lavacharts\Exceptions\DashboardNotFound">DashboardNotFound</abbr></a></td>
                 <td>
@@ -365,10 +267,39 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_getAll">
+        <div class="location">at line 87</div>
+        <code>                    
+    <a href="../../Khill/Lavacharts/Support/Contracts/RenderableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></a>[]
+    <strong>getAll</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns all stored charts and dashboards</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../Khill/Lavacharts/Support/Contracts/RenderableInterface.html"><abbr title="Khill\Lavacharts\Support\Contracts\RenderableInterface">RenderableInterface</abbr></a>[]</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_checkChart">
         <div class="location">at line 107</div>
         <code>                    
-    boolean
+    bool
     <strong>checkChart</strong>(
     string $type, 
     <abbr title="Khill\Lavacharts\Khill\Lavacharts\Values\Label">Label</abbr> $label)</code>
@@ -400,7 +331,7 @@
                     <table class="table table-condensed">
         <tr>
             <td>
-    boolean</td>
+    bool</td>
             <td>
 </td>
         </tr>
@@ -416,7 +347,7 @@
                     <h3 id="method_checkDashboard">
         <div class="location">at line 126</div>
         <code>                    
-    boolean
+    bool
     <strong>checkDashboard</strong>(
     <abbr title="Khill\Lavacharts\Khill\Lavacharts\Values\Label">Label</abbr> $label)</code>
     </h3>
@@ -431,7 +362,7 @@
                 <td>
     <abbr title="Khill\Lavacharts\Khill\Lavacharts\Values\Label">Label</abbr></td>
                 <td>$label</td>
-                <td>Identifying label of a chart to check.</td>
+                <td>Identifying label of a dashboard to isNonEmpty.</td>
             </tr>
             </table>
 
@@ -441,7 +372,7 @@
                     <table class="table table-condensed">
         <tr>
             <td>
-    boolean</td>
+    bool</td>
             <td>
 </td>
         </tr>

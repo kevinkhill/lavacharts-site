@@ -6,6 +6,7 @@ node_modules/
 _site/
 .idea/
 
+
 .jekyll-metadata
 composer.phar
 *.sublime-*

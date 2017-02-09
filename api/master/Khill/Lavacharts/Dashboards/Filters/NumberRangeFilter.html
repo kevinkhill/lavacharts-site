@@ -93,12 +93,20 @@
 </p>
 
             <div class="description">
-            <p>Number Range Filter Class</p>                    </div>
+            <p>Class NumberRangeFilter</p>                    </div>
     
     
             <h2>Constants</h2>
 
             <table class="table table-condensed">
+                    <tr>
+                <td>WRAP_TYPE</td>
+                <td class="last">
+                    <p><em>Type of wrapped class</em></p>
+                    <p>
+</p>
+                </td>
+            </tr>
                     <tr>
                 <td>TYPE</td>
                 <td class="last">
@@ -121,46 +129,37 @@
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method___construct">__construct</a>(
-    array $columnLabelOrIndex, 
-    array $config = array())
-                                            <p>Creates the new Filter object to filter the given column label or index.</p>                </div>
-                <div class="col-md-2"></div>
+    string|int $cLabelOrIndex, 
+    array $options = array())
+                                            <p>Builds a new Filter Object.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method___construct"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    mixed
+    
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___get">__get</a>(
-    string $option)
-                                            <p>Get the value of a set option via magic method.</p>                </div>
+                    <a href="#method___call">__call</a>(
+    string $method, 
+    mixed $arg)
+                                            <p>Allow the setting of options via named option methods</p>                </div>
                 <div class="col-md-2"><small>from&nbsp;
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method___get"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></small></div>
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method___call"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    <a href="../../../../Khill/Lavacharts/Options.html"><abbr title="Khill\Lavacharts\Options">Options</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getOptions">getOptions</a>()
-                                            <p>Gets the Options object for the JsonConfig</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method_getOptions"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a>
+    
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setOption">setOption</a>(
     string $option, 
     mixed $value)
-                                            <p>Shortcut method to set the value of an option and return $this.</p>                </div>
+                                            <p>Sets the values of the customized class with an array of key value pairs.</p>                </div>
                 <div class="col-md-2"><small>from&nbsp;
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method_setOption"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></small></div>
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_setOption"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -169,11 +168,44 @@
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_setOptions">setOptions</a>(
-    array $config)
-                                            <p>Parses the config array by passing the values through each method to check
-validity against if the option exists.</p>                </div>
+    array $options)
+                                            <p>Sets the values of the customized class with an array of key value pairs.</p>                </div>
                 <div class="col-md-2"><small>from&nbsp;
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method_setOptions"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></small></div>
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_setOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_mergeOptions">mergeOptions</a>(
+    array $options)
+                                            <p>Merge a set of options with the existing options.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_mergeOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getOptions">getOptions</a>()
+                                            <p>Retrieves all of the set options</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_getOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasOptions">hasOptions</a>()
+                                            <p>Returns true / false depending if any options have been set.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_hasOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -182,9 +214,62 @@ validity against if the option exists.</p>                </div>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_jsonSerialize">jsonSerialize</a>()
-                                            <p>Custom serialization of the JsonConfig object.</p>                </div>
+                                            <p>Custom serialization of the Options object.</p>                </div>
                 <div class="col-md-2"><small>from&nbsp;
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method_jsonSerialize"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></small></div>
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_jsonSerialize"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetSet">offsetSet</a>(
+    mixed $offset, 
+    mixed $value)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetSet"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetExists">offsetExists</a>(
+    mixed $offset)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetExists"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetUnset">offsetUnset</a>(
+    mixed $offset)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetUnset"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    mixed|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetGet">offsetGet</a>(
+    mixed $offset)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetGet"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -200,60 +285,13 @@ validity against if the option exists.</p>                </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a>
+    string
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_filterColumnIndex">filterColumnIndex</a>(
-    integer $columnIndex)
-                                            <p>The column of the datatable the filter should operate upon.</p>                </div>
+                    <a href="#method_getWrapType">getWrapType</a>()
+                                            <p>Returns the Filter wrap type.</p>                </div>
                 <div class="col-md-2"><small>from&nbsp;
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_filterColumnIndex"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_filterColumnLabel">filterColumnLabel</a>(
-    string $columnLabel)
-                                            <p>The label of the column the filter should operate upon.</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_filterColumnLabel"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_ui">ui</a>(
-    array $uiConfig)
-                                            <p>Assigns custom attributes to the controls that the filter is attached to.</p>                </div>
-                <div class="col-md-2"><small>from&nbsp;
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_ui"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a></small></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    <abbr title="Khill\Lavacharts\Dashboards\Filters\NumberRange">NumberRange</abbr>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_minValue">minValue</a>(
-    int|float $minValue)
-                                            <p>Minimum allowed value for the range lower extent.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    <abbr title="Khill\Lavacharts\Dashboards\Filters\NumberRange">NumberRange</abbr>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_maxValue">maxValue</a>(
-    int|float $maxValue)
-                                            <p>Maximum allowed value for the range higher extent.</p>                </div>
-                <div class="col-md-2"></div>
+    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_getWrapType"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a></small></div>
             </div>
             </div>
 
@@ -263,31 +301,33 @@ validity against if the option exists.</p>                </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 48</div>
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method___construct"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a> at line 41</div>
         <code>                    
     
     <strong>__construct</strong>(
-    array $columnLabelOrIndex, 
-    array $config = array())</code>
+    string|int $cLabelOrIndex, 
+    array $options = array())</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Creates the new Filter object to filter the given column label or index.</p>                                </div>
+                                    <p>Builds a new Filter Object.</p>                    <p>Takes either a column label or a column index to filter. The options object will be
+created internally, so no need to set defaults. The child filter objects will set them.</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
                 <td>
-    array</td>
-                <td>$columnLabelOrIndex</td>
+    string|int</td>
+                <td>$cLabelOrIndex</td>
                 <td>
 </td>
             </tr>
                     <tr>
                 <td>
     array</td>
-                <td>$config</td>
+                <td>$options</td>
                 <td>
 </td>
             </tr>
@@ -299,12 +339,7 @@ validity against if the option exists.</p>                </div>
 
                     <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidConfigProperty.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigProperty">InvalidConfigProperty</abbr></a></td>
-                <td>
-</td>
-            </tr>
-                    <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
+                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidParamType.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidParamType">InvalidParamType</abbr></a></td>
                 <td>
 </td>
             </tr>
@@ -316,17 +351,19 @@ validity against if the option exists.</p>                </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method___get">
+                    <h3 id="method___call">
         <div class="location">in 
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method___get"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 64</div>
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method___call"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 48</div>
         <code>                    
-    mixed
-    <strong>__get</strong>(
-    string $option)</code>
+    
+    <strong>__call</strong>(
+    string $method, 
+    mixed $arg)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Get the value of a set option via magic method.</p>                                </div>
+                                    <p>Allow the setting of options via named option methods</p>                    <p>This is to prevent BC breaks from anyone using this style
+of setting options.</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -334,63 +371,18 @@ validity against if the option exists.</p>                </div>
                     <tr>
                 <td>
     string</td>
-                <td>$option</td>
-                <td>Name of option.</td>
+                <td>$method</td>
+                <td>Option to set.</td>
             </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    mixed</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
                     <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidConfigProperty.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigProperty">InvalidConfigProperty</abbr></a></td>
                 <td>
-</td>
+    mixed</td>
+                <td>$arg</td>
+                <td>Value for the option.</td>
             </tr>
             </table>
 
             
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getOptions">
-        <div class="location">in 
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method_getOptions"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 75</div>
-        <code>                    
-    <a href="../../../../Khill/Lavacharts/Options.html"><abbr title="Khill\Lavacharts\Options">Options</abbr></a>
-    <strong>getOptions</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Gets the Options object for the JsonConfig</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    <a href="../../../../Khill/Lavacharts/Options.html"><abbr title="Khill\Lavacharts\Options">Options</abbr></a></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
             
             
                     </div>
@@ -400,16 +392,16 @@ validity against if the option exists.</p>                </div>
                     <div class="method-item">
                     <h3 id="method_setOption">
         <div class="location">in 
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method_setOption"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 90</div>
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_setOption"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 63</div>
         <code>                    
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a>
+    
     <strong>setOption</strong>(
     string $option, 
     mixed $value)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Shortcut method to set the value of an option and return $this.</p>                    <p>In order to maintain backwards compatibility, ConfigObjects will be unwrapped.</p>            </div>
+                                    <p>Sets the values of the customized class with an array of key value pairs.</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -418,23 +410,108 @@ validity against if the option exists.</p>                </div>
                 <td>
     string</td>
                 <td>$option</td>
-                <td>Option to set.</td>
+                <td>
+</td>
             </tr>
                     <tr>
                 <td>
     mixed</td>
                 <td>$value</td>
-                <td>Value of the option.</td>
+                <td>
+</td>
             </tr>
             </table>
 
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setOptions">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_setOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 73</div>
+        <code>                    
+    
+    <strong>setOptions</strong>(
+    array $options)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Sets the values of the customized class with an array of key value pairs.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$options</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_mergeOptions">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_mergeOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 84</div>
+        <code>                    
+    
+    <strong>mergeOptions</strong>(
+    array $options)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Merge a set of options with the existing options.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$options</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getOptions">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_getOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 95</div>
+        <code>                    
+    array
+    <strong>getOptions</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Retrieves all of the set options</p>                                </div>
+                <div class="tags">
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
             <td>
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></td>
+    array</td>
             <td>
 </td>
         </tr>
@@ -447,48 +524,30 @@ validity against if the option exists.</p>                </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_setOptions">
+                    <h3 id="method_hasOptions">
         <div class="location">in 
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method_setOptions"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 106</div>
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_hasOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 106</div>
         <code>                    
-    
-    <strong>setOptions</strong>(
-    array $config)</code>
+    bool
+    <strong>hasOptions</strong>()</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Parses the config array by passing the values through each method to check
-validity against if the option exists.</p>                                </div>
+                                    <p>Returns true / false depending if any options have been set.</p>                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
+            
+                            <h4>Return Value</h4>
 
                     <table class="table table-condensed">
-                    <tr>
-                <td>
-    array</td>
-                <td>$config</td>
-                <td>
+        <tr>
+            <td>
+    bool</td>
+            <td>
 </td>
-            </tr>
-            </table>
+        </tr>
+    </table>
 
             
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
-                <td>
-</td>
-            </tr>
-                    <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidConfigProperty.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigProperty">InvalidConfigProperty</abbr></a></td>
-                <td>
-</td>
-            </tr>
-            </table>
-
             
                     </div>
     </div>
@@ -497,14 +556,14 @@ validity against if the option exists.</p>                                </div>
                     <div class="method-item">
                     <h3 id="method_jsonSerialize">
         <div class="location">in 
-    <a href="../../../../Khill/Lavacharts/JsonConfig.html#method_jsonSerialize"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 275</div>
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_jsonSerialize"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 116</div>
         <code>                    
     array
     <strong>jsonSerialize</strong>()</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Custom serialization of the JsonConfig object.</p>                                </div>
+                                    <p>Custom serialization of the Options object.</p>                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -513,6 +572,156 @@ validity against if the option exists.</p>                                </div>
         <tr>
             <td>
     array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetSet">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetSet"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 125</div>
+        <code>                    
+    
+    <strong>offsetSet</strong>(
+    mixed $offset, 
+    mixed $value)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$value</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetExists">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetExists"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 138</div>
+        <code>                    
+    bool
+    <strong>offsetExists</strong>(
+    mixed $offset)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetUnset">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetUnset"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 146</div>
+        <code>                    
+    
+    <strong>offsetUnset</strong>(
+    mixed $offset)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetGet">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetGet"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 155</div>
+        <code>                    
+    mixed|null
+    <strong>offsetGet</strong>(
+    mixed $offset)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    mixed|null</td>
             <td>
 </td>
         </tr>
@@ -527,7 +736,7 @@ validity against if the option exists.</p>                                </div>
                     <div class="method-item">
                     <h3 id="method_getType">
         <div class="location">in 
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_getType"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a> at line 82</div>
+    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_getType"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a> at line 63</div>
         <code>                    
     string
     <strong>getType</strong>()</code>
@@ -555,252 +764,30 @@ validity against if the option exists.</p>                                </div>
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_filterColumnIndex">
+                    <h3 id="method_getWrapType">
         <div class="location">in 
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_filterColumnIndex"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a> at line 97</div>
+    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_getWrapType"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a> at line 74</div>
         <code>                    
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a>
-    <strong>filterColumnIndex</strong>(
-    integer $columnIndex)</code>
+    string
+    <strong>getWrapType</strong>()</code>
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>The column of the datatable the filter should operate upon.</p>                    <p>It is mandatory to provide either this option or filterColumnLabel.
-If both present, this option takes precedence.</p>            </div>
+                                    <p>Returns the Filter wrap type.</p>                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>
-    integer</td>
-                <td>$columnIndex</td>
-                <td>Column index</td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
             <td>
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_filterColumnLabel">
-        <div class="location">in 
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_filterColumnLabel"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a> at line 111</div>
-        <code>                    
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a>
-    <strong>filterColumnLabel</strong>(
-    string $columnLabel)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>The label of the column the filter should operate upon.</p>                    <p>It is mandatory to provide either this option or filterColumnIndex.
-If both present, filterColumnIndex takes precedence.</p>            </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>
     string</td>
-                <td>$columnLabel</td>
-                <td>Column label</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a></td>
             <td>
 </td>
         </tr>
     </table>
 
             
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_ui">
-        <div class="location">in 
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html#method_ui"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a> at line 122</div>
-        <code>                    
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a>
-    <strong>ui</strong>(
-    array $uiConfig)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Assigns custom attributes to the controls that the filter is attached to.</p>                                </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>
-    array</td>
-                <td>$uiConfig</td>
-                <td>Array of options for configuring the UI</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    <a href="../../../../Khill/Lavacharts/Dashboards/Filters/Filter.html"><abbr title="Khill\Lavacharts\Dashboards\Filters\Filter">Filter</abbr></a></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_minValue">
-        <div class="location">at line 64</div>
-        <code>                    
-    <abbr title="Khill\Lavacharts\Dashboards\Filters\NumberRange">NumberRange</abbr>
-    <strong>minValue</strong>(
-    int|float $minValue)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Minimum allowed value for the range lower extent.</p>                    <p>If undefined, the value will be inferred from the contents of the DataTable managed by the control.</p>            </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>
-    int|float</td>
-                <td>$minValue</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    <abbr title="Khill\Lavacharts\Dashboards\Filters\NumberRange">NumberRange</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_maxValue">
-        <div class="location">at line 78</div>
-        <code>                    
-    <abbr title="Khill\Lavacharts\Dashboards\Filters\NumberRange">NumberRange</abbr>
-    <strong>maxValue</strong>(
-    int|float $maxValue)</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Maximum allowed value for the range higher extent.</p>                    <p>If undefined, the value will be inferred from the contents of the DataTable managed by the control.</p>            </div>
-                <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>
-    int|float</td>
-                <td>$maxValue</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    <abbr title="Khill\Lavacharts\Dashboards\Filters\NumberRange">NumberRange</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-                            <h4>Exceptions</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidConfigValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidConfigValue">InvalidConfigValue</abbr></a></td>
-                <td>
-</td>
-            </tr>
-            </table>
-
             
                     </div>
     </div>

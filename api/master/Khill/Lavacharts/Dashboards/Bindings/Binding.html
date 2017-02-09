@@ -107,7 +107,9 @@
     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($controlWrappers, $chartWrappers)
+                    <a href="#method___construct">__construct</a>(
+    array $controlWrappers, 
+    array $chartWrappers)
                                             <p>Assigns the wrappers and creates the new Binding.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
@@ -127,8 +129,30 @@
     array
                 </div>
                 <div class="col-md-8 type">
+                    <a href="#method_getChartWrap">getChartWrap</a>(
+    int $index)
+                                            <p>Get the a specific ChartWrap</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
                     <a href="#method_getControlWrappers">getControlWrappers</a>()
                                             <p>Get the ControlWrappers</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getControlWrap">getControlWrap</a>(
+    int $index)
+                                            <p>Get the a specific ControlWrap</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -139,10 +163,12 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 41</div>
+        <div class="location">at line 40</div>
         <code>                    
     
-    <strong>__construct</strong>($controlWrappers, $chartWrappers)</code>
+    <strong>__construct</strong>(
+    array $controlWrappers, 
+    array $chartWrappers)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -152,13 +178,15 @@
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
+                <td>
+    array</td>
                 <td>$controlWrappers</td>
                 <td>
 </td>
             </tr>
                     <tr>
-                <td></td>
+                <td>
+    array</td>
                 <td>$chartWrappers</td>
                 <td>
 </td>
@@ -174,7 +202,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getChartWrappers">
-        <div class="location">at line 52</div>
+        <div class="location">at line 51</div>
         <code>                    
     array
     <strong>getChartWrappers</strong>()</code>
@@ -202,8 +230,49 @@
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_getChartWrap">
+        <div class="location">at line 63</div>
+        <code>                    
+    array
+    <strong>getChartWrap</strong>(
+    int $index)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Get the a specific ChartWrap</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    int</td>
+                <td>$index</td>
+                <td>Which chart wrap to retrieve</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getControlWrappers">
-        <div class="location">at line 62</div>
+        <div class="location">at line 73</div>
         <code>                    
     array
     <strong>getControlWrappers</strong>()</code>
@@ -212,6 +281,47 @@
                     <div class="method-description">
                                     <p>Get the ControlWrappers</p>                                </div>
                 <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getControlWrap">
+        <div class="location">at line 85</div>
+        <code>                    
+    array
+    <strong>getControlWrap</strong>(
+    int $index)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Get the a specific ControlWrap</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    int</td>
+                <td>$index</td>
+                <td>Which control wrap to retrieve</td>
+            </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 

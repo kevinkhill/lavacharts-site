@@ -26,8 +26,8 @@
                 <div id="control-panel">
                     <form action="#" method="GET">
                 <select id="version-switcher" name="version">
-                                            <option value="../../../../master/index.html" selected>Master Branch</option>
-                                            <option value="../../../../3.0/index.html">3.0 Branch</option>
+                                            <option value="../../../../master/index.html">Master Branch</option>
+                                            <option value="../../../../3.0/index.html" selected>3.0 Branch</option>
                                             <option value="../../../../2.5/index.html">2.5 Branch</option>
                                     </select>
             </form>
@@ -88,7 +88,7 @@
     </div>
 
     <p>    class
-    <strong>PieChart</strong>        extends <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/Charts/PieChart.php">View source</a>)
+    <strong>PieChart</strong>        extends <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/3.0/src/Charts/PieChart.php">View source</a>)
 </p>
 
             <div class="description">
@@ -162,6 +162,20 @@ tooltips when hovering over slices.</p>        </div>
                                             <p>Get the value of a set option via magic method.</p>                </div>
                 <div class="col-md-2"><small>from&nbsp;
     <a href="../../../Khill/Lavacharts/JsonConfig.html#method___get"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    <a href="../../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___call">__call</a>(
+    string $method, 
+    string $param)
+                                            <p>Coverall method for the use of chaining any option as a method
+instead of using the constructor.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../Khill/Lavacharts/JsonConfig.html#method___call"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -653,7 +667,7 @@ sliceVisibilityThreshold.</p>                </div>
                     <div class="method-item">
                     <h3 id="method___get">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/JsonConfig.html#method___get"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 64</div>
+    <a href="../../../Khill/Lavacharts/JsonConfig.html#method___get"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 71</div>
         <code>                    
     mixed
     <strong>__get</strong>(
@@ -703,9 +717,59 @@ sliceVisibilityThreshold.</p>                </div>
 
             </div>
                     <div class="method-item">
+                    <h3 id="method___call">
+        <div class="location">in 
+    <a href="../../../Khill/Lavacharts/JsonConfig.html#method___call"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 85</div>
+        <code>                    
+    <a href="../../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a>
+    <strong>__call</strong>(
+    string $method, 
+    string $param)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Coverall method for the use of chaining any option as a method
+instead of using the constructor.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$method</td>
+                <td>Option to set</td>
+            </tr>
+                    <tr>
+                <td>
+    string</td>
+                <td>$param</td>
+                <td>Values for the option</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_getOptions">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/JsonConfig.html#method_getOptions"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 75</div>
+    <a href="../../../Khill/Lavacharts/JsonConfig.html#method_getOptions"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 96</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Options.html"><abbr title="Khill\Lavacharts\Options">Options</abbr></a>
     <strong>getOptions</strong>()</code>
@@ -735,7 +799,7 @@ sliceVisibilityThreshold.</p>                </div>
                     <div class="method-item">
                     <h3 id="method_setOption">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/JsonConfig.html#method_setOption"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 90</div>
+    <a href="../../../Khill/Lavacharts/JsonConfig.html#method_setOption"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 111</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/JsonConfig.html"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a>
     <strong>setOption</strong>(
@@ -784,7 +848,7 @@ sliceVisibilityThreshold.</p>                </div>
                     <div class="method-item">
                     <h3 id="method_setOptions">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/JsonConfig.html#method_setOptions"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 106</div>
+    <a href="../../../Khill/Lavacharts/JsonConfig.html#method_setOptions"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 127</div>
         <code>                    
     
     <strong>setOptions</strong>(
@@ -832,7 +896,7 @@ validity against if the option exists.</p>                                </div>
                     <div class="method-item">
                     <h3 id="method_jsonSerialize">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/JsonConfig.html#method_jsonSerialize"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 275</div>
+    <a href="../../../Khill/Lavacharts/JsonConfig.html#method_jsonSerialize"><abbr title="Khill\Lavacharts\JsonConfig">JsonConfig</abbr></a> at line 296</div>
         <code>                    
     array
     <strong>jsonSerialize</strong>()</code>
@@ -862,7 +926,7 @@ validity against if the option exists.</p>                                </div>
                     <div class="method-item">
                     <h3 id="method_getType">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getType"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 111</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getType"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 103</div>
         <code>                    
     string
     <strong>getType</strong>()</code>
@@ -892,7 +956,7 @@ validity against if the option exists.</p>                                </div>
                     <div class="method-item">
                     <h3 id="method_hasEvents">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_hasEvents"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 122</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_hasEvents"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 114</div>
         <code>                    
     bool
     <strong>hasEvents</strong>()</code>
@@ -922,7 +986,7 @@ validity against if the option exists.</p>                                </div>
                     <div class="method-item">
                     <h3 id="method_getEvents">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getEvents"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 133</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getEvents"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 125</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Configs/EventManager.html"><abbr title="Khill\Lavacharts\Configs\EventManager">EventManager</abbr></a>
     <strong>getEvents</strong>()</code>
@@ -952,7 +1016,7 @@ validity against if the option exists.</p>                                </div>
                     <div class="method-item">
                     <h3 id="method_getLabel">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getLabel"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 145</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getLabel"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 137</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Values/Label.html"><abbr title="Khill\Lavacharts\Values\Label">Label</abbr></a>
     <strong>getLabel</strong>()</code>
@@ -982,7 +1046,7 @@ validity against if the option exists.</p>                                </div>
                     <div class="method-item">
                     <h3 id="method_events">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_events"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 164</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_events"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 156</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>events</strong>(
@@ -1038,7 +1102,7 @@ javascript callback functions.</p>
                     <div class="method-item">
                     <h3 id="method_datatable">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_datatable"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 196</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_datatable"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 188</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>datatable</strong>(
@@ -1081,7 +1145,7 @@ javascript callback functions.</p>
                     <div class="method-item">
                     <h3 id="method_customize">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_customize"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 221</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_customize"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 213</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>customize</strong>(
@@ -1130,7 +1194,7 @@ arrays and they will be converted upon rendering.</p>            </div>
                     <div class="method-item">
                     <h3 id="method_getDataTable">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getDataTable"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 234</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getDataTable"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 226</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/DataTables/DataTable.html"><abbr title="Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></a>
     <strong>getDataTable</strong>()</code>
@@ -1170,7 +1234,7 @@ arrays and they will be converted upon rendering.</p>            </div>
                     <div class="method-item">
                     <h3 id="method_getDataTableJson">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getDataTableJson"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 251</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_getDataTableJson"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 243</div>
         <code>                    
     string
     <strong>getDataTableJson</strong>()</code>
@@ -1210,7 +1274,7 @@ arrays and they will be converted upon rendering.</p>            </div>
                     <div class="method-item">
                     <h3 id="method_render">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_render"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 271</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_render"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 263</div>
         <code>                    
     string
     <strong>render</strong>(
@@ -1262,7 +1326,7 @@ rendered into.</p>            </div>
                     <div class="method-item">
                     <h3 id="method_animation">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_animation"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 290</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_animation"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 282</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>animation</strong>(
@@ -1304,7 +1368,7 @@ rendered into.</p>            </div>
                     <div class="method-item">
                     <h3 id="method_backgroundColor">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_backgroundColor"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 304</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_backgroundColor"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 296</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>backgroundColor</strong>(
@@ -1346,7 +1410,7 @@ rendered into.</p>            </div>
                     <div class="method-item">
                     <h3 id="method_chartArea">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_chartArea"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 321</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_chartArea"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 313</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>chartArea</strong>(
@@ -1390,7 +1454,7 @@ A simple number is a value in pixels; a number followed by % is a percentage.</p
                     <div class="method-item">
                     <h3 id="method_colors">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_colors"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 338</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_colors"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 330</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>colors</strong>(
@@ -1444,7 +1508,7 @@ for example:['red','#004411']</p>            </div>
                     <div class="method-item">
                     <h3 id="method_fontSize">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_fontSize"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 362</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_fontSize"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 354</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>fontSize</strong>(
@@ -1497,7 +1561,7 @@ for example:['red','#004411']</p>            </div>
                     <div class="method-item">
                     <h3 id="method_fontName">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_fontName"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 378</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_fontName"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 370</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>fontName</strong>(
@@ -1550,7 +1614,7 @@ for example:['red','#004411']</p>            </div>
                     <div class="method-item">
                     <h3 id="method_height">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_height"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 392</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_height"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 384</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>height</strong>(
@@ -1603,7 +1667,7 @@ for example:['red','#004411']</p>            </div>
                     <div class="method-item">
                     <h3 id="method_legend">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_legend"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 408</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_legend"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 400</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>legend</strong>(
@@ -1655,7 +1719,7 @@ for example:['red','#004411']</p>            </div>
                     <div class="method-item">
                     <h3 id="method_title">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_title"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 422</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_title"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 414</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>title</strong>(
@@ -1708,7 +1772,7 @@ for example:['red','#004411']</p>            </div>
                     <div class="method-item">
                     <h3 id="method_titlePosition">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_titlePosition"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 441</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_titlePosition"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 433</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>titlePosition</strong>(
@@ -1764,7 +1828,7 @@ for example:['red','#004411']</p>            </div>
                     <div class="method-item">
                     <h3 id="method_titleTextStyle">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_titleTextStyle"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 461</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_titleTextStyle"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 453</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>titleTextStyle</strong>(
@@ -1817,7 +1881,7 @@ for example:['red','#004411']</p>            </div>
                     <div class="method-item">
                     <h3 id="method_tooltip">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_tooltip"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 474</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_tooltip"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 466</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>tooltip</strong>(
@@ -1869,7 +1933,7 @@ for example:['red','#004411']</p>            </div>
                     <div class="method-item">
                     <h3 id="method_width">
         <div class="location">in 
-    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_width"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 486</div>
+    <a href="../../../Khill/Lavacharts/Charts/Chart.html#method_width"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a> at line 478</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/Chart.html"><abbr title="Khill\Lavacharts\Charts\Chart">Chart</abbr></a>
     <strong>width</strong>(
@@ -1921,7 +1985,7 @@ for example:['red','#004411']</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_is3D">
-        <div class="location">at line 97</div>
+        <div class="location">at line 102</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>is3D</strong>(
@@ -1973,7 +2037,7 @@ for example:['red','#004411']</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_slices">
-        <div class="location">at line 118</div>
+        <div class="location">at line 123</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>slices</strong>(
@@ -2030,7 +2094,7 @@ keys of the array as (int)s.</p>            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_pieSliceBorderColor">
-        <div class="location">at line 145</div>
+        <div class="location">at line 150</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>pieSliceBorderColor</strong>(
@@ -2082,7 +2146,7 @@ two-dimensional; is3D == false || null</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_pieSliceText">
-        <div class="location">at line 163</div>
+        <div class="location">at line 168</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>pieSliceText</strong>(
@@ -2137,7 +2201,7 @@ two-dimensional; is3D == false || null</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_pieSliceTextStyle">
-        <div class="location">at line 183</div>
+        <div class="location">at line 188</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>pieSliceTextStyle</strong>(
@@ -2190,7 +2254,7 @@ object, set the values then pass it to this function or to the constructor.</p> 
             </div>
                     <div class="method-item">
                     <h3 id="method_pieStartAngle">
-        <div class="location">at line 196</div>
+        <div class="location">at line 201</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>pieStartAngle</strong>(
@@ -2242,7 +2306,7 @@ orient the leftmost edge of the first slice directly up.</p>                    
             </div>
                     <div class="method-item">
                     <h3 id="method_reverseCategories">
-        <div class="location">at line 209</div>
+        <div class="location">at line 214</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>reverseCategories</strong>(
@@ -2295,7 +2359,7 @@ draw clockwise.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_sliceVisibilityThreshold">
-        <div class="location">at line 224</div>
+        <div class="location">at line 229</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>sliceVisibilityThreshold</strong>(
@@ -2349,7 +2413,7 @@ to show individually any slice which is smaller than half a degree.</p>         
             </div>
                     <div class="method-item">
                     <h3 id="method_pieResidueSliceColor">
-        <div class="location">at line 237</div>
+        <div class="location">at line 242</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>pieResidueSliceColor</strong>(
@@ -2402,7 +2466,7 @@ sliceVisibilityThreshold.</p>                                </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_pieResidueSliceLabel">
-        <div class="location">at line 250</div>
+        <div class="location">at line 255</div>
         <code>                    
     <a href="../../../Khill/Lavacharts/Charts/PieChart.html"><abbr title="Khill\Lavacharts\Charts\PieChart">PieChart</abbr></a>
     <strong>pieResidueSliceLabel</strong>(

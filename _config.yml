@@ -28,14 +28,14 @@ exclude:
  - LICENSE
  - sami.cfg.php
  - gulpfile.js
+ - composer.*
+ - Gemfile*
  - '*.json'
  - '*.md'
  - '*.log'
- - '*.sublime-*'
- - Gemfile*
- - scotch.box
- - Vagrantfile
 ignore_paths:
+ - .idea
+ - vendor
  - node_modules
 
 # Filtering Content

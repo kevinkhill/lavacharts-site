@@ -102,30 +102,12 @@ the type of column to create, all others are optional.</p>        </div>
 
             <table class="table table-condensed">
                     <tr>
-                <td class="type" id="property_TYPES">
+                <td class="type" id="property_types">
                     static                                                            
     array
                 </td>
-                <td>$TYPES</td>
+                <td>$types</td>
                 <td class="last">Valid column types</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type" id="property_ROLES">
-                    static                                                            
-    array
-                </td>
-                <td>$ROLES</td>
-                <td class="last">Valid column roles</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type" id="property_desc">
-                    static                                                            
-    array
-                </td>
-                <td>$desc</td>
-                <td class="last">Valid column descriptions</td>
                 <td></td>
             </tr>
             </table>
@@ -136,7 +118,7 @@ the type of column to create, all others are optional.</p>        </div>
             <div class="container-fluid underlined">
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
     <a href="../../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>
                 </div>
                 <div class="col-md-8 type">
@@ -144,20 +126,32 @@ the type of column to create, all others are optional.</p>        </div>
     string $type, 
     string $label = &#039;&#039;, 
     <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr> $format = null, 
-    string $role = &#039;&#039;)
+    string $role = &#039;&#039;, 
+    array $options = array())
                                             <p>Creates a new column object.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    static&nbsp;
+                    
     <a href="../../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_applyFormat">applyFormat</a>(
     <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Columns\Column">Column</abbr> $column, 
-    <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr> $format)
+    <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr> $format = null)
                                             <p>Creates a new Column with the same values, while applying the Format.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isValidType">isValidType</a>(
+    string $type)
+                                            <p>Checks if a given type is a valid column type</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -168,14 +162,15 @@ the type of column to create, all others are optional.</p>        </div>
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method_create">
-        <div class="location">at line 84</div>
-        <code>        static            
+        <div class="location">at line 56</div>
+        <code>                    
     <a href="../../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>
     <strong>create</strong>(
     string $type, 
     string $label = &#039;&#039;, 
     <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr> $format = null, 
-    string $role = &#039;&#039;)</code>
+    string $role = &#039;&#039;, 
+    array $options = array())</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -208,6 +203,12 @@ the type of column to create, all others are optional.</p>        </div>
                 <td>$role</td>
                 <td>A role for the column to play.</td>
             </tr>
+                    <tr>
+                <td>
+    array</td>
+                <td>$options</td>
+                <td>Column options.</td>
+            </tr>
             </table>
 
             
@@ -231,11 +232,6 @@ the type of column to create, all others are optional.</p>        </div>
                 <td>
 </td>
             </tr>
-                    <tr>
-                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidColumnType.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidColumnType">InvalidColumnType</abbr></a></td>
-                <td>
-</td>
-            </tr>
             </table>
 
             
@@ -245,12 +241,12 @@ the type of column to create, all others are optional.</p>        </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_applyFormat">
-        <div class="location">at line 122</div>
-        <code>        static            
+        <div class="location">at line 82</div>
+        <code>                    
     <a href="../../../../Khill/Lavacharts/DataTables/Columns/Column.html"><abbr title="Khill\Lavacharts\DataTables\Columns\Column">Column</abbr></a>
     <strong>applyFormat</strong>(
     <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Columns\Column">Column</abbr> $column, 
-    <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr> $format)</code>
+    <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr> $format = null)</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -288,6 +284,47 @@ the type of column to create, all others are optional.</p>        </div>
     </table>
 
             
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isValidType">
+        <div class="location">at line 98</div>
+        <code>        static            
+    
+    <strong>isValidType</strong>(
+    string $type)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Checks if a given type is a valid column type</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$type</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidColumnType.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidColumnType">InvalidColumnType</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
             
                     </div>
     </div>

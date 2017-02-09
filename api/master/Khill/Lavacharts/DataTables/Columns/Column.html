@@ -89,8 +89,7 @@
     </div>
 
     <p>    class
-    <strong>Column</strong>        implements
-        <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/DataTables/Columns/Column.php">View source</a>)
+    <strong>Column</strong>        extends <a href="../../../../Khill/Lavacharts/Support/Customizable.html"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/DataTables/Columns/Column.php">View source</a>)
 </p>
 
             <div class="description">
@@ -112,9 +111,145 @@
     string $type, 
     string $label = &#039;&#039;, 
     <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr> $format = null, 
-    string $role = &#039;&#039;)
+    <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\Values\Role">Role</abbr> $role = null, 
+    array $options = array())
                                             <p>Creates a new Column with the defined label.</p>                </div>
                 <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___call">__call</a>(
+    string $method, 
+    mixed $arg)
+                                            <p>Allow the setting of options via named option methods</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method___call"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setOption">setOption</a>(
+    string $option, 
+    mixed $value)
+                                            <p>Sets the values of the customized class with an array of key value pairs.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_setOption"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setOptions">setOptions</a>(
+    array $options)
+                                            <p>Sets the values of the customized class with an array of key value pairs.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_setOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_mergeOptions">mergeOptions</a>(
+    array $options)
+                                            <p>Merge a set of options with the existing options.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_mergeOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getOptions">getOptions</a>()
+                                            <p>Retrieves all of the set options</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_getOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_hasOptions">hasOptions</a>()
+                                            <p>Returns true / false depending if any options have been set.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_hasOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_jsonSerialize">jsonSerialize</a>()
+                                            <p>Custom json serialization of the column.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetSet">offsetSet</a>(
+    mixed $offset, 
+    mixed $value)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetSet"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetExists">offsetExists</a>(
+    mixed $offset)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetExists"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetUnset">offsetUnset</a>(
+    mixed $offset)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetUnset"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    mixed|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetGet">offsetGet</a>(
+    mixed $offset)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetGet"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a></small></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
@@ -166,16 +301,6 @@
                                             <p>Returns the column role.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    
-    array
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_jsonSerialize">jsonSerialize</a>()
-                                            <p>Custom json serialization of the column.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
             </div>
 
 
@@ -184,14 +309,15 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 63</div>
+        <div class="location">at line 62</div>
         <code>                    
     
     <strong>__construct</strong>(
     string $type, 
     string $label = &#039;&#039;, 
     <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr> $format = null, 
-    string $role = &#039;&#039;)</code>
+    <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\Values\Role">Role</abbr> $role = null, 
+    array $options = array())</code>
     </h3>
     <div class="details">
                     <div class="method-description">
@@ -204,7 +330,7 @@
                 <td>
     string</td>
                 <td>$type</td>
-                <td>Type of Column</td>
+                <td>Column type.</td>
             </tr>
                     <tr>
                 <td>
@@ -216,18 +342,406 @@
                 <td>
     <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\DataTables\Formats\Format">Format</abbr></td>
                 <td>$format</td>
+                <td>Column format(optional).</td>
+            </tr>
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\DataTables\Columns\Khill\Lavacharts\Values\Role">Role</abbr></td>
+                <td>$role</td>
+                <td>Column role (optional).</td>
+            </tr>
+                    <tr>
+                <td>
+    array</td>
+                <td>$options</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method___call">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method___call"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 48</div>
+        <code>                    
+    
+    <strong>__call</strong>(
+    string $method, 
+    mixed $arg)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Allow the setting of options via named option methods</p>                    <p>This is to prevent BC breaks from anyone using this style
+of setting options.</p>            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$method</td>
+                <td>Option to set.</td>
+            </tr>
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$arg</td>
+                <td>Value for the option.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setOption">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_setOption"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 63</div>
+        <code>                    
+    
+    <strong>setOption</strong>(
+    string $option, 
+    mixed $value)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Sets the values of the customized class with an array of key value pairs.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$option</td>
                 <td>
 </td>
             </tr>
                     <tr>
                 <td>
-    string</td>
-                <td>$role</td>
-                <td>Column role (optional).</td>
+    mixed</td>
+                <td>$value</td>
+                <td>
+</td>
             </tr>
             </table>
 
             
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setOptions">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_setOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 73</div>
+        <code>                    
+    
+    <strong>setOptions</strong>(
+    array $options)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Sets the values of the customized class with an array of key value pairs.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$options</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_mergeOptions">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_mergeOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 84</div>
+        <code>                    
+    
+    <strong>mergeOptions</strong>(
+    array $options)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Merge a set of options with the existing options.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    array</td>
+                <td>$options</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getOptions">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_getOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 95</div>
+        <code>                    
+    array
+    <strong>getOptions</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Retrieves all of the set options</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_hasOptions">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_hasOptions"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 106</div>
+        <code>                    
+    bool
+    <strong>hasOptions</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Returns true / false depending if any options have been set.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_jsonSerialize">
+        <div class="location">at line 127</div>
+        <code>                    
+    array
+    <strong>jsonSerialize</strong>()</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Custom json serialization of the column.</p>                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetSet">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetSet"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 125</div>
+        <code>                    
+    
+    <strong>offsetSet</strong>(
+    mixed $offset, 
+    mixed $value)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$value</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetExists">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetExists"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 138</div>
+        <code>                    
+    bool
+    <strong>offsetExists</strong>(
+    mixed $offset)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetUnset">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetUnset"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 146</div>
+        <code>                    
+    
+    <strong>offsetUnset</strong>(
+    mixed $offset)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetGet">
+        <div class="location">in 
+    <a href="../../../../Khill/Lavacharts/Support/Customizable.html#method_offsetGet"><abbr title="Khill\Lavacharts\Support\Customizable">Customizable</abbr></a> at line 155</div>
+        <code>                    
+    mixed|null
+    <strong>offsetGet</strong>(
+    mixed $offset)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    mixed|null</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -264,7 +778,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLabel">
-        <div class="location">at line 88</div>
+        <div class="location">at line 87</div>
         <code>                    
     string
     <strong>getLabel</strong>()</code>
@@ -292,7 +806,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getFormat">
-        <div class="location">at line 99</div>
+        <div class="location">at line 97</div>
         <code>                    
     <a href="../../../../Khill/Lavacharts/DataTables/Formats/Format.html"><abbr title="Khill\Lavacharts\DataTables\Formats\Format">Format</abbr></a>
     <strong>getFormat</strong>()</code>
@@ -321,7 +835,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_isFormatted">
-        <div class="location">at line 110</div>
+        <div class="location">at line 107</div>
         <code>                    
     boolean
     <strong>isFormatted</strong>()</code>
@@ -350,7 +864,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getRole">
-        <div class="location">at line 121</div>
+        <div class="location">at line 117</div>
         <code>                    
     string
     <strong>getRole</strong>()</code>
@@ -366,35 +880,6 @@
         <tr>
             <td>
     string</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_jsonSerialize">
-        <div class="location">at line 132</div>
-        <code>                    
-    array
-    <strong>jsonSerialize</strong>()</code>
-    </h3>
-    <div class="details">
-                    <div class="method-description">
-                                    <p>Custom json serialization of the column.</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td>
-    array</td>
             <td>
 </td>
         </tr>

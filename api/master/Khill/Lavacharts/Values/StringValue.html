@@ -88,11 +88,12 @@
     </div>
 
     <p>    class
-    <strong>StringValue</strong>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/Values/StringValue.php">View source</a>)
+    <strong>StringValue</strong>        implements
+        <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/Values/StringValue.php">View source</a>)
 </p>
 
             <div class="description">
-            <p>StringValue Object</p>            <p>Creates a new String value object while checking if it is a non empty and actually a string.</p>        </div>
+            <p>Class StringValue</p>            <p>Creates a new String value object while checking if it is non empty and actually a string.</p>        </div>
     
     
     
@@ -106,7 +107,30 @@
     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($value)
+                    <a href="#method___construct">__construct</a>(
+    string $value)
+                                            <p>StringValue constructor.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isNonEmpty">isNonEmpty</a>(
+    string $value)
+                                            <p>Check a value if is string and not empty without creating
+an instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method___toString">__toString</a>()
                                             <p class="no-description">No description</p>
                                     </div>
                 <div class="col-md-2"></div>
@@ -114,10 +138,10 @@
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    
+    string
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___toString">__toString</a>()
+                    <a href="#method_jsonSerialize">jsonSerialize</a>()
                                             <p class="no-description">No description</p>
                                     </div>
                 <div class="col-md-2"></div>
@@ -130,18 +154,22 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 24</div>
+        <div class="location">at line 33</div>
         <code>                    
     
-    <strong>__construct</strong>($value)</code>
+    <strong>__construct</strong>(
+    string $value)</code>
     </h3>
     <div class="details">
+                    <div class="method-description">
+                                    <p>StringValue constructor.</p>                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
                     <table class="table table-condensed">
                     <tr>
-                <td></td>
+                <td>
+    string</td>
                 <td>$value</td>
                 <td>
 </td>
@@ -150,6 +178,59 @@
 
             
             
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Khill/Lavacharts/Exceptions/InvalidStringValue.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidStringValue">InvalidStringValue</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isNonEmpty">
+        <div class="location">at line 49</div>
+        <code>        static            
+    bool
+    <strong>isNonEmpty</strong>(
+    string $value)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Check a value if is string and not empty without creating
+an instance.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    string</td>
+                <td>$value</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
             
                     </div>
     </div>
@@ -157,14 +238,52 @@
             </div>
                     <div class="method-item">
                     <h3 id="method___toString">
-        <div class="location">at line 33</div>
+        <div class="location">at line 63</div>
         <code>                    
-    
+    string
     <strong>__toString</strong>()</code>
     </h3>
     <div class="details">
                 <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_jsonSerialize">
+        <div class="location">at line 71</div>
+        <code>                    
+    string
+    <strong>jsonSerialize</strong>()</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>

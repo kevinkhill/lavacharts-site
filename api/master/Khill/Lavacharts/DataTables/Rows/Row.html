@@ -90,7 +90,7 @@
 
     <p>    class
     <strong>Row</strong>        implements
-        <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/DataTables/Rows/Row.php">View source</a>)
+        <a target="_blank" href="http://php.net/ArrayAccess"><abbr title="ArrayAccess">ArrayAccess</abbr></a>, <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>        (<a href="https://github.com/kevinkhill/lavacharts/blob/master/src/DataTables/Rows/Row.php">View source</a>)
 </p>
 
             <div class="description">
@@ -110,16 +110,28 @@
                 <div class="col-md-8 type">
                     <a href="#method___construct">__construct</a>(
     array $valueArray)
-                                            <p>Creates a new Row object with the given values.</p>                </div>
+                                            <p>Creates a new Row object with the given values from an array.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+    <a href="../../../../Khill/Lavacharts/DataTables/Rows/Row.html"><abbr title="Khill\Lavacharts\DataTables\Rows\Row">Row</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_create">create</a>(
+    <abbr title="Khill\Lavacharts\DataTables\Rows\Khill\Lavacharts\DataTables\DataTable">DataTable</abbr> $datatable, 
+    array $valueArray)
+                                            <p>Creates a new Row object from an array of values.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
                     
-    mixed
+    <a href="../../../../Khill/Lavacharts/DataTables/Cells/Cell.html"><abbr title="Khill\Lavacharts\DataTables\Cells\Cell">Cell</abbr></a>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getColumnValue">getColumnValue</a>(
+                    <a href="#method_getCell">getCell</a>(
     int $columnIndex)
                                             <p>Returns a column value from the Row.</p>                </div>
                 <div class="col-md-2"></div>
@@ -134,6 +146,55 @@
                                             <p>Custom json serialization of the row.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetSet">offsetSet</a>(
+    mixed $offset, 
+    mixed $value)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetExists">offsetExists</a>(
+    mixed $offset)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetUnset">offsetUnset</a>(
+    mixed $offset)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+    mixed|null
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_offsetGet">offsetGet</a>(
+    mixed $offset)
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
             </div>
 
 
@@ -142,7 +203,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line 38</div>
+        <div class="location">at line 50</div>
         <code>                    
     
     <strong>__construct</strong>(
@@ -150,7 +211,11 @@
     </h3>
     <div class="details">
                     <div class="method-description">
-                                    <p>Creates a new Row object with the given values.</p>                                </div>
+                                    <p>Creates a new Row object with the given values from an array.</p>                    <p>While iterating through the array, if the value is a...
+ - Carbon instance, create a DateCell
+ - null value, create a NullCell
+ - primitive value, create a Cell
+ - Cell, pass it through</p>            </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -171,11 +236,80 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getColumnValue">
-        <div class="location">at line 57</div>
+                    <h3 id="method_create">
+        <div class="location">at line 79</div>
+        <code>        static            
+    <a href="../../../../Khill/Lavacharts/DataTables/Rows/Row.html"><abbr title="Khill\Lavacharts\DataTables\Rows\Row">Row</abbr></a>
+    <strong>create</strong>(
+    <abbr title="Khill\Lavacharts\DataTables\Rows\Khill\Lavacharts\DataTables\DataTable">DataTable</abbr> $datatable, 
+    array $valueArray)</code>
+    </h3>
+    <div class="details">
+                    <div class="method-description">
+                                    <p>Creates a new Row object from an array of values.</p>                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    <abbr title="Khill\Lavacharts\DataTables\Rows\Khill\Lavacharts\DataTables\DataTable">DataTable</abbr></td>
+                <td>$datatable</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>
+    array</td>
+                <td>$valueArray</td>
+                <td>Array of values to assign to the row.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    <a href="../../../../Khill/Lavacharts/DataTables/Rows/Row.html"><abbr title="Khill\Lavacharts\DataTables\Rows\Row">Row</abbr></a></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidCellCount.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidCellCount">InvalidCellCount</abbr></a></td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidDate.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidDate">InvalidDate</abbr></a></td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../Khill/Lavacharts/Exceptions/InvalidRowDefinition.html"><abbr title="Khill\Lavacharts\Exceptions\InvalidRowDefinition">InvalidRowDefinition</abbr></a></td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCell">
+        <div class="location">at line 141</div>
         <code>                    
-    mixed
-    <strong>getColumnValue</strong>(
+    <a href="../../../../Khill/Lavacharts/DataTables/Cells/Cell.html"><abbr title="Khill\Lavacharts\DataTables\Cells\Cell">Cell</abbr></a>
+    <strong>getCell</strong>(
     int $columnIndex)</code>
     </h3>
     <div class="details">
@@ -199,7 +333,7 @@
                     <table class="table table-condensed">
         <tr>
             <td>
-    mixed</td>
+    <a href="../../../../Khill/Lavacharts/DataTables/Cells/Cell.html"><abbr title="Khill\Lavacharts\DataTables\Cells\Cell">Cell</abbr></a></td>
             <td>
 </td>
         </tr>
@@ -223,7 +357,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_jsonSerialize">
-        <div class="location">at line 72</div>
+        <div class="location">at line 155</div>
         <code>                    
     array
     <strong>jsonSerialize</strong>()</code>
@@ -239,6 +373,152 @@
         <tr>
             <td>
     array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetSet">
+        <div class="location">at line 164</div>
+        <code>                    
+    
+    <strong>offsetSet</strong>(
+    mixed $offset, 
+    mixed $value)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$value</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetExists">
+        <div class="location">at line 177</div>
+        <code>                    
+    bool
+    <strong>offsetExists</strong>(
+    mixed $offset)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    bool</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetUnset">
+        <div class="location">at line 185</div>
+        <code>                    
+    
+    <strong>offsetUnset</strong>(
+    mixed $offset)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_offsetGet">
+        <div class="location">at line 194</div>
+        <code>                    
+    mixed|null
+    <strong>offsetGet</strong>(
+    mixed $offset)</code>
+    </h3>
+    <div class="details">
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>
+    mixed</td>
+                <td>$offset</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>
+    mixed|null</td>
             <td>
 </td>
         </tr>
