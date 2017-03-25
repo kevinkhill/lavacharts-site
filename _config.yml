@@ -23,6 +23,7 @@ exclude:
  - javascript
  - resources
  - node_modules
+ - vendor
  - themes
  - CNAME
  - LICENSE
@@ -31,12 +32,10 @@ exclude:
  - '*.json'
  - '*.md'
  - '*.log'
- - '*.sublime-*'
  - Gemfile*
- - scotch.box
- - Vagrantfile
 ignore_paths:
  - node_modules
+ - vendor
 
 # Filtering Content
 show_drafts: nil

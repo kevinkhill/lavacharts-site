@@ -4,6 +4,7 @@ vendor/
 node_modules/
 _site/
 .idea/
+.bundle/
 
 .jekyll-metadata
 composer.phar

@@ -5,7 +5,7 @@
 
 
 <div id="install-composer" class="sub-section">
-  <h2>Composer</h2>
+  <h2>Composer Projects</h2>
   <p>First, copy this line into your project's composer.json file, in the <code>"require": {}</code> section</p>
 
   <div class="pre">
@@ -25,26 +25,38 @@ $ composer update
 
 <div id="install-laravel" class="sub-section">
   <h2>Laravel</h2>
-  <p class="lead">If you are using Laravel...</p>
+  <h3>Service Provider</h3>
+  <p>First step, register the service provider by adding the class namespace to the providers array in <code>app/config/app.php</code></p>
+{% highlight php %}
+"providers" => [
+    ...
 
-  <p>Do not require the <code>vendor/autoload.php</code> file, since Laravel takes care of that.</p>
-  <p>And also, register the service provider by adding this line to the providers array in <code>app/config/app.php</code></p>
-{% highlight php startinline %}
-"Khill\Lavacharts\Laravel\LavachartsServiceProvider"
-{% endhighlight %}
-  <p>Don't worry about adding the class alias, it is loaded automatically.</p>
-  
-  <p>If you already are using Laravel 5.4 (or newer) the providers array is in <code>config/app.php</code> and requires you adding this line</p>
-{% highlight php startinline %}
-Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
-{% endhighlight %}
-  <p>You should also add the class alias here as automatic loading doesn't work</p>
-{% highlight php startinline %}
-'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
+    'Khill\Lavacharts\Laravel\LavachartsServiceProvider',
+]
 {% endhighlight %}
 
+  <p>If you are using PHP 5.5+, then you can use the new <code>::class</code> syntax to reference the Service Provider.</p>
+{% highlight php %}
+Khill\Lavacharts\Laravel\LavachartsServiceProvider::class
+{% endhighlight %}
+
+  <br />
+  <h3>Facade / Alias</h3>
+  <p>The functionality is based upon the single instance of the library, so it is strongly recommended to add the <code>Lava</code> alias for ease of use throughout your application.</p>
+{% highlight php startinline %}
+"aliases" => [
+    ...
+
+    'Lava' => 'Khill\Lavacharts\Laravel\LavachartsFacade',
+]
+{% endhighlight %}
+
+  <p>Same as the service provider, if you are using PHP 5.5+, you can use the <code>::class</code> syntax.</p>
+{% highlight php %}
+Khill\Lavacharts\Laravel\LavachartsFacade::class
+{% endhighlight %}
   <br/>
-  <p class="lead">Remember, while using Laravel, replace <code>$lava-></code> with <code>Lava::</code></p>
+  <p class="lead">Remember, many examples show <code>$lava-></code> but while using Laravel, enable the alias and use <code>\Lava::</code> instead.</p>
 </div>
 
 
