@@ -28,5 +28,15 @@
     "require-dev": {
         "sami/sami": "~3.2"
     },
+    "extra": {
+    "laravel": {
+      "providers": [
+        "Khill\\Lavacharts\\Laravel\\LavachartsServiceProvider"
+      ],
+      "aliases": {
+        "Lava": "Khill\\Lavacharts\\Laravel\\LavachartsFacade"
+      }      
+    }
+  },
     "minimum-stability": "stable"
 }
